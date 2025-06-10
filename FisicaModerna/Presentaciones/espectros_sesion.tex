@@ -1,0 +1,190 @@
+\documentclass[12pt,aspectratio=169]{beamer}
+% Paquetes necesarios
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{textcomp}
+\usepackage{siunitx}
+
+% Tema y configuración
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+\usefonttheme{professionalfonts}
+
+
+% Configuración de TikZ
+\usetikzlibrary{shapes,arrows,positioning,decorations.pathmorphing}
+\pgfplotsset{compat=1.17}
+
+% Colores personalizados
+\definecolor{azuloscuro}{RGB}{25,25,112}
+\definecolor{rojoclaro}{RGB}{220,20,60}
+\definecolor{verdeclaro}{RGB}{50,205,50}
+\definecolor{naranjaclaro}{RGB}{255,140,0}
+
+% Configuración de fuentes más grandes
+\setbeamerfont{title}{size=\huge,series=\bfseries}
+\setbeamerfont{subtitle}{size=\Large}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamerfont{framesubtitle}{size=\large}
+\setbeamerfont{normal text}{size=\large}
+\setbeamerfont{caption}{size=\large}
+
+% Configuración de ecuaciones grandes
+\everymath{\displaystyle}
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{enumerate items}[default]
+
+% define a darker brown
+\definecolor{uwbrown}{HTML}{662200}
+% apply dark brown to the item bullet points
+\setbeamercolor{item}{fg=uwbrown}
+
+\title[Espectros Atómicos]{Los Espectros Atómicos}
+\subtitle{Fundamentos de la Física Cuántica}
+\author{ruben.velazquez@uteq.edu.mx}
+\institute[UTEQ]{Universidad Tecnológica de Querétaro}
+\date{Cuatrimestre Mayo - Agosto 2025}
+\logo{\includegraphics[width=2cm]{../Imagenes/Logo_uteq.png}}
+
+\begin{document}
+% ==================== SLIDE 1: TÍTULO ====================
+
+\frame{\titlepage}
+
+% ==================== SLIDE 2: OBJETIVOS ====================
+\begin{frame}{Objetivos de Aprendizaje}
+    \vspace{1cm}
+    \begin{itemize}
+        \item[\textbullet] \Large \textbf{Comprender} las limitaciones del modelo clásico
+        \vspace{0.5cm}
+        \item[\textbullet] \Large \textbf{Analizar} la ecuación empírica de Balmer
+        \vspace{0.5cm}
+        \item[\textbullet] \Large \textbf{Aplicar} los postulados de Bohr
+        \vspace{0.5cm}
+        \item[\textbullet] \Large \textbf{Evaluar} la revolución cuántica
+    \end{itemize}
+\end{frame}
+% ==================== SLIDE 3: CONTENIDO ====================
+\begin{frame}{Contexto Histórico}
+    
+    \begin{center}
+        \Large \textbf{Los Descubrimientos Clave}
+    \end{center}
+    
+    \begin{center}
+        \begin{tikzpicture}[scale=1.2]
+            % Línea de tiempo
+            \draw[thick,->] (0,0) -- (12,0);
+            
+            % Marcadores de años
+            \foreach \x/\year in {1/1885, 4/1900, 7/1911, 9/1913, 11/1920s} {
+                \draw (\x,0) -- (\x,0.3);
+                \node[below] at (\x,-0.3) {\Large \textbf{\year}};
+            }
+            
+            % Eventos
+            \node[above,text width=2.5cm,align=center] at (1,0.5) {\large \textbf{Balmer} \\ Fórmula empírica};
+            \node[above,text width=2.5cm,align=center] at (7,0.5) {\large \textbf{Rutherford} \\ Modelo planetario};
+            \node[above,text width=2.5cm,align=center] at (9,0.5) {\large \textbf{Bohr} \\ Postulados cuánticos};
+            \node[above,text width=2.5cm,align=center] at (11,0.5) {\large \textbf{Mecánica} \\ \textbf{Cuántica}};
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+% ==================== SLIDE 4: MODELO CLÁSICO ====================
+\begin{frame}{El Misterio de las Líneas Espectrales}
+    \large \textbf{¿Por qué líneas discretas?}
+     
+    \begin{center}
+        \begin{tikzpicture}[scale=1.5]
+            % Espectro continuo
+            \fill[left color=red, right color=violet] (0,2) rectangle (8,2.8);
+            \node[left] at (0,2.4) {\Large \textbf{Continuo}};
+            
+            % Espectro de líneas
+            \fill[black] (0,0) rectangle (8,0.8);
+            \foreach \x/\color in {1.5/red, 3/cyan, 4.5/blue, 6/violet} {
+                \fill[\color] (\x,0) rectangle (\x+0.2,0.8);
+            }
+            \node[left] at (0,0.4) {\Large \textbf{Hidrógeno}};
+            
+            % Etiquetas
+            \node[below] at (1.6,-0.3) {\large H$_\alpha$};
+            \node[below] at (3.1,-0.3) {\large H$_\beta$};
+            \node[below] at (4.6,-0.3) {\large H$_\gamma$};
+            \node[below] at (6.1,-0.3) {\large H$_\delta$};
+        \end{tikzpicture}
+    \end{center}
+       
+\end{frame}
+
+% ==================== SLIDE 5: ECUACIÓN DE BALMER ====================
+\begin{frame}{La Ecuación Empírica de Balmer}
+    \begin{center}
+        \large \textbf{El Patrón Matemático (1885)}
+    \end{center}
+    
+    \begin{center}
+        \colorbox{azuloscuro!10}{\parbox{0.8\textwidth}{
+            \begin{center}
+                \Huge \textcolor{azuloscuro}{
+                    $$\frac{1}{\lambda} = R_H\left(\frac{1}{n_1^2} - \frac{1}{n_2^2}\right)$$
+                }
+            \end{center}
+        }}
+    \end{center}
+        
+\end{frame}
+
+\begin{frame}
+\vspace{1cm}
+    \begin{center}
+        \begin{tabular}{cl}
+            \Large $\lambda$ & \Large Longitud de onda \\[0.3cm]
+            \Large $R_H$ & \Large Constante de Rydberg = $1.097 \times 10^7$ m$^{-1}$ \\[0.3cm]
+            \Large $n_1, n_2$ & \Large Números enteros ($n_2 > n_1$)
+        \end{tabular}
+    \end{center}
+\end{frame}
+
+% ==================== SLIDE 6: SERIES ESPECTRALES ====================
+\begin{frame}{Series Espectrales del Hidrógeno}
+    
+    \begin{center}
+        \Large \textbf{Clasificación por $n_1$}
+    \end{center}
+    
+    \begin{center}
+        \begin{tikzpicture}[scale=1.3]
+            % Diagrama de niveles
+            \foreach \n/\y/\energy in {1/1/-13.6, 2/2.5/-3.4, 3/3.5/-1.51, 4/4.2/-0.85, 5/4.7/0} {
+                \draw[thick] (0,\y) -- (8,\y);
+                \node[left] at (0,\y) {\Large $n=\n$};
+                \node[right] at (8,\y) {\Large \energy eV};
+            }
+            
+            % Transiciones de Lyman (n1=1)
+            \draw[thick,red,->] (1.5,2.5) -- (1.5,1.2);
+            \draw[thick,red,->] (2,3.5) -- (2,1.2);
+            \node[below] at (1.75,0.8) {\large \textcolor{red}{\textbf{Lyman (UV)}}};
+            
+            % Transiciones de Balmer (n1=2)
+            \draw[thick,blue,->] (4.5,3.5) -- (4.5,2.7);
+            \draw[thick,blue,->] (5,4.2) -- (5,2.7);
+            \node[below] at (4.75,2.5) {\large \textcolor{blue}{\textbf{Balmer (Vis)}}};
+            
+            % Transiciones de Paschen (n1=3)
+            \draw[thick,green,->] (6.5,4.2) -- (6.5,3.7);
+            \draw[thick,green,->] (7,4.7) -- (7,3.7);
+            \node[below] at (6.75,3.5) {\large \textcolor{green}{\textbf{Paschen (IR)}}};
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\end{document}

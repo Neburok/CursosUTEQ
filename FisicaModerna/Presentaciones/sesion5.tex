@@ -1,0 +1,574 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb} % For symbols like \hbar
+
+\usetheme{AnnArbor}
+\usecolortheme{spruce}
+
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{enumerate items}[default]
+
+% define a darker brown
+\definecolor{uwbrown}{HTML}{662200}
+% apply dark brown to the item bullet points
+\setbeamercolor{item}{fg=uwbrown}
+
+\title[Dualidad Onda-Partícula]{El Enigma Cuántico: Viaje a la Dualidad Onda-Partícula}
+\subtitle{Una exploración de cómo la materia y la luz desafían nuestra intuición}
+\author{(ruben.velazquez@uteq.edu.mx)}
+\institute[UTEQ]{Universidad Tecnológica de Querétaro}
+\date{Cuatrimestre Mayo - Agosto 2025}
+% \logo{\includegraphics[width=1.5cm]{/Imagenes/Logo_uteq.png}} % Ajusta la ruta y el nombre del archivo del logo
+
+\makeatletter
+\setbeamertemplate{footline}
+{
+	\leavevmode%
+	\hbox{%
+		\begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+			\usebeamerfont{author in head/foot}\insertshortauthor
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.55\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+			\usebeamerfont{title in head/foot}\insertshorttitle
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,right]{section in head/foot}%
+			\usebeamerfont{section in head/foot}\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+	\end{beamercolorbox}}%
+	\vskip0pt%
+}
+\makeatother
+
+\begin{document}
+	
+	% Diapositiva 1: Título y Bienvenida
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% Diapositiva 2: Hoja de Ruta de la Clase
+	\begin{frame}
+		\frametitle{¿Qué Exploraremos Hoy?}
+		\pause
+		Breve introducción al tema: la idea de que las cosas pueden ser ondas y partículas.
+		\pause
+		\begin{block}{Agenda}
+			\begin{enumerate}
+				\item Fundamentos Clásicos: ¿Onda o Partícula? \pause
+				\item El Nacimiento de lo Cuántico: La Energía en Paquetes. \pause
+				\item Evidencia Experimental: Viendo lo Invisible. \pause
+				\item Mecánica Cuántica: Las Nuevas Reglas del Juego. \pause
+				\item Impacto: Tecnología y Filosofía. \pause
+				\item Más Allá: Fronteras Actuales (si el tiempo lo permite).
+			\end{enumerate}
+		\end{block}
+		\pause
+		\begin{alertblock}{}
+			Mencionar que habrá espacio para preguntas.
+		\end{alertblock}
+	\end{frame}
+	
+	% Tabla de Contenidos (Opcional, pero útil)
+	\begin{frame}
+		\frametitle{Tabla de Contenidos}
+		\tableofcontents
+	\end{frame}
+	
+	% Módulo 1: Introducción y Fundamentos Clásicos
+	\section{Fundamentos Clásicos}
+	
+	\begin{frame}
+		\frametitle{Visión Clásica: El Dominio de las Partículas}
+		\begin{block}{Definición de Partícula (Clásica)}
+			\begin{itemize}
+				\item Ente localizado.
+				\item Masa y posición definidas.
+				\item Sigue trayectorias predecibles (Leyes de Newton).
+				\item \textit{[Sugerencia Visual: Animación simple de una bola de billar moviéndose y rebotando]}.
+			\end{itemize}
+		\end{block}
+		\pause
+		\begin{examples}
+			Una canica, un planeta, un grano de arena.
+		\end{examples}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Visión Clásica: El Reino de las Ondas}
+		\begin{block}{Definición de Onda (Clásica)}
+			\begin{itemize}
+				\item Perturbación que se propaga.
+				\item Extensión en el espacio.
+				\item Características: Longitud de onda ($\lambda$), frecuencia ($\nu$), amplitud, velocidad.
+				\item Luz clásica: onda electromagnética, masa nula.
+				\item \textit{[Sugerencia Visual: Animación de ondas en el agua o una cuerda vibrando]}.
+			\end{itemize}
+		\end{block}
+		\pause
+		\begin{examples}
+			Ondas sonoras, olas en el mar, luz (según la visión clásica predominante post-Maxwell).
+		\end{examples}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{La Luz: ¿Corpuscular u Ondulatoria?}
+		Un debate que duró siglos.
+		\pause
+		\begin{columns}[T] % T option for top alignment
+			\begin{column}{0.5\textwidth}
+				\begin{block}{Newton (Teoría Corpuscular)}
+					\begin{itemize}
+						\item Luz = Pequeñas partículas.
+						\item Explicaba reflexión y refracción.
+						\item \textit{[Sugerencia Visual: Retrato de Newton + diagrama simple de reflexión corpuscular]}.
+					\end{itemize}
+				\end{block}
+			\end{column}
+			\begin{column}{0.5\textwidth}
+				\begin{block}{Huygens (Teoría Ondulatoria)}
+					\begin{itemize}
+						\item Luz = Onda.
+						\item Explicaba reflexión, refracción, difracción.
+						\item \textit{[Sugerencia Visual: Retrato de Huygens + diagrama simple del principio de Huygens]}.
+					\end{itemize}
+				\end{block}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Evidencia a Favor de las Ondas}
+		\begin{itemize}
+			\item \textbf{Experimento de la Doble Rendija de Young (1801):}
+			\begin{itemize}
+				\item Demostración crucial del comportamiento ondulatorio de la luz.
+				\item Patrones de interferencia (franjas brillantes y oscuras).
+				\item \textit{[Sugerencia Visual: Diagrama esquemático del experimento de Young con el patrón de interferencia]}.
+			\end{itemize} \pause
+			\item \textbf{Trabajo de Fresnel (Difracción):} Base matemática. \pause
+			\item \textbf{Teoría Electromagnética de Maxwell (1860s):}
+			\begin{itemize}
+				\item Luz = Onda electromagnética.
+				\item Parecía el fin del debate.
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Problemas en el Paraíso Ondulatorio}
+		A finales del s. XIX, la teoría ondulatoria clásica no podía explicar:
+		\begin{enumerate}
+			\item \textbf{Radiación del cuerpo negro:} ("Catástrofe ultravioleta"). \pause
+			\item \textbf{Efecto fotoeléctrico:} Emisión de electrones por luz. \pause
+			\item \textbf{Espectros discretos:} Absorción y emisión atómica.
+		\end{enumerate}
+		\pause
+		\textit{[Sugerencia Visual: Gráfica de la radiación del cuerpo negro mostrando la predicción clásica vs. la observación]}.
+		\pause
+		\begin{alertblock}{Pregunta para la audiencia}
+			¿Qué podría estar fallando?
+		\end{alertblock}
+	\end{frame}
+	
+	% Módulo 2: El Nacimiento de la Teoría Cuántica y la Cuantización
+	\section{Nacimiento de lo Cuántico}
+	
+	\begin{frame}
+		\frametitle{Max Planck y la Cuantización de la Energía (1900)}
+		\begin{itemize}
+			\item \textbf{Problema:} Radiación del cuerpo negro. \pause
+			\item \textbf{Solución de Planck (Postulado Radical):}
+			\begin{itemize}
+				\item La energía no se emite/absorbe de forma continua.
+				\item Se intercambia en paquetes discretos: "cuantos".
+			\end{itemize} \pause
+			\item \textbf{Relación Fundamental de Planck:}
+			\[ E = h\nu \]
+			\begin{itemize}
+				\item $E$: Energía del cuanto.
+				\item $\nu$: Frecuencia de la radiación.
+				\item $h$: Constante de Planck (nueva constante universal).
+			\end{itemize} \pause
+			\item \textit{[Sugerencia Visual: Retrato de Planck + la ecuación $E = h\nu$ destacada]}. \pause
+			\item Implicación: La energía a nivel microscópico es "granulada".
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Einstein Extiende la Idea: Nacen los Fotones (1905)}
+		\begin{itemize}
+			\item \textbf{Problema:} Efecto fotoeléctrico.
+			\begin{itemize}
+				\item La energía de los electrones emitidos depende de la frecuencia (color) de la luz, no de su intensidad.
+				\item Existencia de una frecuencia umbral.
+			\end{itemize} \pause
+			\item \textbf{Explicación de Einstein:}
+			\begin{itemize}
+				\item La luz misma está compuesta por cuantos de energía: \textbf{fotones}.
+				\item Un fotón ($E=h\nu$) interactúa con un electrón.
+				\item Si $h\nu > \text{Función Trabajo (energía de enlace del electrón)} \Rightarrow \text{electrón emitido}$.
+			\end{itemize} \pause
+			\item \textit{[Sugerencia Visual: Diagrama del efecto fotoeléctrico: fotones incidiendo en un metal, electrones siendo emitidos. Mostrar cómo varía con la frecuencia y la intensidad]}. \pause
+			\item \textbf{Conclusión:} ¡La luz también tiene propiedades de partícula!
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{La Audaz Hipótesis de De Broglie (1924)}
+		\begin{itemize}
+			\item \textbf{Razonamiento (Simetría):}
+			\begin{itemize}
+				\item Si las ondas (luz) pueden comportarse como partículas (fotones)...
+				\item ...entonces las partículas (electrones, etc.) deberían poder comportarse como ondas.
+			\end{itemize} \pause
+			\item \textbf{Relación de De Broglie (Ondas de Materia):}
+			\[ \lambda = \frac{h}{p} \]
+			\begin{itemize}
+				\item $\lambda$: Longitud de onda de la partícula.
+				\item $h$: Constante de Planck.
+				\item $p$: Momento lineal de la partícula ($mv$).
+			\end{itemize} \pause
+			\item \textit{[Sugerencia Visual: Retrato de De Broglie + la ecuación $\lambda = h/p$ destacada]}. \pause
+			\item Implicación: Toda la materia tiene una naturaleza ondulatoria.
+			\begin{itemize}
+				\item Objetos macroscópicos: $\lambda$ muy pequeña, indetectable.
+				\item Partículas subatómicas (electrones): $\lambda$ significativa.
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Conectando Mundos: Ondas y Partículas}
+		Estas ecuaciones son el corazón de la dualidad.
+		\pause
+		\begin{block}{Para Fotones (Luz)}
+			\begin{itemize}
+				\item $E = h\nu$ (Energía de partícula, frecuencia de onda)
+				\item $p = h/\lambda$ (Momento de partícula, longitud de onda)
+			\end{itemize}
+		\end{block}
+		\pause
+		\begin{block}{Para Partículas de Materia (ej. Electrones)}
+			\begin{itemize}
+				\item $\lambda = h/p$ (Longitud de onda, momento de partícula)
+			\end{itemize}
+		\end{block}
+		\pause
+		\begin{alertblock}{Pregunta para la audiencia}
+			¿Qué tan "grande" es la longitud de onda de un electrón en un televisor antiguo? ¿Y la tuya al caminar? (Para ilustrar la escala).
+		\end{alertblock}
+	\end{frame}
+	
+	% Módulo 3: Evidencia Experimental de la Dualidad
+	\section{Evidencia Experimental}
+	
+	\begin{frame}
+		\frametitle{¡Los Electrones se Comportan como Ondas!}
+		\begin{itemize}
+			\item \textbf{Experimento de Davisson y Germer (1927):}
+			\begin{itemize}
+				\item Electrones disparados contra un cristal de Níquel.
+				\item Observaron patrones de difracción, ¡similares a los de los rayos X (ondas)!
+				\item \textit{[Sugerencia Visual: Esquema del experimento de Davisson-Germer y el patrón de difracción obtenido]}.
+			\end{itemize} \pause
+			\item \textbf{Experimento de G.P. Thomson (independiente, misma época):}
+			\begin{itemize}
+				\item Difracción de electrones a través de láminas metálicas delgadas.
+			\end{itemize} \pause
+			\item \textbf{Confirmación:} Los electrones tienen una longitud de onda, y coincide con $\lambda = h/p$.
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{La Doble Rendija: Ahora con Electrones (y Más)}
+		\begin{itemize}
+			\item Se adapta el experimento de Young para partículas: electrones, neutrones, átomos, ¡incluso moléculas (fullerenos)! \pause
+			\item \textbf{Resultado Sorprendente:} ¡Se observa un patrón de interferencia!
+			\begin{itemize}
+				\item \textit{[Sugerencia Visual: Diagrama animado (conceptual) de electrones pasando uno a uno por la doble rendija y formando gradualmente el patrón de interferencia en la pantalla]}.
+			\end{itemize} \pause
+			\item \textbf{La Paradoja:}
+			\begin{itemize}
+				\item El patrón se forma incluso enviando partículas \textbf{UNA POR UNA}.
+				\item Cada partícula parece "pasar por ambas rendijas" e interferir consigo misma.
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Observar Cambia el Resultado}
+		\begin{itemize}
+			\item \textbf{Si intentamos detectar por cuál rendija pasa la partícula:}
+			\begin{itemize}
+				\item Colocamos un "detector" en una de las rendijas.
+				\item \textbf{¡El patrón de interferencia DESAPARECE!}
+				\item Se observa un patrón de dos franjas, como si fueran partículas clásicas.
+				\item \textit{[Sugerencia Visual: Modificación del diagrama anterior, mostrando un "detector" en una rendija y el cambio en el patrón final]}.
+			\end{itemize} \pause
+			\item \textbf{Conclusión Profunda:} El acto de medir afecta el comportamiento del sistema. La partícula se propaga como onda, pero se detecta como corpúsculo.
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Explorando los Límites (Variaciones Fascinantes)}
+		Breve mención de:
+		\begin{itemize}
+			\item \textbf{Interferencia con antimateria (positrones):} También muestran dualidad. \pause
+			\item \textbf{Experimentos de elección retardada (Wheeler):} La "decisión" de medir el camino o la interferencia se toma \textit{después} de que la partícula pasa las rendijas. \pause
+			\item \textbf{Borrador cuántico:} Se puede "borrar" la información del camino y restaurar la interferencia.
+		\end{itemize}
+		\pause
+		Estos experimentos profundizan el misterio y la extrañeza cuántica.
+	\end{frame}
+	
+	% Módulo 4: La Dualidad en el Marco de la Mecánica Cuántica
+	\section{Marco de la Mecánica Cuántica}
+	
+	\begin{frame}
+		\frametitle{Describiendo lo Indescriptible: La Función de Onda ($\Psi$)}
+		\begin{itemize}
+			\item En Mecánica Cuántica, una partícula (ej. electrón) se describe por su \textbf{Función de Onda ($\Psi$)}.
+			\begin{itemize}
+				\item $\Psi(x, y, z, t)$: Función matemática compleja (espacio y tiempo).
+			\end{itemize} \pause
+			\item \textbf{Ecuación de Schrödinger (1926):}
+			\begin{itemize}
+				\item Ley fundamental que gobierna la evolución de $\Psi$.
+				\item Análogo cuántico a las leyes de Newton.
+				\item \textit{[Sugerencia Visual: Ecuación de Schrödinger (forma general) destacada. No es necesario que la entiendan en detalle, solo su importancia]}.
+			\end{itemize} \pause
+			\item La función de onda es inherentemente ondulatoria (permite superposición, interferencia).
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{¿Qué Significa $\Psi$? La Probabilidad al Mando}
+		\begin{itemize}
+			\item \textbf{Max Born (1926):}
+			\begin{itemize}
+				\item $\Psi$ en sí misma no es una onda física.
+				\item $|\Psi|^2$ (el cuadrado de su módulo) = \textbf{Densidad de probabilidad} de encontrar la partícula en un punto.
+				\item \textit{[Sugerencia Visual: Gráfica de una función de onda simple y su correspondiente $|\Psi|^2$ como una "nube de probabilidad"]}.
+			\end{itemize} \pause
+			\item \textbf{Implicaciones:}
+			\begin{itemize}
+				\item No se puede hablar de posición exacta antes de medir.
+				\item La partícula existe en un estado de superposición de posibles posiciones.
+				\item La Mecánica Cuántica es intrínsecamente probabilística.
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{El Acto de Medir y sus Consecuencias}
+		\begin{itemize}
+			\item \textbf{Al medir una propiedad (ej. posición):}
+			\begin{itemize}
+				\item La función de onda "colapsa".
+				\item De una distribución de probabilidades, pasa a un estado con un valor definido (el medido).
+				\item \textit{[Sugerencia Visual: Animación conceptual: la "nube" de $|\Psi|^2$ se contrae a un punto al simular una "medición"]}.
+			\end{itemize} \pause
+			\item Este "colapso" es uno de los aspectos más debatidos y menos comprendidos de la MC.
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Bohr: Ondas y Partículas, Caras de la Misma Moneda}
+		\begin{block}{Principio de Complementariedad (Niels Bohr)}
+			\begin{itemize}
+				\item Los aspectos ondulatorios y corpusculares son \textbf{complementarios}.
+				\item Ambos son necesarios para una descripción completa.
+				\item \textbf{No pueden observarse simultáneamente} en el mismo experimento.
+				\item El tipo de experimento determina qué aspecto se manifiesta.
+			\end{itemize}
+		\end{block}
+		\pause
+		\textit{[Sugerencia Visual: Un diagrama tipo "Yin-Yang" con "Onda" y "Partícula" como las dos mitades]}.
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Heisenberg: Límites Fundamentales al Conocimiento}
+		\begin{block}{Relación de Incertidumbre (Werner Heisenberg, 1927)}
+			\begin{itemize}
+				\item Límite fundamental a la precisión simultánea de pares de propiedades conjugadas.
+				\item Ejemplo clave: Posición ($\Delta x$) y Momento lineal ($\Delta p_x$).
+				\[ (\Delta x) (\Delta p_x) \geq \frac{\hbar}{2} \quad (\text{donde } \hbar = h/2\pi) \]
+				\item \textit{[Sugerencia Visual: Una balanza, donde al aumentar la precisión de "Posición", disminuye la de "Momento", y viceversa]}.
+			\end{itemize}
+		\end{block}
+		\pause
+		\begin{alertblock}{Significado}
+			\begin{itemize}
+				\item Cuanto más preciso es $\Delta x$, menos preciso es $\Delta p_x$ (y viceversa).
+				\item Es una característica intrínseca de la naturaleza, no un defecto de los instrumentos.
+			\end{itemize}
+		\end{alertblock}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Energías Discretas y "Direcciones" Cuánticas (Mención)}
+		Aplicar la Ec. de Schrödinger a sistemas confinados (ej. átomo de Hidrógeno):
+		\begin{itemize}
+			\item Conduce a niveles de energía cuantizados (discretos). \pause
+			\item Estados descritos por \textbf{Números Cuánticos} (n, l, m, s). \pause
+			\item Principio de Exclusión de Pauli.
+		\end{itemize}
+		\pause
+		Fundamental para entender la estructura atómica y la química.
+		\pause
+		\textit{[Sugerencia Visual: Diagrama simple de niveles de energía del átomo de Hidrógeno]}.
+	\end{frame}
+	
+	% Módulo 5: Implicaciones, Aplicaciones y Conexión con Física Electrónica
+	\section{Impacto: Tecnología y Filosofía}
+	
+	\begin{frame}
+		\frametitle{La Cuántica en tus Dispositivos}
+		\begin{itemize}
+			\item \textbf{Electrones en Sólidos:}
+			\begin{itemize}
+				\item Comportamiento ondulatorio crucial para entender el transporte de carga.
+				\item Teoría de Bandas (metales, semiconductores, aislantes).
+			\end{itemize} \pause
+			\item \textbf{Interacción Luz-Electrones:}
+			\begin{itemize}
+				\item Base de fotodetectores, células solares (excitación óptica).
+				\item Láseres (emisión estimulada de fotones).
+			\end{itemize} \pause
+			\item \textbf{Efecto Túnel:}
+			\begin{itemize}
+				\item Partículas (ondas) atravesando barreras "imposibles".
+				\item Clave en memorias Flash, microscopio de efecto túnel (STM).
+			\end{itemize} \pause
+			\item \textit{[Sugerencia Visual: Diagrama simple de bandas de energía en un semiconductor y el concepto de efecto túnel]}.
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Tecnologías Nacidas de la Dualidad (Parte 1)}
+		\begin{columns}[T]
+			\begin{column}{0.5\textwidth}
+				\begin{block}{Microscopio de Electrones}
+					\begin{itemize}
+						\item Usa la pequeña $\lambda$ de los electrones para alta resolución.
+						\item Visualizar átomos y moléculas.
+						\item \textit{[Sugerencia Visual: Una imagen impresionante obtenida por un microscopio electrónico]}.
+					\end{itemize}
+				\end{block}
+			\end{column}
+			\begin{column}{0.5\textwidth}
+				\begin{block}{Láseres}
+					\begin{itemize}
+						\item Luz coherente y potente gracias a la naturaleza cuántica de la luz y su interacción con la materia.
+						\item \textit{[Sugerencia Visual: Aplicaciones diversas de los láseres: medicina, industria, comunicaciones]}.
+					\end{itemize}
+				\end{block}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Tecnologías Nacidas de la Dualidad (Parte 2)}
+		\begin{columns}[T]
+			\begin{column}{0.5\textwidth}
+				\begin{block}{Comunicación Cuántica y Criptografía Cuántica (QKD)}
+					\begin{itemize}
+						\item Usa propiedades cuánticas (dualidad, incertidumbre) para seguridad.
+						\item Detección de espionaje.
+					\end{itemize}
+				\end{block}
+			\end{column}
+			\begin{column}{0.5\textwidth}
+				\begin{block}{Computación Cuántica (Mención)}
+					\begin{itemize}
+						\item Aprovecha superposición y entrelazamiento para cálculos revolucionarios.
+					\end{itemize}
+				\end{block}
+			\end{column}
+		\end{columns}
+		\textit{[Sugerencia Visual: Iconos representando seguridad informática y un chip cuántico conceptual]}.
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Repensando la Realidad (Implicaciones Filosóficas)}
+		\begin{itemize}
+			\item La dualidad onda-partícula es \textbf{contraintuitiva}. \pause
+			\item \textbf{Cuestiona:}
+			\begin{itemize}
+				\item La naturaleza de la realidad: ¿Qué "es" un electrón antes de medirlo?
+				\item El papel de la medición y el observador.
+				\item El determinismo vs. la probabilidad.
+			\end{itemize} \pause
+			\item \begin{quote}
+				"Si la mecánica cuántica no te ha sorprendido profundamente, no la has entendido todavía." - Niels Bohr.
+			\end{quote} \pause
+			\item \begin{alertblock}{Pregunta para la audiencia}
+				¿Cómo cambia esto nuestra visión del mundo?
+			\end{alertblock}
+		\end{itemize}
+	\end{frame}
+	
+	% Módulo 6: Temas Avanzados y Direcciones Actuales
+	\section{Más Allá: Fronteras Actuales}
+	
+	\begin{frame}
+		\frametitle{El Viaje Continúa: Preguntas Abiertas}
+		(Opcional, si hay tiempo)
+		\begin{itemize}
+			\item \textbf{Experimentos con objetos más grandes:}
+			\begin{itemize}
+				\item ¿Dónde está el límite entre lo cuántico y lo clásico? (Interferencia con moléculas complejas).
+			\end{itemize} \pause
+			\item \textbf{El Problema de la Medida:}
+			\begin{itemize}
+				\item ¿Qué es exactamente una "medición"? ¿Cómo ocurre el "colapso"?
+				\item Diferentes interpretaciones de la Mecánica Cuántica.
+			\end{itemize} \pause
+			\item \textbf{Unificación con la Relatividad General.} \pause
+			\item \textit{[Sugerencia Visual: Una imagen conceptual de la frontera cuántico-clásica o un diagrama de las diferentes interpretaciones de la MC]}.
+		\end{itemize}
+	\end{frame}
+	
+	% Conclusión
+	\section{Conclusión}
+	
+	\begin{frame}
+		\frametitle{Dualidad Onda-Partícula: Un Pilar de la Física Moderna}
+		\begin{block}{Recapitulación de ideas clave}
+			\begin{itemize}
+				\item La luz y la materia exhiben propiedades tanto de onda como de partícula.
+				\item La descripción depende del experimento.
+				\item La Mecánica Cuántica provee el marco formal.
+				\item $E=h\nu$, $\lambda=h/p$ son relaciones fundamentales.
+				\item Profundas implicaciones tecnológicas y filosóficas.
+			\end{itemize}
+		\end{block}
+		\pause
+		La dualidad nos muestra un universo más rico y extraño de lo que imaginábamos.
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{¿Preguntas?}
+		\begin{center}
+			\Huge \textbf{¿Preguntas?}
+		\end{center}
+		\vfill
+		Abrir el espacio para preguntas de los estudiantes.
+		\newline
+		Fomentar la discusión.
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{¡Gracias!}
+		(Opcional)
+		\begin{center}
+			\Huge \textbf{¡Gracias por su atención!}
+		\end{center}
+		\vfill
+		Sugerencias de lectura adicional o recursos online (si aplica).
+		\newline
+		Información de contacto: ruben.velazquez@uteq.edu.mx
+	\end{frame}
+	
+\end{document}

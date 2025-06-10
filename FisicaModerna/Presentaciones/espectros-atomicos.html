@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Espectros Atómicos - Presentación Interactiva</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            overflow: hidden;
+        }
+        
+        .presentation-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 0.6s ease;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            padding: 60px;
+            box-sizing: border-box;
+        }
+        
+        .slide.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .slide.prev {
+            transform: translateX(-100px);
+        }
+        
+        /* Slide Headers */
+        .slide-header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 20px;
+        }
+        
+        .slide-title {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .slide-subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            font-weight: 400;
+        }
+        
+        /* Content Layouts */
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .three-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+        }
+        
+        /* Text Styles */
+        .large-text {
+            font-size: 1.6em;
+            line-height: 1.4;
+            color: #2c3e50;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .emphasis {
+            color: #e74c3c;
+            font-weight: 700;
+        }
+        
+        /* Lists */
+        .bullet-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .bullet-list li {
+            padding: 15px 0;
+            font-size: 1.3em;
+            position: relative;
+            padding-left: 40px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .bullet-list li::before {
+            content: '⚡';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        
+        /* Equations */
+        .equation-box {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border: 2px solid #667eea;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.1);
+        }
+        
+        .equation {
+            font-size: 2.2em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .equation-label {
+            font-size: 1.1em;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        /* Info Boxes */
+        .info-box {
+            background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+            border-left: 5px solid #2196f3;
+            padding: 25px;
+            border-radius: 0 10px 10px 0;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #fff3e0, #fce4ec);
+            border-left: 5px solid #ff9800;
+            padding: 25px;
+            border-radius: 0 10px 10px 0;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .success-box {
+            background: linear-gradient(135deg, #e8f5e8, #f1f8e9);
+            border-left: 5px solid #4caf50;
+            padding: 25px;
+            border-radius: 0 10px 10px 0;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Visual Elements */
+        .atom-diagram {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            margin: 0 auto;
+        }
+        
+        .nucleus {
+            width: 30px;
+            height: 30px;
+            background: #e74c3c;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 20px rgba(231, 76, 60, 0.5);
+        }
+        
+        .orbit {
+            border: 2px dashed #667eea;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .orbit-1 { width: 80px; height: 80px; }
+        .orbit-2 { width: 140px; height: 140px; }
+        .orbit-3 { width: 200px; height: 200px; }
+        .orbit-4 { width: 260px; height: 260px; }
+        
+        .electron {
+            width: 12px;
+            height: 12px;
+            background: #3498db;
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.7);
+        }
+        
+        .electron-1 {
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: orbit1 4s linear infinite;
+        }
+        
+        .electron-2 {
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: orbit2 6s linear infinite;
+        }
+        
+        @keyframes orbit1 {
+            from { transform: translateX(-50%) rotate(0deg) translateX(40px) rotate(0deg); }
+            to { transform: translateX(-50%) rotate(360deg) translateX(40px) rotate(-360deg); }
+        }
+        
+        @keyframes orbit2 {
+            from { transform: translateX(-50%) rotate(0deg) translateX(70px) rotate(0deg); }
+            to { transform: translateX(-50%) rotate(360deg) translateX(70px) rotate(-360deg); }
+        }
+        
+        /* Spectrum Display */
+        .spectrum {
+            height: 60px;
+            margin: 20px 0;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .continuous-spectrum {
+            background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+        }
+        
+        .line-spectrum {
+            background: #1a1a1a;
+            position: relative;
+        }
+        
+        .spectral-line {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 4px;
+        }
+        
+        .line-656 { left: 15%; background: #ff0000; } /* Hα */
+        .line-486 { left: 30%; background: #00ffff; } /* Hβ */
+        .line-434 { left: 45%; background: #0000ff; } /* Hγ */
+        .line-410 { left: 60%; background: #8000ff; } /* Hδ */
+        
+        /* Energy Level Diagram */
+        .energy-diagram {
+            width: 400px;
+            height: 500px;
+            position: relative;
+            margin: 0 auto;
+            background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        
+        .energy-level {
+            position: absolute;
+            left: 50px;
+            right: 50px;
+            height: 3px;
+            background: #667eea;
+            border-radius: 2px;
+        }
+        
+        .level-n1 { bottom: 50px; }
+        .level-n2 { bottom: 120px; }
+        .level-n3 { bottom: 180px; }
+        .level-n4 { bottom: 220px; }
+        .level-n5 { bottom: 250px; }
+        
+        .level-label {
+            position: absolute;
+            right: -80px;
+            top: -10px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .transition-arrow {
+            position: absolute;
+            left: 150px;
+            width: 3px;
+            background: #e74c3c;
+            border-radius: 2px;
+        }
+        
+        .arrow-balmer {
+            bottom: 50px;
+            height: 70px;
+        }
+        
+        .arrow-lyman {
+            bottom: 50px;
+            height: 130px;
+            left: 180px;
+        }
+        
+        /* Navigation */
+        .nav-controls {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 1000;
+        }
+        
+        .nav-btn {
+            padding: 15px 25px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .nav-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .slide-counter {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            color: #2c3e50;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+        
+        .time-indicator {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            color: #2c3e50;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-year {
+            background: #667eea;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-right: 20px;
+            min-width: 80px;
+            text-align: center;
+        }
+        
+        .timeline-content {
+            flex: 1;
+        }
+        
+        .timeline-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-description {
+            color: #7f8c8d;
+        }
+        
+        /* Problem Cards */
+        .problem-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .problem-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .problem-icon {
+            margin-right: 10px;
+            font-size: 1.5em;
+        }
+        
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .slide {
+                padding: 30px 20px;
+            }
+            
+            .slide-title {
+                font-size: 2em;
+            }
+            
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .equation {
+                font-size: 1.6em;
+            }
+            
+            .atom-diagram {
+                width: 250px;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Indicadores -->
+        <div class="slide-counter">
+            <span id="current-slide">1</span> / <span id="total-slides">20</span>
+        </div>
+        
+        <div class="time-indicator">
+            ⏰ <span id="timer">100:00</span> min
+        </div>
+        
+        <!-- SLIDE 1: PORTADA -->
+        <div class="slide active" data-time="2">
+            <div class="slide-header">
+                <div class="slide-title">⚛️ Los Espectros Atómicos</div>
+                <div class="slide-subtitle">y la Inestabilidad de los Átomos Clásicos</div>
+            </div>
+            
+            <div class="content">
+                <div class="two-column">
+                    <div>
+                        <div class="atom-diagram">
+                            <div class="nucleus"></div>
+                            <div class="orbit orbit-1">
+                                <div class="electron electron-1"></div>
+                            </div>
+                            <div class="orbit orbit-2">
+                                <div class="electron electron-2"></div>
+                            </div>
+                            <div class="orbit orbit-3"></div>
+                            <div class="orbit orbit-4"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="info-box">
+                            <strong>📚 Curso:</strong> Física Moderna<br>
+                            <strong>🎓 Nivel:</strong> Ingeniería / Licenciatura<br>
+                            <strong>⏱️ Duración:</strong> 100 minutos<br>
+                            <strong>📅 Tema:</strong> Capítulo 3
+                        </div>
+                        
+                        <div class="large-text">
+                            <strong>🎯 Objetivos:</strong>
+                            <ul class="bullet-list">
+                                <li>Comprender las limitaciones del modelo clásico</li>
+                                <li>Analizar la ecuación de Balmer</li>
+                                <li>Aplicar los postulados de Bohr</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SLIDE 2: CRONOLOGÍA HISTÓRICA -->
+        <div class="slide" data-time="5">
+            <div class="slide-header">
+                <div class="slide-title">🕰️ Contexto Histórico</div>
+                <div class="slide-subtitle">Los Descubrimientos que Cambiaron la Física</div>
+            </div>
+            
+            <div class="content">
+                <div class="timeline">
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-year">1885</div>
+                        <div class="timeline-content">
+                            <div class="timeline-title">Johann Balmer - Fórmula Empírica</div>
+                            <div class="timeline-description">Descubre la ecuación matemática para las líneas espectrales del hidrógeno</div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-year">1911</div>
+                        <div class="timeline-content">
+                            <div class="timeline-title">Ernest Rutherford - Modelo Planetario</div>
+                            <div class="timeline-description">Propone que los electrones orbitan alrededor del núcleo</div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-year">1913</div>
+                        <div class="timeline-content">
+                            <div class="timeline-title">Niels Bohr - Postulados Cuánticos</div>
+                            <div class="timeline-description">Introduce la cuantización para explicar la estabilidad atómica</div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-year">1920s</div>
+                        <div class="timeline-content">
+                            <div class="timeline-title">Schrödinger & Heisenberg</div>
+                            <div class="timeline-description">Desarrollo de la mecánica cuántica completa</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SLIDE 3: EL MISTERIO DE LAS LÍNEAS ESPECTRALES -->
+        <div class="slide" data-time="8">
+            <div class="slide-header">
+                <div class="slide-title">🌈 El Misterio de las Líneas Espectrales</div>
+                <div class="slide-subtitle">¿Por qué los espectros no son continuos?</div>
+            </div>
+            
+            <div class="content">
+                <div class="large-text" style="text-align: center; margin-bottom: 40px;">
+                    <strong>Observación Experimental:</strong> Los gases emiten luz en <span class="highlight">frecuencias específicas</span>, no en un continuo.
+                </div>
+                
+                <div>
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <strong>Espectro Continuo (Luz Blanca)</strong>
+                    </div>
+                    <div class="spectrum continuous-spectrum"></div>
+                </div>
+                
+                <div style="margin-top: 40px;">
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <strong>Espectro de Líneas del Hidrógeno</strong>
+                    </div>
+                    <div class="spectrum line-spectrum">
+                        <div class="spectral-line line-656"></div>
+                        <div class="spectral-line line-486"></div>
+                        <div class="spectral-line line-434"></div>
+                        <div class="spectral-line line-410"></div>
+                    </div>
+                    <div style="text-align: center; margin-top: 10px; font-size: 0.9em;">
+                        Hα (656nm) - Hβ (486nm) - Hγ (434nm) - Hδ (410nm)
+                    </div>
+                </div>
+                
+                <div class="warning-box" style="margin-top: 30px;">
+                    <strong>❓ La Gran Pregunta:</strong><br>
+                    ¿Por qué solo ciertas frecuencias específicas? La física clásica no puede explicar este fenómeno.
+                </div>
+            </div>
+        </div>
+        
+        <!-- SLIDE 4: LA ECUACIÓN DE BALMER -->
+        <div class="slide" data-time="12">
+            <div class="slide-header">
+                <div class="slide-title">📐 La Ecuación Empírica de Balmer</div>
+                <div class="slide-subtitle">Un patrón matemático sin explicación teórica</div>
+            </div>
+            
+            <div class="content">
+                <div class="equation-box pulse">
+                    <div class="equation">1/λ = R<sub>H</sub>(1/n₁² - 1/n₂²)</div>
+                    <div class="equation-label">Ecuación de Balmer (1885)</div>
+                </div>
+                
+                <div class="two-column" style="margin-top: 40px;">
+                    <div>
+                        <div class="info-box">
+                            <strong>📊 Parámetros:</strong><br><br>
+                            <strong>λ:</strong> Longitud de onda<br>
+                            <strong>R<sub>H</sub>:</strong> Constante de Rydberg<br>
+                            <strong>= 1.097 × 10⁷ m⁻¹</strong><br>
+                            <strong>n₁, n₂:</strong> Números enteros<br>
+                            <strong>(n₂ > n₁)</strong>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="success-box">
+                            <strong>🎯 Series Espectrales:</strong><br><br>
+                            <strong>• Lyman (n₁=1):</strong> Ultravioleta<br>
+                            <strong>• Balmer (n₁=2):</strong> Visible<br>
+                            <strong>• Paschen (n₁=3):</strong> IR cercano<br>
+                            <strong>• Brackett (n₁=4):</strong> IR<br>
+                            <strong>• Pfund (n₁=5):</strong> IR lejano
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="warning-box" style="margin-top: 30px;">
+                    <strong>⚠️ El Problema:</strong> La ecuación funciona perfectamente pero <span class="emphasis">carece de fundamento teórico</span> en la física clásica.
+                </div>
+            </div>
+        </div>
+        
+        <!-- SLIDE 5: CÁLCULO DE EJEMPLO -->
+        <div class="slide" data-time="15">
+            <div class="slide-header">
+                <div class="slide-title">🧮 Ejemplo de Cálculo</div>
+                <div class="slide-subtitle">Línea Hα del Hidrógeno (Roja)</div>
+            </div>
+            
+            <div class="content">
+                <div class="large-text" style="text-align: center; margin-bottom: 30px;">
+                    <strong>Transición:</strong> n = 3 → n = 2 (Serie de Balmer)
+                </div>
+                
+                <div class="equation-box">
+                    <div class="equation">1/λ = R<sub>H</sub>(1/2² - 1/3²)</div>
+                    <div class="equation-label">Paso 1: Aplicar la fórmula</div>
+                </div>
+                
+                <div class="equation-box">
+                    <div class="equation">1/λ = 1.097×10⁷(1/4 - 1/9)</div>
+                    <div class="equation-label">Paso 2: Sustituir valores</div>
+                </div>
+                
+                <div class="equation-box">
+                    <div class="equation">1/λ = 1.097×10⁷ × 5/36</div>
+                    <div class="equation-label">Paso 3: Calcular diferencia</div>
+                </div>
+                
+                <div class="equation-box">
+                    <div class="equation">λ = 656.3 nm</div>
+                    <div class="equation-label">Resultado: Luz roja visible</div>
+                </div>
+                
+                <div class="success-box">
+                    <strong>✅ Verificación Experimental:</strong><br>
+                    Este valor coincide <span class="emphasis">exactamente</span> con las observaciones espectrales del hidrógeno.
+                </div>
+            </div>
+        </div>
+        
+        <!-- SLIDE 6: EL PROBLEMA DE LA ESTABILIDAD ATÓMICA -->
+        <div class="slide" data-time="20">
+            <div class="slide-header">
+                <div class="slide-title">⚡ La Crisis del Modelo Clásico</div>
+                <div class="slide-subtitle">¿Por qué no colapsan los átomos?</div>
+            </div>
+            
+            <div class="content">
+                <div class="two-column">
+                    <div>
+                        <div class="problem-card">
+                            <div class="problem-title">
+                                <span class="problem-icon">🌍</span>
+                                Modelo de Rutherford
+                            </div>
+                            <p>Los electrones orbitan el núcleo como planetas alrededor del Sol.</p>
+                        </div>
+                        
+                        <div class="problem-card">
+                            <div class="problem-title">
+                                <span class="problem-icon">⚡</span>
+                                Electromagnetismo Clásico
+                            </div>
+                            <p>Una carga acelerada debe radiar energía electromagnética.</p>
+                        </div>
+                        
+                        <div class="problem-card">
+                            <div class="problem-title">
+                                <span class="problem-icon">💥</span>
+                                Predicción Catastrófica
+                            </div>
+                            <p>El electrón debería colapsar sobre el núcleo en nanosegundos.</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="atom-diagram">
+                            <div class="nucleus"></div>
+                            <div class="orbit orbit-1" style="border-color: #e74c3c; border-style: solid;"></div>
+                            <div class="orbit orbit-2" style="border-color: #f39c12; border-style: solid;"></div>
+                            <div class="orbit orbit-3" style="border-color: #f1c40f; border-style: solid;"></div>
+                            <div class="orbit orbit-4" style="border-color: #2ecc71; border-style: solid;"></div>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 20px;">
+                            <div style="font-size: 2em; color: #e74c3c;">⬇️</div>
+                            <div style="font-size: 1.2em; font-weight: 600;">Espiral de Colapso</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="warning-box">
+                    <strong>🚨 Contradicción Fundamental:</strong><br>
+                    Los átomos son estables durante millones de años, pero la física clásica predice colapso en ~10⁻¹¹ segundos.
+                </div>
+            </div>
+        </div>
+        
+        <!-- SLIDE 7: CÁLCULO DEL TIEMPO DE COLAPSO -->
+        <div class="slide" data-time="25">
+            <div class="slide-header">
+                <div class="slide-title">⏱️ El Tiempo de Colapso Clásico</div>
+                <div class="slide-subtitle">Predicción vs. Realidad</div>
+            </div>
+            
+            <div class="content">
+                <div class="large-text" style="text-align: center; margin-bottom: 30px;">
+                    <strong>Según la teoría electromagnética clásica...</strong>
+                </div>
+                
+                <div class="equation-box">
+                    <div class="equation">a<sub>c</sub> = v²/r</div>
+                    <div class="equation-label">Aceleración centrípeta del electrón</div>
+                </div>
+                
+                <div class="equation-box">
+                    <div class="equation">P = (2e²a²)/(3c³)</div>
+                    <div class="equation-label">Potencia radiada (Ecuación de Larmor)</div>
+                </div>
+                
+                <div class="equation-box">
+                    <div class="equation">t<sub>colapso</sub> ≈ 1.6 × 10⁻¹¹ segundos</div>
+                    <div class="equation-label">Tiempo predicho para el colapso atómico</div>
+                </div>
+                
+                <div class="two-column" style="margin-top: 40px;">
+                    <div class="warning-box">
+                        <strong>🔬 Predicción Clásica:</strong><br>
+                        • Radiación continua de energía<br>
+                        • Pérdida de velocidad orbital<br>
+                        • Espiral hacia el núcleo<br>
+                        • Colapso en nanosegundos
+                    </div>
+                    
+                    <div class="success-box">
+                        <strong>🌟 Realidad Observada:</strong><br>
+                        • Los átomos son estables<br>
+                        • Existen durante millones de años<br>
+                        • No hay radiación continua<br>
+                        • Solo líneas espectrales discretas
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SLIDE 8: LOS POSTULADOS DE BOHR -->
+        <div class="slide" data-time="30">
+            <div class="slide-header">
+                <div class="slide-title">🎯 Los Postulados de Bohr (1913)</div>
+                <div class="slide-subtitle">La Revolución Cuántica</div>
+            </div>
+            
+            <div class="content">
+                <div class="large-text" style="text-align: center; margin-bottom: 40px;">
+                    <strong>Niels Bohr introduce conceptos cuánticos para resolver la crisis</strong>
+                </div>
+                
+                <div class="three-column">
+                    <div class="info-box">
+                        <strong>🔸 Postulado 1</strong><br><br>
+                        <strong>Órbitas Estacionarias</strong><br><br>
+                        Los electrones orbitan sin emitir radiación electromagnética.
+                    </div>
+                    
+                    <div class="info-box">
+                        <strong>🔸 Postulado 2</strong><br><br>
+                        <strong>Cuantización del Momento Angular</strong><br><br>
+                        Solo están permitidas órbitas con L = nℏ
+                    </div>
+                    
+                    <div class="info-box">
+                        <strong>🔸 Postulado 3</strong><br><br>
+                        <strong>Transiciones Cuánticas</strong><br><br>
+                        La radiación ocurre en transiciones: hν = E<sub>i</sub> - E<sub>f</sub>
+                    </div>
+                </div>
+                
+                <div class="equation-box" style="margin-top: 40px;">
+                    <div class="equation">L = mvr = nℏ</div>
+                    <div class="equation-label">Condición de cuantización (n = 1, 2, 3, ...)</div>
+                </div>
+                
+                <div class="equation-box">
+                    <div class="equation">hν = E<sub>i</sub> - E<sub>f</sub></div>
+                    <div class="equation-label">Condición de frecuencia de Bohr</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SLIDE 9: DESARROLLO MATEMÁTICO -->
+        <div class="slide" data-time="35">
+            <div class="slide-header">
+                <div class="slide-title">🧮 Desarrollo Matemático</div>
+                <div class="slide-subtitle">De los Postulados a las Ecuaciones</div>
+            </div>
+            
+            <div class="content">
+                <div class="large-text" style="text-align: center; margin-bottom: 30px;">
+                    <strong>Derivación paso a paso para el átomo de hidrógeno</strong>
+                </div>
+                
+                <div class="equation-box">
+                    <div class="equation">F<sub>eléctrica</sub> = F<sub>centrípeta</sub></div>
+                    <div class="equation-label">Paso 1: Equilibrio de fuerzas</div>
+                </div>
+                
+                <div class="equation-box">
+                    <div class="equation">ke²/r² = mv²/r</div>
+                    <div class="equation-label">Paso 2: Fuerzas específicas</div>
+                </div>
+                
+                <div class="equation-box">
+                    <div class="equation">mvr = nℏ → v = nℏ/(mr)</div>
+                    <div class="equation-label">Paso 3: Condición de cuantización</div>
+                </div>
+                
+                <div class="equation-box">
+                    <div class="equation">r<sub>n</sub> = n²ℏ²/(mke²) = n²a₀</div>
+                    <div class="equation-label">Paso 4: Radios permitidos</div>
+                </div>
+                
+                <div class="success-box">
+                    <strong>🎯 Radio de Bohr:</strong> a₀ = 0.529 × 10⁻¹⁰ m<br>
+                    <strong>📏 Interpretación:</strong> Solo ciertos radios discretos están permitidos
+                </div>
+            </div>
+        </div>
+        
+        <!-- SLIDE 10: ENERGÍAS CUANTIZADAS -->
+        <div class="slide" data-time="40">
+            <div class="slide-header">
+                <div class="slide-title">⚡ Energías Cuantizadas</div>
+                <div class="slide-subtitle">Los "Escalones" de Energía</div>
+            </div>
+            
+            <div class="content">
+                <div class="two-column">
+                    <div>
+                        <div class="equation-box">
+                            <div class="equation">E<sub>n</sub> = -13.6/n² eV</div>
+                            <div class="equation-label">Energías de las órbitas de Bohr</div>
+                        </div>
+                        
+                        <div class="info-box">
+                            <strong>📊 Niveles de Energía:</strong><br><br>
+                            <strong>n = 1:</strong> E₁ = -13.6 eV<br>
+                            <strong>n = 2:</strong> E₂ = -3.4 eV<br>
+                            <strong>n = 3:</strong> E₃ = -1.51 eV<br>
+                            <strong>n = 4:</strong> E₄ = -0.85 eV<br>
+                            <strong>n → ∞:</strong> E∞ = 0 eV
+                        </div>
+                        
+                        <div class="success-box">
+                            <strong>🔋 Energía de Ionización:</strong><br>
+                            E∞ - E₁ = 0 - (-13.6) = 13.6 eV
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="energy-diagram">
+                            <div class="energy-level level-n1">
+                                <div class="level-label">n = 1 (-13.6 eV)</div>
+                            </div>
+                            <div class="energy-level level-n2">
+                                <div class="level-label">n = 2 (-3.4 eV)</div>
+                            </div>
+                            <div class="energy-level level-n3">
+                                <div class="level-label">n = 3 (-1.51 eV)</div>
+                            </div>
+                            <div class="energy-level level-n4">
+                                <div class="level-label">n = 4 (-0.85 eV)</div>
+                            </div>
+                            <div class="energy-level level-n5">
+                                <div class="level-label">n = ∞ (0 eV)</div>
+                            </div>
+                            
+                            <div class="transition-arrow arrow-balmer"></div>
+                            <div class="transition-arrow arrow-lyman"></div>
+                            
+                            <div style="position: absolute; right: -120px; bottom: 100px; font-size: 0.9em; color: #e74c3c;">
+                                Serie de Balmer
+                            </div>
+                            <div style="position: absolute; right: -120px; bottom: 200px; font-size: 0.9em; color: #e74c3c;">
+                                Serie de Lyman
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SLIDE 11: DERIVACIÓN DE LA CONSTANTE DE RYDBERG -->
+        <div class="slide" data-time="45">
+            <div class="slide-header">
+                <div class="slide-title">🔬 Derivación de la Constante de Rydberg</div>
+                <div class="slide-subtitle">Conectando Teoría con Experimento</div>
+            </div>
+            
+            <div class="content">
+                <div class="large-text" style="text-align: center; margin-bottom: 30px;">
+                    <strong>El modelo de Bohr explica la ecuación empírica de Balmer</strong>
+                </div>
+                
+                <div class="equation-box">
+                    <div class="equation">ν = (E<sub>i</sub> - E<sub>f</sub>)/h</div>
+                    <div class="equation-label">Frecuencia de transición</div>
+                </div>
+                
+                <div class="equation-box">
+                    <div class="equation">ν = (mke⁴)/(4πℏ³) × (1/n<sub>f</sub>² - 1/n<sub>i</sub>²)</div>
+                    <div class="equation-label">Sustituyendo las energías de Bohr</div>
+                </div>
+                
+                <div class="equation-box">
+                    <div class="equation">1/λ = R<sub>H</sub> × (1/n<sub>f</sub>² - 1/n<sub>i</sub>²)</div>
+                    <div class="equation-label">¡La ecuación de Balmer!</div>
+                </div>
+                
+                <div class="equation-box pulse">
+                    <div class="equation">R<sub>H</sub> = (mke⁴)/(4πℏ³c) = 1.097 × 10⁷ m⁻¹</div>
+                    <div class="equation-label">Constante de Rydberg derivada teóricamente</div>
+                </div>
+                
+                <div class="success-box">
+                    <strong>🎯 Triunfo del Modelo de Bohr:</strong><br>
+                    La constante calculada teóricamente coincide <span class="emphasis">exactamente</span> con el valor experimental.
+                </div>
+            </div>
+        </div>
+        
+        <!-- SLIDE 12: APLICACIÓN PRÁCTICA -->
+        <div class="slide" data-time="50">
+            <div class="slide-header">
+                <div class="slide-title">🔧 Aplicación Práctica</div>
+                <div class="slide-subtitle">Calculando Transiciones Específicas</div>
+            </div>
+            
+            <div class="content">
+                <div class="large-text" style="text-align: center; margin-bottom: 30px;">
+                    <strong>Ejemplo: Línea Hβ del Hidrógeno (Azul-Verde)</strong>
+                </div>
+                
+                <div class="two-column">
+                    <div>
+                        <div class="info-box">
+                            <strong>📋 Datos del Problema:</strong><br><br>
+                            <strong>Transición:</strong> n = 4 → n = 2<br>
+                            <strong>Serie:</strong> Balmer (visible)<br>
+                            <strong>Color esperado:</strong> Azul-verde
+                        </div>
+                        
+                        <div class="equation-box">
+                            <div class="equation">1/λ = R<sub>H</sub>(1/2² - 1/4²)</div>
+                            <div class="equation-label">Aplicando la fórmula</div>
+                        </div>
+                        
+                        <div class="equation-box">
+                            <div class="equation">1/λ = 1.097×10⁷ × 3/16</div>
+                            <div class="equation-label">Calculando</div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="equation-box">
+                            <div class="equation">λ = 486.1 nm</div>
+                            <div class="equation-label">Resultado</div>
+                        </div>
+                        
+                        <div class="success-box">
+                            <strong>✅ Verificación:</strong><br>
+                            • 486.1 nm corresponde a luz azul-verde<br>
+                            • Coincide con observaciones experimentales<br>
+                            • Es la segunda línea más intensa de Balmer
+                        </div>
+                        
+                        <div style="background: #00ffaa; height: 60px; border-radius: 8px; margin: 20px 0; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">
+                            λ = 486.1 nm (Hβ)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SLIDE 13: APLICACIONES MODERNAS -->
+        <div class="slide" data-time="55">
+            <div class="slide-header">
+                <div class="slide-title">🌟 Aplicaciones Modernas</div>
+                <div class="slide-subtitle">De la Teoría a la Tecnología</div>
+            </div>
+            
+            <div class="content">
+                <div class="three-column">
+                    <div class="problem-card">
+                        <div class="problem-title">
+                            <span class="problem-icon">🔬</span>
+                            Espectroscopía
+                        </div>
+                        <p><strong>Análisis químico:</strong> Identificación de elementos en muestras desconocidas</p>
+                        <p><strong>Control de calidad:</strong> Verificación de pureza en materiales</p>
+                    </div>
+                    
+                    <div class="problem-card">
+                        <div class="problem-title">
+                            <span class="problem-icon">🌌</span>
+                            Astrofísica
+                        </div>
+                        <p><strong>Composición estelar:</strong> Determinación química de estrellas distantes</p>
+                        <p><strong>Velocidades radiales:</strong> Efecto Doppler en líneas espectrales</p>
+                    </div>
+                    
+                    <div class="problem-card">
+                        <div class="problem-title">
+                            <span class="problem-icon">💊</span>
+                            Medicina
+                        </div>
+                        <p><strong>Resonancia magnética:</strong> Basada en transiciones cuánticas</p>
+                        <p><strong>Terapia fotodinámica:</strong> Uso controlado de frecuencias específicas</p>
+                    </div>
+                </div>
+                
+                <div class="three-column" style="margin-top: 30px;">
+                    <div class="problem-card">
+                        <div class="problem-title">
+                            <span class="problem-icon">💡</span>
+                            Láseres
+                        </div>
+                        <p><strong>Emisión estimulada:</strong> Entre niveles cuantizados específicos</p>
+                        <p><strong>Aplicaciones:</strong> Cirugía, comunicaciones, industria</p>
+                    </div>
+                    
+                    <div class="problem-card">
+                        <div class="problem-title">
+                            <span class="problem-icon">⏰</span>
+                            Metrología
+                        </div>
+                        <p><strong>Relojes atómicos:</strong> Basados en transiciones cuánticas precisas</p>
+                        <p><strong>Estándares:</strong> Definición del segundo y metro</p>
+                    </div>
+                    
+                    <div class="problem-card">
+                        <div class="problem-title">
+                            <span class="problem-icon">🖥️</span>
+                            Computación Cuántica
+                        </div>
+                        <p><strong>Qubits atómicos:</strong> Estados cuánticos como información</p>
+                        <p><strong>Futuro:</strong> Procesamiento exponencialmente más rápido</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SLIDE 14: LIMITACIONES DEL MODELO -->
+        <div class="slide" data-time="60">
+            <div class="slide-header">
+                <div class="slide-title">⚠️ Limitaciones del Modelo de Bohr</div>
+                <div class="slide-subtitle">¿Por qué necesitamos la mecánica cuántica completa?</div>
+            </div>
+            
+            <div class="content">
+                <div class="large-text" style="text-align: center; margin-bottom: 30px;">
+                    <strong>El modelo de Bohr fue exitoso pero incompleto</strong>
+                </div>
+                
+                <div class="two-column">
+                    <div class="success-box">
+                        <strong>✅ Éxitos del Modelo:</strong><br><br>
+                        • Explica los espectros del hidrógeno<br>
+                        • Predice la constante de Rydberg<br>
+                        • Resuelve el problema de estabilidad<br>
+                        • Introduce la cuantización
+                    </div>
+                    
+                    <div class="warning-box">
+                        <strong>❌ Limitaciones Importantes:</strong><br><br>
+                        • No explica átomos multielectrónicos<br>
+                        • No predice intensidades de líneas<br>
+                        • Ignora la estructura fina<br>
+                        • Mezcla mecánica clásica y cuántica
+                    </div>
+                </div>
+                
+                <div class="info-box" style="margin-top: 30px;">
+                    <strong>🔍 Problemas Específicos:</strong><br><br>
+                    <strong>1. Estructura Fina:</strong> Las líneas espectrales tienen subdivisiones que Bohr no explica<br>
+                    <strong>2. Átomos Complejos:</strong> Helio y elementos más pesados no se ajustan al modelo<br>
+                    <strong>3. Intensidades:</strong> ¿Por qué algunas líneas son más brillantes que otras?<br>
+                    <strong>4. Fundamento Teórico:</strong> Los postulados son ad hoc, sin derivación fundamental
+                </div>
+                
+                <div class="success-box">
+                    <strong>🚀 La Solución:</strong><br>
+                    Schrödinger, Heisenberg y otros desarrollaron la mecánica cuántica completa en los años 1920s.
+                </div>
+            </div>
+        </div>
+        
+        <!-- SLIDE 15: EJERCICIOS PRÁCTICOS -->
+        <div class="slide" data-time="70">
+            <div class="slide-header">
+                <div class="slide-title">📝 Ejercicios Prácticos</div>
+                <div class="slide-subtitle">Aplicando los Conceptos</div>
+            </div>
+            
+            <div class="content">
+                <div class="two-column">
+                    <div>
+                        <div class="info-box">
+                            <strong>🎯 Ejercicio 1 - Nivel Básico:</strong><br><br>
+                            Una línea espectral del hidrógeno tiene λ = 434.0 nm.<br><br>
+                            <strong>a)</strong> ¿A qué serie pertenece?<br>
+                            <strong>b)</strong> ¿Cuál es la transición?<br>
+                            <strong>c)</strong> ¿Qué color observamos?
+                        </div>
+                        
+                        <div class="info-box">
+                            <strong>🎯 Ejercicio 2 - Nivel Intermedio:</strong><br><br>
+                            Para el átomo de hidrógeno:<br><br>
+                            <strong>a)</strong> Calcule el radio de la tercera órbita<br>
+                            <strong>b)</strong> Determine la velocidad del electrón en n = 2<br>
+                            <strong>c)</strong> Compare con la velocidad de la luz
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="warning-box">
+                            <strong>🎯 Ejercicio 3 - Nivel Avanzado:</strong><br><br>
+                            Un átomo de hidrógeno absorbe un fotón y pasa de n = 1 a n = 4.<br><br>
+                            <strong>a)</strong> Calcule la energía del fotón<br>
+                            <strong>b)</strong> Determine su frecuencia y longitud de onda<br>
+                            <strong>c)</strong> ¿En qué región del espectro está?<br>
+                            <strong>d)</strong> Liste todas las posibles emisiones posteriores
+                        </div>
+                        
+                        <div class="success-box">
+                            <strong>💡 Pista para Resolver:</strong><br><br>
+                            Recuerden usar:<br>
+                            • E<sub>n</sub> = -13.6/n² eV<br>
+                            • r<sub>n</sub> = n²a₀<br>
+                            • ΔE = hf = hc/λ<br>
+                            • c = 3 × 10⁸ m/s
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SLIDE 16: PROBLEMA INTEGRADOR -->
+        <div class="slide" data-time="80">
+            <div class="slide-header">
+                <div class="slide-title">🧩 Problema Integrador</div>
+                <div class="slide-subtitle">Análisis Espectral Completo</div>
+            </div>
+            
+            <div class="content">
+                <div class="warning-box">
+                    <strong>🔬 Caso de Estudio:</strong><br><br>
+                    Un espectrógrafo registra las siguientes líneas de emisión de una muestra gaseosa desconocida:<br><br>
+                    <strong>Línea A:</strong> 656.3 nm (roja)<br>
+                    <strong>Línea B:</strong> 486.1 nm (azul-verde)<br>
+                    <strong>Línea C:</strong> 434.0 nm (violeta)<br>
+                    <strong>Línea D:</strong> 410.2 nm (violeta)
+                </div>
+                
+                <div class="large-text">
+                    <strong>🎯 Tareas a Realizar:</strong>
+                </div>
+                
+                <div class="two-column">
+                    <div>
+                        <ul class="bullet-list">
+                            <li><strong>Identificación:</strong> ¿Qué elemento es?</li>
+                            <li><strong>Transiciones:</strong> Determine n<sub>i</sub> → n<sub>f</sub> para cada línea</li>
+                            <li><strong>Energías:</strong> Calcule las energías de transición</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <ul class="bullet-list">
+                            <li><strong>Predicción:</strong> ¿Qué otras líneas podrían aparecer?</li>
+                            <li><strong>Serie:</strong> ¿A qué serie espectral pertenecen?</li>
+                            <li><strong>Aplicación:</strong> ¿Cómo se usa esto en astrofísica?</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="success-box">
+                    <strong>💡 Método de Solución:</strong><br>
+                    1. Usar la ecuación de Rydberg inversamente<br>
+                    2. Probar diferentes valores de n₁ y n₂<br>
+                    3. Verificar con los valores experimentales conocidos<br>
+                    4. Construir diagrama de niveles de energía
+                </div>
+            </div>
+        </div>
+        
+        <!-- SLIDE 17: CONEXIONES CONCEPTUALES -->
+        <div class="slide" data-time="85">
+            <div class="slide-header">
+                <div class="slide-title">🔗 Conexiones Conceptuales</div>
+                <div class="slide-subtitle">Integrando el Conocimiento</div>
+            </div>
+            
+            <div class="content">
+                <div class="large-text" style="text-align: center; margin-bottom: 30px;">
+                    <strong>Cómo se conecta este tema con el resto del curso</strong>
+                </div>
+                
+                <div class="two-column">
+                    <div>
+                        <div class="info-box">
+                            <strong>📚 Temas Previos:</strong><br><br>
+                            <strong>• Radiación de Cuerpo Negro:</strong><br>
+                            Introducción a la cuantización de energía<br><br>
+                            <strong>• Efecto Fotoeléctrico:</strong><br>
+                            Naturaleza cuántica de la luz<br><br>
+                            <strong>• Modelo de Rutherford:</strong><br>
+                            Estructura nuclear del átomo
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="success-box">
+                            <strong>🚀 Temas Posteriores:</strong><br><br>
+                            <strong>• Dualidad Onda-Partícula:</strong><br>
+                            De Broglie y ondas de materia<br><br>
+                            <strong>• Principio de Incertidumbre:</strong><br>
+                            Limitaciones fundamentales<br><br>
+                            <strong>• Ecuación de Schrödinger:</strong><br>
+                            Mecánica cuántica completa
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="warning-box">
+                    <strong>🎯 Conceptos Clave para Recordar:</strong><br><br>
+                    1. <strong>Cuantización:</strong> Solo ciertos valores discretos están permitidos<br>
+                    2. <strong>Estabilidad Cuántica:</strong> Los postulados ad hoc resuelven problemas clásicos<br>
+                    3. <strong>Espectros Discretos:</strong> Evidencia directa de niveles de energía cuantizados<br>
+                    4. <strong>Transición Clásico-Cuántico:</strong> El modelo de Bohr como puente histórico
+                </div>
+            </div>
+        </div>
+        
+        <!-- SLIDE 18: PREGUNTAS DE REFLEXIÓN -->
+        <div class="slide" data-time="90">
+            <div class="slide-header">
+                <div class="slide-title">🤔 Preguntas de Reflexión</div>
+                <div class="slide-subtitle">Pensamiento Crítico</div>
+            </div>
+            
+            <div class="content">
+                <div class="large-text" style="text-align: center; margin-bottom: 30px;">
+                    <strong>Para profundizar en el entendimiento conceptual</strong>
+                </div>
+                
+                <div class="two-column">
+                    <div>
+                        <div class="info-box">
+                            <strong>🔍 Preguntas Conceptuales:</strong><br><br>
+                            1. Si el modelo de Bohr funciona tan bien para el hidrógeno, ¿por qué no es la teoría definitiva?<br><br>
+                            2. ¿Qué significa realmente que el momento angular esté "cuantizado"?<br><br>
+                            3. ¿Por qué los postulados de Bohr parecían tan revolucionarios en 1913?
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="warning-box">
+                            <strong>🧠 Preguntas de Aplicación:</strong><br><br>
+                            4. ¿Cómo determinarían los astrónomos la composición de una estrella usando espectroscopía?<br><br>
+                            5. Si un láser funciona por transiciones entre niveles cuantizados, ¿por qué produce luz monocromática?<br><br>
+                            6. ¿Qué limitaciones experimentales existían en 1913 que Bohr no pudo superar?
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="success-box">
+                    <strong>💡 Para Discusión en Clase:</strong><br><br>
+                    <strong>Debate:</strong> "¿Fue el modelo de Bohr un avance o un retroceso científico?"<br><br>
+                    <strong>Argumentos Pro:</strong> Resolvió problemas fundamentales, introdujo conceptos cuánticos<br>
+                    <strong>Argumentos Contra:</strong> Mezcló teorías incompatibles, postulados ad hoc sin justificación
+                </div>
+            </div>
+        </div>
+        
+        <!-- SLIDE 19: RECURSOS ADICIONALES -->
+        <div class="slide" data-time="95">
+            <div class="slide-header">
+                <div class="slide-title">📚 Recursos Adicionales</div>
+                <div class="slide-subtitle">Para Profundizar en el Tema</div>
+            </div>
+            
+            <div class="content">
+                <div class="three-column">
+                    <div class="problem-card">
+                        <div class="problem-title">
+                            <span class="problem-icon">📖</span>
+                            Libros de Texto
+                        </div>
+                        <p><strong>Eisberg & Resnick:</strong><br>
+                        "Quantum Physics" - Cap. 4</p>
+                        <p><strong>Beiser:</strong><br>
+                        "Modern Physics" - Sec. 4.6-4.7</p>
+                    </div>
+                    
+                    <div class="problem-card">
+                        <div class="problem-title">
+                            <span class="problem-icon">🎥</span>
+                            Videos Educativos
+                        </div>
+                        <p><strong>MIT OpenCourseWare:</strong><br>
+                        8.04 Quantum Physics I</p>
+                        <p><strong>Khan Academy:</strong><br>
+                        Bohr Model Series</p>
+                    </div>
+                    
+                    <div class="problem-card">
+                        <div class="problem-title">
+                            <span class="problem-icon">🖥️</span>
+                            Simulaciones
+                        </div>
+                        <p><strong>PhET Colorado:</strong><br>
+                        "Hydrogen Atom" Interactive</p>
+                        <p><strong>NIST Database:</strong><br>
+                        Atomic Spectra Reference</p>
+                    </div>
+                </div>
+                
+                <div class="two-column" style="margin-top: 30px;">
+                    <div class="info-box">
+                        <strong>🔗 Enlaces Útiles:</strong><br><br>
+                        <strong>• NIST Physical Constants:</strong><br>
+                        Valores actualizados de constantes<br><br>
+                        <strong>• Atomic Spectra Database:</strong><br>
+                        Líneas espectrales experimentales<br><br>
+                        <strong>• PhET Simulations:</strong><br>
+                        phet.colorado.edu
+                    </div>
+                    
+                    <div class="success-box">
+                        <strong>💻 Herramientas de IA:</strong><br><br>
+                        <strong>• Para cálculos:</strong><br>
+                        "Calcula la longitud de onda para la transición n=5→n=2 del hidrógeno"<br><br>
+                        <strong>• Para conceptos:</strong><br>
+                        "Explica por qué el modelo de Bohr funciona para hidrógeno pero no para helio"
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SLIDE 20: RESUMEN Y CIERRE -->
+        <div class="slide" data-time="100">
+            <div class="slide-header">
+                <div class="slide-title">🎯 Resumen y Conclusiones</div>
+                <div class="slide-subtitle">Los Puntos Clave de Hoy</div>
+            </div>
+            
+            <div class="content">
+                <div class="large-text" style="text-align: center; margin-bottom: 30px;">
+                    <strong>Un viaje desde la crisis clásica hasta la revolución cuántica</strong>
+                </div>
+                
+                <div class="two-column">
+                    <div>
+                        <div class="success-box">
+                            <strong>✅ Lo que Aprendimos:</strong><br><br>
+                            <strong>1. Crisis del Modelo Clásico:</strong><br>
+                            • Inestabilidad atómica predicha<br>
+                            • Espectros discretos inexplicables<br><br>
+                            <strong>2. Ecuación de Balmer:</strong><br>
+                            • Patrón empírico sin teoría<br>
+                            • Series espectrales organizadas<br><br>
+                            <strong>3. Revolución de Bohr:</strong><br>
+                            • Postulados cuánticos<br>
+                            • Cuantización del momento angular<br>
+                            • Explicación teórica de Rydberg
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="info-box">
+                            <strong>🔍 Conceptos Fundamentales:</strong><br><br>
+                            <strong>• Cuantización:</strong><br>
+                            Solo valores discretos permitidos<br><br>
+                            <strong>• Estabilidad Cuántica:</strong><br>
+                            Órbitas estacionarias sin radiación<br><br>
+                            <strong>• Transiciones Discretas:</strong><br>
+                            Origen de las líneas espectrales<br><br>
+                            <strong>• Puente Histórico:</strong><br>
+                            De la física clásica a la cuántica
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="warning-box">
+                    <strong>🚀 Próximos Pasos:</strong><br>
+                    El modelo de Bohr fue revolucionario pero incompleto. En las siguientes clases exploraremos cómo la mecánica cuántica completa resuelve sus limitaciones y nos lleva a una comprensión más profunda de la naturaleza.
+                </div>
+                
+                <div class="equation-box" style="margin-top: 30px;">
+                    <div class="equation" style="font-size: 1.8em;">¡Gracias por su atención!</div>
+                    <div class="equation-label">¿Preguntas antes del examen la próxima clase?</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Controles de Navegación -->
+        <div class="nav-controls">
+            <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">← Anterior</button>
+            <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Siguiente →</button>
+        </div>
+    </div>
+    
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const timeData = [2, 5, 8, 12, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 70, 80, 85, 90, 95, 100]; // Tiempo acumulado para cada slide
+        
+        // Actualizar contadores
+        document.getElementById('total-slides').textContent = totalSlides;
+        
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active', 'prev');
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else if (index < currentSlide) {
+                    slide.classList.add('prev');
+                }
+            });
+            
+            // Actualizar contador
+            document.getElementById('current-slide').textContent = currentSlide + 1;
+            
+            // Actualizar tiempo restante
+            const timeUsed = timeData[currentSlide];
+            const timeRemaining = 100 - timeUsed;
+            document.getElementById('timer').textContent = timeRemaining + ':00';
+            
+            // Actualizar botones
+            document.getElementById('prevBtn').disabled = currentSlide === 0;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides - 1;
+        }
+        
+        function changeSlide(direction) {
+            const newSlide = currentSlide + direction;
+            if (newSlide >= 0 && newSlide < totalSlides) {
+                currentSlide = newSlide;
+                updateSlide();
+            }
+        }
+        
+        // Navegación con teclado
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                changeSlide(1);
+            } else if (e.key === 'ArrowLeft') {
+                changeSlide(-1);
+            } else if (e.key === 'Home') {
+                currentSlide = 0;
+                updateSlide();
+            } else if (e.key === 'End') {
+                currentSlide = totalSlides - 1;
+                updateSlide();
+            }
+        });
+        
+        // Click en cualquier parte para avanzar (excepto en los botones)
+        document.addEventListener('click', (e) => {
+            if (!e.target.classList.contains('nav-btn') && !e.target.closest('.nav-controls')) {
+                changeSlide(1);
+            }
+        });
+        
+        // Inicializar
+        updateSlide();
+        
+        // Función para modo presentación
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else {
+                document.exitFullscreen();
+            }
+        }
+        
+        // F11 para pantalla completa
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'F11') {
+                e.preventDefault();
+                toggleFullscreen();
+            }
+        });
+        
+        console.log('🎓 Presentación de Espectros Atómicos cargada');
+        console.log('⌨️ Controles: Flechas ←→, Espacio, Home, End, F11');
+        console.log('🖱️ Click para avanzar diapositiva');
+    </script>
+</body>
+</html>

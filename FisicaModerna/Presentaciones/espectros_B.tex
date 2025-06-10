@@ -1,0 +1,957 @@
+\documentclass[12pt,aspectratio=169]{beamer}
+
+% Tema y configuración
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+\usefonttheme{professionalfonts}
+
+% Paquetes necesarios
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{textcomp}
+\usepackage{siunitx}
+
+% Configuración de TikZ
+\usetikzlibrary{shapes,arrows,positioning,decorations.pathmorphing}
+\pgfplotsset{compat=1.17}
+
+% Colores personalizados
+\definecolor{azuloscuro}{RGB}{25,25,112}
+\definecolor{rojoclaro}{RGB}{220,20,60}
+\definecolor{verdeclaro}{RGB}{50,205,50}
+\definecolor{naranjaclaro}{RGB}{255,140,0}
+
+% Configuración de fuentes más grandes
+\setbeamerfont{title}{size=\huge,series=\bfseries}
+\setbeamerfont{subtitle}{size=\Large}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamerfont{framesubtitle}{size=\large}
+\setbeamerfont{normal text}{size=\large}
+\setbeamerfont{caption}{size=\large}
+
+% Configuración de ecuaciones grandes
+\everymath{\displaystyle}
+
+% Información del documento
+\title[Espectros Atómicos]{Los Espectros Atómicos y la Inestabilidad de los Átomos Clásicos}
+\subtitle{Física Moderna - Capítulo 3}
+\author{Profesor}
+\institute{Universidad}
+\date{\today}
+
+\begin{document}
+
+% ==================== SLIDE 1: PORTADA ====================
+\begin{frame}
+    \titlepage
+    \vspace{1cm}
+    \begin{center}
+        \Large
+        \textbf{Duración:} 100 minutos \\
+        \textbf{Nivel:} Ingeniería/Licenciatura
+    \end{center}
+\end{frame}
+
+% ==================== SLIDE 2: OBJETIVOS ====================
+\begin{frame}{Objetivos de Aprendizaje}
+    \vspace{0.5cm}
+    \begin{center}
+        \huge \textbf{¿Qué aprenderemos hoy?}
+    \end{center}
+    
+    \vspace{1cm}
+    \begin{itemize}
+        \item[\textbullet] \Large \textbf{Comprender} las limitaciones del modelo clásico
+        \vspace{0.5cm}
+        \item[\textbullet] \Large \textbf{Analizar} la ecuación empírica de Balmer
+        \vspace{0.5cm}
+        \item[\textbullet] \Large \textbf{Aplicar} los postulados de Bohr
+        \vspace{0.5cm}
+        \item[\textbullet] \Large \textbf{Evaluar} la revolución cuántica
+    \end{itemize}
+\end{frame}
+
+% ==================== SLIDE 3: CRONOLOGÍA ====================
+\begin{frame}{Contexto Histórico}
+    \vspace{0.5cm}
+    \begin{center}
+        \huge \textbf{Los Descubrimientos Clave}
+    \end{center}
+    
+    \vspace{1cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=1.2]
+            % Línea de tiempo
+            \draw[thick,->] (0,0) -- (12,0);
+            
+            % Marcadores de años
+            \foreach \x/\year in {2/1885, 5/1900, 8/1911, 10/1913, 12/1920s} {
+                \draw (\x,0) -- (\x,0.3);
+                \node[below] at (\x,-0.3) {\Large \textbf{\year}};
+            }
+            
+            % Eventos
+            \node[above,text width=2.5cm,align=center] at (2,0.5) {\large \textbf{Balmer} \\ Fórmula empírica};
+            \node[above,text width=2.5cm,align=center] at (8,0.5) {\large \textbf{Rutherford} \\ Modelo planetario};
+            \node[above,text width=2.5cm,align=center] at (10,0.5) {\large \textbf{Bohr} \\ Postulados cuánticos};
+            \node[above,text width=2.5cm,align=center] at (12,0.5) {\large \textbf{Mecánica} \\ \textbf{Cuántica}};
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+% ==================== SLIDE 4: ESPECTROS CONTINUOS VS DISCRETOS ====================
+\begin{frame}{El Misterio de las Líneas Espectrales}
+    \begin{center}
+        \huge \textbf{¿Por qué líneas discretas?}
+    \end{center}
+    
+    \vspace{1cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=1.5]
+            % Espectro continuo
+            \fill[left color=red, right color=violet] (0,2) rectangle (8,2.8);
+            \node[left] at (0,2.4) {\Large \textbf{Continuo}};
+            
+            % Espectro de líneas
+            \fill[black] (0,0) rectangle (8,0.8);
+            \foreach \x/\color in {1.5/red, 3/cyan, 4.5/blue, 6/violet} {
+                \fill[\color] (\x,0) rectangle (\x+0.2,0.8);
+            }
+            \node[left] at (0,0.4) {\Large \textbf{Hidrógeno}};
+            
+            % Etiquetas
+            \node[below] at (1.6,-0.3) {\large H$_\alpha$};
+            \node[below] at (3.1,-0.3) {\large H$_\beta$};
+            \node[below] at (4.6,-0.3) {\large H$_\gamma$};
+            \node[below] at (6.1,-0.3) {\large H$_\delta$};
+        \end{tikzpicture}
+    \end{center}
+    
+    \vspace{1cm}
+    \begin{center}
+        \LARGE \textcolor{rojoclaro}{\textbf{¿Por qué solo frecuencias específicas?}}
+    \end{center}
+\end{frame}
+
+% ==================== SLIDE 5: ECUACIÓN DE BALMER ====================
+\begin{frame}{La Ecuación Empírica de Balmer}
+    \begin{center}
+        \huge \textbf{El Patrón Matemático (1885)}
+    \end{center}
+    
+    \vspace{1cm}
+    \begin{center}
+        \colorbox{azuloscuro!10}{\parbox{0.8\textwidth}{
+            \begin{center}
+                \Huge \textcolor{azuloscuro}{
+                    $$\frac{1}{\lambda} = R_H\left(\frac{1}{n_1^2} - \frac{1}{n_2^2}\right)$$
+                }
+            \end{center}
+        }}
+    \end{center}
+    
+    \vspace{1cm}
+    \begin{center}
+        \begin{tabular}{cl}
+            \Large $\lambda$ & \Large Longitud de onda \\[0.3cm]
+            \Large $R_H$ & \Large Constante de Rydberg = $1.097 \times 10^7$ m$^{-1}$ \\[0.3cm]
+            \Large $n_1, n_2$ & \Large Números enteros ($n_2 > n_1$)
+        \end{tabular}
+    \end{center}
+\end{frame}
+
+% ==================== SLIDE 6: SERIES ESPECTRALES ====================
+\begin{frame}{Series Espectrales del Hidrógeno}
+    \vspace{0.5cm}
+    \begin{center}
+        \huge \textbf{Clasificación por $n_1$}
+    \end{center}
+    
+    \vspace{1cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=1.3]
+            % Diagrama de niveles
+            \foreach \n/\y/\energy in {1/1/-13.6, 2/2.5/-3.4, 3/3.5/-1.51, 4/4.2/-0.85, 5/4.7/0} {
+                \draw[thick] (0,\y) -- (8,\y);
+                \node[left] at (0,\y) {\Large $n=\n$};
+                \node[right] at (8,\y) {\Large \energy eV};
+            }
+            
+            % Transiciones de Lyman (n1=1)
+            \draw[thick,red,->] (1.5,2.5) -- (1.5,1.2);
+            \draw[thick,red,->] (2,3.5) -- (2,1.2);
+            \node[below] at (1.75,0.5) {\large \textcolor{red}{\textbf{Lyman (UV)}}};
+            
+            % Transiciones de Balmer (n1=2)
+            \draw[thick,blue,->] (4.5,3.5) -- (4.5,2.7);
+            \draw[thick,blue,->] (5,4.2) -- (5,2.7);
+            \node[below] at (4.75,0.5) {\large \textcolor{blue}{\textbf{Balmer (Vis)}}};
+            
+            % Transiciones de Paschen (n1=3)
+            \draw[thick,green,->] (6.5,4.2) -- (6.5,3.7);
+            \draw[thick,green,->] (7,4.7) -- (7,3.7);
+            \node[below] at (6.75,0.5) {\large \textcolor{green}{\textbf{Paschen (IR)}}};
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+% ==================== SLIDE 7: CÁLCULO EJEMPLO H-ALPHA ====================
+\begin{frame}{Ejemplo: Cálculo de H$_\alpha$}
+    \begin{center}
+        \huge \textbf{Línea Roja del Hidrógeno}
+    \end{center}
+    
+    \vspace{0.5cm}
+    \begin{center}
+        \Large \textbf{Transición:} $n = 3 \rightarrow n = 2$
+    \end{center}
+    
+    \vspace{1cm}
+    \begin{align}
+        \frac{1}{\lambda} &= R_H\left(\frac{1}{2^2} - \frac{1}{3^2}\right) \\[0.5cm]
+        \frac{1}{\lambda} &= 1.097 \times 10^7 \left(\frac{1}{4} - \frac{1}{9}\right) \\[0.5cm]
+        \frac{1}{\lambda} &= 1.097 \times 10^7 \times \frac{5}{36} \\[0.5cm]
+        \lambda &= \boxed{656.3 \text{ nm}}
+    \end{align}
+    
+    \vspace{0.5cm}
+    \begin{center}
+        \LARGE \textcolor{red}{\textbf{¡Luz roja visible!}}
+    \end{center}
+\end{frame}
+
+% ==================== SLIDE 8: PROBLEMA CLÁSICO ====================
+\begin{frame}{Crisis del Modelo Clásico}
+    \begin{center}
+        \huge \textbf{¿Por qué no colapsan los átomos?}
+    \end{center}
+    
+    \vspace{1cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=1.5]
+            % Núcleo
+            \fill[red] (0,0) circle (0.3);
+            \node at (0,0) {\textbf{+}};
+            
+            % Órbitas con electrón colapsando
+            \foreach \r/\opacity in {2/1, 1.5/0.7, 1/0.4, 0.5/0.2} {
+                \draw[dashed,opacity=\opacity] (0,0) circle (\r);
+            }
+            
+            % Electrón
+            \fill[blue] (2,0) circle (0.15);
+            \node at (2,0) {\textbf{-}};
+            
+            % Flecha de colapso
+            \draw[thick,red,->] (1.5,0) arc (0:180:0.75);
+            \node[above] at (0.75,0.5) {\Large \textcolor{red}{\textbf{Colapso}}};
+        \end{tikzpicture}
+    \end{center}
+    
+    \vspace{1cm}
+    \begin{center}
+        \LARGE \textcolor{rojoclaro}{\textbf{Predicción clásica: Colapso en $\sim 10^{-11}$ s}} \\[0.5cm]
+        \LARGE \textcolor{verdeclaro}{\textbf{Realidad: Los átomos son estables}}
+    \end{center}
+\end{frame}
+
+% ==================== SLIDE 9: ECUACIONES CLÁSICAS ====================
+\begin{frame}{Las Ecuaciones del Problema Clásico}
+    \vspace{0.5cm}
+    \begin{center}
+        \huge \textbf{Electromagnetismo Clásico}
+    \end{center}
+    
+    \vspace{1cm}
+    \begin{center}
+        \colorbox{rojoclaro!10}{\parbox{0.9\textwidth}{
+            \begin{center}
+                \Large \textbf{Aceleración centrípeta:}
+                \Huge $$a_c = \frac{v^2}{r}$$
+            \end{center}
+        }}
+    \end{center}
+    
+    \vspace{1cm}
+    \begin{center}
+        \colorbox{rojoclaro!10}{\parbox{0.9\textwidth}{
+            \begin{center}
+                \Large \textbf{Potencia radiada (Larmor):}
+                \Huge $$P = \frac{2e^2a^2}{3c^3}$$
+            \end{center}
+        }}
+    \end{center}
+    
+    \vspace{1cm}
+    \begin{center}
+        \LARGE \textcolor{rojoclaro}{\textbf{Resultado: $t_{\text{colapso}} \approx 1.6 \times 10^{-11}$ s}}
+    \end{center}
+\end{frame}
+
+% ==================== SLIDE 10: POSTULADOS DE BOHR ====================
+\begin{frame}{Los Postulados de Bohr (1913)}
+    \begin{center}
+        \huge \textbf{La Revolución Cuántica}
+    \end{center}
+    
+    \vspace{1cm}
+    \begin{center}
+        \colorbox{azuloscuro!10}{\parbox{0.95\textwidth}{
+            \Large \textbf{Postulado 1:} Los electrones orbitan en \textbf{órbitas estacionarias} sin radiar
+        }}
+    \end{center}
+    
+    \vspace{0.8cm}
+    \begin{center}
+        \colorbox{verdeclaro!10}{\parbox{0.95\textwidth}{
+            \Large \textbf{Postulado 2:} Solo están permitidas órbitas con
+            \Huge $$L = mvr = n\hbar$$
+        }}
+    \end{center}
+    
+    \vspace{0.8cm}
+    \begin{center}
+        \colorbox{naranjaclaro!10}{\parbox{0.95\textwidth}{
+            \Large \textbf{Postulado 3:} La radiación ocurre en transiciones:
+            \Huge $$h\nu = E_i - E_f$$
+        }}
+    \end{center}
+\end{frame}
+
+% ==================== SLIDE 11: DESARROLLO MATEMÁTICO PASO 1 ====================
+\begin{frame}{Desarrollo Matemático - Paso 1}
+    \begin{center}
+        \huge \textbf{Equilibrio de Fuerzas}
+    \end{center}
+    
+    \vspace{1cm}
+    \begin{center}
+        \colorbox{azuloscuro!10}{\parbox{0.9\textwidth}{
+            \begin{center}
+                \Large \textbf{Fuerza eléctrica = Fuerza centrípeta}
+                \vspace{0.5cm}
+                \Huge $$\frac{ke^2}{r^2} = \frac{mv^2}{r}$$
+            \end{center}
+        }}
+    \end{center}
+    
+    \vspace{1cm}
+    \begin{center}
+        \colorbox{verdeclaro!10}{\parbox{0.9\textwidth}{
+            \begin{center}
+                \Large \textbf{Condición de cuantización:}
+                \vspace{0.5cm}
+                \Huge $$mvr = n\hbar \quad \Rightarrow \quad v = \frac{n\hbar}{mr}$$
+            \end{center}
+        }}
+    \end{center}
+\end{frame}
+
+% ==================== SLIDE 12: DESARROLLO MATEMÁTICO PASO 2 ====================
+\begin{frame}{Desarrollo Matemático - Paso 2}
+    \begin{center}
+        \huge \textbf{Radios Permitidos}
+    \end{center}
+    
+    \vspace{1cm}
+    \begin{center}
+        \Large \textbf{Sustituyendo $v = \frac{n\hbar}{mr}$ en la ecuación de equilibrio:}
+    \end{center}
+    
+    \vspace{1cm}
+    \begin{align}
+        \frac{ke^2}{r^2} &= \frac{m}{r}\left(\frac{n\hbar}{mr}\right)^2 \\[0.8cm]
+        \frac{ke^2}{r^2} &= \frac{n^2\hbar^2}{mr^3} \\[0.8cm]
+        r_n &= \frac{n^2\hbar^2}{mke^2} = n^2 a_0
+    \end{align}
+    
+    \vspace{1cm}
+    \begin{center}
+        \colorbox{verdeclaro!20}{\parbox{0.8\textwidth}{
+            \begin{center}
+                \LARGE \textbf{Radio de Bohr:} $a_0 = 0.529 \times 10^{-10}$ m
+            \end{center}
+        }}
+    \end{center}
+\end{frame}
+
+% ==================== SLIDE 13: ENERGÍAS CUANTIZADAS ====================
+\begin{frame}{Energías Cuantizadas}
+    \begin{center}
+        \huge \textbf{Los "Escalones" de Energía}
+    \end{center}
+    
+    \vspace{1cm}
+    \begin{center}
+        \colorbox{azuloscuro!10}{\parbox{0.9\textwidth}{
+            \begin{center}
+                \Large \textbf{Energía total del electrón:}
+                \vspace{0.5cm}
+                \Huge $$E_n = -\frac{mke^4}{2\hbar^2n^2} = -\frac{13.6 \text{ eV}}{n^2}$$
+            \end{center}
+        }}
+    \end{center}
+    
+    \vspace{1cm}
+    \begin{center}
+        \begin{tabular}{cc}
+            \Large $n = 1$ & \Large $E_1 = -13.6$ eV \\[0.3cm]
+            \Large $n = 2$ & \Large $E_2 = -3.4$ eV \\[0.3cm]
+            \Large $n = 3$ & \Large $E_3 = -1.51$ eV \\[0.3cm]
+            \Large $n = \infty$ & \Large $E_\infty = 0$ eV
+        \end{tabular}
+    \end{center}
+    
+    \vspace{0.5cm}
+    \begin{center}
+        \LARGE \textcolor{rojoclaro}{\textbf{Energía de ionización = 13.6 eV}}
+    \end{center}
+\end{frame}
+
+% ==================== SLIDE 14: CONSTANTE DE RYDBERG DERIVADA ====================
+\begin{frame}{Derivación de la Constante de Rydberg}
+    \begin{center}
+        \huge \textbf{Teoría $\rightarrow$ Experimento}
+    \end{center}
+    
+    \vspace{1cm}
+    \begin{center}
+        \Large \textbf{Frecuencia de transición:}
+    \end{center}
+    
+    \vspace{0.5cm}
+    \begin{align}
+        \nu &= \frac{E_i - E_f}{h} \\[0.5cm]
+        \nu &= \frac{mke^4}{4\pi\hbar^3} \left(\frac{1}{n_f^2} - \frac{1}{n_i^2}\right) \\[0.5cm]
+        \frac{1}{\lambda} &= \frac{\nu}{c} = R_H \left(\frac{1}{n_f^2} - \frac{1}{n_i^2}\right)
+    \end{align}
+    
+    \vspace{1cm}
+    \begin{center}
+        \colorbox{verdeclaro!20}{\parbox{0.9\textwidth}{
+            \begin{center}
+                \LARGE $$R_H = \frac{mke^4}{4\pi\hbar^3c} = 1.097 \times 10^7 \text{ m}^{-1}$$
+            \end{center}
+        }}
+    \end{center}
+    
+    \vspace{0.5cm}
+    \begin{center}
+        \LARGE \textcolor{azuloscuro}{\textbf{¡Coincide exactamente con el experimento!}}
+    \end{center}
+\end{frame}
+
+% ==================== SLIDE 15: DIAGRAMA DE NIVELES COMPLETO ====================
+\begin{frame}{Diagrama de Niveles de Energía}
+    \vspace{0.5cm}
+    \begin{center}
+        \huge \textbf{Transiciones y Series}
+    \end{center}
+    
+    \vspace{0.5cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=1.4]
+            % Niveles de energía
+            \foreach \n/\y/\energy in {1/1/-13.6, 2/2.8/-3.4, 3/4.0/-1.51, 4/4.8/-0.85, 5/5.4/0} {
+                \draw[thick] (0,\y) -- (9,\y);
+                \node[left] at (-0.5,\y) {\Large $n=\n$};
+                \node[right] at (9.5,\y) {\Large \energy eV};
+            }
+            
+            % Serie de Lyman (UV)
+            \draw[thick,violet,->] (1.5,2.8) -- (1.5,1.2);
+            \draw[thick,violet,->] (1.8,4.0) -- (1.8,1.2);
+            \draw[thick,violet,->] (2.1,4.8) -- (2.1,1.2);
+            \node[below] at (1.8,0.3) {\Large \textcolor{violet}{\textbf{Lyman}}};
+            \node[below] at (1.8,0) {\Large \textcolor{violet}{\textbf{(UV)}}};
+            
+            % Serie de Balmer (Visible)
+            \draw[thick,red,->] (4.5,4.0) -- (4.5,3.0);
+            \draw[thick,cyan,->] (4.8,4.8) -- (4.8,3.0);
+            \draw[thick,blue,->] (5.1,5.4) -- (5.1,3.0);
+            \node[below] at (4.8,0.3) {\Large \textcolor{red}{\textbf{Balmer}}};
+            \node[below] at (4.8,0) {\Large \textcolor{red}{\textbf{(Visible)}}};
+            
+            % Serie de Paschen (IR)
+            \draw[thick,orange,->] (7.2,4.8) -- (7.2,4.2);
+            \draw[thick,orange,->] (7.5,5.4) -- (7.5,4.2);
+            \node[below] at (7.35,0.3) {\Large \textcolor{orange}{\textbf{Paschen}}};
+            \node[below] at (7.35,0) {\Large \textcolor{orange}{\textbf{(IR)}}};
+            
+            % Etiquetas de colores específicos
+            \node[right] at (5.2,3.5) {\large H$_\alpha$ (656 nm)};
+            \node[right] at (5.2,3.9) {\large H$_\beta$ (486 nm)};
+        \end{tikzpicture}
+    \end{center>
+\end{frame>
+
+% ==================== SLIDE 16: EJEMPLO PRÁCTICO H-BETA ====================
+\begin{frame}{Ejemplo Práctico: H$_\beta$}
+    \begin{center}
+        \huge \textbf{Línea Azul-Verde}
+    \end{center>
+    
+    \vspace{0.5cm>
+    \begin{center>
+        \Large \textbf{Transición:} $n = 4 \rightarrow n = 2$
+    \end{center>
+    
+    \vspace{1cm>
+    \begin{align}
+        \frac{1}{\lambda} &= R_H\left(\frac{1}{2^2} - \frac{1}{4^2}\right) \\[0.5cm]
+        \frac{1}{\lambda} &= 1.097 \times 10^7 \left(\frac{1}{4} - \frac{1}{16}\right) \\[0.5cm]
+        \frac{1}{\lambda} &= 1.097 \times 10^7 \times \frac{3}{16} \\[0.5cm]
+        \lambda &= \boxed{486.1 \text{ nm}}
+    \end{align}
+    
+    \vspace{1cm>
+    \begin{center>
+        \begin{tikzpicture}
+            \fill[cyan] (0,0) rectangle (6,1);
+            \node at (3,0.5) {\Large \textbf{486.1 nm (H$_\beta$)}};
+        \end{tikzpicture}
+    \end{center>
+\end{frame>
+
+% ==================== SLIDE 17: APLICACIONES MODERNAS ====================
+\begin{frame}{Aplicaciones Modernas}
+    \begin{center}
+        \huge \textbf{De la Teoría a la Tecnología}
+    \end{center>
+    
+    \vspace{1cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=1.2]
+            % Espectroscopía
+            \node[draw,rectangle,minimum width=3cm,minimum height=1.5cm,fill=azuloscuro!20] at (0,3) {};
+            \node at (0,3) {\Large \textbf{Espectroscopía}};
+            \node at (0,2.2) {\large Análisis químico};
+            
+            % Astrofísica
+            \node[draw,rectangle,minimum width=3cm,minimum height=1.5cm,fill=verdeclaro!20] at (5,3) {};
+            \node at (5,3) {\Large \textbf{Astrofísica}};
+            \node at (5,2.2) {\large Composición estelar};
+            
+            % Láseres
+            \node[draw,rectangle,minimum width=3cm,minimum height=1.5cm,fill=rojoclaro!20] at (0,0) {};
+            \node at (0,0) {\Large \textbf{Láseres}};
+            \node at (0,-0.8) {\large Emisión estimulada};
+            
+            % Medicina
+            \node[draw,rectangle,minimum width=3cm,minimum height=1.5cm,fill=naranjaclaro!20] at (5,0) {};
+            \node at (5,0) {\Large \textbf{Medicina}};
+            \node at (5,-0.8) {\large Resonancia magnética};
+        \end{tikzpicture}
+    \end{center}
+    
+    \vspace{1cm}
+    \begin{center}
+        \LARGE \textbf{Los espectros atómicos son la base de tecnologías modernas}
+    \end{center>
+\end{frame>
+
+% ==================== SLIDE 18: LIMITACIONES ====================
+\begin{frame}{Limitaciones del Modelo de Bohr}
+    \begin{center}
+        \huge \textbf{¿Por qué necesitamos mecánica cuántica?}
+    \end{center}
+    
+    \vspace{1cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=1.3]
+            % Éxitos
+            \node[draw,rectangle,minimum width=4cm,minimum height=3cm,fill=verdeclaro!20] at (-3,0) {};
+            \node[above] at (-3,1.2) {\Large \textbf{✓ ÉXITOS}};
+            \node[text width=3.5cm,align=center] at (-3,-0.2) {
+                \large 
+                • Espectros de H \\
+                • Constante de Rydberg \\
+                • Estabilidad atómica \\
+                • Cuantización
+            };
+            
+            % Limitaciones
+            \node[draw,rectangle,minimum width=4cm,minimum height=3cm,fill=rojoclaro!20] at (3,0) {};
+            \node[above] at (3,1.2) {\Large \textbf{✗ LIMITACIONES}};
+            \node[text width=3.5cm,align=center] at (3,-0.2) {
+                \large 
+                • Átomos multielectrónicos \\
+                • Intensidades de líneas \\
+                • Estructura fina \\
+                • Base teórica ad hoc
+            };
+        \end{tikzpicture}
+    \end{center>
+    
+    \vspace{1cm}
+    \begin{center}
+        \LARGE \textcolor{azuloscuro}{\textbf{Solución: Mecánica Cuántica Completa (1920s)}}
+    \end{center>
+\end{frame}
+
+% ==================== SLIDE 19: EJERCICIO PRÁCTICO ====================
+\begin{frame}{Ejercicio en Clase}
+    \begin{center}
+        \huge \textbf{¡Vamos a calcular!}
+    \end{center>
+    
+    \vspace{1cm}
+    \begin{center}
+        \colorbox{naranjaclaro!20}{\parbox{0.9\textwidth}{
+            \begin{center}
+                \Large \textbf{Problema:} Una línea espectral del hidrógeno tiene $\lambda = 434.0$ nm.
+                
+                \vspace{0.5cm}
+                \Large \textbf{Encuentra:}
+                \begin{itemize}
+                    \item[\textbullet] \Large ¿A qué serie pertenece?
+                    \item[\textbullet] \Large ¿Cuál es la transición ($n_i \rightarrow n_f$)?
+                    \item[\textbullet] \Large ¿Qué color observamos?
+                \end{itemize}
+            \end{center}
+        }}
+    \end{center>
+    
+    \vspace{1cm}
+    \begin{center}
+        \Large \textbf{Tiempo: 5 minutos}
+        
+        \vspace{0.5cm}
+        \Large \textbf{Pista:} Usa $\frac{1}{\lambda} = R_H\left(\frac{1}{n_1^2} - \frac{1}{n_2^2}\right)$
+    \end{center>
+\end{frame>
+
+% ==================== SLIDE 20: SOLUCIÓN DEL EJERCICIO ====================
+\begin{frame}{Solución del Ejercicio}
+    \begin{center}
+        \huge \textbf{Paso a paso}
+    \end{center>
+    
+    \vspace{0.5cm}
+    \begin{align}
+        \frac{1}{\lambda} &= \frac{1}{434.0 \times 10^{-9}} = 2.304 \times 10^6 \text{ m}^{-1} \\[0.5cm]
+        \frac{2.304 \times 10^6}{1.097 \times 10^7} &= \frac{1}{n_1^2} - \frac{1}{n_2^2} = 0.210 \\[0.5cm]
+        \text{Probando } n_1 = 2: \quad \frac{1}{4} - \frac{1}{n_2^2} &= 0.210 \\[0.5cm]
+        \frac{1}{n_2^2} &= 0.25 - 0.210 = 0.040 \\[0.5cm]
+        n_2^2 &= 25 \quad \Rightarrow \quad n_2 = 5
+    \end{align}
+    
+    \vspace{0.5cm}
+    \begin{center}
+        \colorbox{verdeclaro!20}{\parbox{0.8\textwidth}{
+            \begin{center}
+                \LARGE \textbf{Respuesta:} \\
+                \Large Serie de Balmer ($n_1 = 2$) \\
+                \Large Transición: $n = 5 \rightarrow n = 2$ \\
+                \Large Color: Violeta (H$_\gamma$)
+            \end{center>
+        }}
+    \end{center>
+\end{frame}
+
+% ==================== SLIDE 21: PROBLEMA INTEGRADOR ====================
+\begin{frame}{Problema Integrador}
+    \begin{center}
+        \huge \textbf{Análisis Espectral Completo}
+    \end{center>
+    
+    \vspace{0.5cm}
+    \begin{center}
+        \colorbox{azuloscuro!10}{\parbox{0.95\textwidth}{
+            \begin{center}
+                \Large \textbf{Un espectrógrafo registra estas líneas:}
+                
+                \vspace{0.5cm}
+                \begin{tabular}{ll}
+                    \Large Línea A: & \Large 656.3 nm (roja) \\
+                    \Large Línea B: & \Large 486.1 nm (azul-verde) \\
+                    \Large Línea C: & \Large 434.0 nm (violeta) \\
+                    \Large Línea D: & \Large 410.2 nm (violeta)
+                \end{tabular}
+            \end{center>
+        }}
+    \end{center>
+    
+    \vspace{1cm}
+    \begin{center}
+        \Large \textbf{Tareas:}
+        \begin{itemize}
+            \item[\textbullet] \Large Identifica el elemento
+            \item[\textbullet] \Large Determina las transiciones
+            \item[\textbullet] \Large Predice la siguiente línea de la serie
+        \end{itemize}
+    \end{center>
+\end{frame>
+
+% ==================== SLIDE 22: CONEXIONES CONCEPTUALES ====================
+\begin{frame}{Conexiones con Otros Temas}
+    \begin{center}
+        \huge \textbf{Integrando el Conocimiento}
+    \end{center>
+    
+    \vspace{1cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=1.4]
+            % Tema central
+            \node[draw,ellipse,minimum width=4cm,minimum height=2cm,fill=azuloscuro!20] at (0,0) {};
+            \node at (0,0) {\Large \textbf{Espectros} \\ \Large \textbf{Atómicos}};
+            
+            % Temas previos
+            \node[draw,rectangle,fill=verdeclaro!20] at (-4,2) {\large Cuerpo Negro};
+            \node[draw,rectangle,fill=verdeclaro!20] at (-4,0) {\large Efecto Fotoeléctrico};
+            \node[draw,rectangle,fill=verdeclaro!20] at (-4,-2) {\large Modelo Rutherford};
+            
+            % Temas posteriores
+            \node[draw,rectangle,fill=naranjaclaro!20] at (4,2) {\large Dualidad Onda-Partícula};
+            \node[draw,rectangle,fill=naranjaclaro!20] at (4,0) {\large Principio Incertidumbre};
+            \node[draw,rectangle,fill=naranjaclaro!20] at (4,-2) {\large Ecuación Schrödinger};
+            
+            % Flechas
+            \draw[thick,->] (-2.5,2) -- (-1.5,0.5);
+            \draw[thick,->] (-2.5,0) -- (-1.5,0);
+            \draw[thick,->] (-2.5,-2) -- (-1.5,-0.5);
+            
+            \draw[thick,->] (1.5,0.5) -- (2.5,2);
+            \draw[thick,->] (1.5,0) -- (2.5,0);
+            \draw[thick,->] (1.5,-0.5) -- (2.5,-2);
+        \end{tikzpicture}
+    \end{center}
+\end{frame>
+
+% ==================== SLIDE 23: PREGUNTAS DE REFLEXIÓN ====================
+\begin{frame}{Preguntas de Reflexión}
+    \begin{center}
+        \huge \textbf{Pensamiento Crítico}
+    \end{center>
+    
+    \vspace{1cm}
+    \begin{center}
+        \Large \textbf{Para discutir:}
+    \end{center>
+    
+    \vspace{0.5cm}
+    \begin{itemize}
+        \item[\textbullet] \Large ¿Por qué los postulados de Bohr parecían tan revolucionarios en 1913?
+        
+        \vspace{0.5cm}
+        \item[\textbullet] \Large Si el modelo funciona para hidrógeno, ¿por qué no es la teoría definitiva?
+        
+        \vspace{0.5cm}
+        \item[\textbullet] \Large ¿Cómo usan los astrónomos los espectros para estudiar estrellas?
+        
+        \vspace{0.5cm}
+        \item[\textbullet] \Large ¿Qué significa realmente que algo esté "cuantizado"?
+    \end{itemize}
+    
+    \vspace{1cm}
+    \begin{center}
+        \LARGE \textcolor{azuloscuro}{\textbf{¡Discutamos en clase!}}
+    \end{center}
+\end{frame>
+
+% ==================== SLIDE 24: PARA RECORDAR ====================
+\begin{frame}{Conceptos Clave para Recordar}
+    \begin{center}
+        \huge \textbf{Los Puntos Esenciales}
+    \end{center>
+    
+    \vspace{1cm}
+    \begin{center}
+        \colorbox{azuloscuro!10}{\parbox{0.9\textwidth}{
+            \Large \textbf{1. CUANTIZACIÓN:} Solo ciertos valores discretos están permitidos
+        }}
+    \end{center>
+    
+    \vspace{0.5cm}
+    \begin{center}
+        \colorbox{verdeclaro!10}{\parbox{0.9\textwidth}{
+            \Large \textbf{2. ESTABILIDAD:} Los postulados cuánticos resuelven problemas clásicos
+        }}
+    \end{center>
+    
+    \vspace{0.5cm}
+    \begin{center}
+        \colorbox{rojoclaro!10}{\parbox{0.9\textwidth}{
+            \Large \textbf{3. ESPECTROS:} Evidencia directa de niveles de energía cuantizados
+        }}
+    \end{center>
+    
+    \vspace{0.5cm}
+    \begin{center}
+        \colorbox{naranjaclaro!10}{\parbox{0.9\textwidth}{
+            \Large \textbf{4. TRANSICIÓN:} El modelo de Bohr como puente histórico
+        }}
+    \end{center>
+    
+    \vspace{1cm}
+    \begin{center}
+        \LARGE \textbf{Ecuación fundamental:} $\boxed{E_n = -\frac{13.6 \text{ eV}}{n^2}}$
+    \end{center>
+\end{frame>
+
+% ==================== SLIDE 25: PRÓXIMA CLASE ====================
+\begin{frame}{Próxima Clase}
+    \begin{center}
+        \huge \textbf{¿Qué sigue?}
+    \end{center>
+    
+    \vspace{1cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=1.3]
+            % Bohr (actual)
+            \node[draw,circle,minimum width=2.5cm,fill=azuloscuro!20] at (-3,0) {};
+            \node at (-3,0) {\Large \textbf{Modelo} \\ \Large \textbf{de Bohr}};
+            
+            % Flecha
+            \draw[thick,->,line width=3pt] (-1.5,0) -- (1.5,0);
+            \node[above] at (0,0.5) {\Large \textbf{Evolución}};
+            
+            % Mecánica Cuántica (siguiente)
+            \node[draw,circle,minimum width=2.5cm,fill=verdeclaro!20] at (3,0) {};
+            \node at (3,0) {\Large \textbf{Mecánica} \\ \Large \textbf{Cuántica}};
+        \end{tikzpicture>
+    \end{center>
+    
+    \vspace{1cm}
+    \begin{center}
+        \Large \textbf{Temas por venir:}
+        \begin{itemize}
+            \item[\textbullet] \Large Dualidad onda-partícula de De Broglie
+            \item[\textbullet] \Large Principio de incertidumbre de Heisenberg
+            \item[\textbullet] \Large Ecuación de Schrödinger
+            \item[\textbullet] \Large Orbitales atómicos modernos
+        \end{itemize}
+    \end{center}
+\end{frame}
+
+% ==================== SLIDE 26: RECURSOS ADICIONALES ====================
+\begin{frame}{Recursos para Estudiar}
+    \begin{center}
+        \huge \textbf{Para Profundizar}
+    \end{center}
+    
+    \vspace{1cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=1.2]
+            % Libros
+            \node[draw,rectangle,minimum width=3cm,minimum height=2cm,fill=azuloscuro!20] at (-3,1) {};
+            \node at (-3,1) {\Large \textbf{📚 Libros}};
+            \node[text width=3cm,align=center] at (-3,0) {\large Eisberg \& Resnick \\ Cap. 4};
+            
+            % Videos
+            \node[draw,rectangle,minimum width=3cm,minimum height=2cm,fill=verdeclaro!20] at (0,1) {};
+            \node at (0,1) {\Large \textbf{🎥 Videos}};
+            \node[text width=3cm,align=center] at (0,0) {\large MIT OCW \\ Khan Academy};
+            
+            % Simulaciones
+            \node[draw,rectangle,minimum width=3cm,minimum height=2cm,fill=rojoclaro!20] at (3,1) {};
+            \node at (3,1) {\Large \textbf{💻 Sims}};
+            \node[text width=3cm,align=center] at (3,0) {\large PhET Colorado \\ NIST Database};
+        \end{tikzpicture}
+    \end{center}
+    
+    \vspace{1cm}
+    \begin{center}
+        \LARGE \textbf{¡Experimenten con las simulaciones!}
+    \end{center>
+\end{frame>
+
+% ==================== SLIDE 27: EVALUACIÓN ====================
+\begin{frame}{Evaluación}
+    \begin{center}
+        \huge \textbf{¿Cómo serán evaluados?}
+    \end{center}
+    
+    \vspace{1cm}
+    \begin{center}
+        \colorbox{azuloscuro!10}{\parbox{0.9\textwidth}{
+            \begin{center}
+                \Large \textbf{Examen Parcial - Próxima Semana}
+                
+                \vspace{0.5cm}
+                \large Incluirá:
+                \begin{itemize}
+                    \item[\textbullet] \large Cálculos con la ecuación de Balmer
+                    \item[\textbullet] \large Identificación de series espectrales
+                    \item[\textbullet] \large Postulados de Bohr y su aplicación
+                    \item[\textbullet] \large Energías de transición
+                    \item[\textbullet] \large Problema integrador de espectroscopía
+                \end{itemize}
+            \end{center}
+        }}
+    \end{center>
+    
+    \vspace{1cm}
+    \begin{center}
+        \LARGE \textcolor{rojoclaro}{\textbf{¡Estudien las ecuaciones y sus significados!}}
+    \end{center>
+\end{frame>
+
+% ==================== SLIDE 28: RESUMEN FINAL ====================
+\begin{frame}{Resumen de la Clase}
+    \begin{center}
+        \huge \textbf{Un Viaje Extraordinario}
+    \end{center>
+    
+    \vspace{0.5cm}
+    \begin{center}
+        \Large \textbf{Hoy hemos visto cómo:}
+    \end{center>
+    
+    \vspace{0.5cm}
+    \begin{itemize}
+        \item[\textbullet] \Large La física clásica \textcolor{rojoclaro}{\textbf{falló}} al explicar los átomos
+        
+        \vspace{0.3cm}
+        \item[\textbullet] \Large Balmer encontró un \textcolor{azuloscuro}{\textbf{patrón matemático}} sin teoría
+        
+        \vspace{0.3cm}
+        \item[\textbullet] \Large Bohr introdujo la \textcolor{verdeclaro}{\textbf{cuantización}} como solución
+        
+        \vspace{0.3cm}
+        \item[\textbullet] \Large Los postulados explicaron \textcolor{naranjaclaro}{\textbf{perfectamente}} el hidrógeno
+    \end{itemize>
+    
+    \vspace{1cm}
+    \begin{center}
+        \colorbox{azuloscuro!20}{\parbox{0.8\textwidth}{
+            \begin{center}
+                \LARGE \textbf{El modelo de Bohr fue el primer paso} \\
+                \LARGE \textbf{hacia la mecánica cuántica moderna}
+            \end{center}
+        }}
+    \end{center>
+\end{frame>
+
+% ==================== SLIDE 29: AGRADECIMIENTOS ====================
+\begin{frame}
+    \begin{center}
+        \Huge \textbf{¡Gracias por su Atención!}
+        
+        \vspace{2cm}
+        \LARGE \textbf{¿Preguntas?}
+        
+        \vspace{2cm}
+        \begin{tikzpicture}
+            % Átomo de Bohr decorativo
+            \draw[thick] (0,0) circle (1);
+            \draw[thick] (0,0) circle (1.5);
+            \draw[thick] (0,0) circle (2);
+            \fill[red] (0,0) circle (0.15);
+            \fill[blue] (1,0) circle (0.1);
+            \fill[blue] (-1.5,0) circle (0.1);
+            \fill[blue] (0,2) circle (0.1);
+        \end{tikzpicture}
+        
+        \vspace{1cm}
+        \Large \textbf{Próxima clase: Dualidad Onda-Partícula}
+    \end{center}
+\end{frame}
+
+\end{document}
