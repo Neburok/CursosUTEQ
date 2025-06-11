@@ -1,0 +1,110 @@
+
+**Ejercicio 1: Ensayo de Tensión en Aleación de Aluminio 6061-T6**
+
+**Objetivo:**
+
+1.  Calcular el esfuerzo nominal y la deformación nominal.
+2.  Graficar la curva esfuerzo-deformación nominal.
+3.  Determinar:
+    *   Módulo de Elasticidad (E)
+    *   Límite Elástico (Yield Strength, σy) utilizando el método del 0.2% offset
+    *   Resistencia a la Tracción (Tensile Strength, σu)
+    *   Elongación Porcentual (%El)
+
+**Datos Experimentales:**
+
+Una probeta cilíndrica de aleación de aluminio 6061-T6 se somete a un ensayo de tensión. Las dimensiones iniciales son:
+
+*   Longitud calibrada (L₀): 60 mm
+*   Diámetro inicial (D₀): 10 mm
+
+Se registran los siguientes datos de carga (F) y alargamiento (ΔL):
+
+| Punto | Carga (F) [N] | Alargamiento (ΔL) [mm] |
+| ----- | ----------- | ---------------------- |
+| 1     | 0           | 0                      |
+| 2     | 10000       | 0.020                  |
+| 3     | 20000       | 0.040                  |
+| 4     | 30000       | 0.060                  |
+| 5     | 40000       | 0.080                  |
+| 6     | 45000       | 0.095                  |
+| 7     | 48000       | 0.110                  |
+| 8     | 50000       | 0.130                  |
+| 9     | 52000       | 0.160                  |
+| 10    | 53000       | 0.200                  |
+| 11    | 54000       | 0.300                  |
+| 12    | 55000       | 0.400                  |
+| 13    | 56000       | 0.600                  |
+| 14    | 57000       | 0.800                  |
+| 15    | 58000       | 1.000                  |
+| 16    | 59000       | 1.500                  |
+| 17    | 60000       | 2.000                  |
+| 18    | 61000       | 3.000                  |
+| 19    | 61500       | 4.000                  |
+| 20    | 62000       | 5.000                  |
+| 21    | 62300       | 6.000                  |
+| 22    | 62500       | 7.000                  |
+| 23    | 62700       | 8.000                  |
+| 24    | 62800       | 9.000                  |
+| 25    | 62900       | 10.000                 |
+| 26    | 62800       | 11.000                 |
+| 27    | 62500       | 12.000                 |
+| 28    | 61500       | 13.000                 |
+| 29    | 59000       | 14.000                 |
+
+Después de la fractura, se mide:
+
+*   Diámetro final (Df): 9.2 mm
+*   Longitud final (Lf): 71.5 mm
+
+**Ejercicio 2: Ensayo de Tensión en Hierro Fundido Gris ASTM A48 Clase 30**
+
+**Objetivo:**
+
+1.  Calcular el esfuerzo nominal y la deformación nominal.
+2.  Graficar la curva esfuerzo-deformación nominal.
+3.  Determinar:
+    *   Módulo de Elasticidad (E)
+    *   Resistencia a la Tracción (Tensile Strength, σu)
+    *   (El hierro fundido gris es frágil, por lo que no tendrá un límite elástico significativo ni elongación porcentual alta).
+
+**Datos Experimentales:**
+
+Una probeta cilíndrica de hierro fundido gris ASTM A48 Clase 30 se somete a un ensayo de tensión. Las dimensiones iniciales son:
+
+*   Longitud calibrada (L₀): 75 mm
+*   Diámetro inicial (D₀): 15 mm
+
+Se registran los siguientes datos de carga (F) y alargamiento (ΔL):
+
+| Punto | Carga (F) [N] | Alargamiento (ΔL) [mm] |
+| ----- | ----------- | ---------------------- |
+| 1     | 0           | 0                      |
+| 2     | 20000       | 0.015                  |
+| 3     | 40000       | 0.030                  |
+| 4     | 60000       | 0.045                  |
+| 5     | 80000       | 0.060                  |
+| 6     | 95000       | 0.075                  |
+| 7     | 110000      | 0.085                  |
+| 8     | 120000      | 0.092                  |
+| 9     | 125000      | 0.097                  |
+| 10    | 128000      | 0.100                  |
+| 11    | 130000      | 0.102                  |
+| 12    | 131000      | 0.103                  |
+| 13    | 131500      | 0.1035                 |
+| 14    | 131000      | 0.104                  |
+| 15    | 130000      | 0.105                  |
+
+Después de la fractura, se mide:
+
+*   Diámetro final (Df): 14.9 mm
+*   Longitud final (Lf): 75.1 mm (aproximadamente igual a L0, debido a la fragilidad)
+
+**Recomendaciones para los Estudiantes:**
+
+*   Indica claramente los pasos a seguir, como en el ejemplo de clase.
+*   Anima a los estudiantes a utilizar software de graficación para visualizar las curvas.
+*   Recuerda la importancia del método del 0.2% offset para el Límite Elástico en el aluminio.
+*   Enfatiza que el hierro fundido es frágil y cómo esto se refleja en la curva esfuerzo-deformación y en la falta de un límite elástico claro.
+
+Estos ejercicios permitirán a tus estudiantes aplicar los conocimientos adquiridos en clase y practicar el cálculo de propiedades mecánicas a partir de datos experimentales. ¡Espero que les sean de gran utilidad!
