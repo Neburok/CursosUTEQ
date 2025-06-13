@@ -1,0 +1,333 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+
+% Configuración de página
+\geometry{margin=2.5cm}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Física Moderna - Ingeniería en Nanotecnología}
+\fancyhead[R]{Universidad Tecnológica de Querétaro}
+\fancyfoot[C]{\thepage}
+
+% Configuración de colores
+\definecolor{uteqblue}{RGB}{0,51,102}
+\definecolor{uteqgray}{RGB}{128,128,128}
+
+% Configuración de cajas de texto
+\newtcolorbox{objetivobox}{
+	colback=blue!5!white,
+	colframe=uteqblue,
+	title=Objetivos,
+	fonttitle=\bfseries
+}
+
+\newtcolorbox{instruccionbox}{
+	colback=gray!5!white,
+	colframe=uteqgray,
+	title=Instrucciones,
+	fonttitle=\bfseries
+}
+
+\newtcolorbox{preguntabox}{
+	colback=orange!5!white,
+	colframe=orange!50!black,
+	title=Preguntas de Análisis,
+	fonttitle=\bfseries
+}
+
+\begin{document}
+	
+	% Título principal
+	\begin{center}
+		{\Huge \textbf{ACTIVIDAD PRÁCTICA}}\\[0.3cm]
+		{\LARGE \textbf{EFECTO FOTOELÉCTRICO}}\\[0.2cm]
+		{\large Física Moderna | Ingeniería en Nanotecnología}\\[0.5cm]
+		\includegraphics[width=5cm]{../../Imagenes/Logo_uteq}
+	\end{center}
+	
+	\vspace{0.5cm}
+	
+	% Datos generales
+	\section*{DATOS GENERALES}
+	\begin{itemize}
+		\item \textbf{Duración:} 45 minutos
+		\item \textbf{Modalidad:} Trabajo colaborativo en equipos de 3-4 estudiantes
+		\item \textbf{Materiales:} Computadora/tablet con acceso a internet, calculadora, hoja de trabajo impresa
+	\end{itemize}
+	
+	% Objetivos
+	\begin{objetivobox}
+		Al finalizar esta actividad, el estudiante será capaz de:
+		\begin{itemize}
+			\item Comprobar experimentalmente las relaciones del efecto fotoeléctrico mediante una simulación
+			\item Determinar la constante de Planck y la función trabajo de diferentes materiales
+			\item Analizar gráficamente la relación entre frecuencia y energía cinética de los fotoelectrones
+			\item Contrastar las predicciones clásicas con los resultados cuánticos
+		\end{itemize}
+	\end{objetivobox}
+	
+	\section*{INTRODUCCIÓN}
+	
+	El simulador PhET ``Efecto Fotoeléctrico'' permite explorar de manera virtual todas las características del efecto fotoeléctrico. En esta actividad, utilizaremos este simulador para verificar experimentalmente la ecuación de Einstein, determinar constantes físicas fundamentales y analizar el comportamiento de diferentes materiales.
+	
+	% Instrucciones generales
+	\begin{instruccionbox}
+		\begin{enumerate}
+			\item Formen equipos de 3-4 integrantes
+			\item Accedan al simulador PhET: \url{https://phet.colorado.edu/es/simulation/photoelectric}
+			\item Completen cada una de las secciones siguientes, registrando sus observaciones y resultados
+			\item Discutan las preguntas de análisis en equipo
+			\item Preparen una breve presentación (2-3 minutos) con sus conclusiones principales
+		\end{enumerate}
+	\end{instruccionbox}
+	
+	\newpage
+	
+	\section{PARTE 1: VERIFICACIÓN DE LA ECUACIÓN DE EINSTEIN}
+	
+	\subsection{Procedimiento:}
+	\begin{enumerate}
+		\item Seleccionen el material ``Sodio'' en el simulador
+		\item Configuren la intensidad al 50\% y el voltaje de la batería en 0 V
+		\item Para cada longitud de onda de la tabla, registren la corriente observada y la energía cinética máxima de los electrones (usando el voltaje de frenado)
+		\item Si no hay emisión de electrones para alguna longitud de onda, marcar con ``N/A''
+	\end{enumerate}
+	
+	\subsection{Tabla de datos:}
+	
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\textbf{Longitud de onda (nm)} & \textbf{Frecuencia ($10^{14}$ Hz)} & \textbf{Corriente (nA)} & \textbf{Energía cinética máxima (eV)} \\
+			\hline
+			400 & & & \\
+			\hline
+			450 & & & \\
+			\hline
+			500 & & & \\
+			\hline
+			550 & & & \\
+			\hline
+			600 & & & \\
+			\hline
+			650 & & & \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\subsection{Análisis:}
+	\begin{enumerate}
+		\item Calculen la frecuencia correspondiente a cada longitud de onda usando $f = c/\lambda$
+		\item Representen gráficamente la energía cinética máxima frente a la frecuencia
+		\item Encuentren la ecuación de la recta de mejor ajuste
+		\item A partir de la pendiente, determinen el valor experimental de la constante de Planck
+		\item A partir del punto de corte con el eje X, determinen la frecuencia umbral y la función trabajo del sodio
+	\end{enumerate}
+	
+	\begin{preguntabox}
+		\textbf{Preguntas:}
+		\begin{enumerate}
+			\item ¿Cómo se compara su valor experimental de la constante de Planck con el valor aceptado ($h = 6.626 \times 10^{-34}$ J·s)?
+			\item ¿Cómo se compara la función trabajo obtenida con el valor teórico para el sodio (2.46 eV)?
+			\item ¿Existe algún caso donde se observe emisión por debajo de la frecuencia umbral?
+		\end{enumerate}
+	\end{preguntabox}
+	
+	\newpage
+	
+	\section{PARTE 2: EFECTO DE LA INTENSIDAD DE LA LUZ}
+	
+	\subsection{Procedimiento:}
+	\begin{enumerate}
+		\item Mantengan seleccionado el material ``Sodio''
+		\item Fijen la longitud de onda en 400 nm
+		\item Varíen la intensidad según los valores de la tabla y registren la corriente y la energía cinética máxima
+	\end{enumerate}
+	
+	\subsection{Tabla de datos:}
+	
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\textbf{Intensidad (\%)} & \textbf{Corriente (nA)} & \textbf{Energía cinética máxima (eV)} \\
+			\hline
+			20 & & \\
+			\hline
+			40 & & \\
+			\hline
+			60 & & \\
+			\hline
+			80 & & \\
+			\hline
+			100 & & \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\subsection{Análisis:}
+	\begin{enumerate}
+		\item Representen gráficamente la corriente frente a la intensidad
+		\item Representen gráficamente la energía cinética máxima frente a la intensidad
+	\end{enumerate}
+	
+	\begin{preguntabox}
+		\textbf{Preguntas:}
+		\begin{enumerate}
+			\item ¿Cómo afecta la intensidad de la luz a la corriente fotoeléctrica?
+			\item ¿Cómo afecta la intensidad de la luz a la energía cinética máxima de los fotoelectrones?
+			\item ¿Estos resultados son coherentes con la teoría clásica o con la teoría cuántica? Expliquen.
+		\end{enumerate}
+	\end{preguntabox}
+	
+	\section{PARTE 3: COMPARACIÓN DE DIFERENTES MATERIALES}
+	
+	\subsection{Procedimiento:}
+	\begin{enumerate}
+		\item Fijen la longitud de onda en 500 nm y la intensidad al 50\%
+		\item Para cada material disponible en el simulador, determinen si hay emisión fotoeléctrica
+		\item Si hay emisión, registren la energía cinética máxima usando el voltaje de frenado
+	\end{enumerate}
+	
+	\subsection{Tabla de datos:}
+	
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\textbf{Material} & \textbf{¿Hay emisión? (Sí/No)} & \textbf{Energía cinética máxima (eV)} & \textbf{Función trabajo estimada (eV)} \\
+			\hline
+			Sodio & & & \\
+			\hline
+			Zinc & & & \\
+			\hline
+			Cobre & & & \\
+			\hline
+			Platino & & & \\
+			\hline
+			Otro & & & \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\subsection{Análisis:}
+	\begin{enumerate}
+		\item Para cada material donde hay emisión, calculen la función trabajo experimental
+		\item Ordenen los materiales según su función trabajo, de menor a mayor
+	\end{enumerate}
+	
+	\begin{preguntabox}
+		\textbf{Preguntas:}
+		\begin{enumerate}
+			\item ¿Qué relación existe entre la función trabajo y la facilidad con que un material emite fotoelectrones?
+			\item ¿Por qué algunos materiales no presentan efecto fotoeléctrico con la longitud de onda utilizada?
+			\item Si quisieran diseñar un detector fotoeléctrico muy sensible a luz visible, ¿qué material elegirían y por qué?
+		\end{enumerate}
+	\end{preguntabox}
+	
+	\newpage
+	
+	\section{PARTE 4: APLICACIÓN A UN PROBLEMA PRÁCTICO}
+	
+	\subsection{Problema:}
+	Se está diseñando un sensor fotoeléctrico para un sistema de seguridad que debe activarse únicamente con luz ultravioleta ($\lambda < 400$ nm) y no con luz visible.
+	
+	\begin{preguntabox}
+		\textbf{Preguntas:}
+		\begin{enumerate}
+			\item ¿Qué material entre los disponibles sería más adecuado para este sensor? Justifiquen su respuesta.
+			\item Calculen la frecuencia de corte y la longitud de onda de corte para el material seleccionado.
+			\item Si el sensor se expone accidentalmente a luz visible intensa (por ejemplo, un flash fotográfico), ¿se activaría?
+			\item Diseñen un experimento con el simulador para verificar su respuesta al punto 3.
+		\end{enumerate}
+	\end{preguntabox}
+	
+	\section{PARTE 5: INTERPRETACIÓN FÍSICA}
+	
+	\begin{preguntabox}
+		\textbf{Preguntas de reflexión:}
+		\begin{enumerate}
+			\item Expliquen cómo el efecto fotoeléctrico evidencia la naturaleza corpuscular de la luz.
+			\item ¿Por qué la emisión fotoeléctrica es instantánea, incluso a intensidades muy bajas?
+			\item ¿Cómo se relaciona la ecuación de Einstein ($K_{\text{máx}} = hf - \phi$) con el principio de conservación de la energía?
+			\item ¿Qué implicación tiene el efecto fotoeléctrico para el debate histórico sobre si la luz es onda o partícula?
+		\end{enumerate}
+	\end{preguntabox}
+	
+	\section*{CONCLUSIONES FINALES}
+	
+	Basándose en sus resultados y análisis, elaboren un párrafo de conclusiones que resuma:
+	\begin{enumerate}
+		\item Las principales características del efecto fotoeléctrico verificadas experimentalmente
+		\item La validez de la ecuación de Einstein para explicar el fenómeno
+		\item Las implicaciones conceptuales para la física cuántica
+		\item Posibles aplicaciones tecnológicas basadas en este fenómeno
+	\end{enumerate}
+	
+	\vspace{3cm}
+	\hrule
+	\vspace{0.3cm}
+	
+	\section*{ENTREGABLES}
+	
+	Al finalizar la actividad, cada equipo debe entregar:
+	\begin{enumerate}
+		\item Esta hoja de trabajo completada con todos los datos y respuestas
+		\item Gráficas elaboradas (pueden ser hechas a mano o en computadora)
+		\item Un breve reporte con sus conclusiones (máximo una página)
+	\end{enumerate}
+	
+	\section*{CRITERIOS DE EVALUACIÓN}
+	
+	\begin{center}
+		\begin{tabular}{|l|c|}
+			\hline
+			\textbf{Criterio} & \textbf{Puntuación máxima} \\
+			\hline
+			Recolección precisa de datos & 20 puntos \\
+			\hline
+			Cálculos y análisis correctos & 25 puntos \\
+			\hline
+			Gráficas bien elaboradas & 15 puntos \\
+			\hline
+			Respuestas a preguntas de análisis & 25 puntos \\
+			\hline
+			Conclusiones y reflexiones & 15 puntos \\
+			\hline
+			\textbf{Total} & \textbf{100 puntos} \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\section*{RECURSOS DE APOYO}
+	
+	\begin{itemize}
+		\item Simulador PhET: \url{https://phet.colorado.edu/es/simulation/photoelectric}
+		\item Valores de referencia para funciones trabajo: [tabla proporcionada en clase]
+		\item Constantes físicas:
+		\begin{itemize}
+			\item Constante de Planck: $h = 6.626 \times 10^{-34}$ J·s $= 4.136 \times 10^{-15}$ eV·s
+			\item Velocidad de la luz: $c = 3.00 \times 10^{8}$ m/s
+			\item Carga del electrón: $e = 1.602 \times 10^{-19}$ C
+		\end{itemize}
+		\item Conversión útil: $hc \approx 1240$ eV·nm
+	\end{itemize}
+	
+	\vfill
+	
+	\begin{center}
+		\textcolor{uteqgray}{\textit{Universidad Tecnológica de Querétaro | Física Moderna | Cuatrimestre Mayo-Agosto 2025}}
+	\end{center}
+	
+\end{document}

@@ -1,0 +1,765 @@
+% ============================================================================
+% PLANTILLA ESTÁNDAR PARA PRÁCTICAS DE LABORATORIO
+% Manual de Física Moderna - Ingeniería en Nanotecnología
+% Universidad Tecnológica de Querétaro
+% ============================================================================
+
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{tikz}
+
+% ============================================================================
+% CONFIGURACIÓN DE PÁGINA Y ESTILO
+% ============================================================================
+
+% Configuración de márgenes
+\geometry{margin=2.5cm, top=3cm, bottom=3cm}
+
+% Configuración de colores institucionales
+\definecolor{uteqblue}{RGB}{0,51,102}
+\definecolor{uteqgray}{RGB}{128,128,128}
+\definecolor{uteqgold}{RGB}{255,204,0}
+\definecolor{practicegreen}{RGB}{46,125,50}
+\definecolor{practiceorange}{RGB}{255,152,0}
+\definecolor{practicered}{RGB}{211,47,47}
+
+% Configuración de headers y footers
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{uteqgray}{Física Moderna - Ingeniería en Nanotecnología}}
+\fancyhead[R]{\small\textcolor{uteqgray}{Universidad Tecnológica de Querétaro}}
+\fancyfoot[L]{\small\textcolor{uteqgray}{\practicetitle}}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{\small\textcolor{uteqgray}{\practicedate}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% ============================================================================
+% CONFIGURACIÓN DE CAJAS Y ENTORNOS
+% ============================================================================
+
+% Caja para datos generales
+\newtcolorbox{datosgeneralesbox}{
+	colback=uteqblue!10!white,
+	colframe=uteqblue,
+	title=\textbf{DATOS GENERALES DE LA PRÁCTICA},
+	fonttitle=\bfseries\color{white},
+	coltitle=white,
+	colbacktitle=uteqblue,
+	boxrule=1pt,
+	arc=3pt
+}
+
+% Caja para objetivos
+\newtcolorbox{objetivobox}{
+	colback=practicegreen!5!white,
+	colframe=practicegreen,
+	title=\textbf{OBJETIVOS DE APRENDIZAJE},
+	fonttitle=\bfseries\color{white},
+	coltitle=white,
+	colbacktitle=practicegreen,
+	boxrule=1pt,
+	arc=3pt
+}
+
+% Caja para competencias
+\newtcolorbox{competenciabox}{
+	colback=uteqgold!20!white,
+	colframe=uteqgold!80!black,
+	title=\textbf{COMPETENCIAS A DESARROLLAR},
+	fonttitle=\bfseries,
+	boxrule=1pt,
+	arc=3pt
+}
+
+% Caja para materiales y recursos
+\newtcolorbox{materialesbox}{
+	colback=gray!10!white,
+	colframe=uteqgray,
+	title=\textbf{MATERIALES Y RECURSOS},
+	fonttitle=\bfseries\color{white},
+	coltitle=white,
+	colbacktitle=uteqgray,
+	boxrule=1pt,
+	arc=3pt
+}
+
+% Caja para marco teórico
+\newtcolorbox{teoriabox}{
+	colback=blue!5!white,
+	colframe=blue!50!black,
+	title=\textbf{MARCO TEÓRICO},
+	fonttitle=\bfseries,
+	boxrule=1pt,
+	arc=3pt
+}
+
+% Caja para instrucciones
+\newtcolorbox{instruccionbox}{
+	colback=practiceorange!10!white,
+	colframe=practiceorange,
+	title=\textbf{INSTRUCCIONES},
+	fonttitle=\bfseries\color{white},
+	coltitle=white,
+	colbacktitle=practiceorange,
+	boxrule=1pt,
+	arc=3pt
+}
+
+% Caja para preguntas de análisis
+\newtcolorbox{preguntabox}{
+	colback=purple!5!white,
+	colframe=purple!50!black,
+	title=\textbf{PREGUNTAS DE ANÁLISIS},
+	fonttitle=\bfseries,
+	boxrule=1pt,
+	arc=3pt
+}
+
+% Caja para nota importante
+\newtcolorbox{notabox}{
+	colback=practicered!10!white,
+	colframe=practicered,
+	title=\textbf{NOTA IMPORTANTE},
+	fonttitle=\bfseries\color{white},
+	coltitle=white,
+	colbacktitle=practicered,
+	boxrule=1pt,
+	arc=3pt
+}
+
+% Caja para evaluación
+\newtcolorbox{evaluacionbox}{
+	colback=teal!10!white,
+	colframe=teal!70!black,
+	title=\textbf{EVALUACIÓN Y CRITERIOS},
+	fonttitle=\bfseries,
+	boxrule=1pt,
+	arc=3pt
+}
+
+% Caja para conclusiones
+\newtcolorbox{conclusionbox}{
+	colback=green!5!white,
+	colframe=green!60!black,
+	title=\textbf{CONCLUSIONES Y REFLEXIÓN},
+	fonttitle=\bfseries,
+	boxrule=1pt,
+	arc=3pt
+}
+
+% ============================================================================
+% CONFIGURACIÓN DE HYPERLINKS
+% ============================================================================
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=uteqblue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	pdftitle={Práctica de Laboratorio - Física Moderna},
+	pdfauthor={Universidad Tecnológica de Querétaro},
+}
+
+% ============================================================================
+% COMANDOS PERSONALIZADOS PARA INFORMACIÓN DE LA PRÁCTICA
+% ============================================================================
+
+% Comandos que deben ser definidos al inicio de cada práctica
+\newcommand{\practicenumber}{XX} % Número de la práctica
+\newcommand{\practicetitle}{TÍTULO DE LA PRÁCTICA} % Título de la práctica
+\newcommand{\practiceunit}{Unidad X} % Unidad temática
+\newcommand{\practicesubtopic}{Subtema específico} % Subtema
+\newcommand{\practiceduration}{XX minutos} % Duración
+\newcommand{\practicemodality}{Presencial asistida por tecnología} % Modalidad
+\newcommand{\practicedate}{Cuatrimestre Mayo-Agosto 2025} % Fecha
+\newcommand{\practicesimulator}{Nombre del simulador} % Simulador principal
+
+% ============================================================================
+% INICIO DEL DOCUMENTO
+% ============================================================================
+
+\begin{document}
+	
+	% ============================================================================
+	% ENCABEZADO DE LA PRÁCTICA
+	% ============================================================================
+	
+	\begin{center}
+		% Logo institucional
+		\includegraphics[width=3cm]{logo_uteq.png}\\[0.3cm]
+		
+		% Título principal
+		{\LARGE \textcolor{uteqblue}{\textbf{PRÁCTICA No. \practicenumber}}}\\[0.2cm]
+		{\Huge \textcolor{uteqblue}{\textbf{\practicetitle}}}\\[0.3cm]
+		{\large \textcolor{uteqgray}{\textbf{Manual de Prácticas de Laboratorio}}}\\[0.2cm]
+		{\normalsize \textcolor{uteqgray}{Física Moderna | Ingeniería en Nanotecnología}}\\[0.5cm]
+	\end{center}
+	
+	% ============================================================================
+	% DATOS GENERALES
+	% ============================================================================
+	
+	\begin{datosgeneralesbox}
+		\begin{multicols}{2}
+			\textbf{Número de Práctica:} \practicenumber\\
+			\textbf{Unidad Temática:} \practiceunit\\
+			\textbf{Tema/Subtema:} \practicesubtopic\\
+			\textbf{Duración:} \practiceduration\\
+			
+			\columnbreak
+			
+			\textbf{Modalidad:} \practicemodality\\
+			\textbf{Simulador Principal:} \practicesimulator\\
+			\textbf{Tipo de Actividad:} Trabajo colaborativo\\
+			\textbf{Tamaño de Equipo:} 3-4 estudiantes\\
+		\end{multicols}
+	\end{datosgeneralesbox}
+	
+	% ============================================================================
+	% SECCIÓN 1: OBJETIVOS DE APRENDIZAJE
+	% ============================================================================
+	
+	\section{OBJETIVOS DE APRENDIZAJE}
+	
+	\begin{objetivobox}
+		\textbf{Al finalizar esta práctica, el estudiante será capaz de:}
+		\begin{enumerate}
+			\item [Objetivo específico 1]
+			\item [Objetivo específico 2]
+			\item [Objetivo específico 3]
+			\item [Objetivo específico 4]
+			\item [Objetivo específico 5]
+		\end{enumerate}
+	\end{objetivobox}
+	
+	% ============================================================================
+	% SECCIÓN 2: COMPETENCIAS A DESARROLLAR
+	% ============================================================================
+	
+	\section{COMPETENCIAS A DESARROLLAR}
+	
+	\begin{competenciabox}
+		\begin{multicols}{2}
+			\textbf{Competencias Disciplinares:}
+			\begin{itemize}[leftmargin=1cm]
+				\item [Competencia disciplinar 1]
+				\item [Competencia disciplinar 2]
+				\item [Competencia disciplinar 3]
+			\end{itemize}
+			
+			\textbf{Competencias Profesionales:}
+			\begin{itemize}[leftmargin=1cm]
+				\item [Competencia profesional 1]
+				\item [Competencia profesional 2]
+				\item [Competencia profesional 3]
+			\end{itemize}
+			
+			\columnbreak
+			
+			\textbf{Competencias Transversales:}
+			\begin{itemize}[leftmargin=1cm]
+				\item [Competencia transversal 1]
+				\item [Competencia transversal 2]
+				\item [Competencia transversal 3]
+			\end{itemize}
+			
+			\textbf{Competencias Tecnológicas:}
+			\begin{itemize}[leftmargin=1cm]
+				\item [Competencia tecnológica 1]
+				\item [Competencia tecnológica 2]
+				\item [Competencia tecnológica 3]
+			\end{itemize}
+		\end{multicols}
+	\end{competenciabox}
+	
+	% ============================================================================
+	% SECCIÓN 3: MATERIALES Y RECURSOS
+	% ============================================================================
+	
+	\section{MATERIALES Y RECURSOS}
+	
+	\begin{materialesbox}
+		\begin{multicols}{2}
+			\textbf{Recursos Tecnológicos:}
+			\begin{itemize}[leftmargin=1cm]
+				\item Computadora/tablet con navegador actualizado
+				\item Conexión a internet estable
+				\item [Simulador específico]
+				\item [Herramienta adicional]
+			\end{itemize}
+			
+			\textbf{Materiales de Trabajo:}
+			\begin{itemize}[leftmargin=1cm]
+				\item Calculadora científica
+				\item Hoja de trabajo impresa
+				\item Material para gráficas
+				\item [Material específico]
+			\end{itemize}
+			
+			\columnbreak
+			
+			\textbf{Recursos Digitales:}
+			\begin{itemize}[leftmargin=1cm]
+				\item Simulador PhET: [URL específico]
+				\item [Herramienta online específica]
+				\item [Recurso complementario]
+			\end{itemize}
+			
+			\textbf{Documentos de Apoyo:}
+			\begin{itemize}[leftmargin=1cm]
+				\item Manual de usuario del simulador
+				\item Tablas de constantes físicas
+				\item Guía de análisis de datos
+				\item [Documento específico]
+			\end{itemize}
+		\end{multicols}
+	\end{materialesbox}
+	
+	% ============================================================================
+	% SECCIÓN 4: MARCO TEÓRICO
+	% ============================================================================
+	
+	\section{MARCO TEÓRICO}
+	
+	\begin{teoriabox}
+		\textbf{Conceptos Fundamentales:}
+		
+		[Aquí se incluye una explicación concisa de los conceptos teóricos necesarios para la práctica, incluyendo:]
+		
+		\begin{itemize}
+			\item Definiciones clave
+			\item Ecuaciones fundamentales
+			\item Principios físicos involucrados
+			\item Relaciones matemáticas importantes
+		\end{itemize}
+		
+		\textbf{Ecuaciones Principales:}
+		
+		\begin{align}
+			\text{Ecuación 1: } \quad & [Ecuación con descripción] \\
+			\text{Ecuación 2: } \quad & [Ecuación con descripción] \\
+			\text{Ecuación 3: } \quad & [Ecuación con descripción]
+		\end{align}
+		
+		\textbf{Conexión con Nanotecnología:}
+		
+		[Explicación de cómo los conceptos se relacionan con aplicaciones en nanotecnología]
+	\end{teoriabox}
+	
+	% ============================================================================
+	% SECCIÓN 5: INSTRUCCIONES GENERALES
+	% ============================================================================
+	
+	\section{INSTRUCCIONES GENERALES}
+	
+	\begin{instruccionbox}
+		\textbf{Antes de comenzar:}
+		\begin{enumerate}
+			\item Formen equipos de 3-4 integrantes
+			\item Revisen el marco teórico y los objetivos de la práctica
+			\item Verifiquen el acceso al simulador: [URL específico]
+			\item Preparen los materiales de trabajo necesarios
+			\item Designen roles dentro del equipo (coordinador, secretario, analista, etc.)
+		\end{enumerate}
+		
+		\textbf{Durante la práctica:}
+		\begin{enumerate}
+			\item Sigan cuidadosamente las instrucciones de cada parte
+			\item Registren todas las observaciones y mediciones
+			\item Discutan los resultados en equipo antes de continuar
+			\item Consulten dudas con el instructor cuando sea necesario
+			\item Mantengan un registro ordenado de sus datos
+		\end{enumerate}
+		
+		\textbf{Al finalizar:}
+		\begin{enumerate}
+			\item Completen todas las secciones de análisis
+			\item Elaboren las conclusiones correspondientes
+			\item Preparen una breve presentación de sus resultados
+			\item Entreguen todos los materiales solicitados
+		\end{enumerate}
+	\end{instruccionbox}
+	
+	% ============================================================================
+	% SECCIÓN 6: DESARROLLO DE LA PRÁCTICA
+	% ============================================================================
+	
+	\section{DESARROLLO DE LA PRÁCTICA}
+	
+	% ----------------------------------------------------------------------------
+	% PARTE 1
+	% ----------------------------------------------------------------------------
+	
+	\subsection{PARTE 1: [TÍTULO DE LA PRIMERA PARTE]}
+	
+	\subsubsection{Procedimiento:}
+	\begin{enumerate}
+		\item [Paso 1 detallado]
+		\item [Paso 2 detallado]
+		\item [Paso 3 detallado]
+		\item [Paso 4 detallado]
+		\item [Paso 5 detallado]
+	\end{enumerate}
+	
+	\subsubsection{Tabla de datos:}
+	
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\textbf{Parámetro 1} & \textbf{Parámetro 2} & \textbf{Parámetro 3} & \textbf{Resultado} \\
+			\hline
+			& & & \\
+			\hline
+			& & & \\
+			\hline
+			& & & \\
+			\hline
+			& & & \\
+			\hline
+			& & & \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\subsubsection{Análisis de resultados:}
+	\begin{enumerate}
+		\item [Instrucción de análisis 1]
+		\item [Instrucción de análisis 2]
+		\item [Instrucción de análisis 3]
+		\item [Instrucción de análisis 4]
+	\end{enumerate}
+	
+	\begin{preguntabox}
+		\textbf{Preguntas de Análisis - Parte 1:}
+		\begin{enumerate}
+			\item [Pregunta conceptual 1]
+			
+			\vspace{1.5cm}
+			
+			\item [Pregunta conceptual 2]
+			
+			\vspace{1.5cm}
+			
+			\item [Pregunta de aplicación 1]
+			
+			\vspace{1.5cm}
+			
+			\item [Pregunta de síntesis 1]
+			
+			\vspace{1.5cm}
+		\end{enumerate}
+	\end{preguntabox}
+	
+	% ----------------------------------------------------------------------------
+	% PARTE 2
+	% ----------------------------------------------------------------------------
+	
+	\subsection{PARTE 2: [TÍTULO DE LA SEGUNDA PARTE]}
+	
+	\subsubsection{Procedimiento:}
+	\begin{enumerate}
+		\item [Paso 1 detallado]
+		\item [Paso 2 detallado]
+		\item [Paso 3 detallado]
+		\item [Paso 4 detallado]
+	\end{enumerate}
+	
+	\subsubsection{Tabla de datos:}
+	
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\textbf{Variable 1} & \textbf{Variable 2} & \textbf{Observación} & \textbf{Cálculo} \\
+			\hline
+			& & & \\
+			\hline
+			& & & \\
+			\hline
+			& & & \\
+			\hline
+			& & & \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\begin{preguntabox}
+		\textbf{Preguntas de Análisis - Parte 2:}
+		\begin{enumerate}
+			\item [Pregunta específica parte 2]
+			
+			\vspace{1.5cm}
+			
+			\item [Pregunta de relación]
+			
+			\vspace{1.5cm}
+			
+			\item [Pregunta de aplicación tecnológica]
+			
+			\vspace{1.5cm}
+		\end{enumerate}
+	\end{preguntabox}
+	
+	% ----------------------------------------------------------------------------
+	% PARTE 3
+	% ----------------------------------------------------------------------------
+	
+	\subsection{PARTE 3: [TÍTULO DE LA TERCERA PARTE]}
+	
+	[Estructura similar para las partes adicionales que requiera la práctica]
+	
+	% ============================================================================
+	% SECCIÓN 7: APLICACIONES Y CASOS PRÁCTICOS
+	% ============================================================================
+	
+	\section{APLICACIONES Y CASOS PRÁCTICOS}
+	
+	\subsection{Aplicación en Nanotecnología:}
+	
+	[Descripción de cómo los conceptos estudiados se aplican específicamente en nanotecnología]
+	
+	\subsection{Caso de Estudio:}
+	
+	[Presentación de un caso real donde se utilicen los principios estudiados]
+	
+	\begin{preguntabox}
+		\textbf{Análisis del Caso de Estudio:}
+		\begin{enumerate}
+			\item ¿Cómo se relacionan los resultados obtenidos con el caso presentado?
+			
+			\vspace{2cm}
+			
+			\item ¿Qué aplicaciones adicionales podrían derivarse de estos principios?
+			
+			\vspace{2cm}
+			
+			\item ¿Cuáles serían las ventajas y limitaciones de esta aplicación?
+			
+			\vspace{2cm}
+		\end{enumerate}
+	\end{preguntabox}
+	
+	% ============================================================================
+	% SECCIÓN 8: EVALUACIÓN FORMATIVA
+	% ============================================================================
+	
+	\section{EVALUACIÓN FORMATIVA}
+	
+	\begin{evaluacionbox}
+		\textbf{Autoevaluación:} Marca con una X tu nivel de comprensión
+		
+		\begin{center}
+			\begin{tabular}{|p{6cm}|c|c|c|c|}
+				\hline
+				\textbf{Criterio} & \textbf{Excelente} & \textbf{Bueno} & \textbf{Regular} & \textbf{Necesito ayuda} \\
+				\hline
+				Comprendo los conceptos teóricos fundamentales & & & & \\
+				\hline
+				Puedo utilizar el simulador correctamente & & & & \\
+				\hline
+				Analizo correctamente los datos obtenidos & & & & \\
+				\hline
+				Relaciono la teoría con las aplicaciones prácticas & & & & \\
+				\hline
+				Trabajo efectivamente en equipo & & & & \\
+				\hline
+			\end{tabular}
+		\end{center}
+		
+		\textbf{Coevaluación del Equipo:}
+		\begin{itemize}
+			\item ¿Cómo calificarían el trabajo colaborativo del equipo? \hrulefill
+			\item ¿Qué aspectos pueden mejorar para la siguiente práctica? \hrulefill
+			\item ¿Todos los miembros participaron activamente? \hrulefill
+		\end{itemize}
+	\end{evaluacionbox}
+	
+	% ============================================================================
+	% SECCIÓN 9: CONCLUSIONES Y REFLEXIÓN
+	% ============================================================================
+	
+	\section{CONCLUSIONES Y REFLEXIÓN}
+	
+	\begin{conclusionbox}
+		\textbf{Síntesis de Resultados:}
+		
+		Elaboren un párrafo que resuma los principales hallazgos de la práctica:
+		
+		\vspace{3cm}
+		
+		\textbf{Conexión con Objetivos de Aprendizaje:}
+		
+		¿Cómo esta práctica contribuyó al logro de los objetivos planteados?
+		
+		\vspace{3cm}
+		
+		\textbf{Aplicaciones en Ingeniería en Nanotecnología:}
+		
+		¿Cómo pueden aplicar estos conocimientos en su futura práctica profesional?
+		
+		\vspace{3cm}
+		
+		\textbf{Reflexión Personal:}
+		
+		¿Qué fue lo más interesante o desafiante de esta práctica?
+		
+		\vspace{3cm}
+	\end{conclusionbox}
+	
+	% ============================================================================
+	% SECCIÓN 10: ENTREGABLES Y CRITERIOS DE EVALUACIÓN
+	% ============================================================================
+	
+	\section{ENTREGABLES Y CRITERIOS DE EVALUACIÓN}
+	
+	\subsection{Entregables:}
+	
+	\begin{enumerate}
+		\item Hoja de trabajo completada con todos los datos y análisis
+		\item Gráficas elaboradas (digitales o manuales)
+		\item Reporte de conclusiones (máximo 1 página)
+		\item Presentación breve de resultados (3-5 minutos)
+	\end{enumerate}
+	
+	\subsection{Criterios de Evaluación:}
+	
+	\begin{center}
+		\begin{tabular}{|l|c|c|}
+			\hline
+			\textbf{Criterio} & \textbf{Puntuación máxima} & \textbf{Puntuación obtenida} \\
+			\hline
+			Recolección precisa de datos & 20 puntos & \\
+			\hline
+			Análisis correcto de resultados & 25 puntos & \\
+			\hline
+			Calidad de gráficas y presentación & 15 puntos & \\
+			\hline
+			Respuestas a preguntas de análisis & 25 puntos & \\
+			\hline
+			Conclusiones y reflexiones & 15 puntos & \\
+			\hline
+			\textbf{TOTAL} & \textbf{100 puntos} & \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	% ============================================================================
+	% SECCIÓN 11: RECURSOS COMPLEMENTARIOS
+	% ============================================================================
+	
+	\section{RECURSOS COMPLEMENTARIOS}
+	
+	\subsection{Enlaces y Simuladores:}
+	\begin{itemize}
+		\item Simulador principal: [URL específico]
+		\item [Recurso complementario 1]
+		\item [Recurso complementario 2]
+		\item [Recurso complementario 3]
+	\end{itemize}
+	
+	\subsection{Lecturas Recomendadas:}
+	\begin{itemize}
+		\item [Referencia bibliográfica 1]
+		\item [Referencia bibliográfica 2]
+		\item [Referencia bibliográfica 3]
+	\end{itemize}
+	
+	\subsection{Videos Educativos:}
+	\begin{itemize}
+		\item [Video recomendado 1 con duración]
+		\item [Video recomendado 2 con duración]
+		\item [Video recomendado 3 con duración]
+	\end{itemize}
+	
+	% ============================================================================
+	% SECCIÓN 12: CONSTANTES Y FÓRMULAS DE REFERENCIA
+	% ============================================================================
+	
+	\section{CONSTANTES Y FÓRMULAS DE REFERENCIA}
+	
+	\begin{notabox}
+		\textbf{Constantes Físicas Fundamentales:}
+		\begin{multicols}{2}
+			\begin{itemize}[leftmargin=1cm]
+				\item Constante de Planck: $h = 6.626 \times 10^{-34}$ J·s
+				\item Velocidad de la luz: $c = 3.00 \times 10^{8}$ m/s
+				\item Carga del electrón: $e = 1.602 \times 10^{-19}$ C
+				\item Masa del electrón: $m_e = 9.109 \times 10^{-31}$ kg
+				\item [Constante específica de la práctica]
+			\end{itemize}
+			
+			\columnbreak
+			
+			\begin{itemize}[leftmargin=1cm]
+				\item Constante de Boltzmann: $k_B = 1.381 \times 10^{-23}$ J/K
+				\item [Conversión útil específica]
+				\item [Constante específica 2]
+				\item [Constante específica 3]
+			\end{itemize}
+		\end{multicols}
+	\end{notabox}
+	
+	% ============================================================================
+	% PIE DE PÁGINA
+	% ============================================================================
+	
+	\vfill
+	
+	\begin{center}
+		\hrule
+		\vspace{0.3cm}
+		\textcolor{uteqgray}{\textit{Universidad Tecnológica de Querétaro | Manual de Prácticas de Laboratorio}}\\
+		\textcolor{uteqgray}{\textit{Física Moderna | Cuatrimestre Mayo-Agosto 2025}}
+	\end{center}
+	
+\end{document}
+
+% ============================================================================
+% INSTRUCCIONES DE USO DE LA PLANTILLA
+% ============================================================================
+
+% PARA USAR ESTA PLANTILLA:
+% 
+% 1. Copiar este archivo y renombrarlo según la práctica específica
+% 
+% 2. Definir las variables al inicio del documento:
+%    \renewcommand{\practicenumber}{01}
+%    \renewcommand{\practicetitle}{RADIACIÓN DE CUERPO NEGRO}
+%    \renewcommand{\practiceunit}{Unidad I: Fundamentos de Teoría Cuántica}
+%    \renewcommand{\practicesubtopic}{Cuantización de la energía}
+%    \renewcommand{\practiceduration}{45 minutos}
+%    \renewcommand{\practicesimulator}{PhET Blackbody Spectrum}
+%
+% 3. Completar cada sección con el contenido específico de la práctica
+%
+% 4. Ajustar el número de partes según sea necesario
+%
+% 5. Personalizar las tablas de datos según los parámetros específicos
+%
+% 6. Adaptar las preguntas de análisis al tema específico
+%
+% 7. Incluir las imágenes necesarias (logo_uteq.png, capturas del simulador, etc.)
+%
+% 8. Revisar y ajustar los recursos complementarios específicos
+%
+% Esta plantilla garantiza:
+% - Uniformidad visual en todas las prácticas
+% - Estructura pedagógica consistente
+% - Facilidad de uso y adaptación
+% - Profesionalismo en la presentación
+% - Cumplimiento de estándares educativos

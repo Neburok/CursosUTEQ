@@ -1,0 +1,508 @@
+\documentclass[12pt,a4paper]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{multicol}
+
+% Configuración de página
+\geometry{margin=2.5cm}
+
+% Configuración de colores institucionales
+\definecolor{uteqblue}{RGB}{0,51,102}
+\definecolor{uteqgray}{RGB}{128,128,128}
+\definecolor{uteqgold}{RGB}{255,204,0}
+
+% Configuración de headers y footers
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Para páginas normales
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[LO]{\rightmark}
+\fancyhead[RE]{\leftmark}
+\fancyfoot[C]{\textcolor{uteqgray}{\textit{Manual de Prácticas de Laboratorio - Física Moderna}}}
+
+% Para páginas de capítulo
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\fancyfoot[C]{\textcolor{uteqgray}{\textit{Manual de Prácticas de Laboratorio - Física Moderna}}}
+	\renewcommand{\headrulewidth}{0pt}
+}
+
+% Configuración de títulos de capítulo
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries\color{uteqblue}}
+{\chaptertitlename\ \thechapter}
+{20pt}
+{\Huge}
+
+% Configuración de cajas
+\newtcolorbox{objetivobox}{
+	colback=blue!5!white,
+	colframe=uteqblue,
+	title=Objetivos del Manual,
+	fonttitle=\bfseries
+}
+
+\newtcolorbox{competenciabox}{
+	colback=green!5!white,
+	colframe=green!50!black,
+	title=Competencias a Desarrollar,
+	fonttitle=\bfseries
+}
+
+\newtcolorbox{notabox}{
+	colback=orange!5!white,
+	colframe=orange!50!black,
+	title=Nota Importante,
+	fonttitle=\bfseries
+}
+
+% Configuración de hyperlinks
+\hypersetup{
+	colorlinks=true,
+	linkcolor=uteqblue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	pdftitle={Manual de Prácticas - Física Moderna},
+	pdfauthor={Universidad Tecnológica de Querétaro},
+	pdfsubject={Física Moderna},
+	pdfkeywords={física, cuántica, nanotecnología, prácticas},
+}
+
+\begin{document}
+	
+	% PORTADA
+	\begin{titlepage}
+		\begin{center}
+			
+			% Logo institucional superior
+			\includegraphics[width=4cm]{../../Imagenes/Logo_uteq}\\[1cm]
+			
+			% Información institucional
+			{\large \textcolor{uteqblue}{\textbf{UNIVERSIDAD TECNOLÓGICA DE QUERÉTARO}}}\\[0.3cm]
+		%	{\normalsize \textcolor{uteqgray}{División Industrial}}\\[0.2cm]
+			{\normalsize \textcolor{uteqgray}{Ingeniería en Nanotecnología}}\\[2cm]
+			
+			% Título principal
+			{\Huge \textcolor{uteqblue}{\textbf{MANUAL DE PRÁCTICAS}}}\\[0.5cm]
+			{\Huge \textcolor{uteqblue}{\textbf{DE LABORATORIO}}}\\[1cm]
+			
+			{\LARGE \textcolor{uteqgray}{\textbf{FÍSICA MODERNA}}}\\[0.3cm]
+			{\large \textcolor{uteqgray}{Fundamentos de Teoría Cuántica y Aplicaciones en Nanotecnología}}\\[2cm]
+			
+			% Información del curso
+			\begin{tcolorbox}[colback=uteqblue!10!white,colframe=uteqblue,width=12cm]
+				\begin{center}
+					\textbf{Información del Curso}\\[0.3cm]
+					\begin{tabular}{ll}
+						\textbf{Clave:} & FIS-902 \\
+						\textbf{Créditos:} & 5 \\
+						\textbf{Horas teóricas:} & 24 \\
+						\textbf{Horas prácticas:} & 36 \\
+						\textbf{Horas totales:} & 60 \\
+						\textbf{Cuatrimestre:} & Noveno \\
+						\textbf{Modalidad:} & Presencial asistida por tecnología \\
+					\end{tabular}
+				\end{center}
+			\end{tcolorbox}
+			
+			\vfill
+			
+			% Información adicional
+			{\large \textcolor{uteqgray}{\textbf{Cuatrimestre Mayo - Agosto 2025}}}\\[0.5cm]
+			{\normalsize \textcolor{uteqgray}{Elaborado conforme a los lineamientos de la Nueva Escuela Mexicana}}\\
+			{\normalsize \textcolor{uteqgray}{y las recomendaciones de la UNESCO sobre educación técnica}}\\[1cm]
+			
+			% Logo institucional inferior
+	%		\includegraphics[width=2cm]{logo_sep.png}
+			\hspace{2cm}
+			\includegraphics[width=2cm]{../../Imagenes/Logo_uteq}
+			
+		\end{center}
+	\end{titlepage}
+	
+	% Página de créditos
+	\thispagestyle{empty}
+	\vspace*{2cm}
+	
+	\begin{center}
+		\textbf{\Large CRÉDITOS Y RECONOCIMIENTOS}
+	\end{center}
+	
+	\vspace{1cm}
+	
+	\textbf{Elaboración y Diseño Instruccional:}
+	\begin{itemize}[leftmargin=2cm]
+		\item Dr. Rubén Velázquez Hernández - Coordinador Académico de Física Moderna
+		\item  [Nombre del Colaborador] - 
+		\item Ing. [Nombre del Colaborador] -
+	\end{itemize}
+	
+	\textbf{Revisión Técnica y Pedagógica:}
+	\begin{itemize}[leftmargin=2cm]
+		\item Academia de Física Moderna - UTEQ
+		\item Comité Académico de Ingeniería en Nanotecnología
+		\item Dirección Académica - UTEQ
+	\end{itemize}
+	
+	\textbf{Apoyo Técnico:}
+	\begin{itemize}[leftmargin=2cm]
+		\item Laboratorio de Física - UTEQ
+		\item Centro de Recursos Digitales - UTEQ
+		\item Departamento de Tecnologías de la Información
+	\end{itemize}
+	
+	\vspace{1cm}
+	
+	\textbf{Agradecimientos Especiales:}
+	\begin{itemize}[leftmargin=2cm]
+		\item Universidad de Colorado Boulder - Proyecto PhET Interactive Simulations
+		\item Comunidad académica internacional de física cuántica educativa
+		\item Estudiantes de la carrera de Ingeniería en Nanotecnología (generaciones 2022-2024) por sus valiosas retroalimentaciones
+	\end{itemize}
+	
+	\vspace{1cm}
+	
+	\begin{center}
+		\textbf{Primera Edición: Mayo 2025}\\
+		\textbf{Universidad Tecnológica de Querétaro}\\
+	AV. Pie de la Cuesta 2501. Col. Unidad Nacional, Querétaro, Querétaro, México  \\
+		www.uteq.edu.mx
+	\end{center}
+	
+	\vspace{1cm}
+	
+	\begin{tcolorbox}[colback=gray!10!white,colframe=gray]
+		\textbf{Derechos Reservados:} Este material ha sido desarrollado con fines educativos para la Universidad Tecnológica de Querétaro. Se permite la reproducción parcial para fines académicos, citando la fuente. La reproducción total requiere autorización expresa de la institución.
+	\end{tcolorbox}
+	
+	\newpage
+	
+	% Tabla de contenidos
+	\tableofcontents
+	
+	% CAPÍTULO 1: INTRODUCCIÓN GENERAL
+	\chapter{INTRODUCCIÓN GENERAL AL MANUAL}
+	
+	\section{Presentación}
+	
+	El presente Manual de Prácticas de Laboratorio para la asignatura de Física Moderna ha sido diseñado específicamente para estudiantes de noveno cuatrimestre de la carrera de Ingeniería en Nanotecnología. Este manual constituye una herramienta pedagógica integral que complementa la formación teórica con experiencias prácticas virtuales y experimentales, facilitando la comprensión de los conceptos fundamentales de la física cuántica y su aplicación en el campo de la nanotecnología.
+	
+	La física moderna, particularmente la mecánica cuántica, representa uno de los pilares fundamentales para la comprensión de los fenómenos que ocurren a escalas nanométricas. Los principios cuánticos no solo explican el comportamiento de la materia a nivel atómico y subatómico, sino que también constituyen la base teórica para el desarrollo de tecnologías emergentes en campos como la electrónica cuántica, la computación cuántica, los materiales nanoestructurados y los dispositivos optoelectrónicos.
+	
+	\section{Marco Pedagógico y Filosófico}
+	
+	\subsection{Alineación con la Nueva Escuela Mexicana}
+	
+	Este manual se ha desarrollado siguiendo los principios de la Nueva Escuela Mexicana, enfatizando:
+	
+	\begin{itemize}
+		\item \textbf{Aprendizaje situado:} Las prácticas están contextualizadas en problemas reales de la nanotecnología y la industria mexicana
+		\item \textbf{Pensamiento crítico:} Se promueve la reflexión sobre las implicaciones éticas y sociales de las tecnologías cuánticas
+		\item \textbf{Trabajo colaborativo:} Todas las actividades están diseñadas para el trabajo en equipo y la construcción colectiva del conocimiento
+		\item \textbf{Interculturalidad:} Se reconocen las contribuciones de científicos de diversas culturas al desarrollo de la física cuántica
+		\item \textbf{Inclusión:} Los materiales están diseñados para ser accesibles a estudiantes con diferentes estilos de aprendizaje y contextos socioeconómicos
+	\end{itemize}
+	
+	\subsection{Enfoque por Competencias}
+	
+	El manual adopta un enfoque por competencias que integra:
+	
+	\begin{competenciabox}
+		\textbf{Competencias Disciplinares:}
+		\begin{itemize}
+			\item Aplicación de principios fundamentales de la física cuántica
+			\item Análisis e interpretación de fenómenos cuánticos
+			\item Resolución de problemas complejos mediante modelos físicos
+			\item Uso de herramientas matemáticas y computacionales especializadas
+		\end{itemize}
+		
+		\textbf{Competencias Profesionales:}
+		\begin{itemize}
+			\item Caracterización de materiales nanoestructurados
+			\item Diseño de procesos basados en principios cuánticos
+			\item Evaluación de propiedades físicas de nanomateriales
+			\item Innovación tecnológica en nanotecnología
+		\end{itemize}
+		
+		\textbf{Competencias Transversales:}
+		\begin{itemize}
+			\item Pensamiento crítico y analítico
+			\item Comunicación científica efectiva
+			\item Trabajo colaborativo y liderazgo
+			\item Aprendizaje autónomo y continuo
+			\item Uso ético de la tecnología
+		\end{itemize}
+	\end{competenciabox}
+	
+	\section{Objetivos del Manual}
+	
+	\begin{objetivobox}
+		\textbf{Objetivo General:}
+		Proporcionar a los estudiantes de Ingeniería en Nanotecnología experiencias prácticas virtuales y experimentales que faciliten la comprensión profunda de los principios fundamentales de la física moderna y su aplicación en el desarrollo de tecnologías nanométricas.
+		
+		\textbf{Objetivos Específicos:}
+		\begin{enumerate}
+			\item Complementar la formación teórica con actividades prácticas que evidencien los principios cuánticos fundamentales
+			\item Desarrollar habilidades para la caracterización virtual de materiales mediante simulaciones computacionales
+			\item Fomentar el pensamiento crítico a través del análisis de datos experimentales y la interpretación de resultados
+			\item Promover la comprensión de las aplicaciones tecnológicas de la física cuántica en nanotecnología
+			\item Facilitar el desarrollo de competencias investigativas y de innovación tecnológica
+			\item Integrar el uso de tecnologías educativas modernas en el proceso de enseñanza-aprendizaje
+			\item Preparar a los estudiantes para enfrentar desafíos profesionales en el campo de la nanotecnología
+		\end{enumerate}
+	\end{objetivobox}
+	
+	\section{Metodología y Enfoque Pedagógico}
+	
+	\subsection{Aprendizaje Activo y Construccionismo}
+	
+	El manual está fundamentado en principios de aprendizaje activo, donde los estudiantes son protagonistas de su propio proceso de aprendizaje. Las actividades están diseñadas para:
+	
+	\begin{itemize}
+		\item Promover la exploración activa de fenómenos físicos
+		\item Facilitar la construcción del conocimiento a través de la experiencia
+		\item Desarrollar habilidades de investigación y experimentación
+		\item Fomentar la reflexión metacognitiva sobre el proceso de aprendizaje
+	\end{itemize}
+	
+	\subsection{Integración de Tecnologías Educativas}
+	
+	Se hace uso intensivo de simulaciones interactivas, principalmente del proyecto PhET de la Universidad de Colorado Boulder, que permiten:
+	
+	\begin{itemize}
+		\item Visualización de conceptos abstractos de la física cuántica
+		\item Experimentación virtual con parámetros imposibles de manipular en laboratorios convencionales
+		\item Exploración de fenómenos a escalas temporales y espaciales extremas
+		\item Desarrollo de intuición física sobre comportamientos cuánticos
+	\end{itemize}
+	
+	\subsection{Evaluación Formativa Continua}
+	
+	Cada práctica incluye instrumentos de evaluación formativa que permiten:
+	
+	\begin{itemize}
+		\item Monitorear el progreso del aprendizaje en tiempo real
+		\item Identificar y corregir concepciones erróneas
+		\item Adaptar la enseñanza a las necesidades individuales
+		\item Promover la autoevaluación y la metacognición
+	\end{itemize}
+	
+	\section{Estructura del Manual}
+	
+	\subsection{Organización por Unidades Temáticas}
+	
+	El manual está estructurado en cinco unidades temáticas que siguen una secuencia lógica de complejidad creciente:
+	
+	\textbf{Unidad I: Fundamentos de Teoría Cuántica}
+	\begin{itemize}
+		\item Práctica 1: Radiación de Cuerpo Negro y Ley de Planck
+		\item Práctica 2: Efecto Fotoeléctrico
+		\item Práctica 3: Espectros Atómicos y Modelo de Bohr
+		\item Práctica 4: Análisis Comparativo de Fenómenos Cuánticos
+	\end{itemize}
+	
+	\textbf{Unidad II: Dualidad Onda-Partícula}
+	\begin{itemize}
+		\item Práctica 5: Ondas de Materia de De Broglie
+		\item Práctica 6: Principio de Incertidumbre de Heisenberg
+		\item Práctica 7: Dualidad Onda-Partícula Integrada
+	\end{itemize}
+	
+	\textbf{Unidad III: Ecuación de Schrödinger}
+	\begin{itemize}
+		\item Práctica 8: Función de Onda y Densidad de Probabilidad
+		\item Práctica 9: Partícula en una Caja (Pozo Infinito)
+		\item Práctica 10: Efecto Túnel Cuántico
+		\item Práctica 11: Oscilador Armónico Cuántico
+	\end{itemize}
+	
+	\textbf{Unidad IV: Átomos y Estructura}
+	\begin{itemize}
+		\item Práctica 12: El Átomo de Hidrógeno
+		\item Práctica 13: Momento Angular y Spin
+		\item Práctica 14: Átomos Multielectrónicos
+	\end{itemize}
+	
+	\textbf{Unidad V: Introducción al Estado Sólido}
+	\begin{itemize}
+		\item Práctica 15: Cristales y Redes Periódicas
+		\item Práctica 16: Teoría de Bandas
+		\item Práctica 17: Conductores, Semiconductores y Aislantes
+	\end{itemize}
+	
+	\textbf{Prácticas Integradoras}
+	\begin{itemize}
+		\item Práctica 18: Caracterización Cuántica de Nanomateriales
+		\item Práctica 19: Aplicaciones Tecnológicas de la Física Cuántica
+		\item Práctica 20: Temas Avanzados y Perspectivas Futuras
+	\end{itemize}
+	
+	\subsection{Elementos Comunes de Cada Práctica}
+	
+	Cada práctica del manual incluye los siguientes elementos estandarizados:
+	
+	\begin{enumerate}
+		\item \textbf{Datos generales:} Duración, modalidad, materiales requeridos
+		\item \textbf{Objetivos de aprendizaje:} Específicos y medibles
+		\item \textbf{Marco teórico:} Conceptos fundamentales necesarios
+		\item \textbf{Procedimiento:} Instrucciones detalladas paso a paso
+		\item \textbf{Actividades de análisis:} Preguntas y problemas de aplicación
+		\item \textbf{Evaluación formativa:} Instrumentos de autoevaluación
+		\item \textbf{Conclusiones:} Síntesis y reflexiones finales
+		\item \textbf{Recursos complementarios:} Materiales adicionales de estudio
+	\end{enumerate}
+	
+	\section{Recomendaciones de Uso}
+	
+	\subsection{Para los Estudiantes}
+	
+	\begin{notabox}
+		\textbf{Antes de cada práctica:}
+		\begin{itemize}
+			\item Revisar el marco teórico correspondiente
+			\item Completar las actividades preparatorias
+			\item Verificar el funcionamiento de los simuladores
+			\item Formar equipos de trabajo colaborativo
+		\end{itemize}
+		
+		\textbf{Durante la práctica:}
+		\begin{itemize}
+			\item Seguir cuidadosamente las instrucciones
+			\item Registrar sistemáticamente todas las observaciones
+			\item Discutir los resultados con los compañeros de equipo
+			\item Consultar dudas con el instructor
+		\end{itemize}
+		
+		\textbf{Después de la práctica:}
+		\begin{itemize}
+			\item Completar el análisis de datos
+			\item Elaborar las conclusiones correspondientes
+			\item Realizar la autoevaluación
+			\item Estudiar los recursos complementarios
+		\end{itemize}
+	\end{notabox}
+	
+	\subsection{Para los Docentes}
+	
+	\textbf{Preparación previa:}
+	\begin{itemize}
+		\item Verificar el funcionamiento de todos los simuladores
+		\item Preparar material de apoyo adicional según las necesidades del grupo
+		\item Revisar las rúbricas de evaluación
+		\item Anticipar posibles dificultades conceptuales
+	\end{itemize}
+	
+	\textbf{Durante la sesión:}
+	\begin{itemize}
+		\item Facilitar el trabajo colaborativo
+		\item Proporcionar retroalimentación continua
+		\item Identificar y corregir concepciones erróneas
+		\item Promover la reflexión metacognitiva
+	\end{itemize}
+	
+	\textbf{Seguimiento posterior:}
+	\begin{itemize}
+		\item Analizar los resultados de las evaluaciones formativas
+		\item Adaptar las siguientes sesiones según las necesidades identificadas
+		\item Proporcionar retroalimentación individual cuando sea necesario
+		\item Documentar las mejores prácticas para futuras implementaciones
+	\end{itemize}
+	
+	\section{Recursos Tecnológicos y Materiales}
+	
+	\subsection{Plataformas y Simuladores}
+	
+	\textbf{Simuladores PhET Interactive Simulations:}
+	\begin{itemize}
+		\item Radiación de Cuerpo Negro
+		\item Efecto Fotoeléctrico
+		\item Modelos del Átomo de Hidrógeno
+		\item Interferencia Cuántica de Ondas
+		\item Estados Ligados Cuánticos
+		\item Efecto Túnel Cuántico
+		\item Estructura de Bandas
+		\item Conductividad
+	\end{itemize}
+	
+	\textbf{Herramientas Computacionales:}
+	\begin{itemize}
+		\item Calculadoras científicas en línea
+		\item Software de graficación (Desmos, GeoGebra)
+		\item Plataformas de análisis de datos
+		\item Aplicaciones de realidad aumentada (cuando estén disponibles)
+	\end{itemize}
+	
+	\subsection{Requisitos Técnicos Mínimos}
+	
+	\begin{itemize}
+		\item Computadora o tablet con navegador web actualizado
+		\item Conexión a internet estable
+		\item Adobe Flash Player o navegadores compatibles con HTML5
+		\item Resolución mínima de pantalla: 1024x768 píxeles
+		\item Audio funcional para contenidos multimedia
+	\end{itemize}
+	
+	\section{Evaluación y Acreditación}
+	
+	\subsection{Sistema de Evaluación}
+	
+	El manual implementa un sistema de evaluación integral que considera:
+	
+	\begin{itemize}
+		\item \textbf{Evaluación diagnóstica:} Para identificar conocimientos previos
+		\item \textbf{Evaluación formativa:} Continua durante cada práctica
+		\item \textbf{Evaluación sumativa:} Al final de cada unidad temática
+		\item \textbf{Autoevaluación:} Para desarrollar metacognición
+		\item \textbf{Coevaluación:} Para fomentar el aprendizaje colaborativo
+	\end{itemize}
+	
+	\subsection{Criterios de Acreditación}
+	
+	Para acreditar satisfactoriamente el componente práctico del curso, los estudiantes deben:
+	
+	\begin{itemize}
+		\item Completar al menos el 80\% de las prácticas programadas
+		\item Obtener una calificación mínima de 70\% en las evaluaciones formativas
+		\item Demostrar comprensión conceptual en las actividades de análisis
+		\item Participar activamente en las actividades colaborativas
+		\item Entregar todos los reportes de práctica en tiempo y forma
+	\end{itemize}
+	
+	\section{Compromiso con la Mejora Continua}
+	
+	Este manual representa un documento vivo que se actualizará periódicamente basándose en:
+	
+	\begin{itemize}
+		\item Retroalimentación de estudiantes y docentes
+		\item Avances en tecnologías educativas
+		\item Desarrollo de nuevos simuladores y herramientas
+		\item Cambios en el currículo y los planes de estudio
+		\item Investigación educativa en enseñanza de la física
+	\end{itemize}
+	
+	Se alienta a toda la comunidad académica a proporcionar sugerencias para el mejoramiento continuo de este recurso educativo.
+	
+	\vfill
+	
+	\begin{center}
+		\textcolor{uteqgray}{\textit{``La física cuántica no es solo una teoría abstracta, sino la base fundamental para comprender y manipular la materia a nivel nanométrico, abriendo posibilidades infinitas para la innovación tecnológica.''}}
+	\end{center}
+	
+\end{document}

@@ -1,0 +1,414 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+
+% Configuración de página
+\geometry{margin=2.5cm}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Física Moderna - Ingeniería en Nanotecnología}
+\fancyhead[R]{Universidad Tecnológica de Querétaro}
+\fancyfoot[C]{\thepage}
+
+% Configuración de colores
+\definecolor{uteqblue}{RGB}{0,51,102}
+\definecolor{uteqgray}{RGB}{128,128,128}
+
+% Configuración de cajas de texto
+\newtcolorbox{objetivobox}{
+	colback=blue!5!white,
+	colframe=uteqblue,
+	title=Objetivos,
+	fonttitle=\bfseries
+}
+
+\newtcolorbox{instruccionbox}{
+	colback=gray!5!white,
+	colframe=uteqgray,
+	title=Instrucciones,
+	fonttitle=\bfseries
+}
+
+\newtcolorbox{preguntabox}{
+	colback=orange!5!white,
+	colframe=orange!50!black,
+	title=Preguntas de Análisis,
+	fonttitle=\bfseries
+}
+
+\newtcolorbox{reflexionbox}{
+	colback=green!5!white,
+	colframe=green!50!black,
+	title=Reflexión,
+	fonttitle=\bfseries
+}
+
+\begin{document}
+	
+	% Título principal
+	\begin{center}
+		{\Huge \textbf{ACTIVIDAD PRÁCTICA}}\\[0.3cm]
+		{\LARGE \textbf{RADIACIÓN DE CUERPO NEGRO}}\\[0.2cm]
+		{\large Física Moderna | Ingeniería en Nanotecnología}\\[0.5cm]
+		\includegraphics[width=5cm]{../../Imagenes/Logo_uteq}
+	\end{center}
+	
+	\vspace{0.5cm}
+	
+	% Datos generales
+	\section*{DATOS GENERALES}
+	\begin{itemize}
+		\item \textbf{Duración:} 45 minutos
+		\item \textbf{Modalidad:} Trabajo colaborativo en equipos de 3-4 estudiantes
+		\item \textbf{Materiales:} Computadora/tablet con acceso a internet, calculadora, hoja de trabajo impresa
+	\end{itemize}
+	
+	% Objetivos
+	\begin{objetivobox}
+		Al finalizar esta actividad, el estudiante será capaz de:
+		\begin{itemize}
+			\item Analizar experimentalmente la distribución espectral de la radiación de cuerpo negro a diferentes temperaturas
+			\item Verificar las leyes de Wien y Stefan-Boltzmann utilizando datos de simulación
+			\item Determinar la constante de Planck mediante análisis gráfico
+			\item Comparar las predicciones de la física clásica con el modelo cuántico de Planck
+		\end{itemize}
+	\end{objetivobox}
+	
+	\section*{INTRODUCCIÓN}
+	
+	La simulación PhET ``Radiación de Cuerpo Negro'' permite explorar el comportamiento del espectro de emisión térmica a diferentes temperaturas. En esta actividad, utilizaremos este simulador para verificar las leyes fundamentales de la radiación térmica y analizar cómo la cuantización de la energía de Planck resolvió la ``catástrofe ultravioleta'' que predecía la física clásica.
+	
+	% Instrucciones generales
+	\begin{instruccionbox}
+		\begin{enumerate}
+			\item Formen equipos de 3-4 integrantes
+			\item Accedan al simulador PhET: \url{https://phet.colorado.edu/es/simulation/blackbody-spectrum}
+			\item Completen cada una de las secciones siguientes, registrando sus observaciones y resultados
+			\item Discutan las preguntas de análisis en equipo
+			\item Preparen una breve presentación (2-3 minutos) con sus conclusiones principales
+		\end{enumerate}
+	\end{instruccionbox}
+	
+	\newpage
+	
+	\section{PARTE 1: VERIFICACIÓN DE LA LEY DE WIEN}
+	
+	\subsection{Procedimiento:}
+	\begin{enumerate}
+		\item En el simulador, muestra tanto el ``Espectro de cuerpo negro'' como la ``Curva de Rayleigh-Jeans''
+		\item Para cada temperatura de la tabla, determina la longitud de onda ($\lambda$) correspondiente al máximo de emisión
+		\item Registra también la intensidad máxima (valor pico) para cada temperatura
+	\end{enumerate}
+	
+	\subsection{Tabla de datos:}
+	
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\textbf{Temperatura (K)} & \textbf{$\lambda$ máximo (nm)} & \textbf{Producto $\lambda \cdot T$ (nm$\cdot$K)} & \textbf{Intensidad máxima (W/m²/nm)} \\
+			\hline
+			3000 & & & \\
+			\hline
+			4000 & & & \\
+			\hline
+			5000 & & & \\
+			\hline
+			6000 & & & \\
+			\hline
+			7000 & & & \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\subsection{Análisis:}
+	\begin{enumerate}
+		\item Calculen el producto $\lambda \cdot T$ para cada temperatura
+		\item ¿Es este producto aproximadamente constante? ¿Cuál es su valor promedio?
+		\item Comparen su valor promedio con la constante de Wien teórica ($b = 2.898 \times 10^{-3}$ m$\cdot$K)
+		\item Calculen el porcentaje de error
+	\end{enumerate}
+	
+	\begin{preguntabox}
+		\textbf{Preguntas:}
+		\begin{enumerate}
+			\item ¿Cómo cambia la posición del máximo del espectro al aumentar la temperatura?
+			\item ¿Qué implicaciones tiene esto para el color aparente de objetos a diferentes temperaturas?
+			\item ¿Podría utilizar esta ley para estimar la temperatura de una estrella basándose en su color? Explique.
+		\end{enumerate}
+	\end{preguntabox}
+	
+	\section{PARTE 2: VERIFICACIÓN DE LA LEY DE STEFAN-BOLTZMANN}
+	
+	\subsection{Procedimiento:}
+	\begin{enumerate}
+		\item Mantengan habilitada la opción ``Mostrar intensidad''
+		\item Para cada temperatura de la tabla, anoten la intensidad total (W/m²) indicada en el simulador
+		\item Calculen el cociente entre la intensidad total y $T^4$
+	\end{enumerate}
+	
+	\subsection{Tabla de datos:}
+	
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\textbf{Temperatura (K)} & \textbf{Intensidad total (W/m²)} & \textbf{Intensidad/$T^4$ (W/m²/K$^4$)} \\
+			\hline
+			3000 & & \\
+			\hline
+			4000 & & \\
+			\hline
+			5000 & & \\
+			\hline
+			6000 & & \\
+			\hline
+			7000 & & \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\subsection{Análisis:}
+	\begin{enumerate}
+		\item ¿Es el cociente Intensidad/$T^4$ aproximadamente constante?
+		\item Calculen el valor promedio de este cociente
+		\item Comparen su valor con la constante de Stefan-Boltzmann teórica ($\sigma = 5.67 \times 10^{-8}$ W/m²K$^4$)
+		\item Calculen el porcentaje de error
+	\end{enumerate}
+	
+	\begin{preguntabox}
+		\textbf{Preguntas:}
+		\begin{enumerate}
+			\item Si la temperatura de un objeto se duplica, ¿en qué factor aumenta la intensidad total radiada?
+			\item ¿Por qué es tan importante la ley de Stefan-Boltzmann para aplicaciones como la termografía?
+			\item Un horno industrial opera a 1500 K. Si se incrementa su temperatura a 1800 K, ¿en qué porcentaje aumentará la energía radiada?
+		\end{enumerate}
+	\end{preguntabox}
+	
+	\newpage
+	
+	\section{PARTE 3: LA CATÁSTROFE ULTRAVIOLETA}
+	
+	\subsection{Procedimiento:}
+	\begin{enumerate}
+		\item Configurar la temperatura en 5000 K
+		\item Habilitar tanto la curva de cuerpo negro (Planck) como la curva de Rayleigh-Jeans
+		\item Observar ambas curvas, particularmente en la región de longitudes de onda cortas
+		\item Tomar varios puntos donde ambas curvas difieren significativamente
+	\end{enumerate}
+	
+	\subsection{Tabla de datos:}
+	
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\textbf{Longitud de onda (nm)} & \textbf{Intensidad Planck (W/m²/nm)} & \textbf{Intensidad Rayleigh-Jeans (W/m²/nm)} & \textbf{Ratio (R-J/Planck)} \\
+			\hline
+			200 & & & \\
+			\hline
+			400 & & & \\
+			\hline
+			600 & & & \\
+			\hline
+			1000 & & & \\
+			\hline
+			2000 & & & \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\subsection{Análisis:}
+	\begin{enumerate}
+		\item ¿En qué región del espectro las diferencias entre las predicciones clásica y cuántica son más significativas?
+		\item ¿Qué sucede con la curva de Rayleigh-Jeans a longitudes de onda muy cortas?
+		\item En la región de longitudes de onda largas, ¿convergen ambas curvas? ¿Por qué?
+	\end{enumerate}
+	
+	\begin{preguntabox}
+		\textbf{Preguntas:}
+		\begin{enumerate}
+			\item Explique, en términos de la hipótesis cuántica de Planck, por qué la intensidad real disminuye a altas frecuencias.
+			\item ¿Por qué se denomina ``catástrofe ultravioleta'' al problema de la predicción clásica?
+			\item ¿Qué implicaciones físicas tendría la predicción clásica si fuera correcta?
+		\end{enumerate}
+	\end{preguntabox}
+	
+	\section{PARTE 4: ANÁLISIS COMPARATIVO DE ESPECTROS}
+	
+	\subsection{Procedimiento:}
+	\begin{enumerate}
+		\item Configurar el simulador para mostrar simultáneamente espectros a diferentes temperaturas
+		\item Observar y registrar el espectro para las siguientes fuentes:
+	\end{enumerate}
+	
+	\subsection{Análisis comparativo:}
+	
+	\begin{center}
+		\begin{tabular}{|p{3cm}|c|c|p{3.5cm}|p{2.5cm}|}
+			\hline
+			\textbf{Fuente} & \textbf{Temperatura (K)} & \textbf{$\lambda$ máximo (nm)} & \textbf{Región espectral dominante} & \textbf{Apariencia visual} \\
+			\hline
+			Temperatura ambiente & 300 & & & \\
+			\hline
+			Filamento de tungsteno & 3000 & & & \\
+			\hline
+			Sol & 5800 & & & \\
+			\hline
+			Estrella azul & 12000 & & & \\
+			\hline
+			Radiación cósmica de fondo & 2.7 & & & \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\subsection{Análisis:}
+	\begin{enumerate}
+		\item ¿Qué porcentaje de la radiación a temperatura ambiente es visible para el ojo humano?
+		\item ¿Por qué no podemos ``ver'' el calor emitido por objetos a temperatura ambiente?
+		\item ¿Cómo se relaciona la temperatura de una estrella con su color?
+	\end{enumerate}
+	
+	\begin{preguntabox}
+		\textbf{Preguntas:}
+		\begin{enumerate}
+			\item ¿Por qué la radiación cósmica de fondo tiene su máximo en la región de microondas?
+			\item Un objeto tiene su pico de emisión en aproximadamente 900 nm. ¿De qué color se vería y cuál sería su temperatura aproximada?
+			\item ¿Por qué el filamento de las bombillas incandescentes debe alcanzar temperaturas tan altas para ser eficiente?
+		\end{enumerate}
+	\end{preguntabox}
+	
+	\newpage
+	
+	\section{PARTE 5: APLICACIONES TECNOLÓGICAS Y CIENTÍFICAS}
+	
+	\subsection{Análisis de aplicaciones:}
+	
+	Para cada una de las siguientes aplicaciones, identifiquen qué aspecto de la radiación de cuerpo negro es relevante y cómo se utiliza:
+	
+	\subsubsection{1. Termografía infrarroja:}
+	\begin{itemize}
+		\item Principio físico utilizado: \hrulefill
+		\item Rango de temperaturas típico: \hrulefill
+		\item Ventajas y limitaciones: \hrulefill
+	\end{itemize}
+	
+	\subsubsection{2. Determinación de la temperatura de estrellas:}
+	\begin{itemize}
+		\item Método utilizado: \hrulefill
+		\item Información adicional que se puede obtener: \hrulefill
+		\item Limitaciones del método: \hrulefill
+	\end{itemize}
+	
+	\subsubsection{3. Diseño de hornos industriales y procesos térmicos:}
+	\begin{itemize}
+		\item Consideraciones importantes basadas en la radiación térmica: \hrulefill
+		\item Optimización energética: \hrulefill
+		\item Aplicaciones en nanotecnología: \hrulefill
+	\end{itemize}
+	
+	\subsubsection{4. Radiación cósmica de fondo:}
+	\begin{itemize}
+		\item Significado cosmológico: \hrulefill
+		\item Temperatura actual y su significado: \hrulefill
+		\item ¿Cómo se determinó que era radiación de cuerpo negro?: \hrulefill
+	\end{itemize}
+	
+	\section{PARTE 6: IMPLICACIONES CONCEPTUALES E HISTÓRICAS}
+	
+	\begin{reflexionbox}
+		\textbf{Reflexión:}
+		
+		Discutan en grupo y elaboren una respuesta consensuada para cada una de las siguientes preguntas:
+		
+		\begin{enumerate}
+			\item ¿Por qué la solución al problema del cuerpo negro marcó el inicio de la física cuántica?
+			
+			\vspace{1.5cm}
+			
+			\item ¿Qué tuvo que ``sacrificar'' Planck de la física clásica para resolver el problema de la radiación del cuerpo negro?
+			
+			\vspace{1.5cm}
+			
+			\item ¿Cómo afectó la hipótesis cuántica de Planck a la visión mecanicista del mundo que prevalecía en la física hasta ese momento?
+			
+			\vspace{1.5cm}
+			
+			\item ¿Qué otras teorías o descubrimientos fueron posibles gracias a la introducción del concepto de cuantización de la energía?
+			
+			\vspace{1.5cm}
+		\end{enumerate}
+	\end{reflexionbox}
+	
+	\section*{CONCLUSIONES Y RESULTADOS}
+	
+	Elaboren un resumen de los principales hallazgos y conclusiones de la actividad:
+	
+	\begin{enumerate}
+		\item Valor experimental obtenido para la constante de Wien: \hrulefill
+		\item Valor experimental obtenido para la constante de Stefan-Boltzmann: \hrulefill
+		\item Principal diferencia entre la predicción clásica y la cuántica: \hrulefill
+		\item Aplicación más relevante de la radiación de cuerpo negro en el campo de la nanotecnología: \hrulefill
+		\item Reflexión final sobre la importancia histórica y conceptual del trabajo de Planck: 
+		
+		\vspace{2cm}
+	\end{enumerate}
+	
+	\section*{ENTREGABLES}
+	
+	Al finalizar la actividad, cada equipo debe entregar:
+	\begin{enumerate}
+		\item Esta hoja de trabajo completada con todos los datos y respuestas
+		\item Gráficas elaboradas (pueden ser hechas a mano o en computadora)
+		\item Un breve informe con sus conclusiones (máximo una página)
+	\end{enumerate}
+	
+	\section*{CRITERIOS DE EVALUACIÓN}
+	
+	\begin{center}
+		\begin{tabular}{|l|c|}
+			\hline
+			\textbf{Criterio} & \textbf{Puntuación máxima} \\
+			\hline
+			Recolección precisa de datos & 20 puntos \\
+			\hline
+			Cálculos y análisis correctos & 25 puntos \\
+			\hline
+			Gráficas bien elaboradas & 15 puntos \\
+			\hline
+			Respuestas a preguntas de análisis & 25 puntos \\
+			\hline
+			Conclusiones y reflexiones & 15 puntos \\
+			\hline
+			\textbf{Total} & \textbf{100 puntos} \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\section*{RECURSOS DE APOYO}
+	
+	\begin{itemize}
+		\item Simulador PhET: \url{https://phet.colorado.edu/es/simulation/blackbody-spectrum}
+		\item Constante de Wien: $b = 2.898 \times 10^{-3}$ m$\cdot$K
+		\item Constante de Stefan-Boltzmann: $\sigma = 5.67 \times 10^{-8}$ W/m²K$^4$
+		\item Constante de Planck: $h = 6.626 \times 10^{-34}$ J$\cdot$s
+		\item Constante de Boltzmann: $k = 1.381 \times 10^{-23}$ J/K
+		\item Velocidad de la luz: $c = 3.00 \times 10^{8}$ m/s
+	\end{itemize}
+	
+	\vfill
+	
+	\begin{center}
+		\textcolor{uteqgray}{\textit{Universidad Tecnológica de Querétaro | Física Moderna | Cuatrimestre Mayo-Agosto 2025}}
+	\end{center}
+	
+\end{document}

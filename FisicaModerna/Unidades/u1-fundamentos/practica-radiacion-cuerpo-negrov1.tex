@@ -1,0 +1,930 @@
+% ============================================================================
+% PRÁCTICA 01: RADIACIÓN DE CUERPO NEGRO
+% Manual de Física Moderna - Ingeniería en Nanotecnología
+% Universidad Tecnológica de Querétaro
+% ============================================================================
+
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{tikz}
+
+% ============================================================================
+% CONFIGURACIÓN DE PÁGINA Y ESTILO
+% ============================================================================
+
+% Configuración de márgenes
+\geometry{margin=2.5cm, top=3cm, bottom=3cm}
+
+% Configuración de colores institucionales
+\definecolor{uteqblue}{RGB}{0,51,102}
+\definecolor{uteqgray}{RGB}{128,128,128}
+\definecolor{uteqgold}{RGB}{255,204,0}
+\definecolor{practicegreen}{RGB}{46,125,50}
+\definecolor{practiceorange}{RGB}{255,152,0}
+\definecolor{practicered}{RGB}{211,47,47}
+
+% Definición de variables específicas de la práctica
+\newcommand{\practicenumber}{01}
+\newcommand{\practicetitle}{RADIACIÓN DE CUERPO NEGRO}
+\newcommand{\practiceunit}{Unidad I: Fundamentos de Teoría Cuántica}
+\newcommand{\practicesubtopic}{Cuantización de la energía y Ley de Planck}
+\newcommand{\practiceduration}{45 minutos}
+\newcommand{\practicemodality}{Presencial asistida por tecnología}
+\newcommand{\practicedate}{Cuatrimestre Mayo-Agosto 2025}
+\newcommand{\practicesimulator}{PhET Blackbody Spectrum}
+
+% Configuración de headers y footers
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{uteqgray}{Física Moderna - Ingeniería en Nanotecnología}}
+\fancyhead[R]{\small\textcolor{uteqgray}{Universidad Tecnológica de Querétaro}}
+\fancyfoot[L]{\small\textcolor{uteqgray}{\practicetitle}}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{\small\textcolor{uteqgray}{\practicedate}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% ============================================================================
+% CONFIGURACIÓN DE CAJAS Y ENTORNOS
+% ============================================================================
+
+% Caja para datos generales
+\newtcolorbox{datosgeneralesbox}{
+	colback=uteqblue!10!white,
+	colframe=uteqblue,
+	title=\textbf{DATOS GENERALES DE LA PRÁCTICA},
+	fonttitle=\bfseries\color{white},
+	coltitle=white,
+	colbacktitle=uteqblue,
+	boxrule=1pt,
+	arc=3pt
+}
+
+% Caja para objetivos
+\newtcolorbox{objetivobox}{
+	colback=practicegreen!5!white,
+	colframe=practicegreen,
+	title=\textbf{OBJETIVOS DE APRENDIZAJE},
+	fonttitle=\bfseries\color{white},
+	coltitle=white,
+	colbacktitle=practicegreen,
+	boxrule=1pt,
+	arc=3pt
+}
+
+% Caja para competencias
+\newtcolorbox{competenciabox}{
+	colback=uteqgold!20!white,
+	colframe=uteqgold!80!black,
+	title=\textbf{COMPETENCIAS A DESARROLLAR},
+	fonttitle=\bfseries,
+	boxrule=1pt,
+	arc=3pt
+}
+
+% Caja para materiales y recursos
+\newtcolorbox{materialesbox}{
+	colback=gray!10!white,
+	colframe=uteqgray,
+	title=\textbf{MATERIALES Y RECURSOS},
+	fonttitle=\bfseries\color{white},
+	coltitle=white,
+	colbacktitle=uteqgray,
+	boxrule=1pt,
+	arc=3pt
+}
+
+% Caja para marco teórico
+\newtcolorbox{teoriabox}{
+	colback=blue!5!white,
+	colframe=blue!50!black,
+	title=\textbf{MARCO TEÓRICO},
+	fonttitle=\bfseries,
+	boxrule=1pt,
+	arc=3pt
+}
+
+% Caja para instrucciones
+\newtcolorbox{instruccionbox}{
+	colback=practiceorange!10!white,
+	colframe=practiceorange,
+	title=\textbf{INSTRUCCIONES},
+	fonttitle=\bfseries\color{white},
+	coltitle=white,
+	colbacktitle=practiceorange,
+	boxrule=1pt,
+	arc=3pt
+}
+
+% Caja para preguntas de análisis
+\newtcolorbox{preguntabox}{
+	colback=purple!5!white,
+	colframe=purple!50!black,
+	title=\textbf{PREGUNTAS DE ANÁLISIS},
+	fonttitle=\bfseries,
+	boxrule=1pt,
+	arc=3pt
+}
+
+% Caja para nota importante
+\newtcolorbox{notabox}{
+	colback=practicered!10!white,
+	colframe=practicered,
+	title=\textbf{NOTA IMPORTANTE},
+	fonttitle=\bfseries\color{white},
+	coltitle=white,
+	colbacktitle=practicered,
+	boxrule=1pt,
+	arc=3pt
+}
+
+% Caja para evaluación
+\newtcolorbox{evaluacionbox}{
+	colback=teal!10!white,
+	colframe=teal!70!black,
+	title=\textbf{EVALUACIÓN Y CRITERIOS},
+	fonttitle=\bfseries,
+	boxrule=1pt,
+	arc=3pt
+}
+
+% Caja para conclusiones
+\newtcolorbox{conclusionbox}{
+	colback=green!5!white,
+	colframe=green!60!black,
+	title=\textbf{CONCLUSIONES Y REFLEXIÓN},
+	fonttitle=\bfseries,
+	boxrule=1pt,
+	arc=3pt
+}
+
+% Configuración de hyperlinks
+\hypersetup{
+	colorlinks=true,
+	linkcolor=uteqblue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	pdftitle={Práctica 01: Radiación de Cuerpo Negro},
+	pdfauthor={Universidad Tecnológica de Querétaro},
+}
+
+% ============================================================================
+% INICIO DEL DOCUMENTO
+% ============================================================================
+
+\begin{document}
+	
+	% ============================================================================
+	% ENCABEZADO DE LA PRÁCTICA
+	% ============================================================================
+	
+	\begin{center}
+		% Logo institucional
+		\includegraphics[width=3cm]{../../Imagenes/Logo_uteq}\\[0.3cm]
+		
+		% Título principal
+		{\LARGE \textcolor{uteqblue}{\textbf{PRÁCTICA No. \practicenumber}}}\\[0.2cm]
+		{\Huge \textcolor{uteqblue}{\textbf{\practicetitle}}}\\[0.3cm]
+		{\large \textcolor{uteqgray}{\textbf{Manual de Prácticas de Laboratorio}}}\\[0.2cm]
+		{\normalsize \textcolor{uteqgray}{Física Moderna | Ingeniería en Nanotecnología}}\\[0.5cm]
+	\end{center}
+	
+	% ============================================================================
+	% DATOS GENERALES
+	% ============================================================================
+	
+	\begin{datosgeneralesbox}
+		\begin{multicols}{2}
+			\textbf{Número de Práctica:} \practicenumber\\
+			\textbf{Unidad Temática:} \practiceunit\\
+			\textbf{Tema/Subtema:} \practicesubtopic\\
+			\textbf{Duración:} \practiceduration\\
+			
+			\columnbreak
+			
+			\textbf{Modalidad:} \practicemodality\\
+			\textbf{Simulador Principal:} \practicesimulator\\
+			\textbf{Tipo de Actividad:} Trabajo colaborativo\\
+			\textbf{Tamaño de Equipo:} 3-4 estudiantes\\
+		\end{multicols}
+	\end{datosgeneralesbox}
+	
+	% ============================================================================
+	% SECCIÓN 1: OBJETIVOS DE APRENDIZAJE
+	% ============================================================================
+	
+	\section{OBJETIVOS DE APRENDIZAJE}
+	
+	\begin{objetivobox}
+		\textbf{Al finalizar esta práctica, el estudiante será capaz de:}
+		\begin{enumerate}
+			\item Analizar experimentalmente la distribución espectral de la radiación de cuerpo negro a diferentes temperaturas
+			\item Verificar las leyes de Wien y Stefan-Boltzmann utilizando datos de simulación
+			\item Comparar las predicciones de la física clásica (Rayleigh-Jeans) con el modelo cuántico de Planck
+			\item Interpretar la ``catástrofe ultravioleta'' y comprender cómo la cuantización resolvió esta crisis
+			\item Relacionar los principios de radiación de cuerpo negro con aplicaciones en nanotecnología y astrofísica
+		\end{enumerate}
+	\end{objetivobox}
+	
+	% ============================================================================
+	% SECCIÓN 2: COMPETENCIAS A DESARROLLAR
+	% ============================================================================
+	
+	\section{COMPETENCIAS A DESARROLLAR}
+	
+	\begin{competenciabox}
+		\begin{multicols}{2}
+			\textbf{Competencias Disciplinares:}
+			\begin{itemize}[leftmargin=1cm]
+				\item Aplicación de conceptos de termodinámica estadística
+				\item Análisis de distribuciones espectrales
+				\item Interpretación de fenómenos cuánticos fundamentales
+			\end{itemize}
+			
+			\textbf{Competencias Profesionales:}
+			\begin{itemize}[leftmargin=1cm]
+				\item Caracterización térmica de materiales
+				\item Análisis de propiedades ópticas
+				\item Diseño de procesos térmicos
+			\end{itemize}
+			
+			\columnbreak
+			
+			\textbf{Competencias Transversales:}
+			\begin{itemize}[leftmargin=1cm]
+				\item Pensamiento crítico y analítico
+				\item Trabajo colaborativo efectivo
+				\item Comunicación científica clara
+			\end{itemize}
+			
+			\textbf{Competencias Tecnológicas:}
+			\begin{itemize}[leftmargin=1cm]
+				\item Uso de simuladores científicos
+				\item Análisis de datos experimentales
+				\item Elaboración de gráficas técnicas
+			\end{itemize}
+		\end{multicols}
+	\end{competenciabox}
+	
+	% ============================================================================
+	% SECCIÓN 3: MATERIALES Y RECURSOS
+	% ============================================================================
+	
+	\section{MATERIALES Y RECURSOS}
+	
+	\begin{materialesbox}
+		\begin{multicols}{2}
+			\textbf{Recursos Tecnológicos:}
+			\begin{itemize}[leftmargin=1cm]
+				\item Computadora/tablet con navegador actualizado
+				\item Conexión a internet estable
+				\item Simulador PhET Blackbody Spectrum
+				\item Calculadora científica
+			\end{itemize}
+			
+			\textbf{Materiales de Trabajo:}
+			\begin{itemize}[leftmargin=1cm]
+				\item Hoja de trabajo impresa
+				\item Material para gráficas (papel milimétrico)
+				\item Regla y lápices de colores
+				\item Calculadora científica
+			\end{itemize}
+			
+			\columnbreak
+			
+			\textbf{Recursos Digitales:}
+			\begin{itemize}[leftmargin=1cm]
+				\item \url{https://phet.colorado.edu/es/simulation/blackbody-spectrum}
+				\item Herramientas de graficación online (Desmos)
+				\item Tablas de constantes físicas
+			\end{itemize}
+			
+			\textbf{Documentos de Apoyo:}
+			\begin{itemize}[leftmargin=1cm]
+				\item Manual de usuario del simulador PhET
+				\item Tabla de constantes físicas fundamentales
+				\item Guía de análisis estadístico de datos
+				\item Formulario de leyes de radiación térmica
+			\end{itemize}
+		\end{multicols}
+	\end{materialesbox}
+	
+	% ============================================================================
+	% SECCIÓN 4: MARCO TEÓRICO
+	% ============================================================================
+	
+	\section{MARCO TEÓRICO}
+	
+	\begin{teoriabox}
+		\textbf{Conceptos Fundamentales:}
+		
+		Un \textbf{cuerpo negro} es un objeto idealizado que absorbe toda la radiación electromagnética incidente, independientemente de la frecuencia o ángulo. También es un emisor perfecto de radiación térmica, cuyo espectro depende únicamente de su temperatura.
+		
+		\textbf{Crisis de la Física Clásica:} La teoría clásica (Rayleigh-Jeans) predecía que la intensidad de radiación aumentaría indefinidamente con la frecuencia, llevando a la ``catástrofe ultravioleta'' - una predicción de energía infinita.
+		
+		\textbf{Solución de Planck (1900):} Propuso que la energía de los osciladores está cuantizada en múltiplos enteros de $hf$, donde $h$ es la constante de Planck y $f$ la frecuencia.
+		
+		\textbf{Ecuaciones Principales:}
+		
+		\begin{align}
+			\text{Ley de Planck: } \quad & B_{\lambda}(\lambda, T) = \frac{2hc^{2}}{\lambda^{5}} \frac{1}{e^{hc/(\lambda k_{B}T)}-1} \\
+			\text{Ley de Wien: } \quad & \lambda_{\text{max}} = \frac{b}{T} \quad \text{donde } b = 2.898 \times 10^{-3} \text{ m·K} \\
+			\text{Ley de Stefan-Boltzmann: } \quad & P = \sigma T^4 \quad \text{donde } \sigma = 5.67 \times 10^{-8} \text{ W/m}^2\text{K}^4
+		\end{align}
+		
+		\textbf{Conexión con Nanotecnología:}
+		
+		Los principios de radiación de cuerpo negro son fundamentales para:
+		\begin{itemize}
+			\item Caracterización térmica de nanomateriales
+			\item Diseño de metamateriales con propiedades radiativas específicas
+			\item Desarrollo de sensores térmicos a escala nanométrica
+			\item Optimización de celdas solares y dispositivos fotovoltaicos
+		\end{itemize}
+	\end{teoriabox}
+	
+	% ============================================================================
+	% SECCIÓN 5: INSTRUCCIONES GENERALES
+	% ============================================================================
+	
+	\section{INSTRUCCIONES GENERALES}
+	
+	\begin{instruccionbox}
+		\textbf{Antes de comenzar:}
+		\begin{enumerate}
+			\item Formen equipos de 3-4 integrantes y designen roles (coordinador, analista de datos, graficador, reportero)
+			\item Revisen el marco teórico y asegúrense de comprender los conceptos de cuerpo negro y cuantización
+			\item Verifiquen el acceso al simulador: \url{https://phet.colorado.edu/es/simulation/blackbody-spectrum}
+			\item Preparen material para elaborar gráficas y registrar datos
+			\item Revisen los objetivos de aprendizaje para enfocar su trabajo
+		\end{enumerate}
+		
+		\textbf{Durante la práctica:}
+		\begin{enumerate}
+			\item Sigan cuidadosamente las instrucciones de cada parte, explorando sistemáticamente las variables
+			\item Registren todas las observaciones y mediciones en las tablas proporcionadas
+			\item Discutan los resultados en equipo antes de continuar a la siguiente parte
+			\item Comparen continuamente las curvas de Planck con las de Rayleigh-Jeans
+			\item Consulten dudas con el instructor cuando encuentren resultados inesperados
+		\end{enumerate}
+		
+		\textbf{Al finalizar:}
+		\begin{enumerate}
+			\item Completen todas las secciones de análisis y elaboren las gráficas solicitadas
+			\item Discutan las implicaciones históricas y conceptuales de sus resultados
+			\item Preparen una presentación breve (3 minutos) destacando sus hallazgos principales
+			\item Entreguen la hoja de trabajo completada y el reporte de conclusiones
+		\end{enumerate}
+	\end{instruccionbox}
+	
+	% ============================================================================
+	% SECCIÓN 6: DESARROLLO DE LA PRÁCTICA
+	% ============================================================================
+	
+	\section{DESARROLLO DE LA PRÁCTICA}
+	
+	% ----------------------------------------------------------------------------
+	% PARTE 1: VERIFICACIÓN DE LA LEY DE WIEN
+	% ----------------------------------------------------------------------------
+	
+	\subsection{PARTE 1: VERIFICACIÓN DE LA LEY DE WIEN}
+	
+	\subsubsection{Procedimiento:}
+	\begin{enumerate}
+		\item En el simulador, habiliten tanto el ``Espectro de cuerpo negro'' como la ``Curva de Rayleigh-Jeans''
+		\item Configuren la temperatura inicial en 3000 K y observen la posición del máximo de emisión
+		\item Para cada temperatura de la tabla, determinen con precisión la longitud de onda ($\lambda$) correspondiente al máximo de emisión
+		\item Registren también la intensidad máxima (valor pico) para cada temperatura
+		\item Observen cómo se comporta la curva de Rayleigh-Jeans en comparación con la de Planck
+	\end{enumerate}
+	
+	\subsubsection{Tabla de datos:}
+	
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\textbf{Temperatura (K)} & \textbf{$\lambda$ máximo (nm)} & \textbf{Producto $\lambda \cdot T$ (nm$\cdot$K)} & \textbf{Intensidad máxima (W/m²/nm)} \\
+			\hline
+			3000 & & & \\
+			\hline
+			4000 & & & \\
+			\hline
+			5000 & & & \\
+			\hline
+			6000 & & & \\
+			\hline
+			7000 & & & \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\subsubsection{Análisis de resultados:}
+	\begin{enumerate}
+		\item Calculen el producto $\lambda \cdot T$ para cada temperatura
+		\item Determinen si este producto es aproximadamente constante y calculen su valor promedio
+		\item Comparen su valor promedio con la constante de Wien teórica ($b = 2.898 \times 10^{-3}$ m$\cdot$K)
+		\item Calculen el porcentaje de error y discutan las posibles fuentes de discrepancia
+	\end{enumerate}
+	
+	\begin{preguntabox}
+		\textbf{Preguntas de Análisis - Parte 1:}
+		\begin{enumerate}
+			\item ¿Cómo cambia la posición del máximo del espectro al aumentar la temperatura? ¿Es esto consistente con la ley de Wien?
+			
+			\vspace{1.5cm}
+			
+			\item ¿Qué implicaciones tiene este comportamiento para el color aparente de objetos a diferentes temperaturas? Proporcione ejemplos específicos.
+			
+			\vspace{1.5cm}
+			
+			\item ¿Cómo podría utilizar la ley de Wien para estimar la temperatura de una estrella basándose en su color dominante? Explique el procedimiento.
+			
+			\vspace{1.5cm}
+			
+			\item ¿Por qué los objetos a temperatura ambiente (300 K) no son visibles en la oscuridad, pero sí detectables con cámaras termográficas?
+			
+			\vspace{1.5cm}
+		\end{enumerate}
+	\end{preguntabox}
+	
+	% ----------------------------------------------------------------------------
+	% PARTE 2: VERIFICACIÓN DE LA LEY DE STEFAN-BOLTZMANN
+	% ----------------------------------------------------------------------------
+	
+	\subsection{PARTE 2: VERIFICACIÓN DE LA LEY DE STEFAN-BOLTZMANN}
+	
+	\subsubsection{Procedimiento:}
+	\begin{enumerate}
+		\item Mantengan habilitada la opción ``Mostrar intensidad'' en el simulador
+		\item Para cada temperatura de la tabla, anoten cuidadosamente la intensidad total (W/m²) indicada
+		\item Calculen el cociente entre la intensidad total y $T^4$ para verificar la proporcionalidad
+		\item Observen cómo aumenta la intensidad total al incrementar la temperatura
+	\end{enumerate}
+	
+	\subsubsection{Tabla de datos:}
+	
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\textbf{Temperatura (K)} & \textbf{Intensidad total (W/m²)} & \textbf{Intensidad/$T^4$ (W/m²/K$^4$)} \\
+			\hline
+			3000 & & \\
+			\hline
+			4000 & & \\
+			\hline
+			5000 & & \\
+			\hline
+			6000 & & \\
+			\hline
+			7000 & & \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\begin{preguntabox}
+		\textbf{Preguntas de Análisis - Parte 2:}
+		\begin{enumerate}
+			\item ¿Es el cociente Intensidad/$T^4$ aproximadamente constante? Compare con la constante teórica de Stefan-Boltzmann.
+			
+			\vspace{1.5cm}
+			
+			\item Si la temperatura de un horno industrial se duplica de 1000 K a 2000 K, ¿en qué factor aumenta la energía total radiada? Calcule y explique.
+			
+			\vspace{1.5cm}
+			
+			\item ¿Por qué es crucial la ley de Stefan-Boltzmann para aplicaciones como termografía infrarroja y diseño de hornos industriales?
+			
+			\vspace{1.5cm}
+		\end{enumerate}
+	\end{preguntabox}
+	
+	% ----------------------------------------------------------------------------
+	% PARTE 3: ANÁLISIS DE LA CATÁSTROFE ULTRAVIOLETA
+	% ----------------------------------------------------------------------------
+	
+	\subsection{PARTE 3: ANÁLISIS DE LA CATÁSTROFE ULTRAVIOLETA}
+	
+	\subsubsection{Procedimiento:}
+	\begin{enumerate}
+		\item Configuren la temperatura en 5000 K (aproximadamente la del Sol)
+		\item Habiliten simultáneamente la curva de cuerpo negro (Planck) y la curva de Rayleigh-Jeans
+		\item Observen ambas curvas, prestando especial atención a la región de longitudes de onda cortas (< 500 nm)
+		\item Tomen puntos de datos donde ambas curvas difieren significativamente
+		\item Analicen el comportamiento de la curva clásica a frecuencias altas
+	\end{enumerate}
+	
+	\subsubsection{Tabla de datos:}
+	
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\textbf{Longitud de onda (nm)} & \textbf{Intensidad Planck (W/m²/nm)} & \textbf{Intensidad Rayleigh-Jeans (W/m²/nm)} & \textbf{Ratio (R-J/Planck)} \\
+			\hline
+			200 & & & \\
+			\hline
+			400 & & & \\
+			\hline
+			600 & & & \\
+			\hline
+			1000 & & & \\
+			\hline
+			2000 & & & \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\begin{preguntabox}
+		\textbf{Preguntas de Análisis - Parte 3:}
+		\begin{enumerate}
+			\item ¿En qué región del espectro son más significativas las diferencias entre las predicciones clásica y cuántica? ¿Por qué?
+			
+			\vspace{1.5cm}
+			
+			\item Explique, en términos de la hipótesis cuántica de Planck, por qué la intensidad real disminuye a altas frecuencias.
+			
+			\vspace{1.5cm}
+			
+			\item ¿Qué implicaciones físicas tendría la predicción clásica si fuera correcta? ¿Por qué esto constituía una ``catástrofe''?
+			
+			\vspace{1.5cm}
+			
+			\item ¿Cómo resolvió la cuantización de Planck el problema de la energía infinita predicha por la teoría clásica?
+			
+			\vspace{1.5cm}
+		\end{enumerate}
+	\end{preguntabox}
+	
+	% ----------------------------------------------------------------------------
+	% PARTE 4: ANÁLISIS COMPARATIVO DE FUENTES REALES
+	% ----------------------------------------------------------------------------
+	
+	\subsection{PARTE 4: ANÁLISIS COMPARATIVO DE FUENTES REALES}
+	
+	\subsubsection{Procedimiento:}
+	\begin{enumerate}
+		\item Utilicen el simulador para modelar diferentes fuentes de radiación térmica
+		\item Para cada fuente listada, configuren la temperatura correspondiente y registren sus características espectrales
+		\item Observen en qué región del espectro electromagnético ocurre la máxima emisión
+		\item Determinen qué porcentaje de la radiación es visible al ojo humano
+	\end{enumerate}
+	
+	\subsubsection{Análisis comparativo:}
+	
+	\begin{center}
+		\begin{tabular}{|p{3cm}|c|c|p{3.5cm}|p{2.5cm}|}
+			\hline
+			\textbf{Fuente} & \textbf{Temperatura (K)} & \textbf{$\lambda$ máximo (nm)} & \textbf{Región espectral dominante} & \textbf{Apariencia visual} \\
+			\hline
+			Temperatura ambiente & 300 & & & \\
+			\hline
+			Filamento de tungsteno & 3000 & & & \\
+			\hline
+			Sol & 5800 & & & \\
+			\hline
+			Estrella azul & 12000 & & & \\
+			\hline
+			Radiación cósmica de fondo & 2.7 & & & \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\begin{preguntabox}
+		\textbf{Preguntas de Análisis - Parte 4:}
+		\begin{enumerate}
+			\item ¿Por qué la radiación cósmica de fondo tiene su máximo en la región de microondas? ¿Qué significado cosmológico tiene esto?
+			
+			\vspace{1.5cm}
+			
+			\item Un material nanoestructurado tiene su pico de emisión en 900 nm. ¿Cuál sería su temperatura y cómo se vería a simple vista?
+			
+			\vspace{1.5cm}
+			
+			\item ¿Por qué las bombillas incandescentes son ineficientes energéticamente desde el punto de vista de la iluminación visible?
+			
+			\vspace{1.5cm}
+		\end{enumerate}
+	\end{preguntabox}
+	
+	% ============================================================================
+	% SECCIÓN 7: APLICACIONES Y CASOS PRÁCTICOS
+	% ============================================================================
+	
+	\section{APLICACIONES Y CASOS PRÁCTICOS}
+	
+	\subsection{Aplicación en Nanotecnología:}
+	
+	Los principios de radiación de cuerpo negro son fundamentales en nanotecnología para:
+	
+	\begin{itemize}
+		\item \textbf{Caracterización térmica:} Determinación de temperaturas en procesos de síntesis de nanomateriales
+		\item \textbf{Metamateriales:} Diseño de estructuras periódicas con propiedades radiativas específicas
+		\item \textbf{Puntos cuánticos:} Análisis de propiedades ópticas y térmicas de nanocristales semiconductores
+		\item \textbf{Sensores térmicos:} Desarrollo de detectores de radiación infrarroja a escala nanométrica
+	\end{itemize}
+	
+	\subsection{Caso de Estudio: Puntos Cuánticos de Silicio}
+	
+	Los puntos cuánticos de silicio (Si-QDs) de diferentes tamaños exhiben propiedades de emisión que pueden modelarse parcialmente usando principios de cuerpo negro modificados. Investigadores han observado que:
+	
+	\begin{itemize}
+		\item QDs de 2-3 nm emiten en el rango visible (500-700 nm)
+		\item La temperatura efectiva de emisión depende del tamaño del punto cuántico
+		\item Las aplicaciones incluyen celdas solares de tercera generación y displays LED
+	\end{itemize}
+	
+	\begin{preguntabox}
+		\textbf{Análisis del Caso de Estudio:}
+		\begin{enumerate}
+			\item ¿Cómo podrían aplicar la ley de Wien para estimar la ``temperatura efectiva'' de emisión de puntos cuánticos?
+			
+			\vspace{2cm}
+			
+			\item ¿Qué ventajas tendría un material nanoestructurado que pueda controlar su emisión térmica comparado con un cuerpo negro ideal?
+			
+			\vspace{2cm}
+			
+			\item ¿Cuáles serían las limitaciones de aplicar directamente las leyes de cuerpo negro a sistemas cuánticos nanométricos?
+			
+			\vspace{2cm}
+		\end{enumerate}
+	\end{preguntabox}
+	
+	% ============================================================================
+	% SECCIÓN 8: EVALUACIÓN FORMATIVA
+	% ============================================================================
+	
+	\section{EVALUACIÓN FORMATIVA}
+	
+	\begin{evaluacionbox}
+		\textbf{Autoevaluación:} Marca con una X tu nivel de comprensión
+		
+		\begin{center}
+			\begin{tabular}{|p{6cm}|c|c|c|c|}
+				\hline
+				\textbf{Criterio} & \textbf{Excelente} & \textbf{Bueno} & \textbf{Regular} & \textbf{Necesito ayuda} \\
+				\hline
+				Comprendo el concepto de cuerpo negro y sus propiedades & & & & \\
+				\hline
+				Puedo explicar la catástrofe ultravioleta y su solución & & & & \\
+				\hline
+				Aplico correctamente las leyes de Wien y Stefan-Boltzmann & & & & \\
+				\hline
+				Interpreto las diferencias entre predicciones clásicas y cuánticas & & & & \\
+				\hline
+				Relaciono los conceptos con aplicaciones en nanotecnología & & & & \\
+				\hline
+				Utilizo eficazmente el simulador PhET & & & & \\
+				\hline
+				Trabajo colaborativamente de manera productiva & & & & \\
+				\hline
+			\end{tabular}
+		\end{center}
+		
+		\textbf{Coevaluación del Equipo:}
+		\begin{itemize}
+			\item ¿Cómo calificarían la colaboración y comunicación dentro del equipo? \hrulefill
+			\item ¿Qué estrategias de trabajo fueron más efectivas? \hrulefill
+			\item ¿Qué aspectos pueden mejorar para futuras prácticas? \hrulefill
+			\item ¿Todos los miembros contribuyeron equitativamente al trabajo? \hrulefill
+		\end{itemize}
+	\end{evaluacionbox}
+	
+	% ============================================================================
+	% SECCIÓN 9: CONCLUSIONES Y REFLEXIÓN
+	% ============================================================================
+	
+	\section{CONCLUSIONES Y REFLEXIÓN}
+	
+	\begin{conclusionbox}
+		\textbf{Síntesis de Resultados:}
+		
+		Elaboren un párrafo que resuma los principales hallazgos de la práctica, incluyendo los valores experimentales obtenidos para las constantes de Wien y Stefan-Boltzmann:
+		
+		\vspace{3cm}
+		
+		\textbf{Conexión con Objetivos de Aprendizaje:}
+		
+		¿Cómo esta práctica contribuyó al logro de los objetivos planteados? Mencionen específicamente qué conceptos ahora comprenden mejor:
+		
+		\vspace{3cm}
+		
+		\textbf{Implicaciones Históricas y Conceptuales:}
+		
+		Reflexionen sobre la importancia histórica del trabajo de Planck y cómo cambió nuestra comprensión de la naturaleza:
+		
+		\vspace{3cm}
+		
+		\textbf{Aplicaciones en Ingeniería en Nanotecnología:}
+		
+		¿Cómo pueden aplicar estos conocimientos sobre radiación térmica en su futura práctica profesional en nanotecnología?
+		
+		\vspace{3cm}
+		
+		\textbf{Reflexión Personal:}
+		
+		¿Qué aspecto de la práctica les resultó más interesante o desafiante? ¿Cómo cambió su perspectiva sobre la física cuántica?
+		
+		\vspace{3cm}
+	\end{conclusionbox}
+	
+	% ============================================================================
+	% SECCIÓN 10: ENTREGABLES Y CRITERIOS DE EVALUACIÓN
+	% ============================================================================
+	
+	\section{ENTREGABLES Y CRITERIOS DE EVALUACIÓN}
+	
+	\subsection{Entregables:}
+	
+	\begin{enumerate}
+		\item Hoja de trabajo completada con todos los datos, cálculos y análisis
+		\item Gráficas de $\lambda_{max}$ vs $T$ y de Intensidad vs $T^4$ (digitales o elaboradas a mano)
+		\item Reporte de conclusiones que incluya reflexiones sobre las implicaciones históricas (máximo 1 página)
+		\item Presentación breve de resultados principales (3-5 minutos por equipo)
+	\end{enumerate}
+	
+	\subsection{Criterios de Evaluación:}
+	
+	\begin{center}
+		\begin{tabular}{|l|c|c|}
+			\hline
+			\textbf{Criterio} & \textbf{Puntuación máxima} & \textbf{Puntuación obtenida} \\
+			\hline
+			Recolección precisa y sistemática de datos & 20 puntos & \\
+			\hline
+			Análisis correcto de resultados y cálculos & 25 puntos & \\
+			\hline
+			Calidad de gráficas y presentación visual & 15 puntos & \\
+			\hline
+			Respuestas completas a preguntas de análisis & 25 puntos & \\
+			\hline
+			Conclusiones reflexivas y bien fundamentadas & 15 puntos & \\
+			\hline
+			\textbf{TOTAL} & \textbf{100 puntos} & \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\begin{notabox}
+		\textbf{Criterios Específicos de Calidad:}
+		\begin{itemize}
+			\item \textbf{Excelente (90-100):} Demuestra comprensión profunda, análisis crítico y conexiones innovadoras
+			\item \textbf{Satisfactorio (70-89):} Comprende conceptos básicos y realiza análisis adecuado
+			\item \textbf{Necesita mejora (<70):} Comprensión limitada o análisis incompleto
+		\end{itemize}
+	\end{notabox}
+	
+	% ============================================================================
+	% SECCIÓN 11: RECURSOS COMPLEMENTARIOS
+	% ============================================================================
+	
+	\section{RECURSOS COMPLEMENTARIOS}
+	
+	\subsection{Enlaces y Simuladores:}
+	\begin{itemize}
+		\item Simulador principal: \url{https://phet.colorado.edu/es/simulation/blackbody-spectrum}
+		\item Calculadora de ley de Wien: \url{https://www.omnicalculator.com/physics/wiens-law}
+		\item Graficador online: \url{https://www.desmos.com/calculator}
+		\item Conversor de unidades: \url{https://www.unitconverters.net/}
+	\end{itemize}
+	
+	\subsection{Lecturas Recomendadas:}
+	\begin{itemize}
+		\item Eisberg, R. \& Resnick, R. ``Física Cuántica'', Capítulo 1: Radiación Térmica y Postulado de Planck
+		\item Serway, R. A. ``Física Moderna'', Capítulo 40: Introducción a la Física Cuántica
+		\item Griffiths, D. ``Quantum Mechanics'', Capítulo 1: The Wave Function (secciones introductorias)
+		\item Artículo: ``Max Planck and the Genesis of Quantum Theory'' - Physics Today
+	\end{itemize}
+	
+	\subsection{Videos Educativos:}
+	\begin{itemize}
+		\item ``La catástrofe ultravioleta y el nacimiento de la física cuántica'' - MinutePhysics (5 min)
+		\item ``Blackbody Radiation'' - Khan Academy (8 min)
+		\item ``Max Planck y la revolución cuántica'' - Veritasium (12 min)
+		\item ``Aplicaciones de la radiación térmica en astronomía'' - NASA Education (15 min)
+	\end{itemize}
+	
+	\subsection{Recursos Avanzados:}
+	\begin{itemize}
+		\item Simulador avanzado de espectros estelares: \url{https://ccnmtl.github.io/blackbody/}
+		\item Base de datos de propiedades térmicas: NIST Webbook
+		\item Artículos de investigación sobre metamateriales térmicos
+		\item Documentación técnica de cámaras termográficas
+	\end{itemize}
+	
+	% ============================================================================
+	% SECCIÓN 12: CONSTANTES Y FÓRMULAS DE REFERENCIA
+	% ============================================================================
+	
+	\section{CONSTANTES Y FÓRMULAS DE REFERENCIA}
+	
+	\begin{notabox}
+		\textbf{Constantes Físicas Fundamentales:}
+		\begin{multicols}{2}
+			\begin{itemize}[leftmargin=1cm]
+				\item Constante de Planck: $h = 6.626 \times 10^{-34}$ J·s
+				\item Velocidad de la luz: $c = 3.00 \times 10^{8}$ m/s
+				\item Constante de Boltzmann: $k_B = 1.381 \times 10^{-23}$ J/K
+				\item Constante de Wien: $b = 2.898 \times 10^{-3}$ m K
+			%	\item Constante de Stefan-Boltzmann: $\sigma = 5.67 \times 10^{-8}$ W/m^2K^4
+			\end{itemize}
+			
+			\columnbreak
+			
+			\begin{itemize}[leftmargin=1cm]
+				\item Conversión útil: $hc = 1.240 \times 10^{-6}$ eV·m
+				\item $k_B T$ a 300 K = 0.026 eV
+				\item 1 eV = $1.602 \times 10^{-19}$ J
+				\item 1 nm = $10^{-9}$ m
+				\item Temperatura del Sol: $T_{\odot} = 5778$ K
+			\end{itemize}
+		\end{multicols}
+		
+		\textbf{Fórmulas Clave:}
+		\begin{align}
+			\text{Ley de Planck: } & \quad B_{\lambda}(\lambda, T) = \frac{2hc^{2}}{\lambda^{5}} \frac{1}{e^{hc/(\lambda k_{B}T)}-1} \\
+			\text{Aproximación de Rayleigh-Jeans: } & \quad B_{\lambda}(\lambda, T) \approx \frac{2ck_{B}T}{\lambda^{4}} \quad \text{(para } \lambda \gg \frac{hc}{k_BT}\text{)} \\
+			\text{Aproximación de Wien: } & \quad B_{\lambda}(\lambda, T) \approx \frac{2hc^{2}}{\lambda^{5}} e^{-hc/(\lambda k_{B}T)} \quad \text{(para } \lambda \ll \frac{hc}{k_BT}\text{)}
+		\end{align}
+	\end{notabox}
+	
+	% ============================================================================
+	% APÉNDICE: GUÍA RÁPIDA DEL SIMULADOR
+	% ============================================================================
+	
+	\section{APÉNDICE: GUÍA RÁPIDA DEL SIMULADOR PhET}
+	
+	\subsection{Controles Principales:}
+	\begin{itemize}
+		\item \textbf{Deslizador de temperatura:} Permite ajustar la temperatura del cuerpo negro (250 K - 50,000 K)
+		\item \textbf{Checkbox ``Curva de cuerpo negro'':} Muestra/oculta la distribución de Planck
+		\item \textbf{Checkbox ``Curva de Rayleigh-Jeans'':} Muestra/oculta la predicción clásica
+		\item \textbf{Checkbox ``Intensidad'':} Muestra el valor numérico de la intensidad total
+		\item \textbf{Zoom:} Permite ampliar regiones específicas del espectro
+	\end{itemize}
+	
+	\subsection{Consejos de Uso:}
+	\begin{itemize}
+		\item Use el cursor para leer valores específicos en las curvas
+		\item Experimente con temperaturas extremas para observar comportamientos límite
+		\item Compare siempre las predicciones clásicas con las cuánticas
+		\item Tome capturas de pantalla para incluir en su reporte
+	\end{itemize}
+	
+	\subsection{Interpretación de Resultados:}
+	\begin{itemize}
+		\item A altas temperaturas: El máximo se desplaza hacia longitudes de onda más cortas
+		\item En el límite clásico: Las curvas de Planck y Rayleigh-Jeans convergen a bajas frecuencias
+		\item Catástrofe ultravioleta: La curva clásica diverge a altas frecuencias
+		\item Cuantización: La curva de Planck tiende a cero a altas frecuencias
+	\end{itemize}
+	
+	% ============================================================================
+	% PROBLEMAS ADICIONALES PARA PRÁCTICA EXTRA
+	% ============================================================================
+	
+	\section{PROBLEMAS ADICIONALES (OPCIONAL)}
+	
+	Para estudiantes que terminen temprano o deseen profundizar más:
+	
+	\begin{enumerate}
+		\item Calcule la temperatura de una estrella que tiene su máximo de emisión en 700 nm (estrella roja).
+		
+		\item Determine qué porcentaje de la radiación del Sol (T = 5778 K) es emitida en el rango visible (400-700 nm).
+		
+		\item Un horno de nanotubos de carbono opera a 2500 K. ¿Cuánta energía por metro cuadrado emite por segundo?
+		
+		\item Estime la temperatura de la radiación cósmica de fondo si su máximo está en 1.9 mm.
+		
+		\item Compare la eficiencia luminosa (porcentaje de energía emitida como luz visible) de una bombilla incandescente (2800 K) con una lámpara halógena (3200 K).
+	\end{enumerate}
+	
+	% ============================================================================
+	% PIE DE PÁGINA
+	% ============================================================================
+	
+	\vfill
+	
+	\begin{center}
+		\hrule
+		\vspace{0.3cm}
+		\textcolor{uteqgray}{\textit{Universidad Tecnológica de Querétaro | Manual de Prácticas de Laboratorio}}\\
+		\textcolor{uteqgray}{\textit{Física Moderna | Cuatrimestre Mayo-Agosto 2025}}\\
+		\textcolor{uteqgray}{\textit{``La cuantización de Planck: El nacimiento de una nueva era en la física''}}
+	\end{center}
+	
+\end{document}
