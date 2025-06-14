@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dualidad Onda-Partícula: El Experimento de la Doble Rendija</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+        
+        .wave-animation {
+            animation: wave 3s ease-in-out infinite;
+        }
+        
+        @keyframes wave {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .particle-animation {
+            animation: particle 2s linear infinite;
+        }
+        
+        @keyframes particle {
+            0% { transform: translateX(-50px); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(300px); opacity: 0; }
+        }
+        
+        .interference-pattern {
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(59, 130, 246, 0.3) 10%, 
+                transparent 20%,
+                rgba(59, 130, 246, 0.3) 30%, 
+                transparent 40%,
+                rgba(59, 130, 246, 0.3) 50%, 
+                transparent 60%,
+                rgba(59, 130, 246, 0.3) 70%, 
+                transparent 80%,
+                rgba(59, 130, 246, 0.3) 90%, 
+                transparent 100%);
+            animation: interference 4s ease-in-out infinite;
+        }
+        
+        @keyframes interference {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        
+        .quantum-dot {
+            animation: quantum-pulse 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes quantum-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 1; }
+        }
+        
+        .electron-path {
+            stroke-dasharray: 5, 5;
+            animation: dash 2s linear infinite;
+        }
+        
+        @keyframes dash {
+            to { stroke-dashoffset: -10; }
+        }
+        
+        .concept-highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .section-divider {
+            background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+            height: 2px;
+            margin: 2rem 0;
+        }
+        
+        .interactive-element:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .math-formula {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { print-color-adjust: exact; }
+            .page-break { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-8">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold text-center mb-4">
+                <i class="fas fa-atom mr-3"></i>
+                Dualidad Onda-Partícula
+            </h1>
+            <p class="text-xl text-center opacity-90">El Experimento de la Doble Rendija con Electrones</p>
+            <div class="text-center mt-4">
+                <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm">
+                    Física Moderna • Mecánica Cuántica
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50 no-print">
+        <div class="container mx-auto px-4">
+            <ul class="flex flex-wrap justify-center py-4 space-x-6 text-sm">
+                <li><a href="#introduccion" class="text-blue-600 hover:text-blue-800 transition-colors">Introducción</a></li>
+                <li><a href="#fundamentos" class="text-blue-600 hover:text-blue-800 transition-colors">Fundamentos</a></li>
+                <li><a href="#experimento" class="text-blue-600 hover:text-blue-800 transition-colors">Experimento</a></li>
+                <li><a href="#electrones" class="text-blue-600 hover:text-blue-800 transition-colors">Con Electrones</a></li>
+                <li><a href="#interpretaciones" class="text-blue-600 hover:text-blue-800 transition-colors">Interpretaciones</a></li>
+                <li><a href="#aplicaciones" class="text-blue-600 hover:text-blue-800 transition-colors">Aplicaciones</a></li>
+                <li><a href="#ejercicios" class="text-blue-600 hover:text-blue-800 transition-colors">Ejercicios</a></li>
+                <li><a href="#recursos" class="text-blue-600 hover:text-blue-800 transition-colors">Recursos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8">
+        <!-- Sección 1: Introducción -->
+        <section id="introduccion" class="mb-16 page-break">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-lightbulb text-yellow-500 mr-3"></i>
+                    1. Introducción a la Dualidad Onda-Partícula
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <p class="text-lg text-gray-700 mb-6">
+                            La dualidad onda-partícula es uno de los conceptos más fascinantes y fundamentales de la física cuántica. 
+                            Este fenómeno establece que los objetos cuánticos, como electrones y fotones, pueden exhibir tanto 
+                            propiedades de onda como de partícula, dependiendo del tipo de experimento que realicemos.
+                        </p>
+                        
+                        <div class="concept-highlight rounded-lg p-6 mb-6">
+                            <h3 class="text-xl font-semibold mb-3">
+                                <i class="fas fa-key mr-2"></i>Concepto Clave
+                            </h3>
+                            <p>
+                                La dualidad onda-partícula sugiere que la naturaleza fundamental de la materia y la energía 
+                                no puede ser completamente descrita usando conceptos clásicos. Los objetos cuánticos son 
+                                entidades que trascienden nuestras categorías clásicas de "onda" y "partícula".
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-center items-center">
+                        <div class="relative w-80 h-60 bg-gradient-to-b from-blue-100 to-purple-100 rounded-lg p-4">
+                            <div class="text-center mb-4">
+                                <h4 class="font-semibold text-gray-700">Dualidad Onda-Partícula</h4>
+                            </div>
+                            
+                            <!-- Representación visual de onda -->
+                            <div class="mb-6">
+                                <p class="text-sm text-gray-600 mb-2">Comportamiento Ondulatorio:</p>
+                                <svg width="100%" height="40" class="wave-animation">
+                                    <path d="M0,20 Q20,5 40,20 T80,20 T120,20 T160,20 T200,20 T240,20 T280,20" 
+                                          stroke="#3b82f6" stroke-width="2" fill="none"/>
+                                </svg>
+                            </div>
+                            
+                            <!-- Representación visual de partícula -->
+                            <div>
+                                <p class="text-sm text-gray-600 mb-2">Comportamiento Corpuscular:</p>
+                                <div class="relative h-8 bg-gray-200 rounded overflow-hidden">
+                                    <div class="absolute w-4 h-4 bg-red-500 rounded-full top-2 particle-animation quantum-dot"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-blue-50 rounded-lg p-6 mb-6">
+                    <h3 class="text-xl font-semibold text-blue-800 mb-4">Historia y Desarrollo</h3>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-white rounded p-4">
+                            <div class="text-blue-600 font-bold text-lg">1900</div>
+                            <div class="text-sm text-gray-600">Max Planck introduce los cuantos de energía</div>
+                        </div>
+                        <div class="bg-white rounded p-4">
+                            <div class="text-blue-600 font-bold text-lg">1905</div>
+                            <div class="text-sm text-gray-600">Einstein explica el efecto fotoeléctrico</div>
+                        </div>
+                        <div class="bg-white rounded p-4">
+                            <div class="text-blue-600 font-bold text-lg">1924</div>
+                            <div class="text-sm text-gray-600">De Broglie propone ondas de materia</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="math-formula">
+                    <h4 class="font-semibold mb-2">Relación de De Broglie:</h4>
+                    <p class="text-lg">λ = h/p</p>
+                    <p class="text-sm text-gray-600 mt-2">
+                        Donde λ es la longitud de onda, h es la constante de Planck, y p es el momento de la partícula.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Sección 2: Fundamentos Teóricos -->
+        <section id="fundamentos" class="mb-16 page-break">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-flask text-green-500 mr-3"></i>
+                    2. Fundamentos Teóricos de la Mecánica Cuántica
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Principios Fundamentales</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-green-500 pl-4">
+                                <h4 class="font-semibold text-green-700">Superposición Cuántica</h4>
+                                <p class="text-gray-600">
+                                    Los sistemas cuánticos pueden existir en múltiples estados simultáneamente hasta ser observados.
+                                </p>
+                            </div>
+                            
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <h4 class="font-semibold text-blue-700">Función de Onda</h4>
+                                <p class="text-gray-600">
+                                    Describe completamente el estado cuántico de un sistema y contiene toda la información observable.
+                                </p>
+                            </div>
+                            
+                            <div class="border-l-4 border-purple-500 pl-4">
+                                <h4 class="font-semibold text-purple-700">Colapso de la Función de Onda</h4>
+                                <p class="text-gray-600">
+                                    Al realizar una medición, el sistema "colapsa" a un estado definido.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Ecuación de Schrödinger</h3>
+                        <div class="math-formula">
+                            <p class="text-lg mb-2">iℏ ∂ψ/∂t = Ĥψ</p>
+                            <p class="text-sm text-gray-600">
+                                Ecuación fundamental que describe la evolución temporal de los sistemas cuánticos.
+                            </p>
+                        </div>
+                        
+                        <div class="mt-6 bg-gray-100 rounded-lg p-4">
+                            <h4 class="font-semibold mb-2">Interpretación Probabilística</h4>
+                            <p class="text-sm text-gray-700">
+                                |ψ(x,t)|² representa la densidad de probabilidad de encontrar la partícula en la posición x en el tiempo t.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-purple-100 to-blue-100 rounded-lg p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                        <i class="fas fa-microscope mr-2"></i>
+                        Diferencias entre Física Clásica y Cuántica
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white rounded-lg p-4">
+                            <h4 class="font-semibold text-gray-700 mb-3">Física Clásica</h4>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li>• Estados bien definidos</li>
+                                <li>• Trayectorias deterministas</li>
+                                <li>• Mediciones no afectan el sistema</li>
+                                <li>• Separación clara onda/partícula</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4">
+                            <h4 class="font-semibold text-gray-700 mb-3">Física Cuántica</h4>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li>• Superposición de estados</li>
+                                <li>• Probabilidades, no certezas</li>
+                                <li>• Las mediciones alteran el sistema</li>
+                                <li>• Dualidad onda-partícula</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Sección 3: Descripción del Experimento -->
+        <section id="experimento" class="mb-16 page-break">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-vial text-red-500 mr-3"></i>
+                    3. El Experimento de la Doble Rendija
+                </h2>
+
+                <div class="mb-8">
+                    <p class="text-lg text-gray-700 mb-6">
+                        El experimento de la doble rendija es considerado el experimento más importante de la física cuántica. 
+                        Demuestra de manera directa la dualidad onda-partícula y los principios fundamentales de la mecánica cuántica.
+                    </p>
+                </div>
+
+                <!-- Diagrama del experimento -->
+                <div class="bg-gray-50 rounded-lg p-6 mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">Configuración Experimental</h3>
+                    
+                    <div class="flex justify-center mb-6">
+                        <svg width="600" height="300" viewBox="0 0 600 300" class="border rounded">
+                            <!-- Fuente de electrones -->
+                            <rect x="20" y="130" width="40" height="40" fill="#ff6b6b" rx="5"/>
+                            <text x="40" y="190" text-anchor="middle" class="text-xs">Fuente de electrones</text>
+                            
+                            <!-- Barrera con dos rendijas -->
+                            <rect x="200" y="50" width="20" height="80" fill="#4a4a4a"/>
+                            <rect x="200" y="170" width="20" height="80" fill="#4a4a4a"/>
+                            <text x="210" y="40" text-anchor="middle" class="text-xs">Barrera</text>
+                            <text x="185" y="145" text-anchor="middle" class="text-xs font-semibold">Rendija A</text>
+                            <text x="185" y="165" text-anchor="middle" class="text-xs font-semibold">Rendija B</text>
+                            
+                            <!-- Pantalla detectora -->
+                            <rect x="450" y="50" width="10" height="200" fill="#4ecdc4"/>
+                            <text x="455" y="40" text-anchor="middle" class="text-xs">Pantalla</text>
+                            
+                            <!-- Trayectorias de electrones -->
+                            <path d="M60,150 Q130,120 190,140" stroke="#3b82f6" stroke-width="2" fill="none" class="electron-path"/>
+                            <path d="M60,150 Q130,180 190,160" stroke="#3b82f6" stroke-width="2" fill="none" class="electron-path"/>
+                            
+                            <!-- Ondas desde las rendijas -->
+                            <g class="wave-animation">
+                                <path d="M220,140 Q250,130 280,140 Q310,150 340,140 Q370,130 400,140 Q430,150 450,140" 
+                                      stroke="#8b5cf6" stroke-width="1.5" fill="none" opacity="0.7"/>
+                                <path d="M220,160 Q250,170 280,160 Q310,150 340,160 Q370,170 400,160 Q430,150 450,160" 
+                                      stroke="#8b5cf6" stroke-width="1.5" fill="none" opacity="0.7"/>
+                            </g>
+                            
+                            <!-- Patrón de interferencia -->
+                            <rect x="450" y="50" width="40" height="200" class="interference-pattern" opacity="0.6"/>
+                            
+                            <!-- Dimensiones -->
+                            <text x="300" y="290" text-anchor="middle" class="text-xs text-gray-600">Distancia ≈ 1 metro</text>
+                            <line x1="200" y1="280" x2="450" y2="280" stroke="#666" stroke-width="1"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-red-50 rounded-lg p-6 interactive-element">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-broadcast-tower text-red-500 text-3xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-red-700 mb-2">1. Fuente de Electrones</h4>
+                        <p class="text-sm text-gray-700">
+                            Emisor que produce un haz de electrones de baja intensidad, 
+                            permitiendo que pasen uno a la vez.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-blue-50 rounded-lg p-6 interactive-element">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-columns text-blue-500 text-3xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-blue-700 mb-2">2. Doble Rendija</h4>
+                        <p class="text-sm text-gray-700">
+                            Barrera opaca con dos aberturas paralelas muy estrechas, 
+                            separadas por una distancia comparable a la longitud de onda del electrón.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-green-50 rounded-lg p-6 interactive-element">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-desktop text-green-500 text-3xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-green-700 mb-2">3. Pantalla Detectora</h4>
+                        <p class="text-sm text-gray-700">
+                            Detector sensible que registra la llegada de cada electrón individual, 
+                            formando gradualmente un patrón.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="concept-highlight rounded-lg p-6">
+                    <h3 class="text-xl font-semibold mb-4">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>
+                        El Misterio Cuántico
+                    </h3>
+                    <p class="mb-4">
+                        Cuando los electrones pasan por las dos rendijas <strong>sin ser observados</strong>, 
+                        crean un patrón de interferencia en la pantalla, como si fueran ondas.
+                    </p>
+                    <p>
+                        Pero cuando <strong>observamos</strong> por cuál rendija pasa cada electrón, 
+                        el patrón de interferencia desaparece y se comportan como partículas clásicas.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Sección 4: Experimento con Electrones -->
+        <section id="electrones" class="mb-16 page-break">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-atom text-purple-500 mr-3"></i>
+                    4. Experimento Paso a Paso con Electrones
+                </h2>
+
+                <div class="space-y-8">
+                    <!-- Caso 1: Una sola rendija -->
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                            <span class="bg-blue-500 text-white rounded-full w-8 h-8 inline-flex items-center justify-center text-sm mr-3">1</span>
+                            Experimento con Una Sola Rendija
+                        </h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <p class="text-gray-700 mb-4">
+                                    Primero, bloqueamos una de las rendijas y observamos el patrón resultante.
+                                </p>
+                                
+                                <div class="bg-white rounded p-4 mb-4">
+                                    <h4 class="font-semibold text-gray-700 mb-2">Resultado Observado:</h4>
+                                    <ul class="text-sm text-gray-600 space-y-1">
+                                        <li>• Patrón simple con máximo central</li>
+                                        <li>• Distribución clásica de partículas</li>
+                                        <li>• Sin efectos de interferencia</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-center">
+                                <svg width="250" height="150" class="border rounded bg-white">
+                                    <text x="125" y="20" text-anchor="middle" class="text-xs font-semibold">Una Rendija</text>
+                                    
+                                    <!-- Rendija única -->
+                                    <rect x="80" y="40" width="10" height="20" fill="#4a4a4a"/>
+                                    <rect x="80" y="90" width="10" height="20" fill="#4a4a4a"/>
+                                    <rect x="80" y="60" width="10" height="30" fill="white" stroke="#4a4a4a"/>
+                                    
+                                    <!-- Patrón simple -->
+                                    <rect x="200" y="40" width="20" height="70" fill="#3b82f6" opacity="0.7"/>
+                                    <rect x="205" y="50" width="10" height="50" fill="#1e40af"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Caso 2: Dos rendijas sin observación -->
+                    <div class="bg-purple-50 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                            <span class="bg-purple-500 text-white rounded-full w-8 h-8 inline-flex items-center justify-center text-sm mr-3">2</span>
+                            Dos Rendijas - Sin Observación
+                        </h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <p class="text-gray-700 mb-4">
+                                    Abrimos ambas rendijas y permitimos que los electrones pasen sin observar por cuál rendija van.
+                                </p>
+                                
+                                <div class="bg-white rounded p-4 mb-4">
+                                    <h4 class="font-semibold text-purple-700 mb-2">¡Resultado Sorprendente!</h4>
+                                    <ul class="text-sm text-gray-600 space-y-1">
+                                        <li>• <strong>Patrón de interferencia</strong></li>
+                                        <li>• Franjas brillantes y oscuras</li>
+                                        <li>• Comportamiento ondulatorio</li>
+                                        <li>• Cada electrón "interfiere consigo mismo"</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="math-formula">
+                                    <h4 class="font-semibold mb-2">Condición de interferencia:</h4>
+                                    <p>Constructiva: δ = nλ</p>
+                                    <p>Destructiva: δ = (n + ½)λ</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-center">
+                                <svg width="250" height="150" class="border rounded bg-white">
+                                    <text x="125" y="20" text-anchor="middle" class="text-xs font-semibold">Dos Rendijas - Sin Observar</text>
+                                    
+                                    <!-- Dos rendijas -->
+                                    <rect x="80" y="40" width="10" height="25" fill="#4a4a4a"/>
+                                    <rect x="80" y="85" width="10" height="25" fill="#4a4a4a"/>
+                                    <rect x="80" y="65" width="10" height="20" fill="white" stroke="#4a4a4a"/>
+                                    
+                                    <!-- Patrón de interferencia -->
+                                    <g class="interference-pattern">
+                                        <rect x="200" y="45" width="4" height="60" fill="#8b5cf6" opacity="0.9"/>
+                                        <rect x="208" y="50" width="4" height="50" fill="#8b5cf6" opacity="0.3"/>
+                                        <rect x="216" y="48" width="4" height="54" fill="#8b5cf6" opacity="0.7"/>
+                                        <rect x="224" y="52" width="4" height="46" fill="#8b5cf6" opacity="0.2"/>
+                                        <rect x="232" y="49" width="4" height="52" fill="#8b5cf6" opacity="0.6"/>
+                                    </g>
+                                    
+                                    <!-- Ondas -->
+                                    <path d="M90,75 Q120,70 150,75 Q180,80 200,75" stroke="#8b5cf6" stroke-width="1" fill="none" opacity="0.5"/>
+                                    <path d="M90,85 Q120,90 150,85 Q180,80 200,85" stroke="#8b5cf6" stroke-width="1" fill="none" opacity="0.5"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Caso 3: Dos rendijas con observación -->
+                    <div class="bg-red-50 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                            <span class="bg-red-500 text-white rounded-full w-8 h-8 inline-flex items-center justify-center text-sm mr-3">3</span>
+                            Dos Rendijas - Con Observación
+                        </h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <p class="text-gray-700 mb-4">
+                                    Colocamos detectores para observar por cuál rendija pasa cada electrón.
+                                </p>
+                                
+                                <div class="bg-white rounded p-4 mb-4">
+                                    <h4 class="font-semibold text-red-700 mb-2">El Colapso de la Función de Onda:</h4>
+                                    <ul class="text-sm text-gray-600 space-y-1">
+                                        <li>• El patrón de interferencia <strong>desaparece</strong></li>
+                                        <li>• Los electrones se comportan como partículas</li>
+                                        <li>• Cada electrón pasa por una rendija específica</li>
+                                        <li>• El acto de observar cambia el resultado</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+                                    <p class="text-sm">
+                                        <strong>Principio de Complementariedad:</strong> 
+                                        No podemos observar simultáneamente las propiedades ondulatorias 
+                                        y corpusculares de un sistema cuántico.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-center">
+                                <svg width="250" height="150" class="border rounded bg-white">
+                                    <text x="125" y="20" text-anchor="middle" class="text-xs font-semibold">Dos Rendijas - Con Observar</text>
+                                    
+                                    <!-- Dos rendijas con detectores -->
+                                    <rect x="80" y="40" width="10" height="25" fill="#4a4a4a"/>
+                                    <rect x="80" y="85" width="10" height="25" fill="#4a4a4a"/>
+                                    <rect x="80" y="65" width="10" height="20" fill="white" stroke="#4a4a4a"/>
+                                    
+                                    <!-- Detectores -->
+                                    <circle cx="105" cy="75" r="8" fill="#ff6b6b" opacity="0.7"/>
+                                    <circle cx="105" cy="85" r="8" fill="#ff6b6b" opacity="0.7"/>
+                                    <text x="105" y="130" text-anchor="middle" class="text-xs">Detectores</text>
+                                    
+                                    <!-- Patrón clásico (sin interferencia) -->
+                                    <rect x="200" y="50" width="15" height="20" fill="#3b82f6" opacity="0.7"/>
+                                    <rect x="200" y="80" width="15" height="20" fill="#3b82f6" opacity="0.7"/>
+                                    
+                                    <!-- Trayectorias definidas -->
+                                    <line x1="90" y1="75" x2="200" y2="60" stroke="#ff6b6b" stroke-width="2" stroke-dasharray="3,3"/>
+                                    <line x1="90" y1="85" x2="200" y2="90" stroke="#ff6b6b" stroke-width="2" stroke-dasharray="3,3"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experimento retardado -->
+                    <div class="bg-green-50 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                            <span class="bg-green-500 text-white rounded-full w-8 h-8 inline-flex items-center justify-center text-sm mr-3">4</span>
+                            Experimento de Elección Retardada
+                        </h3>
+                        
+                        <p class="text-gray-700 mb-4">
+                            En una variante fascinante del experimento, se decide si observar o no <strong>después</strong> 
+                            de que el electrón ya ha pasado por las rendijas, pero <strong>antes</strong> de que llegue a la pantalla.
+                        </p>
+                        
+                        <div class="concept-highlight rounded-lg p-4">
+                            <h4 class="text-lg font-semibold mb-2">Resultado Extraordinario:</h4>
+                            <p>
+                                El resultado del experimento depende de la decisión futura de observar o no, 
+                                sugiriendo que la naturaleza cuántica trasciende nuestras nociones clásicas de causa y efecto.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Sección 5: Interpretaciones -->
+        <section id="interpretaciones" class="mb-16 page-break">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-brain text-indigo-500 mr-3"></i>
+                    5. Interpretaciones y Consecuencias
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Interpretaciones Principales</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-blue-50 rounded-lg p-4">
+                                <h4 class="font-semibold text-blue-700 mb-2">
+                                    <i class="fas fa-university mr-2"></i>
+                                    Interpretación de Copenhague
+                                </h4>
+                                <p class="text-sm text-gray-700">
+                                    La función de onda describe completamente el sistema hasta la medición, 
+                                    momento en el cual "colapsa" a un estado definido.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-green-50 rounded-lg p-4">
+                                <h4 class="font-semibold text-green-700 mb-2">
+                                    <i class="fas fa-sitemap mr-2"></i>
+                                    Interpretación de Muchos Mundos
+                                </h4>
+                                <p class="text-sm text-gray-700">
+                                    Todos los resultados posibles ocurren simultáneamente en universos paralelos. 
+                                    No hay colapso, solo ramificación.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-purple-50 rounded-lg p-4">
+                                <h4 class="font-semibold text-purple-700 mb-2">
+                                    <i class="fas fa-eye mr-2"></i>
+                                    Interpretación de la Información
+                                </h4>
+                                <p class="text-sm text-gray-700">
+                                    Lo crucial no es la "observación consciente" sino la obtención de información 
+                                    que distingue entre alternativas cuánticas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Implicaciones Filosóficas</h3>
+                        
+                        <div class="bg-gray-50 rounded-lg p-6">
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-indigo-500 rounded-full mt-2"></div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-700">Realidad Objetiva</h4>
+                                        <p class="text-sm text-gray-600">
+                                            ¿Existe una realidad independiente del observador?
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-indigo-500 rounded-full mt-2"></div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-700">Localidad</h4>
+                                        <p class="text-sm text-gray-600">
+                                            Los objetos distantes pueden estar "entrelazados" instantáneamente.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-indigo-500 rounded-full mt-2"></div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-700">Determinismo</h4>
+                                        <p class="text-sm text-gray-600">
+                                            La naturaleza es fundamentalmente probabilística.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-highlight rounded-lg p-6 mb-6">
+                    <h3 class="text-xl font-semibold mb-4">
+                        <i class="fas fa-quote-left mr-2"></i>
+                        Citas Famosas
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <blockquote class="border-l-4 border-white pl-4">
+                            <p class="italic">"Aquél que no se sorprende cuando oye hablar por primera vez de la teoría cuántica, posiblemente no la ha entendido."</p>
+                            <cite class="text-sm opacity-80">- Niels Bohr</cite>
+                        </blockquote>
+                        
+                        <blockquote class="border-l-4 border-white pl-4">
+                            <p class="italic">"Creo que puedo decir con seguridad que nadie entiende la mecánica cuántica."</p>
+                            <cite class="text-sm opacity-80">- Richard Feynman</cite>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <div class="bg-yellow-50 rounded-lg p-6">
+                    <h3 class="text-xl font-semibold text-yellow-800 mb-4">
+                        <i class="fas fa-exclamation-circle mr-2"></i>
+                        Conceptos Erróneos Comunes
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-white rounded p-4">
+                            <h4 class="font-semibold text-red-600 mb-2">❌ Error:</h4>
+                            <p class="text-sm">"La conciencia humana colapsa la función de onda"</p>
+                        </div>
+                        <div class="bg-white rounded p-4">
+                            <h4 class="font-semibold text-green-600 mb-2">✅ Correcto:</h4>
+                            <p class="text-sm">Cualquier interacción que obtenga información causa el colapso</p>
+                        </div>
+                        
+                        <div class="bg-white rounded p-4">
+                            <h4 class="font-semibold text-red-600 mb-2">❌ Error:</h4>
+                            <p class="text-sm">"Los electrones son ondas o partículas"</p>
+                        </div>
+                        <div class="bg-white rounded p-4">
+                            <h4 class="font-semibold text-green-600 mb-2">✅ Correcto:</h4>
+                            <p class="text-sm">Los electrones son entidades cuánticas con aspectos ondulatorios y corpusculares</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Sección 6: Aplicaciones -->
+        <section id="aplicaciones" class="mb-16 page-break">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-rocket text-orange-500 mr-3"></i>
+                    6. Aplicaciones Modernas y Tecnologías Cuánticas
+                </h2>
+
+                <p class="text-lg text-gray-700 mb-8">
+                    Los principios descubiertos en el experimento de la doble rendija han revolucionado la tecnología moderna 
+                    y prometen transformar aún más nuestro futuro.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <!-- Tecnologías Actuales -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">
+                            <i class="fas fa-microchip mr-2 text-blue-500"></i>
+                            Tecnologías Actuales
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-blue-50 rounded-lg p-4 interactive-element">
+                                <h4 class="font-semibold text-blue-700 mb-2">Microscopio Electrónico</h4>
+                                <p class="text-sm text-gray-700">
+                                    Utiliza la naturaleza ondulatoria de los electrones para obtener imágenes 
+                                    con resolución atómica, impossible con luz visible.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-green-50 rounded-lg p-4 interactive-element">
+                                <h4 class="font-semibold text-green-700 mb-2">Semiconductores</h4>
+                                <p class="text-sm text-gray-700">
+                                    Los transistores y circuitos integrados funcionan basándose en principios 
+                                    cuánticos del comportamiento de electrones en materiales.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-purple-50 rounded-lg p-4 interactive-element">
+                                <h4 class="font-semibold text-purple-700 mb-2">Láser</h4>
+                                <p class="text-sm text-gray-700">
+                                    La emisión estimulada de fotones se basa en principios cuánticos 
+                                    de superposición y coherencia.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-red-50 rounded-lg p-4 interactive-element">
+                                <h4 class="font-semibold text-red-700 mb-2">Resonancia Magnética</h4>
+                                <p class="text-sm text-gray-700">
+                                    Utiliza la superposición cuántica de espines nucleares para crear 
+                                    imágenes detalladas del interior del cuerpo humano.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tecnologías Emergentes -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">
+                            <i class="fas fa-atom mr-2 text-purple-500"></i>
+                            Tecnologías Emergentes
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-indigo-50 rounded-lg p-4 interactive-element">
+                                <h4 class="font-semibold text-indigo-700 mb-2">Computación Cuántica</h4>
+                                <p class="text-sm text-gray-700">
+                                    Utiliza superposición y entrelazamiento para realizar cálculos 
+                                    exponencialmente más rápidos que computadoras clásicas.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-teal-50 rounded-lg p-4 interactive-element">
+                                <h4 class="font-semibold text-teal-700 mb-2">Criptografía Cuántica</h4>
+                                <p class="text-sm text-gray-700">
+                                    Garantiza comunicaciones absolutamente seguras usando las leyes 
+                                    fundamentales de la mecánica cuántica.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-orange-50 rounded-lg p-4 interactive-element">
+                                <h4 class="font-semibold text-orange-700 mb-2">Teletransporte Cuántico</h4>
+                                <p class="text-sm text-gray-700">
+                                    Transferencia instantánea de información cuántica a distancia, 
+                                    fundamental para internet cuántica.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-pink-50 rounded-lg p-4 interactive-element">
+                                <h4 class="font-semibold text-pink-700 mb-2">Sensores Cuánticos</h4>
+                                <p class="text-sm text-gray-700">
+                                    Dispositivos ultra-sensibles para detectar campos magnéticos, 
+                                    gravitacionales y otras fuerzas con precisión sin precedentes.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Casos de Estudio -->
+                <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-6">
+                        <i class="fas fa-flask mr-2"></i>
+                        Casos de Estudio: Del Laboratorio a la Industria
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-white rounded-lg p-4">
+                            <div class="text-center mb-3">
+                                <i class="fas fa-laptop-code text-3xl text-blue-500"></i>
+                            </div>
+                            <h4 class="font-semibold text-center mb-2">IBM Quantum</h4>
+                            <p class="text-xs text-gray-600 text-center">
+                                Procesadores cuánticos accesibles vía cloud computing para investigación y desarrollo.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4">
+                            <div class="text-center mb-3">
+                                <i class="fas fa-shield-alt text-3xl text-green-500"></i>
+                            </div>
+                            <h4 class="font-semibold text-center mb-2">ID Quantique</h4>
+                            <p class="text-xs text-gray-600 text-center">
+                                Sistemas comerciales de distribución de claves cuánticas para comunicaciones seguras.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4">
+                            <div class="text-center mb-3">
+                                <i class="fas fa-search text-3xl text-purple-500"></i>
+                            </div>
+                            <h4 class="font-semibold text-center mb-2">Quantum Sensing</h4>
+                            <p class="text-xs text-gray-600 text-center">
+                                Magnetómetros cuánticos para detección de recursos naturales y aplicaciones médicas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Sección 7: Ejercicios -->
+        <section id="ejercicios" class="mb-16 page-break">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-pencil-alt text-yellow-500 mr-3"></i>
+                    7. Ejercicios y Preguntas de Reflexión
+                </h2>
+
+                <div class="space-y-8">
+                    <!-- Preguntas Conceptuales -->
+                    <div class="bg-blue-50 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-blue-800 mb-4">
+                            <i class="fas fa-lightbulb mr-2"></i>
+                            Preguntas Conceptuales
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-white rounded p-4">
+                                <h4 class="font-semibold text-gray-700 mb-2">1. Análisis del Experimento</h4>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    Explica por qué el patrón de interferencia desaparece cuando observamos por cuál rendija pasa el electrón. 
+                                    ¿Qué significa físicamente "observar" en este contexto?
+                                </p>
+                                <div class="bg-gray-100 p-3 rounded text-xs text-gray-500">
+                                    💡 Pista: Considera el concepto de información y cómo afecta a la función de onda.
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white rounded p-4">
+                                <h4 class="font-semibold text-gray-700 mb-2">2. Interpretaciones Cuánticas</h4>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    Compara las interpretaciones de Copenhague y de Muchos Mundos del experimento. 
+                                    ¿Cuáles son las implicaciones de cada una para nuestra comprensión de la realidad?
+                                </p>
+                                <div class="bg-gray-100 p-3 rounded text-xs text-gray-500">
+                                    💡 Pista: Piensa en el destino de las posibilidades no observadas.
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white rounded p-4">
+                                <h4 class="font-semibold text-gray-700 mb-2">3. Escalas Macroscópicas</h4>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    ¿Por qué no observamos efectos cuánticos en objetos macroscópicos? 
+                                    ¿Dónde está la frontera entre el mundo cuántico y clásico?
+                                </p>
+                                <div class="bg-gray-100 p-3 rounded text-xs text-gray-500">
+                                    💡 Pista: Considera la longitud de onda de De Broglie para objetos grandes.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Problemas Cuantitativos -->
+                    <div class="bg-green-50 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-green-800 mb-4">
+                            <i class="fas fa-calculator mr-2"></i>
+                            Problemas Cuantitativos
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-white rounded p-4">
+                                <h4 class="font-semibold text-gray-700 mb-2">Problema 1: Longitud de Onda de De Broglie</h4>
+                                <p class="text-sm text-gray-600 mb-3">
+                                    Un electrón se acelera desde el reposo mediante una diferencia de potencial de 100 V. 
+                                    Calcula su longitud de onda de De Broglie.
+                                </p>
+                                
+                                <div class="math-formula mb-3">
+                                    <p class="text-sm">Datos:</p>
+                                    <p class="text-xs">h = 6.626 × 10⁻³⁴ J·s</p>
+                                    <p class="text-xs">mₑ = 9.109 × 10⁻³¹ kg</p>
+                                    <p class="text-xs">e = 1.602 × 10⁻¹⁹ C</p>
+                                </div>
+                                
+                                <div class="bg-gray-100 p-3 rounded text-xs text-gray-500">
+                                    💻 Solución: λ ≈ 0.123 nm
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white rounded p-4">
+                                <h4 class="font-semibold text-gray-700 mb-2">Problema 2: Separación de Rendijas</h4>
+                                <p class="text-sm text-gray-600 mb-3">
+                                    Para observar un patrón de interferencia claro con electrones de 100 eV, 
+                                    ¿cuál debería ser aproximadamente la separación entre las rendijas?
+                                </p>
+                                
+                                <div class="bg-gray-100 p-3 rounded text-xs text-gray-500">
+                                    💡 Considera que la separación debe ser comparable a la longitud de onda.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experimentos Mentales -->
+                    <div class="bg-purple-50 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-purple-800 mb-4">
+                            <i class="fas fa-brain mr-2"></i>
+                            Experimentos Mentales
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-white rounded p-4">
+                                <h4 class="font-semibold text-gray-700 mb-2">El Detector Cuántico</h4>
+                                <p class="text-sm text-gray-600 mb-3">
+                                    Imagina un detector que solo funciona el 50% de las veces. Cuando detecta un electrón, 
+                                    sabemos por cuál rendija pasó. Cuando no detecta nada, no tenemos información. 
+                                    ¿Qué patrón observarías en la pantalla?
+                                </p>
+                                <div class="bg-gray-100 p-3 rounded text-xs text-gray-500">
+                                    🤔 Reflexiona sobre cómo la información parcial afecta la interferencia.
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white rounded p-4">
+                                <h4 class="font-semibold text-gray-700 mb-2">El Gato de Schrödinger Cuántico</h4>
+                                <p class="text-sm text-gray-600 mb-3">
+                                    Si pudiéramos hacer el experimento de doble rendija con un objeto macroscópico 
+                                    (digamos, una pelota de tenis), ¿qué obstáculos prácticos enfrentaríamos? 
+                                    ¿Sería posible observar interferencia?
+                                </p>
+                                <div class="bg-gray-100 p-3 rounded text-xs text-gray-500">
+                                    🔬 Considera factores como decoherencia, temperatura y interacciones ambientales.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Actividad Práctica -->
+                    <div class="concept-highlight rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4">
+                            <i class="fas fa-users mr-2"></i>
+                            Actividad de Debate
+                        </h3>
+                        
+                        <div class="bg-white bg-opacity-20 rounded p-4">
+                            <h4 class="font-semibold mb-2">Tema: "¿Existe la realidad sin observador?"</h4>
+                            <p class="text-sm mb-3">
+                                Divide la clase en equipos para debatir diferentes interpretaciones de la mecánica cuántica:
+                            </p>
+                            
+                            <div class="grid md:grid-cols-3 gap-4 text-sm">
+                                <div class="bg-white bg-opacity-20 rounded p-3">
+                                    <strong>Equipo Copenhague:</strong> La realidad se define por la medición
+                                </div>
+                                <div class="bg-white bg-opacity-20 rounded p-3">
+                                    <strong>Equipo Muchos Mundos:</strong> Todas las posibilidades son reales
+                                </div>
+                                <div class="bg-white bg-opacity-20 rounded p-3">
+                                    <strong>Equipo Variables Ocultas:</strong> Existe una realidad determinista subyacente
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Sección 8: Recursos -->
+        <section id="recursos" class="mb-16 page-break">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-book text-green-500 mr-3"></i>
+                    8. Recursos Adicionales y Referencias
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Literatura Recomendada -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                            <i class="fas fa-book-open mr-2 text-blue-500"></i>
+                            Literatura Recomendada
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-blue-50 rounded-lg p-4">
+                                <h4 class="font-semibold text-blue-700">Libros Fundamentales</h4>
+                                <ul class="text-sm text-gray-700 mt-2 space-y-1">
+                                    <li>• "Introducción a la Mecánica Cuántica" - D.J. Griffiths</li>
+                                    <li>• "Física Cuántica" - R. Eisberg & R. Resnick</li>
+                                    <li>• "El Universo Cuántico" - Brian Cox</li>
+                                    <li>• "Física Cuántica para Filósofos" - Alberto Cordero</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-green-50 rounded-lg p-4">
+                                <h4 class="font-semibold text-green-700">Divulgación Científica</h4>
+                                <ul class="text-sm text-gray-700 mt-2 space-y-1">
+                                    <li>• "El Tejido del Cosmos" - Brian Greene</li>
+                                    <li>• "Alicia en el País de los Cuantos" - R. Gilmore</li>
+                                    <li>• "El Gato de Schrödinger" - John Gribbin</li>
+                                    <li>• "Física de lo Imposible" - Michio Kaku</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recursos Digitales -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                            <i class="fas fa-globe mr-2 text-purple-500"></i>
+                            Recursos Digitales
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-purple-50 rounded-lg p-4">
+                                <h4 class="font-semibold text-purple-700">Simulaciones Interactivas</h4>
+                                <ul class="text-sm text-gray-700 mt-2 space-y-1">
+                                    <li>• PhET - University of Colorado Boulder</li>
+                                    <li>• Quantum Mechanics Visualizations</li>
+                                    <li>• MIT OpenCourseWare - 8.04</li>
+                                    <li>• Wolfram Demonstrations Project</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-red-50 rounded-lg p-4">
+                                <h4 class="font-semibold text-red-700">Videos Educativos</h4>
+                                <ul class="text-sm text-gray-700 mt-2 space-y-1">
+                                    <li>• "Double Slit Experiment" - Veritasium</li>
+                                    <li>• "Quantum Mechanics" - 3Blue1Brown</li>
+                                    <li>• "The Fabric of the Cosmos" - NOVA</li>
+                                    <li>• "What the Bleep Do We Know?" - Documentary</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Laboratorios Virtuales -->
+                <div class="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg p-6 mt-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                        <i class="fas fa-microscope mr-2"></i>
+                        Laboratorios Virtuales y Experimentos
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white rounded-lg p-4">
+                            <h4 class="font-semibold text-orange-700 mb-2">Simulador de Doble Rendija</h4>
+                            <p class="text-sm text-gray-700 mb-3">
+                                Experimenta con diferentes parámetros: energía del electrón, separación de rendijas, 
+                                distancia a la pantalla, y observa cómo cambia el patrón de interferencia.
+                            </p>
+                            <div class="bg-orange-100 rounded p-2 text-xs text-orange-800">
+                                Disponible en: quantum-lab.org/double-slit
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4">
+                            <h4 class="font-semibold text-yellow-700 mb-2">Calculadora Cuántica</h4>
+                            <p class="text-sm text-gray-700 mb-3">
+                                Herramienta para calcular longitudes de onda de De Broglie, probabilidades cuánticas 
+                                y visualizar funciones de onda.
+                            </p>
+                            <div class="bg-yellow-100 rounded p-2 text-xs text-yellow-800">
+                                Disponible en: physics-calc.org/quantum
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cronología de Descubrimientos -->
+                <div class="bg-gray-50 rounded-lg p-6 mt-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                        <i class="fas fa-timeline mr-2"></i>
+                        Cronología de Descubrimientos Cuánticos
+                    </h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-20 text-sm font-bold text-blue-600">1900</div>
+                            <div class="flex-1 text-sm">Max Planck - Cuantización de la energía</div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-20 text-sm font-bold text-blue-600">1905</div>
+                            <div class="flex-1 text-sm">Einstein - Efecto fotoeléctrico y cuantos de luz</div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-20 text-sm font-bold text-blue-600">1924</div>
+                            <div class="flex-1 text-sm">De Broglie - Ondas de materia</div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-20 text-sm font-bold text-blue-600">1925</div>
+                            <div class="flex-1 text-sm">Heisenberg - Mecánica matricial</div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-20 text-sm font-bold text-blue-600">1926</div>
+                            <div class="flex-1 text-sm">Schrödinger - Ecuación de onda</div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-20 text-sm font-bold text-blue-600">1927</div>
+                            <div class="flex-1 text-sm">Davisson-Germer - Difracción de electrones</div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-20 text-sm font-bold text-blue-600">1961</div>
+                            <div class="flex-1 text-sm">Jönsson - Primer experimento de doble rendija con electrones</div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-20 text-sm font-bold text-blue-600">1989</div>
+                            <div class="flex-1 text-sm">Tonomura - Experimento electrón por electrón</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contactos Académicos -->
+                <div class="bg-indigo-50 rounded-lg p-6 mt-8">
+                    <h3 class="text-xl font-semibold text-indigo-800 mb-4">
+                        <i class="fas fa-university mr-2"></i>
+                        Recursos Académicos Adicionales
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-indigo-700 mb-2">Instituciones de Investigación</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Instituto de Física Teórica - UNAM</li>
+                                <li>• Centro de Investigación en Óptica</li>
+                                <li>• Departamento de Física - Universidad de los Andes</li>
+                                <li>• Instituto Balseiro - Argentina</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-indigo-700 mb-2">Revistas Científicas</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Physical Review Letters</li>
+                                <li>• Nature Physics</li>
+                                <li>• American Journal of Physics</li>
+                                <li>• Revista Mexicana de Física</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-2xl font-bold mb-4">¡Felicidades por Completar el Curso!</h3>
+            <p class="mb-4">
+                Has explorado uno de los experimentos más fascinantes de la física moderna. 
+                La dualidad onda-partícula continúa siendo un campo activo de investigación 
+                con aplicaciones revolucionarias en desarrollo.
+            </p>
+            <div class="flex justify-center space-x-8 text-sm">
+                <div>
+                    <i class="fas fa-atom text-2xl mb-2 block"></i>
+                    <span>Física Cuántica</span>
+                </div>
+                <div>
+                    <i class="fas fa-microscope text-2xl mb-2 block"></i>
+                    <span>Investigación</span>
+                </div>
+                <div>
+                    <i class="fas fa-rocket text-2xl mb-2 block"></i>
+                    <span>Innovación</span>
+                </div>
+            </div>
+            <p class="text-sm mt-6 opacity-75">
+                Curso diseñado para Física Moderna • Universidad • 2024
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add interactive elements functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate quantum dots
+            const quantumDots = document.querySelectorAll('.quantum-dot');
+            quantumDots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    this.style.animationDuration = '0.5s';
+                    setTimeout(() => {
+                        this.style.animationDuration = '1.5s';
+                    }, 1000);
+                });
+            });
+
+            // Interactive elements hover effects
+            const interactiveElements = document.querySelectorAll('.interactive-element');
+            interactiveElements.forEach(element => {
+                element.addEventListener('mouseenter', function() {
+                    this.classList.add('shadow-lg');
+                });
+                element.addEventListener('mouseleave', function() {
+                    this.classList.remove('shadow-lg');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
