@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Arte del Bonsái: Curso Interactivo</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FBF9F6; /* Un blanco hueso muy sutil */
+            color: #3C3C3B;
+        }
+        /* Color de la barra de desplazamiento */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F1ECE4;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #A8A196;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8E8577;
+        }
+        .active-link {
+            background-color: #D3E4CD; /* Verde pastel para el enlace activo */
+            color: #2E4034;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="flex flex-col md:flex-row min-h-screen">
+        <!-- Sidebar de Navegación -->
+        <aside id="sidebar" class="w-full md:w-72 bg-[#F1ECE4] p-6 shrink-0 transition-all duration-300">
+            <h1 class="text-2xl font-bold text-[#4A443D] mb-8">El Arte del Bonsái</h1>
+            <nav id="course-nav">
+                <!-- Los enlaces se generarán con JavaScript -->
+            </nav>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="flex-1 p-6 md:p-10 lg:p-12 overflow-y-auto">
+            <div id="course-content">
+                <!-- El contenido de la sección activa se mostrará aquí -->
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // --- BASE DE DATOS DEL CURSO ---
+        // Toda la información del curso se almacena en este objeto.
+        // Esto facilita añadir, editar o eliminar secciones en el futuro.
+        const courseData = {
+            'introduccion': {
+                title: '1. Introducción e Historia del Bonsái',
+                objectives: [
+                    'Comprender el origen y la evolución del bonsái.',
+                    'Entender el significado de la palabra "bonsái" y su filosofía.',
+                    'Reconocer el bonsái como una representación artística de la naturaleza.'
+                ],
+                content: `
+                    <p class="mb-4">El bonsái es un arte milenario cuyo origen se remonta a China hace unos dos mil años, conocido entonces como <strong>Penjing</strong>. La palabra "bonsái" es de origen japonés y significa literalmente "árbol en bandeja". Inicialmente, era un objeto de culto para los monjes taoístas, simbolizando la eternidad y un puente entre lo divino y lo humano.</p>
+                    <p class="mb-6">El arte fue llevado a Japón hace unos 800 años, donde se transformó bajo la concepción Zen, enfocándose en árboles únicos que representaban el universo. Su popularidad en Occidente creció tras su presentación en exposiciones mundiales en París (1878) y Londres (1909).</p>
+                    <h3 class="text-2xl font-bold text-[#3B7D54] mb-4 mt-8">Herramientas Visuales</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                            <h4 class="font-bold text-lg mb-2 text-gray-800">Línea de Tiempo Interactiva</h4>
+                            <p class="text-gray-600 mb-4">Explora la evolución del bonsái a través de los siglos.</p>
+                            <div class="relative border-l-2 border-gray-300 ml-3 py-4">
+                                <!-- Punto en la línea de tiempo 1 -->
+                                <div class="mb-8 pl-8">
+                                    <div class="absolute w-4 h-4 bg-[#3B7D54] rounded-full -left-2 mt-1"></div>
+                                    <p class="font-semibold text-gray-700">Hace 2000 años</p>
+                                    <p class="text-gray-600 text-sm">Origen en China como "Penjing", paisajes en miniatura.</p>
+                                </div>
+                                <!-- Punto en la línea de tiempo 2 -->
+                                <div class="mb-8 pl-8">
+                                    <div class="absolute w-4 h-4 bg-[#3B7D54] rounded-full -left-2 mt-1"></div>
+                                    <p class="font-semibold text-gray-700">Hace 800 años</p>
+                                    <p class="text-gray-600 text-sm">Llegada a Japón y reinterpretación bajo la filosofía Zen.</p>
+                                </div>
+                                <!-- Punto en la línea de tiempo 3 -->
+                                <div class="pl-8">
+                                    <div class="absolute w-4 h-4 bg-[#3B7D54] rounded-full -left-2 mt-1"></div>
+                                    <p class="font-semibold text-gray-700">1878 - 1909</p>
+                                    <p class="text-gray-600 text-sm">Popularización en Occidente a través de exposiciones mundiales.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                           <h4 class="font-bold text-lg mb-2 text-gray-800">Penjing vs. Bonsái</h4>
+                           <p class="text-gray-600 mb-4">Compara las dos tradiciones visualmente.</p>
+                            <img src="https://placehold.co/600x400/D3E4CD/4A443D?text=Penjing+(Paisajismo)" alt="Ejemplo de Penjing" class="rounded-lg mb-4 w-full h-40 object-cover">
+                           <img src="https://placehold.co/600x400/D3E4CD/4A443D?text=Bonsái+(Árbol+único)" alt="Ejemplo de Bonsái" class="rounded-lg w-full h-40 object-cover">
+                        </div>
+                    </div>
+                `
+            },
+            'estilos': {
+                title: '2. Formas y Estilos del Bonsái',
+                objectives: [
+                    'Identificar los principales estilos de bonsái y sus características.',
+                    'Comprender cómo cada estilo refleja una forma de crecimiento en la naturaleza.'
+                ],
+                content: `
+                    <p class="mb-6">El universo del bonsái cuenta con más de veinte estilos reconocidos. Cada uno busca reflejar una forma de crecimiento natural y contar una historia única. Se clasifican por su composición, la estructura del tronco, su relación con el entorno, entre otros.</p>
+                    <h3 class="text-2xl font-bold text-[#3B7D54] mb-4 mt-8">Buscador de Estilos</h3>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 mb-8">
+                        <p class="text-gray-700 mb-4">Filtra los estilos por sus características principales:</p>
+                        <div id="filter-tags" class="flex flex-wrap gap-2">
+                           <!-- Las etiquetas de filtro se generan con JavaScript -->
+                        </div>
+                    </div>
+                    <div id="styles-gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Las tarjetas de los estilos se generan con JavaScript -->
+                    </div>
+                `
+            },
+            'produccion': {
+                title: '3. Obtención y Producción',
+                 objectives: [
+                    'Conocer los diferentes métodos para iniciar un bonsái.',
+                    'Evaluar las ventajas y desventajas de cada método (tiempo, dificultad, costo).'
+                ],
+                content: '<p class="text-gray-500">Contenido de la sección de obtención y producción próximamente...</p>'
+            },
+            'cuidados': {
+                title: '4. Cuidados Esenciales',
+                 objectives: [
+                    'Dominar las técnicas fundamentales para mantener un bonsái sano.',
+                    'Aprender a diagnosticar y solucionar problemas comunes.'
+                ],
+                content: '<p class="text-gray-500">Contenido de la sección de cuidados esenciales próximamente...</p>'
+            },
+            'refinamiento': {
+                title: '5. Técnicas de Refinamiento',
+                 objectives: [
+                    'Aprender técnicas avanzadas para dar una apariencia de vejez.',
+                    'Entender los principios de preparación para exposición.'
+                ],
+                content: '<p class="text-gray-500">Contenido de la sección de técnicas de refinamiento próximamente...</p>'
+            },
+            'recursos': {
+                title: '6. Recursos Adicionales',
+                 objectives: [
+                    'Proporcionar una lista de recursos fiables para continuar el aprendizaje.',
+                    'Facilitar el acceso a comunidades y proveedores especializados.'
+                ],
+                content: '<p class="text-gray-500">Contenido de la sección de recursos adicionales próximamente...</p>'
+            }
+        };
+
+        // --- DATOS PARA LA GALERÍA DE ESTILOS ---
+        const bonsaiStyles = [
+            { name: 'Chokkan (Vertical Formal)', image: 'https://placehold.co/600x400/A8D5BA/4A443D?text=Chokkan', tags: ['tronco', 'formal'] },
+            { name: 'Moyogi (Vertical Informal)', image: 'https://placehold.co/600x400/A8D5BA/4A443D?text=Moyogi', tags: ['tronco', 'informal'] },
+            { name: 'Shakan (Inclinado)', image: 'https://placehold.co/600x400/A8D5BA/4A443D?text=Shakan', tags: ['tronco', 'entorno'] },
+            { name: 'Kengai (Cascada)', image: 'https://placehold.co/600x400/A8D5BA/4A443D?text=Kengai', tags: ['entorno', 'desafiante'] },
+            { name: 'Han-Kengai (Semicascada)', image: 'https://placehold.co/600x400/A8D5BA/4A443D?text=Han-Kengai', tags: ['entorno'] },
+            { name: 'Fukinagashi (Azotado por Viento)', image: 'https://placehold.co/600x400/A8D5BA/4A443D?text=Fukinagashi', tags: ['entorno', 'movimiento'] },
+            { name: 'Hokidachi (Escoba)', image: 'https://placehold.co/600x400/A8D5BA/4A443D?text=Hokidachi', tags: ['copa'] },
+            { name: 'Yose-ue (Bosque)', image: 'https://placehold.co/600x400/A8D5BA/4A443D?text=Yose-ue', tags: ['composición'] },
+            { name: 'Sokan (Doble Tronco)', image: 'https://placehold.co/600x400/A8D5BA/4A443D?text=Sokan', tags: ['composición', 'tronco'] },
+        ];
+
+
+        // --- LÓGICA DE LA APLICACIÓN ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const navContainer = document.getElementById('course-nav');
+            const contentContainer = document.getElementById('course-content');
+            
+            // Función para renderizar el contenido de una sección
+            function renderContent(sectionKey) {
+                const section = courseData[sectionKey];
+                if (!section) return;
+
+                // Construir el HTML del contenido
+                let objectivesHtml = '<div class="bg-[#E8F0E9] border-l-4 border-[#4CAF50] p-6 rounded-lg mb-8"><h3 class="text-xl font-bold text-[#2E4034] mb-3">Objetivos de Aprendizaje</h3><ul class="list-disc list-inside space-y-1 text-gray-700">';
+                section.objectives.forEach(obj => {
+                    objectivesHtml += `<li>${obj}</li>`;
+                });
+                objectivesHtml += '</ul></div>';
+
+                contentContainer.innerHTML = `
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2E4034] mb-4 pb-3 border-b-2 border-gray-200">${section.title}</h2>
+                    ${objectivesHtml}
+                    ${section.content}
+                `;
+
+                // Si la sección es "estilos", inicializar la galería y los filtros
+                if (sectionKey === 'estilos') {
+                    initStylesGallery();
+                }
+                
+                // Actualizar el enlace activo en la navegación
+                updateActiveLink(sectionKey);
+            }
+
+            // Función para actualizar el enlace activo
+            function updateActiveLink(activeKey) {
+                const links = navContainer.querySelectorAll('a');
+                links.forEach(link => {
+                    if (link.dataset.section === activeKey) {
+                        link.classList.add('active-link');
+                    } else {
+                        link.classList.remove('active-link');
+                    }
+                });
+            }
+
+            // --- Lógica para la galería de estilos ---
+            function initStylesGallery() {
+                const gallery = document.getElementById('styles-gallery');
+                const filterTagsContainer = document.getElementById('filter-tags');
+                if (!gallery || !filterTagsContainer) return;
+
+                // Extraer todas las etiquetas únicas
+                const allTags = [...new Set(bonsaiStyles.flatMap(style => style.tags))];
+                let activeTags = new Set();
+                
+                // Renderizar las etiquetas de filtro
+                filterTagsContainer.innerHTML = `<button data-tag="all" class="px-3 py-1 text-sm font-medium rounded-full bg-[#3B7D54] text-white">Todos</button>` + allTags.map(tag =>
+                    `<button data-tag="${tag}" class="px-3 py-1 text-sm font-medium rounded-full bg-gray-200 text-gray-700 transition hover:bg-gray-300">${tag.charAt(0).toUpperCase() + tag.slice(1)}</button>`
+                ).join('');
+
+
+                // Renderizar la galería
+                function renderGallery() {
+                    gallery.innerHTML = bonsaiStyles
+                        .filter(style => activeTags.size === 0 || style.tags.some(tag => activeTags.has(tag)))
+                        .map(style => `
+                            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden group transform hover:-translate-y-1 transition-transform duration-300">
+                                <img src="${style.image}" alt="Estilo ${style.name}" class="w-full h-48 object-cover">
+                                <div class="p-4">
+                                    <h4 class="font-bold text-lg text-gray-800">${style.name}</h4>
+                                    <div class="flex flex-wrap gap-1 mt-2">
+                                        ${style.tags.map(tag => `<span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full">${tag}</span>`).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('');
+                }
+                
+                // Manejar clics en las etiquetas
+                filterTagsContainer.addEventListener('click', (e) => {
+                    if (e.target.tagName !== 'BUTTON') return;
+                    
+                    const selectedTag = e.target.dataset.tag;
+                    const buttons = filterTagsContainer.querySelectorAll('button');
+
+                    if (selectedTag === 'all') {
+                        activeTags.clear();
+                    } else {
+                        if (activeTags.has(selectedTag)) {
+                            activeTags.delete(selectedTag);
+                        } else {
+                            activeTags.add(selectedTag);
+                        }
+                    }
+
+                    // Actualizar estilos de los botones
+                    buttons.forEach(button => {
+                        const tag = button.dataset.tag;
+                        if (tag === 'all' && activeTags.size === 0) {
+                            button.classList.remove('bg-gray-200', 'text-gray-700');
+                            button.classList.add('bg-[#3B7D54]', 'text-white');
+                        } else if (tag !== 'all' && activeTags.has(tag)) {
+                            button.classList.remove('bg-gray-200', 'text-gray-700');
+                            button.classList.add('bg-[#3B7D54]', 'text-white');
+                        } else {
+                            button.classList.remove('bg-[#3B7D54]', 'text-white');
+                            button.classList.add('bg-gray-200', 'text-gray-700');
+                        }
+
+                        if(tag === 'all' && activeTags.size > 0){
+                           button.classList.add('bg-gray-200', 'text-gray-700');
+                           button.classList.remove('bg-[#3B7D54]', 'text-white');
+                        }
+                    });
+                    
+                    renderGallery();
+                });
+                
+                // Renderizado inicial
+                renderGallery();
+            }
+
+            // Crear los enlaces de navegación iniciales
+            const sectionKeys = Object.keys(courseData);
+            sectionKeys.forEach(key => {
+                const section = courseData[key];
+                const link = document.createElement('a');
+                link.href = `#${key}`;
+                link.textContent = section.title;
+                link.dataset.section = key;
+                link.className = 'block text-[#5A524A] hover:text-black py-2 px-3 rounded-md transition-colors duration-200';
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    renderContent(key);
+                    // Opcional: para cerrar el menú en móvil después de hacer clic
+                    if (window.innerWidth < 768) {
+                        // Aquí se podría añadir lógica para un menú hamburguesa
+                    }
+                });
+                navContainer.appendChild(link);
+            });
+
+            // Renderizar la primera sección al cargar la página
+            renderContent(sectionKeys[0]);
+        });
+    </script>
+</body>
+</html>

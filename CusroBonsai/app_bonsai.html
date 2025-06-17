@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medidor Virtual de Humedad para Bonsái</title>
+    
+    <!-- Chosen Palette: Natural Tones (Beige, Green, Brown) -->
+    <!-- Application Structure Plan: A two-column responsive layout. The left column contains the interactive simulator (bonsai image, tools), promoting active engagement. The right column holds the control panel and information displays (diagnosis, tips), providing context and learning reinforcement. This structure separates action from information, creating an intuitive user flow where users can set conditions on the right and see the immediate impact on the left. On mobile, the columns stack for a clear top-to-bottom progression. -->
+    <!-- Visualization & Content Choices: The core visualization is a dynamic image of the substrate, which directly addresses the learning goal of visual identification. The interactive tools (eye, hand, stick) serve as drill-downs for specific information goals (visual details, tactile feel, internal moisture), providing layers of information upon user request. Textual content in the diagnosis and tips panels is dynamically updated by JS to support the visual simulation, creating a cohesive learning experience. All elements are built with standard HTML/CSS/JS, confirming no SVG or Mermaid JS is used. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FBF9F6;
+        }
+        .control-button {
+            transition: all 0.2s ease-in-out;
+        }
+        .control-button.active {
+            background-color: #2E4034; /* Dark Green */
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+        .feedback-panel-enter {
+            animation: fadeIn 0.5s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-[#2E4034]">Medidor Virtual de Humedad</h1>
+            <p class="text-lg text-gray-600 mt-2">Aprende a regar tu bonsái como un experto</p>
+        </header>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+
+            <!-- Columna Izquierda: Simulador -->
+            <div class="lg:w-3/5 w-full bg-white p-6 rounded-2xl shadow-lg border border-gray-200">
+                <div class="relative w-full h-auto aspect-[4/3] bg-cover bg-center rounded-xl overflow-hidden" style="background-image: url('https://placehold.co/800x600/D3E4CD/4A443D?text=Bonsai');">
+                    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/5">
+                         <img id="sustrato-img" src="" alt="Sustrato del bonsái" class="w-full h-auto rounded-t-lg transition-opacity duration-500">
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <p class="text-center font-medium text-gray-600 mb-4">Usa las herramientas para inspeccionar</p>
+                    <div id="virtual-tools" class="flex justify-center gap-4 mb-6">
+                        <button data-tool="visual" class="tool-btn bg-blue-100 hover:bg-blue-200 text-blue-800 font-bold py-2 px-4 rounded-full shadow-sm flex items-center gap-2">👁️ Visual</button>
+                        <button data-tool="tactil" class="tool-btn bg-orange-100 hover:bg-orange-200 text-orange-800 font-bold py-2 px-4 rounded-full shadow-sm flex items-center gap-2">✋ Tacto</button>
+                        <button data-tool="palillo" class="tool-btn bg-yellow-100 hover:bg-yellow-200 text-yellow-800 font-bold py-2 px-4 rounded-full shadow-sm flex items-center gap-2">🌱 Palillo</button>
+                    </div>
+                </div>
+
+                <div class="mt-auto pt-6 border-t border-gray-200">
+                     <button id="regar-btn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg py-4 px-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
+                        Regar el Bonsái
+                    </button>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Panel de Control -->
+            <div class="lg:w-2/5 w-full space-y-6">
+                <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-200">
+                    <h3 class="font-bold text-xl mb-4 text-[#2E4034]">1. Elige el Escenario</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="font-semibold text-gray-700">Estación:</label>
+                            <div id="selector-estacion" class="grid grid-cols-2 gap-2 mt-2">
+                                <button data-value="primavera" class="control-button py-2 px-3 bg-gray-200 rounded-lg">Primavera</button>
+                                <button data-value="verano" class="control-button py-2 px-3 bg-gray-200 rounded-lg">Verano</button>
+                                <button data-value="otono" class="control-button py-2 px-3 bg-gray-200 rounded-lg">Otoño</button>
+                                <button data-value="invierno" class="control-button py-2 px-3 bg-gray-200 rounded-lg">Invierno</button>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="font-semibold text-gray-700">Clima:</label>
+                            <div id="selector-clima" class="grid grid-cols-3 gap-2 mt-2">
+                                <button data-value="soleado" class="control-button py-2 px-3 bg-gray-200 rounded-lg">Soleado</button>
+                                <button data-value="nublado" class="control-button py-2 px-3 bg-gray-200 rounded-lg">Nublado</button>
+                                <button data-value="viento" class="control-button py-2 px-3 bg-gray-200 rounded-lg">Viento</button>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="font-semibold text-gray-700">Ubicación:</label>
+                            <div id="selector-ubicacion" class="grid grid-cols-2 gap-2 mt-2">
+                                <button data-value="sol" class="control-button py-2 px-3 bg-gray-200 rounded-lg">Pleno Sol</button>
+                                <button data-value="sombra" class="control-button py-2 px-3 bg-gray-200 rounded-lg">Sombra Parcial</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="panel-diagnostico" class="bg-white p-6 rounded-2xl shadow-lg border border-gray-200 min-h-[100px]"></div>
+                <div id="panel-consejos" class="bg-white p-6 rounded-2xl shadow-lg border border-gray-200 min-h-[100px]"></div>
+                <div id="panel-feedback" class="p-6 rounded-2xl shadow-lg min-h-[100px] transition-all duration-500"></div>
+
+            </div>
+        </div>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    // --- 1. CONFIGURACIÓN INICIAL Y GESTIÓN DE ESTADO ---
+
+    // Objeto para mantener el estado actual de la simulación
+    const simuladorEstado = {
+        estacion: 'primavera',
+        clima: 'soleado',
+        ubicacion: 'sol',
+        humedad: 'seco' // puede ser 'seco', 'humedo', 'mojado'
+    };
+
+    // Base de datos de textos para mantener el código limpio
+    const textos = {
+        humedad: {
+            seco: {
+                visual: "El sustrato se ve pálido y agrietado. Parece suelto y hay un pequeño espacio entre la tierra y la maceta.",
+                tactil: "Se siente ligero, cálido y arenoso. No se pega a los dedos.",
+                palillo: "El palillo sale completamente seco y limpio. Es hora de regar."
+            },
+            humedo: {
+                visual: "El color del sustrato es oscuro y uniforme. Se ve compacto y bien asentado.",
+                tactil: "Se siente fresco y ligeramente pegajoso, pero sin formar lodo.",
+                palillo: "El palillo sale con una marca oscura de humedad, pero sin tierra adherida."
+            },
+            mojado: {
+                visual: "El sustrato está muy oscuro, casi negro. La superficie brilla por el exceso de agua.",
+                tactil: "Se siente pesado y lodoso. Se pega a los dedos al tocarlo.",
+                palillo: "El palillo sale empapado y con partículas de sustrato adheridas."
+            }
+        },
+        diagnostico: {
+            seco: "La combinación de condiciones actuales hace que el sustrato se seque rápidamente. El árbol necesita agua.",
+            humedo: "Las condiciones son estables y el sustrato retiene bien la humedad. Aún no es necesario regar.",
+            mojado: "El sustrato está saturado. Hay riesgo de pudrición de raíces si se añade más agua."
+        },
+        consejos: {
+            verano: "En verano, especialmente en días soleados y con viento, revisa la humedad por la mañana y por la tarde.",
+            invierno: "Durante el invierno, el bonsái entra en dormancia y necesita mucha menos agua. Riega solo cuando sea necesario.",
+            viento: "El viento es el factor que más rápido seca el sustrato, ¡incluso más que el sol directo!",
+            sombra: "En sombra, la evaporación es menor. Los riegos pueden ser más espaciados."
+        }
+    };
+    
+    // Imágenes del sustrato
+    const imagenesSustrato = {
+        seco: 'https://placehold.co/400x150/D1B49D/3C3C3B?text=Sustrato+Seco',
+        humedo: 'https://placehold.co/400x150/8B5E34/FFFFFF?text=Sustrato+Humedo',
+        mojado: 'https://placehold.co/400x150/3A2F2F/FFFFFF?text=Sustrato+Mojado'
+    };
+
+    // Referencias a los elementos del DOM
+    const sustratoImg = document.getElementById('sustrato-img');
+    const panelDiagnostico = document.getElementById('panel-diagnostico');
+    const panelConsejos = document.getElementById('panel-consejos');
+    const panelFeedback = document.getElementById('panel-feedback');
+    const selectorEstacion = document.getElementById('selector-estacion');
+    const selectorClima = document.getElementById('selector-clima');
+    const selectorUbicacion = document.getElementById('selector-ubicacion');
+
+    // --- 2. LÓGICA DE LA SIMULACIÓN ---
+
+    // Calcula el estado de humedad basado en las condiciones
+    function calcularHumedad() {
+        let score = 0;
+        // Puntuación basada en la estación
+        if (simuladorEstado.estacion === 'verano') score += 3;
+        if (simuladorEstado.estacion === 'primavera') score += 2;
+        if (simuladorEstado.estacion === 'otono') score += 1;
+        // Puntuación basada en el clima
+        if (simuladorEstado.clima === 'soleado') score += 2;
+        if (simuladorEstado.clima === 'viento') score += 3;
+        // Puntuación basada en la ubicación
+        if (simuladorEstado.ubicacion === 'sol') score += 2;
+        
+        // Determinar estado de humedad
+        if (score >= 6) {
+            simuladorEstado.humedad = 'seco';
+        } else if (score >= 3) {
+            simuladorEstado.humedad = 'humedo';
+        } else {
+            simuladorEstado.humedad = 'mojado';
+        }
+    }
+
+    // Actualiza toda la interfaz de usuario basándose en el estado actual
+    function actualizarVista() {
+        // Actualizar imagen del sustrato
+        sustratoImg.style.opacity = 0;
+        setTimeout(() => {
+             sustratoImg.src = imagenesSustrato[simuladorEstado.humedad];
+             sustratoImg.style.opacity = 1;
+        }, 300);
+
+        // Actualizar panel de diagnóstico
+        panelDiagnostico.innerHTML = `
+            <h3 class="font-bold text-xl mb-2 text-[#2E4034]">Diagnóstico</h3>
+            <p class="text-gray-600">${textos.diagnostico[simuladorEstado.humedad]}</p>
+        `;
+
+        // Actualizar panel de consejos (lógica simple)
+        let consejoClave = 'verano';
+        if (simuladorEstado.estacion === 'invierno') consejoClave = 'invierno';
+        if (simuladorEstado.clima === 'viento') consejoClave = 'viento';
+        panelConsejos.innerHTML = `
+             <h3 class="font-bold text-xl mb-2 text-[#2E4034]">Consejo del Día</h3>
+            <p class="text-gray-600">${textos.consejos[consejoClave]}</p>
+        `;
+        
+        // Limpiar el panel de feedback
+        limpiarFeedback();
+    }
+    
+    // Muestra un mensaje en el panel de feedback y lo limpia después de un tiempo
+    function mostrarFeedback(mensaje, tipo = 'info') {
+        panelFeedback.innerHTML = mensaje;
+        panelFeedback.classList.add('feedback-panel-enter');
+
+        if(tipo === 'exito') {
+            panelFeedback.className = 'p-6 rounded-2xl shadow-lg min-h-[100px] transition-all duration-500 bg-green-100 text-green-800';
+        } else if (tipo === 'advertencia') {
+            panelFeedback.className = 'p-6 rounded-2xl shadow-lg min-h-[100px] transition-all duration-500 bg-red-100 text-red-800';
+        } else {
+            panelFeedback.className = 'p-6 rounded-2xl shadow-lg min-h-[100px] transition-all duration-500 bg-blue-100 text-blue-800';
+        }
+
+        setTimeout(limpiarFeedback, 5000); // El mensaje desaparece a los 5 segundos
+    }
+    
+    function limpiarFeedback() {
+        panelFeedback.innerHTML = '';
+        panelFeedback.className = 'p-6 rounded-2xl shadow-lg min-h-[100px] transition-all duration-500';
+    }
+
+
+    // --- 3. MANEJADORES DE EVENTOS ---
+
+    // Manejador genérico para los grupos de selectores
+    function manejarSeleccion(contenedor, propiedad) {
+        contenedor.addEventListener('click', (e) => {
+            if (e.target.tagName === 'BUTTON') {
+                // Actualizar estado
+                simuladorEstado[propiedad] = e.target.dataset.value;
+                // Actualizar estilos de los botones
+                contenedor.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
+                e.target.classList.add('active');
+                // Recalcular y actualizar la vista
+                calcularHumedad();
+                actualizarVista();
+            }
+        });
+    }
+
+    manejarSeleccion(selectorEstacion, 'estacion');
+    manejarSeleccion(selectorClima, 'clima');
+    manejarSeleccion(selectorUbicacion, 'ubicacion');
+    
+    // Event listener para las herramientas virtuales
+    document.getElementById('virtual-tools').addEventListener('click', (e) => {
+        const tool = e.target.closest('button')?.dataset.tool;
+        if (tool) {
+            const descripcion = textos.humedad[simuladorEstado.humedad][tool];
+            mostrarFeedback(`<p><span class="font-bold">${tool.charAt(0).toUpperCase() + tool.slice(1)}:</span> ${descripcion}</p>`);
+        }
+    });
+
+    // Event listener para el botón de regar
+    document.getElementById('regar-btn').addEventListener('click', () => {
+        if (simuladorEstado.humedad === 'seco') {
+            mostrarFeedback('<p class="font-bold">¡Excelente! Has regado en el momento perfecto. El sustrato ahora está húmedo y tu bonsái te lo agradece.</p>', 'exito');
+            simuladorEstado.humedad = 'humedo';
+            actualizarVista();
+        } else {
+            mostrarFeedback('<p class="font-bold">¡Cuidado! El sustrato ya tiene suficiente agua. Regar en exceso puede ahogar las raíces y causar enfermedades.</p>', 'advertencia');
+        }
+    });
+
+    // --- 4. INICIALIZACIÓN ---
+    
+    // Establecer estado inicial y renderizar
+    function init() {
+        document.querySelector('#selector-estacion button[data-value="primavera"]').classList.add('active');
+        document.querySelector('#selector-clima button[data-value="soleado"]').classList.add('active');
+        document.querySelector('#selector-ubicacion button[data-value="sol"]').classList.add('active');
+        calcularHumedad();
+        actualizarVista();
+    }
+    
+    init();
+
+});
+</script>
+
+</body>
+</html>
