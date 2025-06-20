@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.17)  19 JUN 2025 21:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.17)  19 JUN 2025 21:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1355,7 +1355,7 @@ Package pdftex.def Info: ../Imagenes/Logo_uteq.png  used on input line 187.
  [10
 
 ]
-<../Imagenes/MaxBorn.png, id=421, 341.77687pt x 416.30531pt>
+<../Imagenes/MaxBorn.png, id=422, 341.77687pt x 416.30531pt>
 File: ../Imagenes/MaxBorn.png Graphic file (type png)
 <use ../Imagenes/MaxBorn.png>
 Package pdftex.def Info: ../Imagenes/MaxBorn.png  used on input line 202.
@@ -1378,6 +1378,75 @@ Package pdftex.def Info: ../Imagenes/Logo_uteq.png  used on input line 217.
  [12
 
 ]
+File: ../Imagenes/Logo_uteq.png Graphic file (type png)
+<use ../Imagenes/Logo_uteq.png>
+Package pdftex.def Info: ../Imagenes/Logo_uteq.png  used on input line 229.
+(pdftex.def)             Requested size: 56.9055pt x 24.51817pt.
+ [13
+
+]
+<example-image.pdf, id=544, 321.2pt x 240.9pt>
+File: example-image.pdf Graphic file (type pdf)
+<use example-image.pdf>
+Package pdftex.def Info: example-image.pdf  used on input line 250.
+(pdftex.def)             Requested size: 129.52461pt x 97.14491pt.
+
+Overfull \vbox (14.80275pt too high) detected at line 250
+ []
+
+File: ../Imagenes/Logo_uteq.png Graphic file (type png)
+<use ../Imagenes/Logo_uteq.png>
+Package pdftex.def Info: ../Imagenes/Logo_uteq.png  used on input line 250.
+(pdftex.def)             Requested size: 56.9055pt x 24.51817pt.
+[14
+
+ <c:/texlive/2022/texmf-dist/tex/latex/mwe/example-image.pdf>]
+Overfull \hbox (21.26678pt too wide) in paragraph at lines 263--263
+ \OT1/cmss/bx/n/12 1D)[] 
+ []
+
+File: ../Imagenes/Logo_uteq.png Graphic file (type png)
+<use ../Imagenes/Logo_uteq.png>
+Package pdftex.def Info: ../Imagenes/Logo_uteq.png  used on input line 263.
+(pdftex.def)             Requested size: 56.9055pt x 24.51817pt.
+[15
+
+]
+File: ../Imagenes/Logo_uteq.png Graphic file (type png)
+<use ../Imagenes/Logo_uteq.png>
+Package pdftex.def Info: ../Imagenes/Logo_uteq.png  used on input line 273.
+(pdftex.def)             Requested size: 56.9055pt x 24.51817pt.
+ [16
+
+]
+File: ../Imagenes/Logo_uteq.png Graphic file (type png)
+<use ../Imagenes/Logo_uteq.png>
+Package pdftex.def Info: ../Imagenes/Logo_uteq.png  used on input line 289.
+(pdftex.def)             Requested size: 56.9055pt x 24.51817pt.
+ [17
+
+]
+File: ../Imagenes/Logo_uteq.png Graphic file (type png)
+<use ../Imagenes/Logo_uteq.png>
+Package pdftex.def Info: ../Imagenes/Logo_uteq.png  used on input line 289.
+(pdftex.def)             Requested size: 56.9055pt x 24.51817pt.
+ [18
+
+]
+File: ../Imagenes/Logo_uteq.png Graphic file (type png)
+<use ../Imagenes/Logo_uteq.png>
+Package pdftex.def Info: ../Imagenes/Logo_uteq.png  used on input line 299.
+(pdftex.def)             Requested size: 56.9055pt x 24.51817pt.
+ [19
+
+]
+File: ../Imagenes/Logo_uteq.png Graphic file (type png)
+<use ../Imagenes/Logo_uteq.png>
+Package pdftex.def Info: ../Imagenes/Logo_uteq.png  used on input line 310.
+(pdftex.def)             Requested size: 56.9055pt x 24.51817pt.
+ [20
+
+]
 \tf@nav=\write6
 \openout6 = `funcionOnda1.nav'.
 
@@ -1395,33 +1464,35 @@ Package rerunfilecheck Info: File `funcionOnda1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 45721 strings out of 476093
- 1121644 string characters out of 5795577
+ 45801 strings out of 476093
+ 1124183 string characters out of 5795577
  1865787 words of memory out of 5000000
- 65321 multiletter control sequences out of 15000+600000
+ 65384 multiletter control sequences out of 15000+600000
  528532 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,15n,122p,727b,910s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/tex
-live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2022/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2022/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2022/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><
-c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texliv
-e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2022/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2022/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmssi12.pfb><c:/texlive/2022/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmssi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmsy6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pf
-b><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on funcionOnda1.pdf (12 pages, 1171230 bytes).
+ 128i,16n,122p,727b,910s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/tex
+live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2022
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2022/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2022/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
+><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texliv
+e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2022/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2022/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2022/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmssi12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmssi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:
+/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/texlive/2022/texm
+f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2022/texmf-di
+st/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on funcionOnda1.pdf (20 pages, 1231463 bytes).
 PDF statistics:
- 562 PDF objects out of 1000 (max. 8388607)
- 431 compressed objects within 5 object streams
- 25 named destinations out of 1000 (max. 500000)
- 429 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 881 PDF objects out of 1000 (max. 8388607)
+ 690 compressed objects within 7 object streams
+ 41 named destinations out of 1000 (max. 500000)
+ 710 words of extra memory for PDF output out of 10000 (max. 10000000)
 

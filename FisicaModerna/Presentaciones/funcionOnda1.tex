@@ -215,5 +215,97 @@
 	\end{beamercolorbox}
 	\tiny{\textit{Sugerencia: Dibujar en pizarra $\psi(x)$ vs $|\psi(x)|^2$.}}
 \end{frame}	
-	
+
+	\begin{frame}{Normalización}
+	\begin{block}{La partícula tiene que estar en algún lugar}
+		Si $|\Psi|^2$ representa una probabilidad, la probabilidad total de encontrar la partícula en \textit{todo el universo} debe ser del 100\% (o 1).
+		\vspace{0.5em}
+		Esto impone una condición matemática fundamental:
+		\begin{equation*}
+			\int_{\text{todo el espacio}} |\Psi|^2 dV = 1
+		\end{equation*}
+		Cualquier función de onda físicamente válida debe estar \textbf{normalizada}.
+	\end{block}
+\end{frame}
+
+% --- Diapositiva 9: La Ley Fundamental del Mundo Cuántico ---
+\begin{frame}{La Ley Fundamental del Mundo Cuántico}
+	\begin{columns}
+		\column{0.5\textwidth}
+		\begin{block}{Mecánica Clásica}
+			Conociendo las fuerzas, \textbf{F = ma} nos dice cómo se moverá un objeto.
+		\end{block}
+		\column{0.5\textwidth}
+		\begin{block}{Mecánica Cuántica}
+			Conociendo el entorno (la energía potencial $U(x)$), necesitamos una ley que nos diga cómo será la función de onda $\psi(x)$.
+		\end{block}
+	\end{columns}
+	\vfill
+	\centering
+	Esa ley es la \textbf{Ecuación de Schrödinger}.
+	\begin{figure}
+		\includegraphics[width=0.3\textwidth]{example-image} % Reemplaza con imagen de Schrödinger
+		\caption{Erwin Schrödinger (p. 1364).}
+	\end{figure}
+\end{frame}
+
+% --- Diapositiva 10: La Ecuación de Schrödinger ---
+\begin{frame}{La Ecuación de Schrödinger}
+	\centering\textbf{(Independiente del tiempo, 1D)}\medskip
+	\begin{beamercolorbox}[sep=0.3cm,center,wd=\textwidth]{block body}
+		\Huge
+		\begin{equation*}
+			-\frac{\hbar^2}{2m} \frac{d^2\psi(x)}{dx^2} + U(x)\psi(x) = E\psi(x)
+		\end{equation*}
+	\end{beamercolorbox}
+	\medskip
+	\centering (Ecuación 39.18, p. 1364)
+\end{frame}
+
+% --- Diapositiva 11: Anatomía de la Ecuación ---
+\begin{frame}{Anatomía de la Ecuación}
+	Desglosando sus partes:
+	\begin{align*}
+		\underbrace{-\frac{\hbar^2}{2m} \frac{d^2\psi}{dx^2}}_{\text{Término de Energía Cinética}} + \underbrace{U(x)\psi(x)}_{\text{Término de Energía Potencial}} &= \underbrace{E\psi(x)}_{\text{Energía Total del estado}}
+	\end{align*}
+	\vspace{1em}
+	La ecuación dice: \textbf{(Energía Cinética + Energía Potencial)$\psi$ = (Energía Total)$\psi$}
+\end{frame}
+
+% --- Diapositiva 12: La Magia de la Ecuación de Schrödinger ---
+\begin{frame}{La Magia de la Ecuación de Schrödinger}
+	\begin{block}{¿Por qué es tan importante?}
+		Resolver la ecuación para un potencial $U(x)$ dado nos da dos cosas:
+		\begin{enumerate}
+			\item Las \textbf{funciones de onda permitidas, $\psi(x)$}, que describen el estado de la partícula.
+			\item Los \textbf{niveles de energía permitidos, $E$}, para cada estado.
+		\end{enumerate}
+	\end{block}
+	\pause
+	\begin{alertblock}{}
+		\centering
+		\textbf{La cuantización de la energía no se postula, ¡sino que surge como una consecuencia natural de la naturaleza ondulatoria de la materia!}
+	\end{alertblock}
+\end{frame}
+
+% --- Diapositiva 13: Resumen de la Clase ---
+\begin{frame}{Resumen de la Clase}
+	\begin{enumerate}
+		\item Las partículas se describen por una \textbf{función de onda ($\Psi$)}, que contiene toda su información.
+		\item El significado físico es la \textbf{densidad de probabilidad, $|\Psi|^2$}, que nos dice dónde es más probable encontrar la partícula.
+		\item La \textbf{Ecuación de Schrödinger} es la ley fundamental que nos permite encontrar la función de onda y la energía de un sistema.
+		\item Resolverla demuestra que la \textbf{energía está cuantizada} de forma natural.
+	\end{enumerate}
+\end{frame}
+
+% --- Diapositiva 14: Próximos Pasos ---
+\begin{frame}{Próximos Pasos}
+	\begin{block}{¿Qué sigue?}
+		En la próxima clase, aplicaremos la Ecuación de Schrödinger al sistema cuántico más simple:
+		\vspace{1em}
+		\centering\textbf{\Large La partícula en una caja.}
+		\vspace{1em}
+		Veremos cómo resolver la ecuación paso a paso y cómo aparecen los niveles de energía y las funciones de onda cuantizadas.
+	\end{block}
+\end{frame}	
 \end{document}
