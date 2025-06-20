@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase: Función de Onda y Ecuación de Schrödinger</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Para MathJax (renderizado de LaTeX en la web) -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header>
+        <h1>La Función de Onda y la Ecuación de Schrödinger</h1>
+        <p>Una introducción a la descripción cuántica de la materia</p>
+    </header>
+
+    <main>
+        <section id="slide-1" class="slide active">
+            <h2>El Enigma Cuántico</h2>
+            <img src="images/mosca.jpg" alt="Mosca obtenida con haz de electrones" class="slide-image">
+            <div class="question-block">
+                <h3>Pregunta Inicial:</h3>
+                <p>Esta imagen se tomó con un <strong>haz de electrones</strong>, no de luz. ¿Qué propiedad de los electrones permite obtener imágenes con un nivel de detalle que la luz visible no puede alcanzar?</p>
+                <small><em>Pista: Hipótesis de De Broglie (p. 1350) y longitud de onda.</em></small>
+            </div>
+        </section>
+
+        <section id="slide-2" class="slide">
+            <h2>La Necesidad de una Nueva Física</h2>
+            <div class="content-block">
+                <h3>Más allá del modelo de Bohr</h3>
+                <ul>
+                    <li>El modelo de Bohr fue un gran avance, pero era inconsistente.</li>
+                    <li>No podía explicar átomos más complejos que el hidrógeno.</li>
+                    <li><em>"Se necesitaban desviaciones más drásticas respecto de los conceptos clásicos."</em> (p. 1349)</li>
+                </ul>
+                <p>La solución es la <strong>Mecánica Cuántica</strong>, describiendo la materia como <strong>ondas</strong>.</p>
+            </div>
+        </section>
+
+        <section id="slide-3a" class="slide">
+            <h2>Recordando las Ondas Clásicas (Parte 1)</h2>
+             <div class="content-block">
+                <h3>Antes de lo cuántico, recordemos lo clásico</h3>
+                <p>Pensemos en una onda simple: <strong>una onda en una cuerda de guitarra.</strong></p>
+            </div>
+            <img src="images/onda_cuerda.png" alt="Onda en una cuerda" class="slide-image">
+            <p><strong>Pregunta:</strong> ¿Cómo describimos matemáticamente esta onda?</p>
+        </section>
+
+        <section id="slide-3b" class="slide">
+            <h2>Recordando las Ondas Clásicas (Parte 2)</h2>
+            <div class="content-block">
+                <h3>La Función de Onda Clásica</h3>
+                <p>Usamos una <strong>función de onda clásica</strong> para describir el desplazamiento \(y\) de cada punto \(x\) de la cuerda en cualquier instante \(t\):</p>
+                <p class="formula">\(y(x, t)\)</p>
+                <p><strong>¿Qué información contiene \(y(x, t)\)?</strong></p>
+                <ul>
+                    <li>La <strong>forma</strong> de la onda.</li>
+                    <li>La <strong>amplitud</strong> (energía).</li>
+                    <li>La <strong>velocidad</strong> de cualquier punto.</li>
+                    <li>¡Contiene <strong>TODA la información</strong> sobre el estado de la cuerda!</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="slide-3c" class="slide">
+            <h2>Analogía Visual: De lo Clásico a lo Cuántico</h2>
+            <div class="content-block">
+                <h3>Construyendo un Puente Conceptual</h3>
+                <table>
+                    <tr>
+                        <th>Mundo Clásico (Cuerda)</th>
+                        <th>Mundo Cuántico (Electrón)</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Objeto:</strong> Cuerda vibrante</td>
+                        <td><strong>Objeto:</strong> Partícula (ej. electrón)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Descripción:</strong> Desplazamiento \(y\)</td>
+                        <td><strong>Descripción:</strong> ???</td>
+                    </tr>
+                     <tr>
+                        <td><strong>Función:</strong> \(y(x, t)\)</td>
+                        <td><strong>Función:</strong> \(\Psi(x, y, z, t)\)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Propósito:</strong> Describe forma y movimiento.</td>
+                        <td><strong>Propósito:</strong> Describe estado cuántico.</td>
+                    </tr>
+                </table>
+                <p>Usaremos la misma idea de "función de onda", pero su significado será diferente.</p>
+            </div>
+        </section>
+
+        <section id="slide-4" class="slide">
+            <h2>¿Qué es la Función de Onda (\(\Psi\))?</h2>
+            <div class="content-block">
+                <h3>El lenguaje de las ondas cuánticas</h3>
+                <p>Una partícula en mecánica cuántica se describe por su <strong>Función de Onda</strong>:</p>
+                <p class="formula main-formula">\(\Psi(x, y, z, t)\)</p>
+                <ul>
+                    <li>Contiene toda la información posible sobre la partícula.</li>
+                    <li><strong>¡CUIDADO!</strong> No es una onda física. Es una <strong>onda de probabilidad</strong> (p. 1362).</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="slide-5" class="slide">
+            <h2>Un Caso Especial: Estados Estacionarios</h2>
+            <div class="content-block">
+                <h3>Simplificando el problema</h3>
+                <p>Un <strong>estado estacionario</strong> es un estado con <strong>energía definida y constante (\(E\))</strong>.</p>
+                <p>La función de onda se puede separar:</p>
+                <p class="formula">\(\Psi(x, y, z, t) = \psi(x, y, z) \cdot e^{-iEt/\hbar}\)</p>
+                <p class="caption">(Ecuación 39.14, p. 1363)</p>
+                <ul>
+                    <li>\(\psi(x, y, z)\): Parte espacial.</li>
+                    <li>\(e^{-iEt/\hbar}\): Parte temporal.</li>
+                </ul>
+                <p>Nos enfocaremos en la parte espacial, \(\psi(x)\).</p>
+            </div>
+        </section>
+
+        <section id="slide-6" class="slide">
+            <h2>La Gran Pregunta...</h2>
+            <div class="alert-block">
+                <h3>Si \(\Psi\) es un número complejo, ¿qué significa físicamente?</h3>
+                <ul>
+                    <li>No podemos medir \(\Psi\) directamente.</li>
+                    <li>¿Cómo conectamos esta función abstracta con el mundo real?</li>
+                </ul>
+            </div>
+            <img src="images/max_born.jpg" alt="Max Born" class="slide-image small-image">
+             <p class="caption">Max Born (p. 1362). La respuesta la dio en 1926.</p>
+        </section>
+
+        <section id="slide-7" class="slide">
+            <h2>La Interpretación de Born: Probabilidad</h2>
+             <div class="content-block">
+                <p>El significado físico está en el <strong>cuadrado de su valor absoluto</strong>:</p>
+                <p class="formula main-formula">\(|\Psi|^2\)</p>
+                <ul>
+                    <li>\(|\Psi|^2\) es la <strong>densidad de probabilidad</strong>.</li>
+                    <li>\(|\Psi|^2 dV\) es la <strong>probabilidad</strong> de encontrar la partícula en un volumen \(dV\).</li>
+                </ul>
+                <div class="highlight-box">
+                    <strong>En resumen: Donde \(|\Psi|^2\) es grande, es muy probable encontrar la partícula.</strong>
+                </div>
+            </div>
+        </section>
+
+        <section id="slide-8" class="slide">
+            <h2>Normalización</h2>
+            <div class="content-block">
+                <h3>La partícula tiene que estar en algún lugar</h3>
+                <p>La probabilidad total de encontrar la partícula en todo el universo debe ser 1 (100%).</p>
+                <p>Condición matemática:</p>
+                <p class="formula">\(\int_{\text{todo el espacio}} |\Psi|^2 dV = 1\)</p>
+                <p>Cualquier función de onda físicamente válida debe estar <strong>normalizada</strong>.</p>
+            </div>
+        </section>
+
+        <section id="slide-9" class="slide">
+            <h2>La Ley Fundamental del Mundo Cuántico</h2>
+            <div class="columns">
+                <div class="column">
+                    <h4>Mecánica Clásica</h4>
+                    <p>Conociendo fuerzas, \(F = ma\) nos dice cómo se moverá un objeto.</p>
+                </div>
+                <div class="column">
+                    <h4>Mecánica Cuántica</h4>
+                    <p>Conociendo \(U(x)\), necesitamos una ley para \(\psi(x)\).</p>
+                </div>
+            </div>
+            <p>Esa ley es la <strong>Ecuación de Schrödinger</strong>.</p>
+            <img src="images/schrodinger.jpg" alt="Erwin Schrödinger" class="slide-image small-image">
+            <p class="caption">Erwin Schrödinger (p. 1364).</p>
+        </section>
+
+        <section id="slide-10" class="slide">
+            <h2>La Ecuación de Schrödinger</h2>
+            <p class="text-center"><strong>(Independiente del tiempo, 1D)</strong></p>
+            <div class="formula-box">
+                <p class="formula main-formula">\(-\frac{\hbar^2}{2m} \frac{d^2\psi(x)}{dx^2} + U(x)\psi(x) = E\psi(x)\)</p>
+            </div>
+            <p class="caption text-center">(Ecuación 39.18, p. 1364)</p>
+        </section>
+
+        <section id="slide-11" class="slide">
+            <h2>Anatomía de la Ecuación</h2>
+            <div class="content-block">
+                <h3>Desglosando sus partes:</h3>
+                <p><span class="term-kinetic">\(-\frac{\hbar^2}{2m} \frac{d^2\psi}{dx^2}\)</span> \(\rightarrow\) Término de Energía Cinética</p>
+                <p><span class="term-potential">\(U(x)\psi(x)\)</span> \(\rightarrow\) Término de Energía Potencial</p>
+                <p><span class="term-total">\(E\psi(x)\)</span> \(\rightarrow\) Energía Total del estado</p>
+                <br>
+                <p>La ecuación dice: <strong>(Energía Cinética + Energía Potencial)\(\psi\) = (Energía Total)\(\psi\)</strong></p>
+            </div>
+        </section>
+
+        <section id="slide-12" class="slide">
+            <h2>La Magia de la Ecuación de Schrödinger</h2>
+            <div class="content-block">
+                <h3>¿Por qué es tan importante?</h3>
+                <p>Resolver la ecuación para un potencial \(U(x)\) dado nos da:</p>
+                <ol>
+                    <li>Las <strong>funciones de onda permitidas, \(\psi(x)\)</strong>.</li>
+                    <li>Los <strong>niveles de energía permitidos, \(E\)</strong>.</li>
+                </ol>
+            </div>
+            <div class="alert-block highlight-box">
+                <strong>La cuantización de la energía no se postula, ¡sino que surge como una consecuencia natural de la naturaleza ondulatoria de la materia!</strong>
+            </div>
+        </section>
+
+        <section id="slide-13" class="slide">
+            <h2>Resumen de la Clase</h2>
+            <ol>
+                <li>Partículas descritas por una <strong>función de onda (\(\Psi\))</strong>.</li>
+                <li>Significado físico: <strong>densidad de probabilidad, \(|\Psi|^2\)</strong>.</li>
+                <li><strong>Ecuación de Schrödinger</strong>: ley fundamental para \(\Psi\) y \(E\).</li>
+                <li>Resolverla demuestra que la <strong>energía está cuantizada</strong>.</li>
+            </ol>
+        </section>
+
+        <section id="slide-14" class="slide">
+            <h2>Próximos Pasos</h2>
+            <div class="content-block">
+                <h3>¿Qué sigue?</h3>
+                <p>En la próxima clase, aplicaremos la Ecuación de Schrödinger al sistema cuántico más simple:</p>
+                <p class="text-center highlight-text"><strong>La partícula en una caja.</strong></p>
+                <p>Veremos cómo resolver la ecuación y cómo aparecen los niveles de energía y las funciones de onda cuantizadas.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <button id="prevBtn" onclick="changeSlide(-1)">Anterior</button>
+        <button id="nextBtn" onclick="changeSlide(1)">Siguiente</button>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

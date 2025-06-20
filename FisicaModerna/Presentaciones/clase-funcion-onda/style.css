@@ -1,0 +1,185 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 0.2rem;
+}
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+    max-width: 900px; /* Ancho máximo del contenido */
+    margin: 20px auto; /* Centrar contenido */
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.slide {
+    display: none; /* Ocultar todas las diapositivas por defecto */
+    padding: 20px;
+    border-bottom: 1px solid #ddd; /* Separador visual */
+}
+
+.slide.active {
+    display: block; /* Mostrar la diapositiva activa */
+}
+
+.slide h2 {
+    color: #333;
+    border-bottom: 2px solid #5cb85c;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+.slide-image {
+    display: block;
+    max-width: 70%; /* Ajustar al contenido */
+    height: auto;
+    margin: 15px auto; /* Centrar imagen */
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+.slide-image.small-image {
+    max-width: 40%;
+}
+
+.question-block, .content-block, .alert-block {
+    background-color: #e9e9e9;
+    padding: 15px;
+    margin-top: 15px;
+    border-left: 5px solid #5cb85c;
+}
+
+.alert-block {
+    border-left-color: #f0ad4e;
+}
+
+.formula {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.4em;
+    text-align: center;
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px dashed #ccc;
+}
+
+.formula.main-formula {
+    font-size: 1.8em; /* Destacar fórmulas clave */
+}
+
+.formula-box { /* Para la ecuación de Schrödinger */
+    padding: 20px;
+    border: 2px solid #337ab7;
+    margin: 20px 0;
+    background-color: #e7f3fe;
+}
+
+
+.caption {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.highlight-box {
+    background-color: #dff0d8;
+    border: 1px solid #d6e9c6;
+    color: #3c763d;
+    padding: 15px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.highlight-text {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #337ab7;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.columns {
+    display: flex;
+    gap: 20px; /* Espacio entre columnas */
+}
+.column {
+    flex: 1; /* Cada columna toma el mismo espacio */
+    background-color: #f9f9f9;
+    padding:10px;
+    border: 1px solid #eee;
+}
+.column h4{
+    margin-top:0;
+    color: #337ab7;
+}
+
+
+.term-kinetic { color: red; font-weight: bold; }
+.term-potential { color: blue; font-weight: bold; }
+.term-total { color: green; font-weight: bold; }
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+    margin-top: auto; /* Empujar al fondo si el contenido es corto */
+}
+
+footer button {
+    background: #5cb85c;
+    color: white;
+    border: 0;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+footer button:hover {
+    background: #4cae4c;
+}
+
+/* Ocultar botón si es la primera/última diapositiva */
+#prevBtn:disabled, #nextBtn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
