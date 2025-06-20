@@ -1,0 +1,265 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{mwe} % Para las imágenes de ejemplo
+\usepackage{physics} % Para notación física
+\usepackage{braket} % Para notación cuántica
+
+% Opcional: Elige un tema de Beamer
+\usetheme{Madrid} % Ejemplo, puedes elegir otro como Warsaw, Berlin, Boadilla, etc.
+\usecolortheme{default} % Puedes elegir otros temas de color
+
+\title{La Función de Onda y la Ecuación de Schrödinger}
+\subtitle{Una introducción a la descripción cuántica de la materia}
+\author{Curso: Física Moderna \\ Dr. Jorge Barojas}
+\date{\today}
+
+\begin{document}
+
+% --- Diapositiva 1: Título ---
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% --- Diapositiva 2: El Enigma Cuántico ---
+\begin{frame}{El Enigma Cuántico}
+  \begin{figure}
+    \includegraphics[width=0.6\textwidth]{example-image-a} % Reemplaza con tu imagen de la mosca
+    \caption{Imagen de una mosca de murciélago obtenida con un haz de electrones (p. 1349).}
+  \end{figure}
+  \begin{block}{Pregunta Inicial}
+    Esta imagen se tomó con un \textbf{haz de electrones}, no de luz.
+    \vspace{0.5em}
+    ¿Qué propiedad de los electrones permite obtener imágenes con un nivel de detalle que la luz visible no puede alcanzar?
+  \end{block}
+  \tiny{\textit{Nota para el presentador: Hipótesis de De Broglie (p. 1350) y longitud de onda.}}
+\end{frame}
+
+% --- Diapositiva 3: La Necesidad de una Nueva Física ---
+\begin{frame}{La Necesidad de una Nueva Física}
+  \begin{block}{Más allá del modelo de Bohr}
+    \begin{itemize}
+      \item El modelo de Bohr fue un gran avance, pero era inconsistente: mezclaba ideas clásicas y cuánticas.
+      \item No podía explicar átomos más complejos que el hidrógeno.
+      \item Como dice el texto: \textit{"Se necesitaban desviaciones más drásticas respecto de los conceptos clásicos."} (p. 1349)
+    \end{itemize}
+  \end{block}
+  \pause
+  La solución es la \textbf{Mecánica Cuántica}, una teoría que describe la materia no como partículas puntuales, sino como \textbf{ondas}.
+\end{frame}
+
+% --- Diapositiva 3a: Recordando las Ondas Clásicas (Parte 1) ---
+\begin{frame}{Recordando las Ondas Clásicas (Parte 1)}
+  \begin{block}{Antes de lo cuántico, recordemos lo clásico}
+    Pensemos en una onda simple que todos conocemos: \textbf{una onda en una cuerda de guitarra.}
+  \end{block}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{example-image-b} % Reemplaza con una imagen de onda en cuerda
+    \caption{Onda en una cuerda.}
+  \end{figure}
+  \textbf{Pregunta:} ¿Cómo describimos matemáticamente esta onda?
+\end{frame}
+
+% --- Diapositiva 3b: Recordando las Ondas Clásicas (Parte 2) ---
+\begin{frame}{Recordando las Ondas Clásicas (Parte 2)}
+  \begin{block}{La Función de Onda Clásica}
+    Usamos una \textbf{función de onda clásica} para describir el desplazamiento $y$ de cada punto $x$ de la cuerda en cualquier instante $t$:
+    \begin{center}
+      \Large $y(x, t)$
+    \end{center}
+    \vspace{1em}
+    \textbf{¿Qué información contiene $y(x, t)$?}
+    \begin{itemize}
+      \item La \textbf{forma} de la onda en el espacio.
+      \item La \textbf{amplitud} (relacionada con la energía de la onda).
+      \item La \textbf{velocidad} de cualquier punto de la cuerda.
+      \item ¡Contiene \textbf{TODA la información} sobre el estado de la cuerda!
+    \end{itemize}
+  \end{block}
+  Esta idea de una función que describe completamente un sistema es clave.
+\end{frame}
+
+% --- Diapositiva 3c: Analogía Visual: De lo Clásico a lo Cuántico ---
+\begin{frame}{Analogía Visual: De lo Clásico a lo Cuántico}
+  \begin{block}{Construyendo un Puente Conceptual}
+    \begin{tabular}{|m{0.45\textwidth}|m{0.45\textwidth}|}
+      \hline
+      \centering \textbf{Mundo Clásico (Cuerda)} & \centering \textbf{Mundo Cuántico (Electrón)} \\
+      \hline
+      \textbf{Objeto:} Cuerda vibrante & \textbf{Objeto:} Partícula (ej. electrón) \\
+      \textbf{Descripción:} Desplazamiento $y$ & \textbf{Descripción:} ??? \\
+      \textbf{Función:} \large $y(x, t)$ & \textbf{Función:} \large $\Psi(x, y, z, t)$ \\
+      \textbf{Propósito:} Describe la forma y movimiento de la cuerda. & \textbf{Propósito:} Describe el \textbf{estado cuántico} de la partícula. \\
+      \hline
+    \end{tabular}
+  \end{block}
+  \vspace{1em}
+  Vamos a usar la misma idea de una función de onda para describir el electrón, pero su significado será diferente y más profundo.
+\end{frame}
+
+% --- Diapositiva 4: ¿Qué es la Función de Onda (Ψ)? ---
+\begin{frame}{¿Qué es la Función de Onda ($\Psi$)?}
+  \begin{block}{El lenguaje de las ondas cuánticas}
+    Así como una onda en una cuerda se describe por $y(x, t)$, una partícula en mecánica cuántica se describe por su \textbf{Función de Onda}:
+    \begin{center}
+      \Huge $\Psi(x, y, z, t)$
+    \end{center}
+    \begin{itemize}
+      \item Es una función matemática que \textbf{contiene toda la información posible} sobre la partícula.
+      \item \textbf{¡CUIDADO!} No es una onda física en un medio material. Es una \textbf{onda de probabilidad} (p. 1362).
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+% --- Diapositiva 5: Un Caso Especial: Estados Estacionarios ---
+\begin{frame}{Un Caso Especial: Estados Estacionarios}
+  \begin{block}{Simplificando el problema}
+    Un \textbf{estado estacionario} es un estado donde la partícula tiene una \textbf{energía definida y constante ($E$)}.
+    \vspace{0.5em}
+    En este caso, la función de onda se puede separar:
+    \begin{equation*}
+      \Psi(x, y, z, t) = \psi(x, y, z) \cdot e^{-iEt/\hbar}
+    \end{equation*}
+    \centering (Ecuación 39.14, p. 1363)
+    \vspace{0.5em}
+    \begin{itemize}
+      \item $\psi(x, y, z)$: Parte espacial (independiente del tiempo).
+      \item $e^{-iEt/\hbar}$: Parte temporal (oscilatoria).
+    \end{itemize}
+  \end{block}
+  Nos enfocaremos en la parte espacial, $\psi(x)$, que describe la "forma" de la onda.
+\end{frame}
+
+% --- Diapositiva 6: La Gran Pregunta... ---
+\begin{frame}{La Gran Pregunta...}
+  \begin{alertblock}{Si $\Psi$ es un número complejo, ¿qué significa físicamente?}
+    \begin{itemize}
+        \item No podemos medir $\Psi$ directamente.
+        \item ¿Cómo conectamos esta función matemática abstracta con los experimentos y el mundo real?
+    \end{itemize}
+  \end{alertblock}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.3\textwidth]{example-image-c} % Reemplaza con imagen de Max Born
+    \caption{Max Born (p. 1362).}
+  \end{figure}
+  \centering La respuesta la dio Max Born en 1926.
+\end{frame}
+
+% --- Diapositiva 7: La Interpretación de Born: Probabilidad ---
+\begin{frame}{La Interpretación de Born: Probabilidad}
+  El significado físico no está en $\Psi$, sino en el \textbf{cuadrado de su valor absoluto}:
+  \begin{center}
+    \Huge $|\Psi|^2$
+  \end{center}
+  \begin{itemize}
+    \item $|\Psi|^2$ se conoce como la \textbf{densidad de probabilidad}.
+    \item $|\Psi|^2 dV$ es la \textbf{probabilidad} de encontrar la partícula en un pequeño volumen $dV$.
+  \end{itemize}
+  \vspace{1em}
+  \begin{beamercolorbox}[sep=0.3cm,center,wd=\textwidth]{block body alerted}
+    \textbf{En resumen: Donde $|\Psi|^2$ es grande, es muy probable encontrar la partícula.}
+  \end{beamercolorbox}
+  \tiny{\textit{Sugerencia: Dibujar en pizarra $\psi(x)$ vs $|\psi(x)|^2$.}}
+\end{frame}
+
+% --- Diapositiva 8: Normalización ---
+\begin{frame}{Normalización}
+  \begin{block}{La partícula tiene que estar en algún lugar}
+    Si $|\Psi|^2$ representa una probabilidad, la probabilidad total de encontrar la partícula en \textit{todo el universo} debe ser del 100\% (o 1).
+    \vspace{0.5em}
+    Esto impone una condición matemática fundamental:
+    \begin{equation*}
+      \int_{\text{todo el espacio}} |\Psi|^2 dV = 1
+    \end{equation*}
+    Cualquier función de onda físicamente válida debe estar \textbf{normalizada}.
+  \end{block}
+\end{frame}
+
+% --- Diapositiva 9: La Ley Fundamental del Mundo Cuántico ---
+\begin{frame}{La Ley Fundamental del Mundo Cuántico}
+  \begin{columns}
+    \column{0.5\textwidth}
+      \begin{block}{Mecánica Clásica}
+        Conociendo las fuerzas, \textbf{F = ma} nos dice cómo se moverá un objeto.
+      \end{block}
+    \column{0.5\textwidth}
+      \begin{block}{Mecánica Cuántica}
+        Conociendo el entorno (la energía potencial $U(x)$), necesitamos una ley que nos diga cómo será la función de onda $\psi(x)$.
+      \end{block}
+  \end{columns}
+  \vfill
+  \centering
+  Esa ley es la \textbf{Ecuación de Schrödinger}.
+  \begin{figure}
+    \includegraphics[width=0.3\textwidth]{example-image} % Reemplaza con imagen de Schrödinger
+    \caption{Erwin Schrödinger (p. 1364).}
+  \end{figure}
+\end{frame}
+
+% --- Diapositiva 10: La Ecuación de Schrödinger ---
+\begin{frame}{La Ecuación de Schrödinger}
+  \centering\textbf{(Independiente del tiempo, 1D)}\medskip
+  \begin{beamercolorbox}[sep=0.3cm,center,wd=\textwidth]{block body}
+  \Huge
+  \begin{equation*}
+    -\frac{\hbar^2}{2m} \frac{d^2\psi(x)}{dx^2} + U(x)\psi(x) = E\psi(x)
+  \end{equation*}
+  \end{beamercolorbox}
+  \medskip
+  \centering (Ecuación 39.18, p. 1364)
+\end{frame}
+
+% --- Diapositiva 11: Anatomía de la Ecuación ---
+\begin{frame}{Anatomía de la Ecuación}
+  Desglosando sus partes:
+  \begin{align*}
+    \underbrace{-\frac{\hbar^2}{2m} \frac{d^2\psi}{dx^2}}_{\text{Término de Energía Cinética}} + \underbrace{U(x)\psi(x)}_{\text{Término de Energía Potencial}} &= \underbrace{E\psi(x)}_{\text{Energía Total del estado}}
+  \end{align*}
+  \vspace{1em}
+  La ecuación dice: \textbf{(Energía Cinética + Energía Potencial)$\psi$ = (Energía Total)$\psi$}
+\end{frame}
+
+% --- Diapositiva 12: La Magia de la Ecuación de Schrödinger ---
+\begin{frame}{La Magia de la Ecuación de Schrödinger}
+  \begin{block}{¿Por qué es tan importante?}
+    Resolver la ecuación para un potencial $U(x)$ dado nos da dos cosas:
+    \begin{enumerate}
+      \item Las \textbf{funciones de onda permitidas, $\psi(x)$}, que describen el estado de la partícula.
+      \item Los \textbf{niveles de energía permitidos, $E$}, para cada estado.
+    \end{enumerate}
+  \end{block}
+  \pause
+  \begin{alertblock}{}
+    \centering
+    \textbf{La cuantización de la energía no se postula, ¡sino que surge como una consecuencia natural de la naturaleza ondulatoria de la materia!}
+  \end{alertblock}
+\end{frame}
+
+% --- Diapositiva 13: Resumen de la Clase ---
+\begin{frame}{Resumen de la Clase}
+  \begin{enumerate}
+    \item Las partículas se describen por una \textbf{función de onda ($\Psi$)}, que contiene toda su información.
+    \item El significado físico es la \textbf{densidad de probabilidad, $|\Psi|^2$}, que nos dice dónde es más probable encontrar la partícula.
+    \item La \textbf{Ecuación de Schrödinger} es la ley fundamental que nos permite encontrar la función de onda y la energía de un sistema.
+    \item Resolverla demuestra que la \textbf{energía está cuantizada} de forma natural.
+  \end{enumerate}
+\end{frame}
+
+% --- Diapositiva 14: Próximos Pasos ---
+\begin{frame}{Próximos Pasos}
+  \begin{block}{¿Qué sigue?}
+    En la próxima clase, aplicaremos la Ecuación de Schrödinger al sistema cuántico más simple:
+    \vspace{1em}
+    \centering\textbf{\Large La partícula en una caja.}
+    \vspace{1em}
+    Veremos cómo resolver la ecuación paso a paso y cómo aparecen los niveles de energía y las funciones de onda cuantizadas.
+  \end{block}
+\end{frame}
+
+\end{document}
+
+
