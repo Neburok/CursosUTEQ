@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.11.29)  24 JUN 2025 00:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.11.29)  24 JUN 2025 13:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./ManualPracticas-FisicModerna.tex
-(ManualPracticas-FisicModerna.tex
+**./ManualAsignatura-FisicaModerna-v0.tex
+(ManualAsignatura-FisicaModerna-v0.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
 (C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls
@@ -767,55 +767,164 @@ Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
 \mult@nat@firstbox=\box117
 \colbreak@box=\box118
 \mc@col@check@num=\count323
+) (C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
+Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
+\TX@col@width=\dimen292
+\TX@old@table=\dimen293
+\TX@old@col=\dimen294
+\TX@target=\dimen295
+\TX@delta=\dimen296
+\TX@cols=\count324
+\TX@ftn=\toks42
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 86.
+(C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
+Package: longtable 2023-11-01 v4.19 Multi-page Table package (DPC)
+\LTleft=\skip72
+\LTright=\skip73
+\LTpre=\skip74
+\LTpost=\skip75
+\LTchunksize=\count325
+\LTcapwidth=\dimen297
+\LT@head=\box119
+\LT@firsthead=\box120
+\LT@foot=\box121
+\LT@lastfoot=\box122
+\LT@gbox=\box123
+\LT@cols=\count326
+\LT@rows=\count327
+\c@LT@tables=\count328
+\c@LT@chunks=\count329
+\LT@p@ftn=\toks43
+)
+(C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tik
+z.sty
+(C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.
+sty
+(C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys
+.sty
+(C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfke
+ys.code.tex))
+(C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+(C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.co
+de.tex))
+(C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffo
+r.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen298
+\pgffor@skip=\dimen299
+\pgffor@stack=\toks44
+\pgffor@toks=\toks45
+))
+(C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/t
+ikz\tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgfli
+braryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count330
+\pgfplotmarksize=\dimen300
+)
+\tikz@lastx=\dimen301
+\tikz@lasty=\dimen302
+\tikz@lastxsaved=\dimen303
+\tikz@lastysaved=\dimen304
+\tikz@lastmovetox=\dimen305
+\tikz@lastmovetoy=\dimen306
+\tikzleveldistance=\dimen307
+\tikzsiblingdistance=\dimen308
+\tikz@figbox=\box124
+\tikz@figbox@bg=\box125
+\tikz@tempbox=\box126
+\tikz@tempbox@bg=\box127
+\tikztreelevel=\count331
+\tikznumberofchildren=\count332
+\tikznumberofcurrentchild=\count333
+\tikz@fig@count=\count334
+
+(C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodu
+lematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count335
+\pgfmatrixcurrentcolumn=\count336
+\pgf@matrix@numberofcolumns=\count337
+)
+\tikz@expandcount=\count338
+
+(C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/t
+ikz/libraries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome5\fontawes
+ome5.sty
+(C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2024-01-04 L3 programming layer (loader) 
 
 (C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-p
 dftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count324
-\l__pdf_internal_box=\box119
-) (ManualPracticas-FisicModerna.aux
+\l__color_backend_stack_int=\count339
+\l__pdf_internal_box=\box128
+))
+Package: fontawesome5 2022/05/02 v5.15.4 Font Awesome 5
+
+(C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l
+3keys2e.sty
+Package: l3keys2e 2023-10-10 LaTeX2e option processing using LaTeX3 keys
+)
+(C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpa
+rse.sty
+Package: xparse 2023-10-10 L3 Experimental document command parser
+)
+(C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome5\fontawes
+ome5-generic-helper.sty
+Package: fontawesome5-generic-helper 2022/05/02 v5.15.4 non-uTeX helper for fon
+tawesome5
+
+(C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome5\fontawes
+ome5-mapping.def)))
+Package hyperref Info: Option `colorlinks' set `true' on input line 169.
+ (ManualAsignatura-FisicaModerna-v0.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
-\openout1 = `ManualPracticas-FisicModerna.aux'.
+\openout1 = `ManualAsignatura-FisicaModerna-v0.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Info: Redefining \. on input line 88.
-LaTeX Info: Redefining \% on input line 88.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Info: Redefining \. on input line 176.
+LaTeX Info: Redefining \% on input line 176.
 
 (C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.
 mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count325
-\scratchdimen=\dimen292
-\scratchbox=\box120
-\nofMPsegments=\count326
-\nofMParguments=\count327
-\everyMPshowfont=\toks42
-\MPscratchCnt=\count328
-\MPscratchDim=\dimen293
-\MPnumerator=\count329
-\makeMPintoPDFobject=\count330
-\everyMPtoPDFconversion=\toks43
+\scratchcounter=\count340
+\scratchdimen=\dimen309
+\scratchbox=\box129
+\nofMPsegments=\count341
+\nofMParguments=\count342
+\everyMPshowfont=\toks46
+\MPscratchCnt=\count343
+\MPscratchDim=\dimen310
+\MPnumerator=\count344
+\makeMPintoPDFobject=\count345
+\everyMPtoPDFconversion=\toks47
 )
 (C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf
 -base.sty
@@ -861,23 +970,22 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 88.
-(ManualPracticas-FisicModerna.out) (ManualPracticas-FisicModerna.out)
+Package hyperref Info: Link coloring ON on input line 176.
+(ManualAsignatura-FisicaModerna-v0.out) (ManualAsignatura-FisicaModerna-v0.out)
 \@outlinefile=\write4
-\openout4 = `ManualPracticas-FisicModerna.out'.
+\openout4 = `ManualAsignatura-FisicaModerna-v0.out'.
 
-<../../Imagenes/Logo_uteq.png, id=98, 503.7219pt x 217.0509pt>
+<../../Imagenes/Logo_uteq.png, id=90, 503.7219pt x 217.0509pt>
 File: ../../Imagenes/Logo_uteq.png Graphic file (type png)
 <use ../../Imagenes/Logo_uteq.png>
-Package pdftex.def Info: ../../Imagenes/Logo_uteq.png  used on input line 95.
+Package pdftex.def Info: ../../Imagenes/Logo_uteq.png  used on input line 183.
 (pdftex.def)             Requested size: 113.81102pt x 49.03967pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 113
+LaTeX Font Info:    Trying to load font information for U+msa on input line 200
 .
-
 (C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 113
+LaTeX Font Info:    Trying to load font information for U+msb on input line 200
 .
 
 (C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -885,25 +993,43 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 File: ../../Imagenes/Logo_uteq.png Graphic file (type png)
 <use ../../Imagenes/Logo_uteq.png>
-Package pdftex.def Info: ../../Imagenes/Logo_uteq.png  used on input line 133.
+Package pdftex.def Info: ../../Imagenes/Logo_uteq.png  used on input line 230.
 (pdftex.def)             Requested size: 56.9055pt x 24.51817pt.
 
 [1
 
 
 {C:/Users/RubenVH/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <../../Imag
-enes/Logo_uteq.png>] [2] (ManualPracticas-FisicModerna.toc
+enes/Logo_uteq.png>] [2]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[3]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[4
+
+] (ManualAsignatura-FisicaModerna-v0.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
 \tf@toc=\write5
-\openout5 = `ManualPracticas-FisicModerna.toc'.
+\openout5 = `ManualAsignatura-FisicaModerna-v0.toc'.
 
- [3
-
-]
-LaTeX Info: Redefining \. on input line 199.
-LaTeX Info: Redefining \% on input line 199.
+ [5]
+LaTeX Info: Redefining \. on input line 298.
+LaTeX Info: Redefining \% on input line 298.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -913,20 +1039,161 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.71667pt}.
 
-[4
+[6
+
+] (ManualAsignatura-FisicaModerna-v0.lot
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+)
+\tf@lot=\write6
+\openout6 = `ManualAsignatura-FisicaModerna-v0.lot'.
+
+ [7]
+LaTeX Info: Redefining \. on input line 301.
+LaTeX Info: Redefining \% on input line 301.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.71667pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.71667pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.71667pt}.
+
+[8
 
 ]
 Cap\'{\i }tulo 1.
+LaTeX Font Info:    Trying to load font information for U+fontawesomefree2 on i
+nput line 307.
 
-Overfull \hbox (27.4592pt too wide) in paragraph at lines 199--199
-|\OT1/cmr/bx/n/24.88 INTRODUCCI[]ON GE-NE-RAL AL MA-
+(C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome5\ufontawe
+somefree2.fd) [9{C:/Users/RubenVH/AppData/Local/Programs/MiKTeX/fonts/enc/dvips
+/fontawesome5/fa5free2.enc}]
+LaTeX Font Info:    Trying to load font information for U+fontawesomefree0 on i
+nput line 358.
+
+(C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome5\ufontawe
+somefree0.fd)
+Underfull \vbox (badness 2080) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 376.
+LaTeX Info: Redefining \% on input line 376.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.71667pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.71667pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.71667pt}.
+
+[10{C:/Users/RubenVH/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/fontawesome5
+/fa5free0.enc}]
+LaTeX Font Info:    Trying to load font information for U+fontawesomefree3 on i
+nput line 377.
+
+(C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome5\ufontawe
+somefree3.fd)
+LaTeX Font Info:    Trying to load font information for U+fontawesomefree1 on i
+nput line 388.
+
+(C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome5\ufontawe
+somefree1.fd)
+LaTeX Info: Redefining \. on input line 408.
+LaTeX Info: Redefining \% on input line 408.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.71667pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.71667pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.71667pt}.
+
+[11{C:/Users/RubenVH/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/fontawesome5
+/fa5free3.enc}{C:/Users/RubenVH/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/f
+ontawesome5/fa5free1.enc}]
+LaTeX Info: Redefining \. on input line 457.
+LaTeX Info: Redefining \% on input line 457.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.71667pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.71667pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.71667pt}.
+
+[12]
+Overfull \hbox (14.73477pt too wide) in paragraph at lines 465--465
+ []|\OT1/cmr/bx/n/12 Unidad| 
  []
 
-[5]
+LaTeX Info: Redefining \. on input line 485.
+LaTeX Info: Redefining \% on input line 485.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[13]
+LaTeX Info: Redefining \. on input line 485.
+LaTeX Info: Redefining \% on input line 485.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.71667pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.71667pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.71667pt}.
+
+[14
+
+]
+Cap\'{\i }tulo 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 485--485
+|\OT1/cmr/bx/n/24.88 Cap^^S^^Ptu-lo 2|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 485--485
+\OT1/cmr/bx/n/24.88 ELEC-TRO-MAG-NE-TIS-MO|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 487--487
+|[]\OT1/cmr/bx/n/17.28 Informaci^^Son Ge-ne-ral de la Uni-dad|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 500--500
+|[]\OT1/cmr/bx/n/17.28 Contenidos Tem^^Sati-cos|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 502--502
+|[]\OT1/cmr/bx/n/14.4 Tema 1.1: Cam-pos El^^Sectri-cos y Magn^^Seti-cos|
+ []
+
+
+Underfull \vbox (badness 1087) has occurred while \output is active []
+
+ [15]
+Underfull \hbox (badness 10000) in paragraph at lines 537--537
+|[]\OT1/cmr/bx/n/14.4 Tema 1.2: Ecua-cio-nes de Max-well|
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 269.
-LaTeX Info: Redefining \% on input line 269.
+LaTeX Info: Redefining \. on input line 563.
+LaTeX Info: Redefining \% on input line 563.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -936,45 +1203,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.71667pt}.
 
-[6]
-LaTeX Info: Redefining \. on input line 289.
-LaTeX Info: Redefining \% on input line 289.
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 564--564
+|[]\OT1/cmr/bx/n/14.4 Tema 1.3: Ecua-ci^^Son de On-da y Po-la-ri-za-ci^^Son|
+ []
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[7]
-LaTeX Info: Redefining \. on input line 339.
-LaTeX Info: Redefining \% on input line 339.
+Underfull \hbox (badness 10000) in paragraph at lines 589--589
+|[]\OT1/cmr/bx/n/17.28 Pr^^Sacti-cas de La-bo-ra-to-rio|
+ []
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.71667pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.71667pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-(fancyhdr)                \addtolength{\topmargin}{-3.71667pt}.
-
-[8]
-LaTeX Info: Redefining \. on input line 399.
-LaTeX Info: Redefining \% on input line 399.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[9]
-LaTeX Info: Redefining \. on input line 420.
-LaTeX Info: Redefining \% on input line 420.
+LaTeX Info: Redefining \. on input line 618.
+LaTeX Info: Redefining \% on input line 618.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -984,9 +1227,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.71667pt}.
 
-[10]
-LaTeX Info: Redefining \. on input line 467.
-LaTeX Info: Redefining \% on input line 467.
+[17]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 646.
+LaTeX Info: Redefining \% on input line 646.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -996,9 +1241,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.71667pt}.
 
-[11]
-LaTeX Info: Redefining \. on input line 506.
-LaTeX Info: Redefining \% on input line 506.
+[18]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 673.
+LaTeX Info: Redefining \% on input line 673.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1008,7 +1255,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.71667pt}.
 
-[12] (ManualPracticas-FisicModerna.aux
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 674--674
+|[]\OT1/cmr/bx/n/17.28 Evaluaci^^Son de la Uni-dad I|
+ []
+
+LaTeX Info: Redefining \. on input line 693.
+LaTeX Info: Redefining \% on input line 693.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.71667pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.71667pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.71667pt}.
+
+[20] (ManualAsignatura-FisicaModerna-v0.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -1016,25 +1278,30 @@ LaTeX Info: Redefining \% on input line 11.
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
-Package rerunfilecheck Info: File `ManualPracticas-FisicModerna.out' has not ch
-anged.
-(rerunfilecheck)             Checksum: E70EBA50CBB9611EBF6622B4FF9CD826;4715.
+Package rerunfilecheck Info: File `ManualAsignatura-FisicaModerna-v0.out' has n
+ot changed.
+(rerunfilecheck)             Checksum: 72F74E3694D49F3A9427E2557689DF2B;4353.
  ) 
 Here is how much of TeX's memory you used:
- 22782 strings out of 474486
- 422709 string characters out of 5742810
- 1939542 words of memory out of 5000000
- 44659 multiletter control sequences out of 15000+600000
- 565791 words of font info for 64 fonts, out of 8000000 for 9000
+ 28727 strings out of 474486
+ 558617 string characters out of 5742810
+ 1941542 words of memory out of 5000000
+ 50510 multiletter control sequences out of 15000+600000
+ 567300 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,12n,87p,576b,591s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/RubenVH/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmbx12.pfb><C:/Users/RubenVH/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmr12.pfb><C:/Users/RubenVH/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmti12.pfb>
-Output written on ManualPracticas-FisicModerna.pdf (12 pages, 198089 bytes).
+ 83i,13n,87p,469b,606s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/RubenVH/AppData/Local/Programs/MiKTeX/fonts/type1/public/fontawesom
+e5/FontAwesome5Free-Solid.pfb><C:/Users/RubenVH/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/RubenVH/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/RubenVH/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/RubenVH
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Use
+rs/RubenVH/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.
+pfb>
+Output written on ManualAsignatura-FisicaModerna-v0.pdf (20 pages, 274703 bytes
+).
 PDF statistics:
- 221 PDF objects out of 1000 (max. 8388607)
- 52 named destinations out of 1000 (max. 500000)
- 202 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 281 PDF objects out of 1000 (max. 8388607)
+ 64 named destinations out of 1000 (max. 500000)
+ 186 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,693 @@
+\documentclass[12pt,a4paper]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{tikz}
+\usepackage{fontawesome5}
+
+% Configuración de página
+\geometry{margin=2.5cm}
+
+% Configuración de colores institucionales
+\definecolor{uteqblue}{RGB}{0,51,102}
+\definecolor{uteqgray}{RGB}{128,128,128}
+\definecolor{uteqgold}{RGB}{255,204,0}
+\definecolor{uteqgreen}{RGB}{34,139,34}
+\definecolor{uteqorange}{RGB}{255,140,0}
+
+% Configuración de headers y footers
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Para páginas normales
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[LO]{\rightmark}
+\fancyhead[RE]{\leftmark}
+\fancyfoot[C]{\textcolor{uteqgray}{\textit{Manual del Estudiante - Física Moderna}}}
+
+% Para páginas de capítulo
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\fancyfoot[C]{\textcolor{uteqgray}{\textit{Manual del Estudiante - Física Moderna}}}
+	\renewcommand{\headrulewidth}{0pt}
+}
+
+% Configuración de títulos de capítulo
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries\color{uteqblue}}
+{\chaptertitlename\ \thechapter}
+{20pt}
+{\Huge}
+
+% Configuración de títulos de sección
+\titleformat{\section}
+{\normalfont\Large\bfseries\color{uteqblue}}
+{\thesection}
+{1em}
+{}
+
+\titleformat{\subsection}
+{\normalfont\large\bfseries\color{uteqgreen}}
+{\thesubsection}
+{1em}
+{}
+
+% Configuración de cajas temáticas
+\newtcolorbox{objetivobox}{
+	colback=blue!5!white,
+	colframe=uteqblue,
+	title=\faTarget\ Objetivos,
+	fonttitle=\bfseries,
+	rounded corners
+}
+
+\newtcolorbox{competenciabox}{
+	colback=green!5!white,
+	colframe=uteqgreen,
+	title=\faCogs\ Competencias a Desarrollar,
+	fonttitle=\bfseries,
+	rounded corners
+}
+
+\newtcolorbox{saberbox}{
+	colback=blue!8!white,
+	colframe=blue!60!black,
+	title=\faBook\ SABER - Conocimientos,
+	fonttitle=\bfseries,
+	rounded corners
+}
+
+\newtcolorbox{saberhacerbox}{
+	colback=green!8!white,
+	colframe=green!60!black,
+	title=\faTools\ SABER HACER - Habilidades,
+	fonttitle=\bfseries,
+	rounded corners
+}
+
+\newtcolorbox{serbox}{
+	colback=orange!8!white,
+	colframe=orange!60!black,
+	title=\faHeart\ SER - Actitudes y Valores,
+	fonttitle=\bfseries,
+	rounded corners
+}
+
+\newtcolorbox{evaluacionbox}{
+	colback=purple!8!white,
+	colframe=purple!60!black,
+	title=\faClipboardCheck\ Evaluación,
+	fonttitle=\bfseries,
+	rounded corners
+}
+
+\newtcolorbox{practicabox}{
+	colback=cyan!8!white,
+	colframe=cyan!60!black,
+	title=\faFlask\ Práctica de Laboratorio,
+	fonttitle=\bfseries,
+	rounded corners
+}
+
+\newtcolorbox{notabox}{
+	colback=yellow!10!white,
+	colframe=orange!50!black,
+	title=\faExclamationTriangle\ Nota Importante,
+	fonttitle=\bfseries,
+	rounded corners
+}
+
+\newtcolorbox{consejobox}{
+	colback=green!5!white,
+	colframe=green!40!black,
+	title=\faLightbulb\ Consejo para el Éxito,
+	fonttitle=\bfseries,
+	rounded corners
+}
+
+\newtcolorbox{tecnologiabox}{
+	colback=gray!5!white,
+	colframe=gray!60!black,
+	title=\faLaptop\ Herramientas Tecnológicas,
+	fonttitle=\bfseries,
+	rounded corners
+}
+
+% Configuración de tablas especiales
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+% Configuración de hyperlinks
+\hypersetup{
+	colorlinks=true,
+	linkcolor=uteqblue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	pdftitle={Manual del Estudiante - Física Moderna},
+	pdfauthor={Universidad Tecnológica de Querétaro},
+	pdfsubject={Física Moderna - Ingeniería en Nanotecnología},
+	pdfkeywords={física, cuántica, nanotecnología, estudiante, manual},
+}
+
+% Comandos personalizados
+\newcommand{\nivel}[1]{\textcolor{uteqblue}{\textbf{#1}}}
+\newcommand{\destaque}[1]{\textcolor{uteqorange}{\textbf{#1}}}
+\newcommand{\importante}[1]{\textcolor{red}{\textbf{#1}}}
+
+\begin{document}
+	
+	% PORTADA
+	\begin{titlepage}
+		\begin{center}
+			
+			% Logo institucional superior
+			\includegraphics[width=4cm]{../../Imagenes/Logo_uteq}\\[1cm]
+			
+			% Información institucional
+			{\large \textcolor{uteqblue}{\textbf{UNIVERSIDAD TECNOLÓGICA DE QUERÉTARO}}}\\[0.3cm]
+			
+			{\normalsize \textcolor{uteqgray}{Ingeniería en Nanotecnología}}\\[1cm]
+			
+			% Título principal
+			{\Huge \textcolor{uteqblue}{\textbf{MANUAL DE ASIGNATURA}}}\\[1cm]
+			
+			{\LARGE \textcolor{uteqgray}{\textbf{FÍSICA MODERNA}}}\\[0.5cm]
+			{\large \textcolor{uteqgray}{Fundamentos Cuánticos para Nanotecnología}}\\[3cm]
+			
+			% Información del curso
+			\begin{tcolorbox}[colback=uteqblue!10!white,colframe=uteqblue,width=14cm]
+				\begin{center}
+					\textbf{Información de la Asignatura}\\[0.5cm]
+					\begin{tabular}{ll}
+						\textbf{Cuatrimestre:} & Noveno \\
+						\textbf{Horas teóricas:} & 24 horas \\
+						\textbf{Horas prácticas:} & 36 horas \\
+						\textbf{Horas totales:} & 60 horas \\
+						\textbf{Modalidad:} & Presencial asistida por tecnología \\
+						
+					\end{tabular}
+				\end{center}
+			\end{tcolorbox}
+			
+			\vspace{1cm}
+			
+			% Competencia principal
+			\begin{tcolorbox}[colback=uteqgreen!10!white,colframe=uteqgreen,width=14cm]
+				\begin{center}
+					\textbf{Competencia Principal}\\[0.3cm]
+					\small{Diseñar procesos de producción de materiales nanoestructurados en laboratorio y a nivel industrial, con 
+						base en la planeación, técnicas de síntesis e incorporación y normatividad aplicable, para su 
+						comercialización y contribuir a la innovación tecnológica	sus características y propiedades tecnológicas}
+				\end{center}
+			\end{tcolorbox}
+			
+			\vfill
+			
+			% Información adicional
+			{\normalsize \textcolor{uteqgray}{\textbf{Cuatrimestre Mayo - Agosto 2025}}}\\[0.5cm]
+			{\small \textcolor{uteqgray}{Elaborado conforme al modelo educativo basado en competencias}}\\[1cm]
+			
+			% Logo institucional inferior
+			\includegraphics[width=2cm]{../../Imagenes/Logo_uteq}
+			
+		\end{center}
+	\end{titlepage}
+	
+	% Página de créditos
+	\thispagestyle{empty}
+	\vspace*{1cm}
+	
+	\begin{center}
+		\textbf{\Large CRÉDITOS Y RECONOCIMIENTOS}
+	\end{center}
+	
+	\vspace{1cm}
+	
+	\textbf{Elaboración y Diseño Curricular:}
+	\begin{itemize}[leftmargin=2cm]
+		\item Comité de Directores de la Carrera de Ingeniería en Nanotecnología
+		\item Dr. Rubén Velázquez Hernández - Coordinador Académico de Física Moderna
+		\item Ing. [Nombre del Colaborador] - Especialista en Metodologías Activas
+	\end{itemize}
+	
+	\textbf{Revisión Técnica y Pedagógica:}
+	\begin{itemize}[leftmargin=2cm]
+		\item Academia de Ciencias Básicas - UTEQ
+		\item Comité Académico de Ingeniería en Nanotecnología
+		\item Dirección Académica - UTEQ
+		\item C.G.U.T. y P. - Coordinación General de Universidades Tecnológicas y Politécnicas
+	\end{itemize}
+	
+	\textbf{Apoyo Técnico y Recursos:}
+	\begin{itemize}[leftmargin=2cm]
+		\item Laboratorio de Física Moderna - UTEQ
+		\item Centro de Recursos Digitales e Innovación Educativa
+		\item Departamento de Tecnologías de la Información
+		\item Biblioteca Digital Institucional
+	\end{itemize}
+	
+	\vspace{1cm}
+	
+	\textbf{Agradecimientos Especiales:}
+	\begin{itemize}[leftmargin=2cm]
+		\item Universidad de Colorado Boulder - Proyecto PhET Interactive Simulations
+		\item Comunidad internacional de educación en física cuántica
+		\item Estudiantes de Ingeniería en Nanotecnología (generaciones 2022-2024)
+		\item Sector productivo en nanotecnología por retroalimentación en competencias profesionales
+	\end{itemize}
+	
+	\vspace{1cm}
+	
+	\begin{center}
+		\textbf{Primera Edición: Mayo 2025}\\
+		\textbf{Universidad Tecnológica de Querétaro}\\
+		Av. Pie de la Cuesta 2501. Col. Unidad Nacional, Querétaro, Querétaro, México\\
+		www.uteq.edu.mx
+	\end{center}
+	
+	\vspace{1cm}
+	
+	\begin{tcolorbox}[colback=gray!10!white,colframe=gray]
+		\textbf{Derechos Reservados:} Este material ha sido desarrollado específicamente para estudiantes de la Universidad Tecnológica de Querétaro. Se permite la reproducción parcial para fines académicos no comerciales, citando apropiadamente la fuente. La reproducción total o uso comercial requiere autorización expresa de la institución.
+	\end{tcolorbox}
+	
+	\newpage
+	
+	% Tabla de contenidos
+	\tableofcontents
+	
+	\listoftables
+	
+	% CAPÍTULO 1: INTRODUCCIÓN PARA EL ESTUDIANTE
+	\chapter{INTRODUCCIÓN PARA EL ESTUDIANTE}
+	
+	\section{Bienvenido a la Física Moderna}
+	
+	¡Felicitaciones por llegar al noveno cuatrimestre de tu carrera! Estás a punto de embarcarte en uno de los viajes intelectuales más fascinantes de la ciencia: \textbf{la exploración del mundo cuántico}.
+	
+	\begin{consejobox}
+		La física moderna no es solo una materia más en tu plan de estudios. Es la \textbf{base fundamental} de las tecnologías que vas a desarrollar como ingeniero en nanotecnología. Desde los transistores de tu celular hasta las futuras computadoras cuánticas, todo funciona gracias a los principios que estudiarás en este curso.
+	\end{consejobox}
+	
+	\subsection{¿Qué hace especial a la Física Moderna?}
+	
+	La física moderna estudia fenómenos que ocurren en dos regímenes extremos:
+	
+	\begin{itemize}
+		\item \textbf{Lo muy pequeño:} Átomos, electrones, fotones (escala nanométrica)
+		\item \textbf{Lo muy rápido:} Velocidades cercanas a la de la luz
+	\end{itemize}
+	
+	En estas escalas, las reglas del juego son completamente diferentes a las que observamos en nuestra vida cotidiana. Los objetos pueden estar en múltiples lugares simultáneamente, pueden atravesar barreras "impenetrables", y pueden influirse mutuamente instantáneamente sin importar la distancia.
+	
+	\subsection{Conexión con tu Carrera Profesional}
+	
+	Como futuro \textbf{Ingeniero en Nanotecnología}, trabajarás con materiales y dispositivos que tienen dimensiones entre 1 y 100 nanómetros. A esta escala:
+	
+	\begin{itemize}
+		\item Los efectos cuánticos \importante{dominan} el comportamiento de la materia
+		\item Las propiedades de los materiales \importante{cambian radicalmente} respecto al material masivo
+		\item Se pueden diseñar materiales con propiedades \importante{a la medida} para aplicaciones específicas
+	\end{itemize}
+	
+	\begin{tecnologiabox}
+		\textbf{Ejemplos de tecnologías que estudiarás:}
+		\begin{itemize}
+			\item \textbf{Quantum dots:} Nanopartículas que cambian de color según su tamaño
+			\item \textbf{Transistores de efecto túnel:} Dispositivos ultrarrápidos para electrónica
+			\item \textbf{Células solares cuánticas:} Paneles solares de nueva generación
+			\item \textbf{Sensores nanométricos:} Detectores ultrasensibles para medicina
+		\end{itemize}
+	\end{tecnologiabox}
+	
+	\section{Objetivos de Aprendizaje}
+	
+%	\begin{objetivobox}
+		Al finalizar este curso serás capaz de:
+		
+		\begin{enumerate}
+			\item \textbf{Describir} los fenómenos fundamentales de la física moderna
+			\item \textbf{Aplicar} principios cuánticos (cuantización, dualidad, ecuación de Schrödinger)
+			\item \textbf{Comprender} el comportamiento cuántico de la materia a nivel atómico
+			\item \textbf{Determinar} características y propiedades de materiales nanoestructurados
+			\item \textbf{Utilizar} herramientas computacionales y de IA para análisis cuántico
+		\end{enumerate}
+%	\end{objetivobox}
+	
+	\section{Competencias que Desarrollarás}
+	
+	\begin{competenciabox}
+		\textbf{Competencia Principal:}
+		
+		Fundamentar el diseño de procesos de producción de materiales nanoestructurados mediante la aplicación de principios de física moderna, para determinar sus características, propiedades y potenciales aplicaciones tecnológicas.
+	\end{competenciabox}
+	
+	\subsection{Desglose por Dimensiones}
+	
+	\begin{saberbox}
+		\textbf{SABER - Conocimientos que adquirirás:}
+		\begin{itemize}
+			\item Principios de cuantización de energía
+			\item Naturaleza dual onda-partícula de la materia y radiación
+			\item Estructura atómica y niveles de energía
+			\item Mecánica cuántica básica y ecuación de Schrödinger
+			\item Teoría de bandas en sólidos cristalinos
+		\end{itemize}
+	\end{saberbox}
+	
+	\begin{saberhacerbox}
+		\textbf{SABER HACER - Habilidades que desarrollarás:}
+		\begin{itemize}
+			\item Resolver problemas cuantitativos de física moderna
+			\item Utilizar simulaciones computacionales para visualizar fenómenos cuánticos
+			\item Interpretar espectros atómicos y moleculares
+			\item Clasificar materiales según sus propiedades electrónicas
+			\item Caracterizar nanomateriales usando principios cuánticos
+		\end{itemize}
+	\end{saberhacerbox}
+	
+	\begin{serbox}
+		\textbf{SER - Actitudes y valores que fortalecerás:}
+		\begin{itemize}
+			\item Pensamiento crítico y analítico avanzado
+			\item Creatividad e innovación tecnológica
+			\item Trabajo colaborativo efectivo
+			\item Comunicación científica clara y precisa
+			\item Aprendizaje autónomo y continuo
+			\item Uso ético de tecnologías emergentes
+		\end{itemize}
+	\end{serbox}
+	
+	\section{Metodología de Trabajo}
+	
+	Este curso utiliza metodologías activas de aprendizaje que te colocan en el centro del proceso educativo:
+	
+	\subsection{En Clases Presenciales}
+	
+	\begin{itemize}
+		\item \textbf{Exposiciones interactivas} con demostraciones experimentales en vivo
+		\item \textbf{Resolución colaborativa} de problemas en equipos multidisciplinarios
+		\item \textbf{Simulaciones en tiempo real} usando software especializado (PhET, MATLAB)
+		\item \textbf{Discusiones grupales} sobre aplicaciones tecnológicas actuales
+		\item \textbf{Debates conceptuales} sobre implicaciones de la mecánica cuántica
+	\end{itemize}
+	
+	\subsection{En Laboratorio}
+	
+	\begin{itemize}
+		\item \textbf{Experimentos fundamentales} como efecto fotoeléctrico y difracción electrónica
+		\item \textbf{Simulaciones computacionales} de sistemas cuánticos complejos
+		\item \textbf{Caracterización de nanomateriales} con equipos de investigación modernos
+		\item \textbf{Proyectos de investigación aplicada} conectados con la industria
+	\end{itemize}
+	
+	\subsection{Trabajo Autónomo}
+	
+	\begin{itemize}
+		\item \textbf{Resolución de problemas} usando herramientas digitales avanzadas
+		\item \textbf{Investigación dirigida} sobre aplicaciones tecnológicas emergentes
+		\item \textbf{Uso responsable de IA} para profundizar en conceptos complejos
+		\item \textbf{Portafolio digital} de evidencias de aprendizaje
+	\end{itemize}
+	
+	\section{Herramientas de Apoyo}
+	
+%	\begin{tecnologiabox}
+		\textbf{Software de Simulación que utilizarás:}
+		\begin{itemize}
+			\item \textbf{PhET Interactive Simulations:} Visualización de fenómenos cuánticos
+			\item \textbf{Quantum ESPRESSO:} Simulaciones de primeros principios
+			\item \textbf{MATLAB/Python:} Análisis de datos y cálculos numéricos
+			\item \textbf{VMD:} Visualización molecular dinámica
+		\end{itemize}
+		
+		\textbf{Herramientas de Inteligencia Artificial:}
+		\begin{itemize}
+			\item \textbf{ChatGPT/Claude:} Explicaciones personalizadas y resolución de dudas
+			\item \textbf{Wolfram Alpha:} Cálculos matemáticos complejos y verificación
+			\item \textbf{Socratic:} Apoyo visual para comprensión de problemas
+		\end{itemize}
+		
+		\textbf{Equipos de Laboratorio:}
+		\begin{itemize}
+			\item \textbf{Espectrómetros:} Análisis de emisión atómica y molecular
+			\item \textbf{Microscopio AFM:} Caracterización nanoestructural
+			\item \textbf{Equipos electromagnéticos:} Medición de propiedades de materiales
+		\end{itemize}
+%	\end{tecnologiabox}
+	\section{Cronograma General}
+	
+%	\begin{table}[h]
+		\centering
+%		\caption{Distribución Temporal por Unidades}
+		\begin{tabular}{|C{2cm}|C{1cm}|L{6cm}|C{2cm}|}
+			\hline
+		%	\rowcolor{uteqgreen!20}
+			\textbf{Semanas} & \textbf{Unidad} & \textbf{Tema Principal} & \textbf{Horas} \\
+			\hline
+			1-3 & I & Teoría Básica del Electromagnetismo & 14 h \\
+			\hline
+			4-6 & II & Modelo Nuclear del Átomo & 16 h \\
+			\hline
+			7-9 & III & Dualidad Onda-Partícula & 12 h \\
+			\hline
+			10-13 & IV & Solución de la Ecuación de Schrödinger & 20 h \\
+			\hline
+			14-15 & - & Evaluación Final y Proyecto Integrador & 8 h \\
+			\hline
+		\end{tabular}
+%	\end{table}
+	
+	\begin{notabox}
+		\textbf{Requisito de Asistencia:} Debes mantener un mínimo de \importante{80\% de asistencia} para tener derecho a evaluación. Este es un requisito indispensable establecido por las políticas institucionales.
+	\end{notabox}
+	
+	% CAPÍTULO 2: UNIDAD I
+	\chapter{UNIDAD I: TEORÍA BÁSICA DEL ELECTROMAGNETISMO}
+	
+	\section{Información General de la Unidad}
+	
+	
+%	\begin{objetivobox}
+		\textbf{Al finalizar esta unidad serás capaz de:}
+		\begin{itemize}
+			\item Explicar el comportamiento electromagnético de materiales nanoestructurados
+			\item Aplicar las ecuaciones de Maxwell para análisis de ondas EM
+			\item Caracterizar propiedades ópticas de nanomateriales
+			\item Utilizar simulaciones para modelar propagación electromagnética
+		\end{itemize}
+%	\end{objetivobox}
+	
+	\section{Contenidos Temáticos}
+	
+	\subsection{Tema 1.1: Campos Eléctricos y Magnéticos}
+	\textbf{Duración:} 2 semanas
+	
+	\begin{saberbox}
+		\textbf{Conocimientos que adquirirás:}
+		\begin{itemize}
+			\item Naturaleza de los campos electromagnéticos como perturbaciones del espacio
+%			\item Magnitudes fundamentales: E, B, μ, ε y su significado físico
+			\item Propiedades electromagnéticas específicas de nanomateriales
+			\item Mecanismos de interacción campos-materia a escala nanométrica
+			\item Fenómenos de polarización y magnetización en nanoestructuras
+		\end{itemize}
+	\end{saberbox}
+	
+	\begin{saberhacerbox}
+		\textbf{Habilidades que desarrollarás:}
+		\begin{itemize}
+			\item Calcular campos electromagnéticos en configuraciones geométricas específicas
+			\item Determinar la respuesta electromagnética de materiales nanoestructurados
+			\item Analizar la propagación de ondas EM en diferentes medios
+			\item Relacionar propiedades microscópicas con comportamiento macroscópico
+			\item Interpretar mediciones experimentales de propiedades electromagnéticas
+		\end{itemize}
+	\end{saberhacerbox}
+	
+	\begin{serbox}
+		\textbf{Actitudes que fortalecerás:}
+		\begin{itemize}
+			\item Pensamiento analítico para problemas electromagnéticos complejos
+			\item Iniciativa para explorar aplicaciones tecnológicas emergentes
+			\item Orden y precisión en cálculos y mediciones experimentales
+			\item Trabajo colaborativo en resolución de problemas
+		\end{itemize}
+	\end{serbox}
+	
+	\subsection{Tema 1.2: Ecuaciones de Maxwell}
+	\textbf{Duración:} 1 semana
+	
+	\begin{saberbox}
+		\textbf{Conocimientos clave:}
+		\begin{itemize}
+			\item Formulación integral de las cuatro ecuaciones de Maxwell
+			\item Significado físico: Ley de Gauss, Ampère-Maxwell, Faraday, ausencia de monopolos
+			
+			\item Significado físico: Ley de Gauss, Ampère-Maxwell, Faraday, ausencia de monopolos
+			\item Derivación de la ecuación de onda electromagnética
+			\item Propiedades fundamentales: velocidad, frecuencia, longitud de onda, energía
+			\item Relación entre campos eléctricos y magnéticos en ondas propagantes
+			\end{itemize}
+		\end{saberbox}
+	
+\begin{saberhacerbox}
+\textbf{Aplicaciones prácticas:}
+\begin{itemize}
+\item Aplicar ecuaciones de Maxwell para resolver problemas de propagación
+\item Calcular velocidad de ondas EM en medios materiales específicos
+%\item Determinar parámetros electromagnéticos (ε, μ) de materiales
+\item Analizar polarización de ondas electromagnéticas
+\item Modelar comportamiento EM en nanoestructuras
+\end{itemize}
+\end{saberhacerbox}
+
+\subsection{Tema 1.3: Ecuación de Onda y Polarización}
+\textbf{Duración:} 1 semana
+
+\begin{saberbox}
+\textbf{Conceptos fundamentales:}
+\begin{itemize}
+\item Ecuación de onda electromagnética: derivación y soluciones generales
+\item Estados de polarización: lineal, circular, elíptica
+\item Interacción luz-materia: absorción, dispersión, refracción
+\item Efectos ópticos en nanoestructuras: plasmones, efectos de tamaño
+\item Aplicaciones en caracterización óptica de nanomateriales
+\end{itemize}
+\end{saberbox}
+
+\begin{saberhacerbox}
+\textbf{Competencias técnicas:}
+\begin{itemize}
+\item Resolver la ecuación de onda para configuraciones específicas
+\item Analizar experimentalmente la polarización de la luz
+\item Caracterizar propiedades ópticas de nanomateriales
+\item Diseñar experimentos de caracterización electromagnética
+\item Interpretar espectros ópticos de materiales nanoestructurados
+\end{itemize}
+\end{saberhacerbox}
+
+\section{Prácticas de Laboratorio}
+
+\begin{practicabox}
+\textbf{Práctica 1.1: Medición de Campos Electromagnéticos}
+
+\textbf{Duración:} 3 horas
+
+\textbf{Objetivo:} Medir experimentalmente campos eléctricos y magnéticos generados por diferentes configuraciones de carga y corriente.
+
+\textbf{Materiales:}
+\begin{itemize}
+\item Sonda de campo eléctrico calibrada
+\item Gaussímetro de alta precisión
+\item Generador de señales programable
+\item Conductores geométricos diversos (rectos, espirales, placas)
+\item Osciloscopio digital de 4 canales
+\end{itemize}
+
+\textbf{Actividades principales:}
+\begin{enumerate}
+\item Calibración de equipos y verificación de funcionamiento
+\item Medición de campo eléctrico alrededor de conductores cargados
+\item Medición de campo magnético generado por corrientes variables
+\item Análisis estadístico de datos y comparación con predicciones teóricas
+\item Evaluación de incertidumbres experimentales y fuentes de error
+\end{enumerate}
+
+\textbf{Entregable:} Reporte técnico (5-8 páginas) con gráficas, análisis estadístico y conclusiones sobre la validez experimental de las leyes electromagnéticas.
+\end{practicabox}
+
+\begin{practicabox}
+\textbf{Práctica 1.2: Caracterización Electromagnética de Nanomateriales}
+
+\textbf{Duración:} 3 horas
+
+\textbf{Objetivo:} Determinar propiedades electromagnéticas de materiales nanoestructurados usando técnicas de caracterización óptica avanzada.
+
+\textbf{Materiales especializados:}
+\begin{itemize}
+\item Muestras: grafeno, nanotubos de carbono, nanopartículas metálicas
+\item Espectrofotómetro UV-Vis-NIR de alta resolución
+\item Sistema de polarizadores y analizadores ópticos
+\item Láser sintonizable de diferentes longitudes de onda
+\item Fotodetectores calibrados y sistema de adquisición
+\end{itemize}
+
+\textbf{Procedimiento experimental:}
+\begin{enumerate}
+\item Preparación segura de muestras nanoestructuradas
+\item Medición sistemática de transmitancia y reflectancia vs.$ \lambda$
+\item Análisis completo de polarización (lineal y circular)
+\item Determinación de constantes ópticas (n, k, e)
+\item Comparación cuantitativa con materiales convencionales
+\end{enumerate}
+
+\textbf{Entregable:} Reporte comparativo con interpretación física de resultados y propuestas de aplicación tecnológica.
+\end{practicabox}
+
+\begin{practicabox}
+\textbf{Práctica 1.3: Simulación de Propagación de Ondas EM}
+
+\textbf{Duración:} 2 horas
+
+\textbf{Objetivo:} Modelar computacionalmente la propagación de ondas electromagnéticas en diferentes medios y validar con teoría.
+
+\textbf{Software utilizado:}
+\begin{itemize}
+\item COMSOL Multiphysics (módulo de ondas EM)
+\item PhET Interactive Simulations
+\item MATLAB con toolbox de ondas
+\item Python con bibliotecas científicas (NumPy, SciPy, Matplotlib)
+\end{itemize}
+
+\textbf{Simulaciones a realizar:}
+\begin{enumerate}
+\item Propagación de ondas planas en espacio libre
+\item Ondas en medios dieléctricos con diferentes permitividades
+\item Fenómenos de reflexión y transmisión en interfaces
+\item Efectos de dispersión en medios con pérdidas
+\item Validación de resultados con teoría electromagnética
+\end{enumerate}
+
+\textbf{Entregable:} Portafolio digital con simulaciones, análisis paramétrico y conclusiones sobre comportamiento electromagnético.
+\end{practicabox}
+
+\section{Evaluación de la Unidad I}
+
+\begin{evaluacionbox}
+\textbf{Estructura de Evaluación:}
+
+\textbf{Evaluación Formativa (40\%):}
+\begin{itemize}
+\item Problemas resueltos semanales (15\%)
+\item Participación en clase y simulaciones (10\%)
+\item Reportes de laboratorio (10\%)
+\item Autoevaluación reflexiva (5\%)
+\end{itemize}
+
+\textbf{Evaluación Sumativa (60\%):}
+\begin{itemize}
+\item Examen de unidad (60\% de la evaluación total de unidad)
+\end{itemize}
+\end{evaluacionbox}
+
+\end{document}
