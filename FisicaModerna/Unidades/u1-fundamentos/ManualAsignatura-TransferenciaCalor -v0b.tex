@@ -1,0 +1,738 @@
+\documentclass[12pt,a4paper,twoside]{book}
+
+% Paquetes necesarios
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{braket}
+
+% Configuración de página
+\geometry{
+	top=2.5cm,
+	bottom=2.5cm,
+	left=3cm,
+	right=2.5cm,
+	headheight=14pt
+}
+
+% Configuración de headers y footers
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\leftmark}
+\fancyhead[RO]{\rightmark}
+\fancyfoot[C]{\thepage}
+
+% Configuración de títulos
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries\color{purple!70!black}}
+{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+
+\titleformat{\section}
+{\normalfont\Large\bfseries\color{purple!60!black}}
+{\thesection}{1em}{}
+
+\titleformat{\subsection}
+{\normalfont\large\bfseries\color{purple!50!black}}
+{\thesubsection}{1em}{}
+
+% Configuración de cajas para Saber y Saber Hacer
+\newtcolorbox{saberbox}{
+	colback=purple!5!white,
+	colframe=purple!75!black,
+	title=\textbf{SABER - Conocimientos Teóricos},
+	fonttitle=\bfseries,
+	boxrule=1pt
+}
+
+\newtcolorbox{hacerbox}{
+	colback=orange!5!white,
+	colframe=orange!75!black,
+	title=\textbf{SABER HACER - Habilidades Prácticas},
+	fonttitle=\bfseries,
+	boxrule=1pt
+}
+
+% Cajas especiales para física moderna
+\newtcolorbox{ecuacionbox}{
+	colback=blue!5!white,
+	colframe=blue!75!black,
+	title=\textbf{ECUACIÓN FUNDAMENTAL},
+	fonttitle=\bfseries,
+	boxrule=1pt
+}
+
+\newtcolorbox{experimentobox}{
+	colback=green!5!white,
+	colframe=green!75!black,
+	title=\textbf{EXPERIMENTO CLAVE},
+	fonttitle=\bfseries,
+	boxrule=1pt
+}
+
+% Configuración de hiperenlaces
+\hypersetup{
+	colorlinks=true,
+	linkcolor=purple,
+	filecolor=magenta,
+	urlcolor=cyan,
+	pdftitle={Manual de Física Moderna},
+	pdfauthor={Universidad Tecnológica},
+	pdfsubject={Ingeniería en Nanotecnología},
+	pdfkeywords={física moderna, mecánica cuántica, electromagnetismo, nanotecnología}
+}
+
+% Información del documento
+\title{\textbf{MANUAL DE FÍSICA MODERNA}\\
+	\large Ingeniería en Nanotecnología en Competencias Profesionales}
+\author{Universidad Tecnológica}
+\date{\today}
+
+% Inicio del documento
+\begin{document}
+	
+	\frontmatter
+	\maketitle
+	
+	% Tabla de contenidos
+	\tableofcontents
+	\listoffigures
+	\listoftables
+	
+	% Prefacio
+	\chapter*{Prefacio}
+	\addcontentsline{toc}{chapter}{Prefacio}
+	Este manual ha sido desarrollado para la asignatura de Física Moderna del noveno cuatrimestre de la carrera de Ingeniería en Nanotecnología en Competencias Profesionales, conforme al programa académico vigente desde septiembre de 2021.
+	
+	El objetivo principal es que el alumno describa el comportamiento de los materiales nanoestructurados con base en los conceptos, teorías y principios de física moderna para determinar sus características y propiedades.
+	
+	\mainmatter
+	
+	% UNIDAD I: TEORÍA BÁSICA DEL ELECTROMAGNETISMO
+	\chapter{Teoría Básica del Electromagnetismo}
+	\label{chap:electromagnetismo}
+	
+	El estudio del electromagnetismo es fundamental para comprender el comportamiento de los materiales nanoestructurados, ya que las propiedades electromagnéticas determinan muchas de las características únicas que exhiben estos materiales a escala nanométrica.
+	
+	\section{Campos Eléctricos y Magnéticos}
+	\label{sec:campos_electromagneticos}
+	
+	\subsection{Saber - Conocimientos Teóricos}
+	\begin{saberbox}
+		\begin{itemize}
+			\item Explicar las magnitudes electromagnéticas fundamentales
+			\item Definir los campos eléctricos y magnéticos y sus propiedades
+			\item Comprender su efecto en las propiedades de los materiales nanoestructurados
+			\item Identificar las características fundamentales de cada tipo de campo
+		\end{itemize}
+	\end{saberbox}
+	
+	% Contenido teórico
+	El campo eléctrico $\vec{E}$ es una magnitud vectorial que describe la fuerza que experimentaría una carga de prueba positiva en un punto dado del espacio. Se define matemáticamente como:
+	
+	\begin{ecuacionbox}
+		$$\vec{E} = \frac{\vec{F}}{q_0}$$
+		donde $\vec{F}$ es la fuerza sobre la carga de prueba $q_0$.
+	\end{ecuacionbox}
+	
+	\subsection{Saber Hacer - Habilidades Prácticas}
+	\begin{hacerbox}
+		\begin{itemize}
+			\item Calcular la longitud de onda de una partícula
+			\item Aplicar la relación de De Broglie en diferentes sistemas
+			\item Predecir efectos de difracción de partículas
+			\item Resolver problemas de mecánica ondulatoria
+		\end{itemize}
+	\end{hacerbox}
+	
+	% UNIDAD IV: SOLUCIÓN DE LA ECUACIÓN DE SCHRÖDINGER
+	\chapter{Solución de la Ecuación de Schrödinger}
+	\label{chap:schrodinger}
+	
+	\section{Ecuación de Onda Cuántica}
+	\label{sec:ecuacion_onda}
+	
+	\subsection{Saber - Conocimientos Teóricos}
+	\begin{saberbox}
+		\begin{itemize}
+			\item Explicar la solución de la ecuación de Schrödinger para el átomo de Hidrógeno
+			\item Reconocer los niveles de energía cuantizados
+			\item Describir la paradoja del gato de Schrödinger
+			\item Comprender los fundamentos de la mecánica cuántica
+		\end{itemize}
+	\end{saberbox}
+	
+	\begin{ecuacionbox}
+		\textbf{Ecuación de Schrödinger dependiente del tiempo:}
+		$i\hbar \frac{\partial \Psi}{\partial t} = \hat{H}\Psi$
+		
+		\textbf{Ecuación de Schrödinger independiente del tiempo:}
+		$\hat{H}\psi = E\psi$
+		
+		donde $\hat{H}$ es el operador Hamiltoniano y $\Psi$ la función de onda.
+	\end{ecuacionbox}
+	
+	\subsection{Saber Hacer - Habilidades Prácticas}
+	\begin{hacerbox}
+		\begin{itemize}
+			\item Representar gráficamente los niveles de energía del átomo de hidrógeno
+			\item Resolver la ecuación de Schrödinger en casos simples
+			\item Interpretar funciones de onda
+			\item Calcular probabilidades cuánticas
+		\end{itemize}
+	\end{hacerbox}
+	
+	\section{Pozo de Potencial}
+	\label{sec:pozo_potencial}
+	
+	\subsection{Saber - Conocimientos Teóricos}
+	\begin{saberbox}
+		\begin{itemize}
+			\item Definir los conceptos de pozo de potencial y barreras de potencial
+			\item Comprender el confinamiento cuántico
+			\item Identificar diferentes tipos de potenciales
+			\item Entender la cuantización energética en sistemas confinados
+		\end{itemize}
+	\end{saberbox}
+	
+	Para una partícula en un pozo de potencial infinito unidimensional:
+	
+	\begin{ecuacionbox}
+		\textbf{Función de onda:}
+		$\psi_n(x) = \sqrt{\frac{2}{L}} \sin\left(\frac{n\pi x}{L}\right)$
+		
+		\textbf{Niveles de energía:}
+		$E_n = \frac{n^2 \pi^2 \hbar^2}{2mL^2}$
+	\end{ecuacionbox}
+	
+	\subsection{Saber Hacer - Habilidades Prácticas}
+	\begin{hacerbox}
+		\begin{itemize}
+			\item Determinar la magnitud de las fuerzas de una partícula confinada en una barrera de energía
+			\item Calcular niveles energéticos en pozos de potencial
+			\item Resolver problemas de confinamiento cuántico
+			\item Analizar sistemas nanoestructurados
+		\end{itemize}
+	\end{hacerbox}
+	
+	\section{Efecto Túnel}
+	\label{sec:efecto_tunel}
+	
+	\subsection{Saber - Conocimientos Teóricos}
+	\begin{saberbox}
+		\begin{itemize}
+			\item Explicar el comportamiento de una partícula en un pozo de potencial
+			\item Definir la zona prohibida para el electrón
+			\item Comprender el efecto túnel cuántico
+			\item Identificar aplicaciones tecnológicas del efecto túnel
+		\end{itemize}
+	\end{saberbox}
+	
+	\begin{experimentobox}
+		\textbf{Efecto Túnel:}
+		\begin{itemize}
+			\item \textbf{Fenómeno:} Penetración de partículas a través de barreras de potencial
+			\item \textbf{Probabilidad de transmisión:} $T \approx e^{-2\kappa a}$ donde $\kappa = \sqrt{2m(V-E)/\hbar^2}$
+			\item \textbf{Aplicaciones:} Microscopio de efecto túnel, diodos túnel
+		\end{itemize}
+	\end{experimentobox}
+	
+	\subsection{Saber Hacer - Habilidades Prácticas}
+	\begin{hacerbox}
+		\begin{itemize}
+			\item Establecer el comportamiento de una partícula en una barrera de potencial
+			\item Calcular probabilidades de transmisión túnel
+			\item Analizar dispositivos basados en efecto túnel
+			\item Resolver problemas de tunelaje cuántico
+		\end{itemize}
+	\end{hacerbox}
+	
+	\section{Potenciales Periódicos}
+	\label{sec:potenciales_periodicos}
+	
+	\subsection{Saber - Conocimientos Teóricos}
+	\begin{saberbox}
+		\begin{itemize}
+			\item Explicar la distribución de cargas propuesto por Kronig-Penney de un cristal unidimensional
+			\item Explicar la diferencia entre cristal perfecto y real
+			\item Comprender la periodicidad en sólidos cristalinos
+			\item Entender las aproximaciones en física del estado sólido
+		\end{itemize}
+	\end{saberbox}
+	
+	\subsection{Saber Hacer - Habilidades Prácticas}
+	\begin{hacerbox}
+		\begin{itemize}
+			\item Aplicar el modelo de Kronig-Penney
+			\item Analizar estructuras cristalinas periódicas
+			\item Calcular bandas de energía en cristales
+			\item Resolver problemas de física del estado sólido
+		\end{itemize}
+	\end{hacerbox}
+	
+	\section{Estructura de Bandas}
+	\label{sec:estructura_bandas}
+	
+	\subsection{Saber - Conocimientos Teóricos}
+	\begin{saberbox}
+		\begin{itemize}
+			\item Reconocer los sólidos cristalinos, no cristalinos y cuasi cristalinos de acuerdo a la teoría de bandas
+			\item Comprender los modelos de amarre fuerte
+			\item Identificar diferentes tipos de sólidos según su estructura electrónica
+			\item Entender la formación de bandas energéticas
+		\end{itemize}
+	\end{saberbox}
+	
+	\subsection{Saber Hacer - Habilidades Prácticas}
+	\begin{hacerbox}
+		\begin{itemize}
+			\item Seleccionar un sólido cristalino y un cuasicristal de acuerdo a la teoría de bandas
+			\item Determinar el comportamiento como conductor de diferentes materiales
+			\item Calcular estructuras de bandas simplificadas
+			\item Clasificar materiales según su estructura electrónica
+		\end{itemize}
+	\end{hacerbox}
+	
+	\section{Definición Microscópica de Conductores, Semiconductores y Aislantes}
+	\label{sec:conductores_semiconductores}
+	
+	\subsection{Saber - Conocimientos Teóricos}
+	\begin{saberbox}
+		\begin{itemize}
+			\item Reconocer los materiales conductores, semiconductores y aislantes de acuerdo a la teoría de bandas
+			\item Comprender las diferencias energéticas entre tipos de materiales
+			\item Identificar la banda de valencia y banda de conducción
+			\item Entender el concepto de banda prohibida
+		\end{itemize}
+	\end{saberbox}
+	
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[scale=0.8]
+			% Conductor
+			\draw[thick] (0,0) rectangle (2,1);
+			\draw[thick] (0,1.5) rectangle (2,2.5);
+			\fill[blue!30] (0,0) rectangle (2,1);
+			\fill[blue!30] (0,1.5) rectangle (2,2);
+			\node at (1,-0.5) {\textbf{Conductor}};
+			\node at (1,0.5) {BV};
+			\node at (1,2) {BC};
+			
+			% Semiconductor
+			\draw[thick] (4,0) rectangle (6,1);
+			\draw[thick] (4,2) rectangle (6,3);
+			\fill[blue!30] (4,0) rectangle (6,1);
+			\node at (5,-0.5) {\textbf{Semiconductor}};
+			\node at (5,0.5) {BV};
+			\node at (5,2.5) {BC};
+			\node at (5,1.5) {$E_g \sim 1$ eV};
+			
+			% Aislante
+			\draw[thick] (8,0) rectangle (10,1);
+			\draw[thick] (8,3.5) rectangle (10,4.5);
+			\fill[blue!30] (8,0) rectangle (10,1);
+			\node at (9,-0.5) {\textbf{Aislante}};
+			\node at (9,0.5) {BV};
+			\node at (9,4) {BC};
+			\node at (9,2.25) {$E_g > 3$ eV};
+		\end{tikzpicture}
+		\caption{Estructura de bandas en diferentes tipos de materiales}
+	\end{figure}
+	
+	\subsection{Saber Hacer - Habilidades Prácticas}
+	\begin{hacerbox}
+		\begin{itemize}
+			\item Calcular las energías de la banda prohibida entre un conductor, un semiconductor y un aislante
+			\item Clasificar materiales según sus propiedades eléctricas
+			\item Predecir comportamientos eléctricos basándose en estructura de bandas
+			\item Diseñar aplicaciones basadas en propiedades semiconductoras
+		\end{itemize}
+	\end{hacerbox}
+	
+	% Ejercicios y problemas resueltos
+	\chapter{Ejercicios y Problemas Resueltos}
+	\label{chap:ejercicios}
+	
+	\section{Problemas de Electromagnetismo}
+	\label{sec:problemas_electromagnetismo}
+	
+	\textbf{Problema 1:} Calcular el campo eléctrico generado por una distribución de carga puntual en materiales nanoestructurados.
+	
+	\textbf{Solución:}
+	Para una carga puntual $q$ en el vacío:
+	$\vec{E} = \frac{1}{4\pi\epsilon_0} \frac{q}{r^2} \hat{r}$
+	
+	En materiales nanoestructurados, debemos considerar la permitividad relativa $\epsilon_r$:
+	$\vec{E} = \frac{1}{4\pi\epsilon_0\epsilon_r} \frac{q}{r^2} \hat{r}$
+	
+	\section{Problemas de Mecánica Cuántica}
+	\label{sec:problemas_cuantica}
+	
+	\textbf{Problema 2:} Determinar los niveles de energía de un electrón confinado en un punto cuántico esférico.
+	
+	\textbf{Solución:}
+	Para una partícula en una esfera de radio $R$:
+	$E_{nl} = \frac{\hbar^2}{2mR^2} \alpha_{nl}^2$
+	
+	donde $\alpha_{nl}$ son las raíces de las funciones esféricas de Bessel.
+	
+	% Apéndices
+	\appendix
+	\chapter{Constantes Físicas Fundamentales}
+	
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{@{}lcc@{}}
+			\toprule
+			\textbf{Constante} & \textbf{Símbolo} & \textbf{Valor} \\
+			\midrule
+			Velocidad de la luz & $c$ & $2.998 \times 10^8$ m/s \\
+			Constante de Planck & $h$ & $6.626 \times 10^{-34}$ J·s \\
+			Constante de Planck reducida & $\hbar$ & $1.055 \times 10^{-34}$ J·s \\
+			Carga elemental & $e$ & $1.602 \times 10^{-19}$ C \\
+			Masa del electrón & $m_e$ & $9.109 \times 10^{-31}$ kg \\
+			Constante de Boltzmann & $k_B$ & $1.381 \times 10^{-23}$ J/K \\
+			\bottomrule
+		\end{tabular}
+		\caption{Constantes físicas fundamentales}
+	\end{table}
+	
+	\chapter{Fórmulas de Mecánica Cuántica}
+	
+	\section{Operadores Cuánticos Fundamentales}
+	
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{@{}lc@{}}
+			\toprule
+			\textbf{Observable} & \textbf{Operador} \\
+			\midrule
+			Posición & $\hat{x} = x$ \\
+			Momento & $\hat{p} = -i\hbar \frac{\partial}{\partial x}$ \\
+			Energía cinética & $\hat{T} = \frac{\hat{p}^2}{2m} = -\frac{\hbar^2}{2m}\nabla^2$ \\
+			Hamiltoniano & $\hat{H} = \hat{T} + \hat{V}$ \\
+			\bottomrule
+		\end{tabular}
+		\caption{Operadores cuánticos fundamentales}
+	\end{table}
+	
+	\chapter{Materiales Nanoestructurados}
+	
+	\section{Propiedades Cuánticas en Nanomateriales}
+	
+	Los materiales nanoestructurados exhiben propiedades únicas debido al confinamiento cuántico:
+	
+	\begin{itemize}
+		\item \textbf{Puntos cuánticos:} Confinamiento en las tres dimensiones
+		\item \textbf{Hilos cuánticos:} Confinamiento en dos dimensiones
+		\item \textbf{Pozos cuánticos:} Confinamiento en una dimensión
+	\end{itemize}
+	
+	% Bibliografía
+	\backmatter
+	\begin{thebibliography}{99}
+		\bibitem{griffiths} Griffiths, D.J. \textit{Quantum Mechanics}. Cambridge University Press, USA, 2016.
+		
+		\bibitem{sanchez} Sánchez, M. \textit{Física Cuántica}. Piramide, México, 2015.
+		
+		\bibitem{bauer} Bauer, W. \& Westfall, G.D. \textit{Física para ingeniería y ciencias con física moderna}. McGraw Hill, China, 2014.
+		
+		\bibitem{eisberg} Eisberg, R. \& Resnick, R. \textit{Física cuántica}. Limusa Wiley, España.
+		
+		\bibitem{searway} Searway, R.A., Moses, C.J. \& Moyer, C.A. \textit{Física moderna}. Cengage Learning Editores S.A. de C.V., América Latina, 2005.
+		
+		\bibitem{tipler} Tipler, P.A. \textit{Física Moderna}. Reverte, Madrid, España, 2012.
+		
+		\bibitem{peraza} Peraza Álvarez, A. \textit{Elementos de Física Moderna}. Trillas, México D.F., 2010.
+		
+		\bibitem{ohanian} Ohanian, H.C. \textit{Modern Physics}. Prentice-Hall, London, Inglaterra, 2005.
+		
+		\bibitem{beiser} Beiser, A. \textit{Concepts of Modern Physics}. McGraw Hill, London, Inglaterra, 2003.
+		
+		\bibitem{pena} de la Peña, L. \& Villavicencio, M. \textit{Problemas y Ejercicios de Mecánica Cuántica}. Fondo de Cultura Económica, México D.F., 2003.
+		
+		\bibitem{reitz} Reitz, J.R., Milford, F.J. \& Christy, R.W. \textit{Fundamentos de la Teoría Electromagnética}. Addison-Wesley Iberoamericana, Madrid, España, 1995.
+	\end{thebibliography}
+	
+\end{document}
+\item Determinar los campos eléctricos y magnéticos en diferentes configuraciones
+\item Demostrar la generación de un campo magnético a partir de un campo eléctrico
+\item Calcular las interacciones electromagnéticas en materiales nanoestructurados
+\item Aplicar las leyes fundamentales del electromagnetismo
+\end{itemize}
+\end{hacerbox}
+
+% Ejercicios prácticos aquí
+
+\section{Ecuaciones de Maxwell}
+\label{sec:ecuaciones_maxwell}
+
+\subsection{Saber - Conocimientos Teóricos}
+\begin{saberbox}
+\begin{itemize}
+\item Explicar las ecuaciones de Maxwell y su significado físico
+\item Relacionar los campos y los desplazamientos de una onda electromagnética
+\item Comprender la unificación de electricidad y magnetismo
+\item Identificar las implicaciones de cada ecuación de Maxwell
+\end{itemize}
+\end{saberbox}
+
+Las ecuaciones de Maxwell constituyen el fundamento teórico del electromagnetismo clásico:
+
+\begin{ecuacionbox}
+\begin{align}
+\nabla \cdot \vec{E} &= \frac{\rho}{\epsilon_0} \quad \text{(Ley de Gauss)} \\
+\nabla \cdot \vec{B} &= 0 \quad \text{(No existen monopolos magnéticos)} \\
+\nabla \times \vec{E} &= -\frac{\partial \vec{B}}{\partial t} \quad \text{(Ley de Faraday)} \\
+\nabla \times \vec{B} &= \mu_0 \vec{J} + \mu_0 \epsilon_0 \frac{\partial \vec{E}}{\partial t} \quad \text{(Ley de Ampère-Maxwell)}
+\end{align}
+\end{ecuacionbox}
+
+\subsection{Saber Hacer - Habilidades Prácticas}
+\begin{hacerbox}
+\begin{itemize}
+\item Determinar el comportamiento magnético y eléctrico de un material con las ecuaciones de Maxwell
+\item Resolver problemas utilizando las ecuaciones de Maxwell
+\item Analizar la propagación de ondas electromagnéticas
+\item Aplicar las ecuaciones en problemas de ingeniería
+\end{itemize}
+\end{hacerbox}
+
+\section{Ecuación de Onda y Polarización de la Luz}
+\label{sec:onda_polarizacion}
+
+\subsection{Saber - Conocimientos Teóricos}
+\begin{saberbox}
+\begin{itemize}
+\item Identificar la ecuación de onda y su relación con la polarización de la luz
+\item Comprender los fenómenos de polarización electromagnética
+\item Conocer los diferentes tipos de polarización
+\item Entender la naturaleza ondulatoria de la luz
+\end{itemize}
+\end{saberbox}
+
+\subsection{Saber Hacer - Habilidades Prácticas}
+\begin{hacerbox}
+\begin{itemize}
+\item Determinar las propiedades de polarización de la luz con materiales nanoestructurados
+\item Calcular parámetros de ondas electromagnéticas
+\item Analizar experimentos de polarización
+\item Diseñar sistemas ópticos basados en polarización
+\end{itemize}
+\end{hacerbox}
+
+\section{Ondas Planas en Conductores y Dieléctricos}
+\label{sec:ondas_planas}
+
+\subsection{Saber - Conocimientos Teóricos}
+\begin{saberbox}
+\begin{itemize}
+\item Describir el concepto de ecuación de onda electromagnética
+\item Comprender el comportamiento de las ondas en diferentes medios
+\item Identificar las diferencias entre conductores y dieléctricos
+\item Conocer los parámetros que caracterizan la propagación
+\end{itemize}
+\end{saberbox}
+
+\subsection{Saber Hacer - Habilidades Prácticas}
+\begin{hacerbox}
+\begin{itemize}
+\item Representar gráficamente la ecuación de onda
+\item Calcular la propagación en diferentes medios
+\item Analizar la atenuación y dispersión de ondas
+\item Resolver problemas de transmisión electromagnética
+\end{itemize}
+\end{hacerbox}
+
+% UNIDAD II: MODELO NUCLEAR DEL ÁTOMO
+\chapter{Modelo Nuclear del Átomo}
+\label{chap:modelo_nuclear}
+
+\section{El Descubrimiento del Núcleo Atómico}
+\label{sec:descubrimiento_nucleo}
+
+\subsection{Saber - Conocimientos Teóricos}
+\begin{saberbox}
+\begin{itemize}
+\item Explicar el origen de las teorías atómicas que dieron lugar al modelo actual del átomo
+\item Comprender la evolución histórica de los modelos atómicos
+\item Identificar las contribuciones de los diferentes científicos
+\item Conocer las limitaciones de los modelos anteriores
+\end{itemize}
+\end{saberbox}
+
+\subsection{Saber Hacer - Habilidades Prácticas}
+\begin{hacerbox}
+\begin{itemize}
+\item Elaborar modelos atómicos comparativos
+\item Representar la evolución de los conceptos atómicos
+\item Analizar experimentos históricos fundamentales
+\item Evaluar la validez de diferentes modelos
+\end{itemize}
+\end{hacerbox}
+
+\section{Experimento de Rutherford}
+\label{sec:experimento_rutherford}
+
+\subsection{Saber - Conocimientos Teóricos}
+\begin{saberbox}
+\begin{itemize}
+\item Reconocer el modelo atómico de Rutherford y su importancia en la física moderna
+\item Identificar el experimento de Rutherford y sus implicaciones
+\item Comprender el concepto de núcleo atómico
+\item Entender la distribución de carga en el átomo
+\end{itemize}
+\end{saberbox}
+
+\begin{experimentobox}
+\textbf{Experimento de Rutherford (1909):}
+\begin{itemize}
+\item \textbf{Procedimiento:} Bombardeo de lámina de oro con partículas alfa
+\item \textbf{Observación:} La mayoría pasaban sin desviarse, pero algunas se desviaban significativamente
+\item \textbf{Conclusión:} El átomo tiene un núcleo pequeño y denso
+\end{itemize}
+\end{experimentobox}
+
+\subsection{Saber Hacer - Habilidades Prácticas}
+\begin{hacerbox}
+\begin{itemize}
+\item Representar el modelo atómico de Rutherford
+\item Analizar los resultados del experimento de dispersión
+\item Calcular trayectorias de partículas alfa
+\item Interpretar datos experimentales de dispersión
+\end{itemize}
+\end{hacerbox}
+
+\section{Modelo Atómico de Bohr y la Interacción Radiación-Materia}
+\label{sec:modelo_bohr}
+
+\subsection{Saber - Conocimientos Teóricos}
+\begin{saberbox}
+\begin{itemize}
+\item Comprender las líneas espectrales de los elementos con el modelo atómico de Bohr
+\item Describir la interacción Radiación-Materia
+\item Reconocer la interacción de partículas cargadas con la materia
+\item Entender los procesos de emisión y absorción atómica
+\end{itemize}
+\end{saberbox}
+
+\begin{ecuacionbox}
+\textbf{Postulados de Bohr:}
+\begin{enumerate}
+\item Los electrones orbitan en órbitas estacionarias: $L = n\hbar$
+\item Energía cuantizada: $E_n = -\frac{13.6 \text{ eV}}{n^2}$
+\item Emisión/absorción: $h\nu = E_i - E_f$
+\end{enumerate}
+\end{ecuacionbox}
+
+\subsection{Saber Hacer - Habilidades Prácticas}
+\begin{hacerbox}
+\begin{itemize}
+\item Calcular las series espectrales de los elementos
+\item Determinar las características y propiedades estructurales del material en función de su espectro de emisión
+\item Analizar espectros atómicos experimentales
+\item Relacionar niveles energéticos con transiciones espectrales
+\end{itemize}
+\end{hacerbox}
+
+% UNIDAD III: DUALIDAD ONDA-PARTÍCULA
+\chapter{Dualidad Onda-Partícula}
+\label{chap:dualidad}
+
+\section{Postulado de Planck y Radiación de Cuerpo Negro}
+\label{sec:planck_cuerpo_negro}
+
+\subsection{Saber - Conocimientos Teóricos}
+\begin{saberbox}
+\begin{itemize}
+\item Reconocer el postulado de Planck y la ley de Stefan-Boltzmann de radiación de cuerpo negro
+\item Comprender la cuantización de la energía electromagnética
+\item Identificar las características del espectro de cuerpo negro
+\item Entender la crisis de la física clásica
+\end{itemize}
+\end{saberbox}
+
+\begin{ecuacionbox}
+\textbf{Ley de Planck:}
+$$B(\lambda, T) = \frac{2hc^2}{\lambda^5} \frac{1}{e^{hc/\lambda k_B T} - 1}$$
+\textbf{Cuantización de Planck:} $E = h\nu$
+\end{ecuacionbox}
+
+\subsection{Saber Hacer - Habilidades Prácticas}
+\begin{hacerbox}
+\begin{itemize}
+\item Calcular la energía emitida por un material por radiación
+\item Aplicar la ley de distribución de Planck
+\item Resolver problemas de radiación térmica
+\item Analizar espectros de emisión de cuerpos reales
+\end{itemize}
+\end{hacerbox}
+
+\section{Efecto Fotoeléctrico}
+\label{sec:efecto_fotoelectrico}
+
+\subsection{Saber - Conocimientos Teóricos}
+\begin{saberbox}
+\begin{itemize}
+\item Describir la diferencia entre electrones y fotones
+\item Describir el efecto fotoeléctrico y sus características
+\item Comprender la naturaleza cuántica de la luz
+\item Identificar los parámetros del efecto fotoeléctrico
+\end{itemize}
+\end{saberbox}
+
+\begin{experimentobox}
+\textbf{Efecto Fotoeléctrico:}
+\begin{itemize}
+\item \textbf{Observación:} Emisión de electrones al iluminar una superficie metálica
+\item \textbf{Ecuación de Einstein:} $h\nu = \phi + K_{max}$
+\item \textbf{Implicación:} La luz tiene naturaleza corpuscular (fotones)
+\end{itemize}
+\end{experimentobox}
+
+\subsection{Saber Hacer - Habilidades Prácticas}
+\begin{hacerbox}
+\begin{itemize}
+\item Reproducir en laboratorio el efecto fotoeléctrico
+\item Calcular energías de fotones y electrones
+\item Determinar funciones de trabajo de materiales
+\item Analizar experimentos fotoelectrónicos
+\end{itemize}
+\end{hacerbox}
+
+\section{Hipótesis de De Broglie}
+\label{sec:hipotesis_broglie}
+
+\subsection{Saber - Conocimientos Teóricos}
+\begin{saberbox}
+\begin{itemize}
+\item Describir el comportamiento dual de la materia onda-partícula
+\item Comprender la hipótesis de De Broglie
+\item Identificar las condiciones para observar efectos ondulatorios
+\item Entender la generalización de la dualidad onda-partícula
+\end{itemize}
+\end{saberbox}
+
+\begin{ecuacionbox}
+\textbf{Hipótesis de De Broglie:}
+$$\lambda = \frac{h}{p} = \frac{h}{mv}$$
+donde $\lambda$ es la longitud de onda de De Broglie y $p$ es el momento de la partícula.
+\end{ecuacionbox}
+
+\subsection{Saber Hacer - Habilidades Prácticas}
+\begin{hacerbox}
+\begin{itemize}

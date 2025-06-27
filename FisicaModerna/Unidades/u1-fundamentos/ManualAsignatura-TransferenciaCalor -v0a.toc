@@ -1,0 +1,55 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{Prefacio}{\es@scroman {ix}}{chapter*.4}%
+\contentsline {chapter}{\numberline {1}Conceptos Básicos de Transferencia de Calor}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Termodinámica y Transferencia de Calor}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Saber - Conocimientos Teóricos}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Saber Hacer - Habilidades Prácticas}{1}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2}Calor y Otras Formas de Energía}{1}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Saber - Conocimientos Teóricos}{2}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Saber Hacer - Habilidades Prácticas}{2}{subsection.1.2.2}%
+\contentsline {section}{\numberline {1.3}Mecanismos de Transferencia de Calor}{2}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Saber - Conocimientos Teóricos}{2}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Saber Hacer - Habilidades Prácticas}{2}{subsection.1.3.2}%
+\contentsline {chapter}{\numberline {2}Transferencia de Calor por Conducción}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Conducción Unidimensional en Estado Estable}{3}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Saber - Conocimientos Teóricos}{3}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Saber Hacer - Habilidades Prácticas}{3}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Conducción en Régimen Transitorio}{3}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Saber - Conocimientos Teóricos}{3}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Saber Hacer - Habilidades Prácticas}{4}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Transferencia de Calor con Aletas}{4}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Saber - Conocimientos Teóricos}{4}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Saber Hacer - Habilidades Prácticas}{4}{subsection.2.3.2}%
+\contentsline {chapter}{\numberline {3}Transferencia de Calor por Convección}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Fundamentos de la Convección}{5}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Saber - Conocimientos Teóricos}{5}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Saber Hacer - Habilidades Prácticas}{5}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Convección Forzada}{5}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Saber - Conocimientos Teóricos}{6}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Saber Hacer - Habilidades Prácticas}{6}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Convección Libre}{6}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Saber - Conocimientos Teóricos}{6}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Saber Hacer - Habilidades Prácticas}{6}{subsection.3.3.2}%
+\contentsline {chapter}{\numberline {4}Transferencia de Calor por Radiación}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Fundamentos de la Radiación}{7}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Saber - Conocimientos Teóricos}{7}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Saber Hacer - Habilidades Prácticas}{7}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Transferencia de Calor por Radiación entre Superficies}{7}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Saber - Conocimientos Teóricos}{8}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Saber Hacer - Habilidades Prácticas}{8}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Radiación en Superficies Reales y Blindajes}{8}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Saber - Conocimientos Teóricos}{8}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Saber Hacer - Habilidades Prácticas}{8}{subsection.4.3.2}%
+\contentsline {chapter}{\numberline {5}Fuentes de Energía}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Fuentes de Energía Convencionales}{9}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Saber - Conocimientos Teóricos}{9}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Saber Hacer - Habilidades Prácticas}{9}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Fuentes Alternas de Energía}{9}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Saber - Conocimientos Teóricos}{9}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Saber Hacer - Habilidades Prácticas}{10}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Sistemas de Conversión de Energía}{10}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Saber - Conocimientos Teóricos}{10}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Saber Hacer - Habilidades Prácticas}{10}{subsection.5.3.2}%
+\contentsline {chapter}{\numberline {A}Propiedades Termofísicas de Materiales}{11}{appendix.Alph1}%
+\contentsline {chapter}{\numberline {B}Factores de Conversión de Unidades}{13}{appendix.Alph2}%
+\contentsline {chapter}{\numberline {C}Correlaciones y Ecuaciones de Referencia}{15}{appendix.Alph3}%

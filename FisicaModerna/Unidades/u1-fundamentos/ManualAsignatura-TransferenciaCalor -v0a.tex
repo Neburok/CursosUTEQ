@@ -1,0 +1,459 @@
+\documentclass[12pt,a4paper,twoside]{book}
+
+% Paquetes necesarios
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{enumitem}
+
+% Configuración de página
+\geometry{
+	top=2.5cm,
+	bottom=2.5cm,
+	left=3cm,
+	right=2.5cm,
+	headheight=14pt
+}
+
+% Configuración de headers y footers
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\leftmark}
+\fancyhead[RO]{\rightmark}
+\fancyfoot[C]{\thepage}
+
+% Configuración de títulos
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries\color{blue!70!black}}
+{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+
+\titleformat{\section}
+{\normalfont\Large\bfseries\color{blue!60!black}}
+{\thesection}{1em}{}
+
+\titleformat{\subsection}
+{\normalfont\large\bfseries\color{blue!50!black}}
+{\thesubsection}{1em}{}
+
+% Configuración de cajas para Saber y Saber Hacer
+\newtcolorbox{saberbox}{
+	colback=blue!5!white,
+	colframe=blue!75!black,
+	title=\textbf{SABER - Conocimientos Teóricos},
+	fonttitle=\bfseries,
+	boxrule=1pt
+}
+
+\newtcolorbox{hacerbox}{
+	colback=green!5!white,
+	colframe=green!75!black,
+	title=\textbf{SABER HACER - Habilidades Prácticas},
+	fonttitle=\bfseries,
+	boxrule=1pt
+}
+
+% Configuración de hiperenlaces
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=cyan,
+	pdftitle={Manual de Transferencia de Calor},
+	pdfauthor={Universidad Tecnológica},
+	pdfsubject={Ingeniería Metal Mecánica},
+	pdfkeywords={transferencia de calor, conducción, convección, radiación}
+}
+
+% Información del documento
+\title{\textbf{MANUAL DE TRANSFERENCIA DE CALOR}\\
+	\large Ingeniería en Metal Mecánica en Competencias Profesionales}
+\author{Universidad Tecnológica}
+\date{\today}
+
+% Inicio del documento
+\begin{document}
+	
+	\frontmatter
+	\maketitle
+	
+	% Tabla de contenidos
+	\tableofcontents
+	\listoffigures
+	\listoftables
+	
+	% Prefacio
+	\chapter*{Prefacio}
+	\addcontentsline{toc}{chapter}{Prefacio}
+	Este manual ha sido desarrollado para la asignatura de Transferencia de Calor del noveno cuatrimestre de la carrera de Ingeniería en Metal Mecánica en Competencias Profesionales, conforme al programa académico vigente desde septiembre de 2020.
+	
+	El objetivo principal es que el alumno comprenda los diversos mecanismos de transferencia de calor (conducción, convección, radiación) y las fuentes alternas de energía para emplearlos en la solución de problemas en ingeniería.
+	
+	\mainmatter
+	
+	% UNIDAD I: CONCEPTOS BÁSICOS DE TRANSFERENCIA DE CALOR
+	\chapter{Conceptos Básicos de Transferencia de Calor}
+	\label{chap:conceptos_basicos}
+	
+	\section{Termodinámica y Transferencia de Calor}
+	\label{sec:termodinamica_transferencia}
+	
+	\subsection{Saber - Conocimientos Teóricos}
+	\begin{saberbox}
+		\begin{itemize}
+			\item Definir las áreas de aplicación de la transferencia de calor y su diferencia con la Termodinámica
+			\item Identificar los principios fundamentales que distinguen ambas disciplinas
+			\item Reconocer las limitaciones y alcances de cada área de estudio
+		\end{itemize}
+	\end{saberbox}
+	
+	% Contenido teórico aquí
+	La transferencia de calor es...
+	
+	\subsection{Saber Hacer - Habilidades Prácticas}
+	\begin{hacerbox}
+		\begin{itemize}
+			\item Diferenciar entre las aplicaciones de la Termodinámica y la Transferencia de calor
+			\item Seleccionar el enfoque apropiado según el tipo de problema a resolver
+			\item Aplicar los conceptos básicos en situaciones prácticas de ingeniería
+		\end{itemize}
+	\end{hacerbox}
+	
+	% Ejercicios y ejemplos prácticos aquí
+	
+	\section{Calor y Otras Formas de Energía}
+	\label{sec:calor_energia}
+	
+	\subsection{Saber - Conocimientos Teóricos}
+	\begin{saberbox}
+		\begin{itemize}
+			\item Describir las fuentes de generación de calor y energía
+			\item Identificar los diferentes tipos de energía y sus transformaciones
+			\item Comprender la elaboración de modelos de transferencia de calor para aplicaciones en ingeniería
+		\end{itemize}
+	\end{saberbox}
+	
+	\subsection{Saber Hacer - Habilidades Prácticas}
+	\begin{hacerbox}
+		\begin{itemize}
+			\item Diferenciar entre un modelo exacto pero complejo y uno no tan exacto pero sencillo
+			\item Evaluar los resultados obtenidos en la solución de problemas de transferencia
+			\item Seleccionar el modelo apropiado según la precisión requerida y recursos disponibles
+		\end{itemize}
+	\end{hacerbox}
+	
+	\section{Mecanismos de Transferencia de Calor}
+	\label{sec:mecanismos_transferencia}
+	
+	\subsection{Saber - Conocimientos Teóricos}
+	\begin{saberbox}
+		\begin{itemize}
+			\item Describir los mecanismos de transferencia de calor: Conducción, convección y radiación
+			\item Identificar las características distintivas de cada mecanismo
+			\item Comprender las condiciones que favorecen cada tipo de transferencia
+		\end{itemize}
+	\end{saberbox}
+	
+	\subsection{Saber Hacer - Habilidades Prácticas}
+	\begin{hacerbox}
+		\begin{itemize}
+			\item Diferenciar los mecanismos de transferencia de calor que se presentan en un equipo o sistema mecánico
+			\item Identificar el mecanismo predominante en diferentes situaciones
+			\item Analizar sistemas donde ocurren múltiples mecanismos simultáneamente
+		\end{itemize}
+	\end{hacerbox}
+	
+	% UNIDAD II: TRANSFERENCIA DE CALOR POR CONDUCCIÓN
+	\chapter{Transferencia de Calor por Conducción}
+	\label{chap:conduccion}
+	
+	\section{Conducción Unidimensional en Estado Estable}
+	\label{sec:conduccion_estable}
+	
+	\subsection{Saber - Conocimientos Teóricos}
+	\begin{saberbox}
+		\begin{itemize}
+			\item Identificar las ecuaciones para la conducción de calor en estado estable
+			\item Comprender las condiciones de frontera y sus aplicaciones
+			\item Conocer los sistemas unidimensionales sencillos y sus características
+		\end{itemize}
+	\end{saberbox}
+	
+	\subsection{Saber Hacer - Habilidades Prácticas}
+	\begin{hacerbox}
+		\begin{itemize}
+			\item Realizar cálculos de flujo de calor en sistemas unidimensionales
+			\item Aplicar las ecuaciones de conducción de calor y sus condiciones de frontera
+			\item Resolver problemas de transferencia en paredes planas, cilindros y esferas
+		\end{itemize}
+	\end{hacerbox}
+	
+	\section{Conducción en Régimen Transitorio}
+	\label{sec:conduccion_transitorio}
+	
+	\subsection{Saber - Conocimientos Teóricos}
+	\begin{saberbox}
+		\begin{itemize}
+			\item Identificar las ecuaciones de conducción de calor en estado transitorio
+			\item Comprender la aplicación en problemas de transferencia de calor
+			\item Conocer los métodos de solución para diferentes geometrías
+		\end{itemize}
+	\end{saberbox}
+	
+	\subsection{Saber Hacer - Habilidades Prácticas}
+	\begin{hacerbox}
+		\begin{itemize}
+			\item Emplear las ecuaciones de conducción de calor de régimen transitorio
+			\item Resolver problemas en paredes planas, cilindros y esferas
+			\item Analizar sólidos semi-infinitos y sistemas multidimensionales
+		\end{itemize}
+	\end{hacerbox}
+	
+	\section{Transferencia de Calor con Aletas}
+	\label{sec:aletas}
+	
+	\subsection{Saber - Conocimientos Teóricos}
+	\begin{saberbox}
+		\begin{itemize}
+			\item Comprender el principio de funcionamiento de las aletas
+			\item Identificar los tipos de aletas y sus aplicaciones
+			\item Conocer la efectividad y eficiencia de las aletas
+		\end{itemize}
+	\end{saberbox}
+	
+	\subsection{Saber Hacer - Habilidades Prácticas}
+	\begin{hacerbox}
+		\begin{itemize}
+			\item Calcular la transferencia de calor desde superficies con aletas
+			\item Diseñar sistemas de aletas para aplicaciones específicas
+			\item Optimizar el rendimiento de sistemas con aletas
+		\end{itemize}
+	\end{hacerbox}
+	
+	% UNIDAD III: TRANSFERENCIA DE CALOR POR CONVECCIÓN
+	\chapter{Transferencia de Calor por Convección}
+	\label{chap:conveccion}
+	
+	\section{Fundamentos de la Convección}
+	\label{sec:fundamentos_conveccion}
+	
+	\subsection{Saber - Conocimientos Teóricos}
+	\begin{saberbox}
+		\begin{itemize}
+			\item Explicar los conceptos fundamentales de transferencia de calor por convección
+			\item Identificar los números adimensionales relevantes (Nusselt, Reynolds, Prandtl)
+			\item Comprender la diferencia entre convección natural y forzada
+		\end{itemize}
+	\end{saberbox}
+	
+	\subsection{Saber Hacer - Habilidades Prácticas}
+	\begin{hacerbox}
+		\begin{itemize}
+			\item Distinguir los mecanismos de transferencia de calor por convección
+			\item Identificar las aplicaciones en ingeniería
+			\item Calcular coeficientes de transferencia de calor básicos
+		\end{itemize}
+	\end{hacerbox}
+	
+	\section{Convección Forzada}
+	\label{sec:conveccion_forzada}
+	
+	\subsection{Saber - Conocimientos Teóricos}
+	\begin{saberbox}
+		\begin{itemize}
+			\item Identificar los conceptos teóricos y empíricos de la convección forzada
+			\item Comprender las correlaciones para diferentes geometrías
+			\item Conocer los regímenes de flujo laminar y turbulento
+		\end{itemize}
+	\end{saberbox}
+	
+	\subsection{Saber Hacer - Habilidades Prácticas}
+	\begin{hacerbox}
+		\begin{itemize}
+			\item Emplear las ecuaciones de convección para calcular coeficientes de transferencia
+			\item Analizar flujo en placas planas, cilindros y esferas
+			\item Resolver problemas de flujo interno y externo
+		\end{itemize}
+	\end{hacerbox}
+	
+	\section{Convección Libre}
+	\label{sec:conveccion_libre}
+	
+	\subsection{Saber - Conocimientos Teóricos}
+	\begin{saberbox}
+		\begin{itemize}
+			\item Identificar los conceptos teóricos y empíricos de la convección libre
+			\item Comprender el número de Grashof y su significado físico
+			\item Conocer las correlaciones para diferentes configuraciones
+		\end{itemize}
+	\end{saberbox}
+	
+	\subsection{Saber Hacer - Habilidades Prácticas}
+	\begin{hacerbox}
+		\begin{itemize}
+			\item Emplear las ecuaciones de convección libre para diferentes geometrías
+			\item Determinar experimentalmente coeficientes de transferencia
+			\item Analizar convección en recintos cerrados y superficies con aletas
+		\end{itemize}
+	\end{hacerbox}
+	
+	% UNIDAD IV: TRANSFERENCIA DE CALOR POR RADIACIÓN
+	\chapter{Transferencia de Calor por Radiación}
+	\label{chap:radiacion}
+	
+	\section{Fundamentos de la Radiación}
+	\label{sec:fundamentos_radiacion}
+	
+	\subsection{Saber - Conocimientos Teóricos}
+	\begin{saberbox}
+		\begin{itemize}
+			\item Definir los conceptos básicos de transferencia de calor por radiación
+			\item Comprender la radiación térmica y de cuerpo negro
+			\item Identificar las propiedades de la radiación e intensidad
+		\end{itemize}
+	\end{saberbox}
+	
+	\subsection{Saber Hacer - Habilidades Prácticas}
+	\begin{hacerbox}
+		\begin{itemize}
+			\item Diferenciar el mecanismo de radiación de conducción y convección
+			\item Calcular emisión y absorción de radiación
+			\item Aplicar las leyes fundamentales de la radiación térmica
+		\end{itemize}
+	\end{hacerbox}
+	
+	\section{Transferencia de Calor por Radiación entre Superficies}
+	\label{sec:radiacion_superficies}
+	
+	\subsection{Saber - Conocimientos Teóricos}
+	\begin{saberbox}
+		\begin{itemize}
+			\item Identificar el mecanismo y ecuaciones fundamentales de la radiación
+			\item Comprender el concepto de factor de visión
+			\item Conocer las aplicaciones industriales de la radiación
+		\end{itemize}
+	\end{saberbox}
+	
+	\subsection{Saber Hacer - Habilidades Prácticas}
+	\begin{hacerbox}
+		\begin{itemize}
+			\item Emplear las ecuaciones de transferencia de calor por radiación
+			\item Calcular factores de visión para diferentes configuraciones
+			\item Resolver problemas con superficies negras y grises
+		\end{itemize}
+	\end{hacerbox}
+	
+	\section{Radiación en Superficies Reales y Blindajes}
+	\label{sec:radiacion_blindajes}
+	
+	\subsection{Saber - Conocimientos Teóricos}
+	\begin{saberbox}
+		\begin{itemize}
+			\item Comprender el comportamiento de superficies grises y difusas
+			\item Identificar los efectos de los blindajes contra radiación
+			\item Conocer las aplicaciones en sistemas industriales
+		\end{itemize}
+	\end{saberbox}
+	
+	\subsection{Saber Hacer - Habilidades Prácticas}
+	\begin{hacerbox}
+		\begin{itemize}
+			\item Analizar transferencia de calor en superficies reales
+			\item Diseñar sistemas de blindaje contra radiación
+			\item Resolver problemas complejos de intercambio radiativo
+		\end{itemize}
+	\end{hacerbox}
+	
+	% UNIDAD V: FUENTES DE ENERGÍA
+	\chapter{Fuentes de Energía}
+	\label{chap:fuentes_energia}
+	
+	\section{Fuentes de Energía Convencionales}
+	\label{sec:energia_convencional}
+	
+	\subsection{Saber - Conocimientos Teóricos}
+	\begin{saberbox}
+		\begin{itemize}
+			\item Identificar las fuentes convencionales de energía
+			\item Comprender las ventajas y desventajas de cada fuente
+			\item Conocer las aplicaciones actuales en procesos productivos
+		\end{itemize}
+	\end{saberbox}
+	
+	\subsection{Saber Hacer - Habilidades Prácticas}
+	\begin{hacerbox}
+		\begin{itemize}
+			\item Categorizar las fuentes de energía según sus características
+			\item Evaluar la viabilidad de diferentes fuentes convencionales
+			\item Seleccionar la fuente apropiada para aplicaciones específicas
+		\end{itemize}
+	\end{hacerbox}
+	
+	\section{Fuentes Alternas de Energía}
+	\label{sec:energia_alterna}
+	
+	\subsection{Saber - Conocimientos Teóricos}
+	\begin{saberbox}
+		\begin{itemize}
+			\item Identificar el potencial de las fuentes alternas de energía
+			\item Comprender las ventajas y desventajas de energías renovables
+			\item Conocer las aplicaciones actuales en procesos productivos
+		\end{itemize}
+	\end{saberbox}
+	
+	\subsection{Saber Hacer - Habilidades Prácticas}
+	\begin{hacerbox}
+		\begin{itemize}
+			\item Demostrar el potencial de fuentes alternas en aplicaciones térmicas
+			\item Evaluar la factibilidad de implementación industrial
+			\item Diseñar sistemas básicos con energías renovables
+		\end{itemize}
+	\end{hacerbox}
+	
+	\section{Sistemas de Conversión de Energía}
+	\label{sec:conversion_energia}
+	
+	\subsection{Saber - Conocimientos Teóricos}
+	\begin{saberbox}
+		\begin{itemize}
+			\item Identificar los sistemas de conversión más empleados en la industria
+			\item Comprender los principios de eficiencia energética
+			\item Conocer herramientas de software para evaluación energética
+		\end{itemize}
+	\end{saberbox}
+	
+	\subsection{Saber Hacer - Habilidades Prácticas}
+	\begin{hacerbox}
+		\begin{itemize}
+			\item Distinguir sistemas de conversión basándose en su eficiencia
+			\item Simular procesos de evaluación energética de proyectos sustentables
+			\item Optimizar sistemas de conversión para aplicaciones específicas
+		\end{itemize}
+	\end{hacerbox}
+	
+	% Apéndices
+	\appendix
+	\chapter{Propiedades Termofísicas de Materiales}
+	\chapter{Factores de Conversión de Unidades}
+	\chapter{Correlaciones y Ecuaciones de Referencia}
+	
+	% Bibliografía
+	\backmatter
+	\begin{thebibliography}{99}
+		\bibitem{cengel} Yunus A. Çengel. \textit{Transferencia de calor}. McGraw Hill, Reno, Nevada, 2005.
+		\bibitem{incropera} F.P. Incropera, D.P. DeWitt. \textit{Fundamentals of heat transfer}. John Wiley \& Sons Inc., Washington, 2000.
+		\bibitem{holman} J.P. Holman. \textit{Heat transfer}. McGraw Hill, Washington, 2003.
+	\end{thebibliography}
+	
+\end{document}

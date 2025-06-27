@@ -1,0 +1,52 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{Prefacio}{\es@scroman {ix}}{chapter*.4}%
+\contentsline {chapter}{\numberline {1}Teoría Básica del Electromagnetismo}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Campos Eléctricos y Magnéticos}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Saber - Conocimientos Teóricos}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Saber Hacer - Habilidades Prácticas}{2}{subsection.1.1.2}%
+\contentsline {chapter}{\numberline {2}Modelo Nuclear del Átomo}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}El Descubrimiento del Núcleo Atómico}{3}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Saber - Conocimientos Teóricos}{3}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Saber Hacer - Habilidades Prácticas}{3}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Experimento de Rutherford}{3}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Saber - Conocimientos Teóricos}{4}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Saber Hacer - Habilidades Prácticas}{4}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Modelo Atómico de Bohr y la Interacción Radiación-Materia}{4}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Saber - Conocimientos Teóricos}{4}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Saber Hacer - Habilidades Prácticas}{5}{subsection.2.3.2}%
+\contentsline {chapter}{\numberline {3}Dualidad Onda-Partícula}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Postulado de Planck y Radiación de Cuerpo Negro}{7}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Saber - Conocimientos Teóricos}{7}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Saber Hacer - Habilidades Prácticas}{7}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Efecto Fotoeléctrico}{8}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Saber - Conocimientos Teóricos}{8}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Saber Hacer - Habilidades Prácticas}{8}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Hipótesis de De Broglie}{8}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Saber - Conocimientos Teóricos}{8}{subsection.3.3.1}%
+\contentsline {chapter}{\numberline {4}Solución de la Ecuación de Schrödinger}{11}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Ecuación de Onda Cuántica}{11}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Saber - Conocimientos Teóricos}{11}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Saber Hacer - Habilidades Prácticas}{11}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Pozo de Potencial}{12}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Saber - Conocimientos Teóricos}{12}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Saber Hacer - Habilidades Prácticas}{12}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Efecto Túnel}{12}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Saber - Conocimientos Teóricos}{12}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Saber Hacer - Habilidades Prácticas}{13}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Potenciales Periódicos}{13}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Saber - Conocimientos Teóricos}{13}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Saber Hacer - Habilidades Prácticas}{13}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}Estructura de Bandas}{14}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Saber - Conocimientos Teóricos}{14}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Saber Hacer - Habilidades Prácticas}{14}{subsection.4.5.2}%
+\contentsline {section}{\numberline {4.6}Definición Microscópica de Conductores, Semiconductores y Aislantes}{14}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Saber - Conocimientos Teóricos}{14}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Saber Hacer - Habilidades Prácticas}{15}{subsection.4.6.2}%
+\contentsline {chapter}{\numberline {5}Ejercicios y Problemas Resueltos}{17}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Problemas de Electromagnetismo}{17}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Problemas de Mecánica Cuántica}{17}{section.5.2}%
+\contentsline {chapter}{\numberline {A}Constantes Físicas Fundamentales}{19}{appendix.Alph1}%
+\contentsline {chapter}{\numberline {B}Fórmulas de Mecánica Cuántica}{21}{appendix.Alph2}%
+\contentsline {section}{\numberline {B.1}Operadores Cuánticos Fundamentales}{21}{section.Alph2.1}%
+\contentsline {chapter}{\numberline {C}Materiales Nanoestructurados}{23}{appendix.Alph3}%
+\contentsline {section}{\numberline {C.1}Propiedades Cuánticas en Nanomateriales}{23}{section.Alph3.1}%
