@@ -279,7 +279,14 @@ INPUT C:\Users\RubenVH\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT ..\..\Imagenes\Logo_uteq.png
 INPUT ..\..\Imagenes\Logo_uteq.png
 INPUT ..\..\Imagenes\Logo_uteq.png
+INPUT .\practica-efecto-fotoelectrico.toc
+INPUT .\practica-efecto-fotoelectrico.toc
+INPUT practica-efecto-fotoelectrico.toc
+OUTPUT practica-efecto-fotoelectrico.toc
 INPUT C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT ..\..\Imagenes\Logo_uteq.png
+INPUT ..\..\Imagenes\Logo_uteq.png
+INPUT ..\..\Imagenes\Logo_uteq.png
 INPUT C:\Users\RubenVH\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
 INPUT ..\..\Imagenes\Logo_uteq.png
 INPUT ..\..\Imagenes\Logo_uteq.png

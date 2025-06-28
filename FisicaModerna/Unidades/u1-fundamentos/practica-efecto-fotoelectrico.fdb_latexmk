@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1750276553.70323 "c:/Users/RubenVH/Repositorios/CursosUTEQ/FisicaModerna/Unidades/u1-fundamentos/practica-efecto-fotoelectrico.tex" "practica-efecto-fotoelectrico.pdf" "practica-efecto-fotoelectrico" 1750276556.21884 0
+["pdflatex"] 1750952023.10895 "c:/Users/RubenVH/Repositorios/CursosUTEQ/FisicaModerna/Unidades/u1-fundamentos/practica-efecto-fotoelectrico.tex" "practica-efecto-fotoelectrico.pdf" "practica-efecto-fotoelectrico" 1750952024.43271 0
   "../../Imagenes/Logo_uteq.png" 1744869889 131418 7c6d4c524083f934c0317b7969d4abce ""
-  "C:/Users/RubenVH/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1749798115 122568 ed6ad01964f77d6fa94d617930229f60 ""
+  "C:/Users/RubenVH/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1750788361 123670 46c285af6b1f372f9e41ebf8c5df4dba ""
   "C:/Users/RubenVH/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1749798120 14064 be2428bbb3929aff1a24cb2c749afb86 ""
   "C:/Users/RubenVH/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1732860646 24225991 58d23d7a1c3d9de1fd385c1093e932c3 ""
   "C:/Users/RubenVH/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm1200.tfm" 993062508 1444 95ffe0f19b974d50849790c8225c7ef7 ""
@@ -157,13 +157,15 @@
   "C:/Users/RubenVH/AppData/Local/Programs/MiKTeX/tex/latex/trimspaces/trimspaces.sty" 1253169183 1380 971a51b00a14503ddf754cab24c3f209 ""
   "C:/Users/RubenVH/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/RubenVH/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
-  "c:/Users/RubenVH/Repositorios/CursosUTEQ/FisicaModerna/Unidades/u1-fundamentos/practica-efecto-fotoelectrico.tex" 1750276552 11743 e2fed978ff18a331806090e0d0da986d ""
-  "practica-efecto-fotoelectrico.aux" 1750276556 2219 293b85aeb025d034dbf10d9e229e57b4 "pdflatex"
-  "practica-efecto-fotoelectrico.out" 1750276556 2576 108916e113b5756f4965f1d8b39dfb6d "pdflatex"
-  "practica-efecto-fotoelectrico.tex" 1750276552 11743 e2fed978ff18a331806090e0d0da986d ""
+  "c:/Users/RubenVH/Repositorios/CursosUTEQ/FisicaModerna/Unidades/u1-fundamentos/practica-efecto-fotoelectrico.tex" 1750952019 11765 bb4c776229584d8ee18401b7f4bbd84e ""
+  "practica-efecto-fotoelectrico.aux" 1750952024 2219 5d12799b2c99e153e2d3ddb9abda2024 "pdflatex"
+  "practica-efecto-fotoelectrico.out" 1750952024 2576 108916e113b5756f4965f1d8b39dfb6d "pdflatex"
+  "practica-efecto-fotoelectrico.tex" 1750952019 11765 bb4c776229584d8ee18401b7f4bbd84e ""
+  "practica-efecto-fotoelectrico.toc" 1750952024 1310 b9d46a185844fc23363f828925022110 "pdflatex"
   (generated)
   "practica-efecto-fotoelectrico.aux"
   "practica-efecto-fotoelectrico.log"
   "practica-efecto-fotoelectrico.out"
   "practica-efecto-fotoelectrico.pdf"
+  "practica-efecto-fotoelectrico.toc"
   (rewritten before read)

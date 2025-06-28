@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.11.29)  18 JUN 2025 13:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.11.29)  26 JUN 2025 09:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -620,8 +620,15 @@ File: ../../Imagenes/Logo_uteq.png Graphic file (type png)
 <use ../../Imagenes/Logo_uteq.png>
 Package pdftex.def Info: ../../Imagenes/Logo_uteq.png  used on input line 101.
 (pdftex.def)             Requested size: 56.9055pt x 24.51817pt.
-[2]
-Overfull \hbox (117.49203pt too wide) in paragraph at lines 116--133
+[2] (practica-efecto-fotoelectrico.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+)
+\tf@toc=\write5
+\openout5 = `practica-efecto-fotoelectrico.toc'.
+
+
+Overfull \hbox (117.49203pt too wide) in paragraph at lines 118--135
  [] 
  []
 
@@ -634,10 +641,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: ../../Imagenes/Logo_uteq.png Graphic file (type png)
 <use ../../Imagenes/Logo_uteq.png>
-Package pdftex.def Info: ../../Imagenes/Logo_uteq.png  used on input line 153.
+Package pdftex.def Info: ../../Imagenes/Logo_uteq.png  used on input line 141.
 (pdftex.def)             Requested size: 56.9055pt x 24.51817pt.
 [3]
-Overfull \hbox (140.03098pt too wide) in paragraph at lines 211--226
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+File: ../../Imagenes/Logo_uteq.png Graphic file (type png)
+<use ../../Imagenes/Logo_uteq.png>
+Package pdftex.def Info: ../../Imagenes/Logo_uteq.png  used on input line 155.
+(pdftex.def)             Requested size: 56.9055pt x 24.51817pt.
+[4]
+Overfull \hbox (140.03098pt too wide) in paragraph at lines 213--228
  [] 
  []
 
@@ -650,9 +669,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: ../../Imagenes/Logo_uteq.png Graphic file (type png)
 <use ../../Imagenes/Logo_uteq.png>
-Package pdftex.def Info: ../../Imagenes/Logo_uteq.png  used on input line 226.
+Package pdftex.def Info: ../../Imagenes/Logo_uteq.png  used on input line 228.
 (pdftex.def)             Requested size: 56.9055pt x 24.51817pt.
-[4]
+[5]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -662,10 +681,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: ../../Imagenes/Logo_uteq.png Graphic file (type png)
 <use ../../Imagenes/Logo_uteq.png>
-Package pdftex.def Info: ../../Imagenes/Logo_uteq.png  used on input line 243.
+Package pdftex.def Info: ../../Imagenes/Logo_uteq.png  used on input line 245.
 (pdftex.def)             Requested size: 56.9055pt x 24.51817pt.
-[5]
-Overfull \hbox (53.77164pt too wide) in paragraph at lines 245--245
+[6]
+Overfull \hbox (53.77164pt too wide) in paragraph at lines 247--247
 []\OT1/cmr/bx/n/17.28 PARTE 4: APLI-CA-CI[]ON A UN PRO-BLE-MA PR[]ACTI-
  []
 
@@ -678,9 +697,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: ../../Imagenes/Logo_uteq.png Graphic file (type png)
 <use ../../Imagenes/Logo_uteq.png>
-Package pdftex.def Info: ../../Imagenes/Logo_uteq.png  used on input line 280.
+Package pdftex.def Info: ../../Imagenes/Logo_uteq.png  used on input line 282.
 (pdftex.def)             Requested size: 56.9055pt x 24.51817pt.
-[6]
+[7]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -690,9 +709,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 File: ../../Imagenes/Logo_uteq.png Graphic file (type png)
 <use ../../Imagenes/Logo_uteq.png>
-Package pdftex.def Info: ../../Imagenes/Logo_uteq.png  used on input line 337.
+Package pdftex.def Info: ../../Imagenes/Logo_uteq.png  used on input line 339.
 (pdftex.def)             Requested size: 56.9055pt x 24.51817pt.
-[7] (practica-efecto-fotoelectrico.aux
+[8] (practica-efecto-fotoelectrico.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -704,17 +723,17 @@ Package rerunfilecheck Info: File `practica-efecto-fotoelectrico.out' has not ch
 (rerunfilecheck)             Checksum: 108916E113B5756F4965F1D8B39DFB6D;2576.
  ) 
 Here is how much of TeX's memory you used:
- 22015 strings out of 474486
- 410290 string characters out of 5742810
- 1940542 words of memory out of 5000000
- 43877 multiletter control sequences out of 15000+600000
+ 22024 strings out of 474486
+ 410585 string characters out of 5742810
+ 1941542 words of memory out of 5000000
+ 43881 multiletter control sequences out of 15000+600000
  566297 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,13n,87p,521b,585s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\RubenVH\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/RubenVH/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/RubenVH/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/RubenVH/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/RubenVH/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/RubenVH/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/RubenVH/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/RubenVH/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/RubenVH/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on practica-efecto-fotoelectrico.pdf (7 pages, 231944 bytes).
+Output written on practica-efecto-fotoelectrico.pdf (8 pages, 236564 bytes).
 PDF statistics:
- 223 PDF objects out of 1000 (max. 8388607)
- 77 named destinations out of 1000 (max. 500000)
+ 244 PDF objects out of 1000 (max. 8388607)
+ 79 named destinations out of 1000 (max. 500000)
  138 words of extra memory for PDF output out of 10000 (max. 10000000)
 
