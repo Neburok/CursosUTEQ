@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación: Selección de Materiales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Usamos la fuente Montserrat para un look moderno y limpio */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-snap-type: y mandatory; /* Opcional: para que el scroll se ajuste a cada diapositiva */
+        }
+        .slide {
+            scroll-snap-align: start; /* Opcional: para que el scroll se ajuste a cada diapositiva */
+        }
+        /* Efecto sutil en el texto para mejorar el contraste con el fondo */
+        .text-shadow {
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+
+    <!-- === DIAPOSITIVA 1: TÍTULO === -->
+    <div id="slide-1" class="slide w-full h-screen bg-cover bg-center relative flex items-center justify-center" style="background-image: url('https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=1974&auto=format&fit=crop');">
+        <!-- Capa semitransparente para oscurecer el fondo -->
+        <div class="absolute inset-0 bg-black/60"></div>
+        <!-- Contenedor para el logo -->
+        <div class="absolute top-8 left-8 z-10">
+            <svg class="h-12 w-12 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m-9 9h18" />
+            </svg>
+        </div>
+        <!-- Contenido principal centrado -->
+        <div class="relative z-10 text-center text-white p-8">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 text-shadow">
+                Curso de Selección de Materiales
+            </h1>
+            <h2 class="text-xl md:text-3xl font-light mb-12 text-shadow">
+                Sesión 1: Introducción y Fundamentos del Método Ashby
+            </h2>
+            <div class="author-info text-lg md:text-xl text-white/90">
+                <p>Presentado por: Rubén Velázquez Hernández</p>
+                <p>Fecha: Julio 2025</p>
+            </div>
+        </div>
+        <!-- Indicador de diapositiva -->
+        <div class="absolute bottom-8 right-8 z-10 text-white/70 text-lg">
+            1
+        </div>
+    </div>
+    <!-- === FIN DIAPOSITIVA 1 === -->
+
+
+    <!-- === DIAPOSITIVA 2: AGENDA === -->
+    <div id="slide-2" class="slide w-full h-screen bg-cover bg-center relative flex items-center justify-center" style="background-image: url('https://images.unsplash.com/photo-1554189097-97a47a599d65?q=80&w=1974&auto=format&fit=crop');">
+        <!-- Se usa la misma capa semitransparente -->
+        <div class="absolute inset-0 bg-black/60"></div>
+        <!-- El mismo logo -->
+        <div class="absolute top-8 left-8 z-10">
+            <svg class="h-12 w-12 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m-9 9h18" />
+            </svg>
+        </div>
+        <!-- Contenido principal de la diapositiva 2 -->
+        <div class="relative z-10 text-white p-8 max-w-4xl w-full">
+            <h1 class="text-5xl md:text-6xl font-bold mb-10 text-center text-shadow">
+                ¿Qué veremos hoy?
+            </h1>
+            <ul class="space-y-6 text-xl md:text-2xl">
+                <li class="flex items-start">
+                    <svg class="h-8 w-8 mr-4 text-cyan-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <span class="text-shadow">¿Por qué es crucial seleccionar bien un material?</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="h-8 w-8 mr-4 text-cyan-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+                    <span class="text-shadow">El universo de los materiales: Familias y clases.</span>
+                </li>
+                <li class="flex items-start">
+                     <svg class="h-8 w-8 mr-4 text-cyan-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" /></svg>
+                    <span class="text-shadow">Métodos para seleccionar: Del tradicional al método gráfico.</span>
+                </li>
+                <li class="flex items-start">
+                     <svg class="h-8 w-8 mr-4 text-cyan-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V6a2 2 0 012-2h2.5" /></svg>
+                    <span class="text-shadow">El arte de "traducir": Cómo convertir una necesidad en requisitos.</span>
+                </li>
+                <li class="flex items-start">
+                     <svg class="h-8 w-8 mr-4 text-cyan-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
+                    <span class="text-shadow">Ejercicio práctico: Analizando un caso real.</span>
+                </li>
+            </ul>
+        </div>
+        <!-- Actualizamos el indicador de diapositiva -->
+        <div class="absolute bottom-8 right-8 z-10 text-white/70 text-lg">
+            2
+        </div>
+    </div>
+    <!-- === FIN DIAPOSITIVA 2 === -->
+
+</body>
+</html>
