@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación: Selección de Materiales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-snap-type: y mandatory;
+        }
+        .slide {
+            scroll-snap-align: start;
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+
+    <!-- === DIAPOSITIVA 1: TÍTULO === -->
+    <div id="slide-1" class="slide w-full h-screen bg-cover bg-center relative flex items-center justify-center" style="background-image: url('https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=1974&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div class="absolute top-8 left-8 z-10"><svg class="h-12 w-12 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m-9 9h18" /></svg></div>
+        <div class="relative z-10 text-center text-white p-8">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 text-shadow">Curso de Selección de Materiales</h1>
+            <h2 class="text-xl md:text-3xl font-light mb-12 text-shadow">Sesión 1: Introducción y Fundamentos del Método Ashby</h2>
+            <div class="author-info text-lg md:text-xl text-white/90"><p>Presentado por: Rubén Velázquez Hernández</p><p>Fecha: Julio 2025</p></div>
+        </div>
+        <div class="absolute bottom-8 right-8 z-10 text-white/70 text-lg">1</div>
+    </div>
+
+    <!-- === DIAPOSITIVA 2: AGENDA === -->
+    <div id="slide-2" class="slide w-full h-screen bg-cover bg-center relative flex items-center justify-center" style="background-image: url('https://images.unsplash.com/photo-1554189097-97a47a599d65?q=80&w=1974&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div class="absolute top-8 left-8 z-10"><svg class="h-12 w-12 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m-9 9h18" /></svg></div>
+        <div class="relative z-10 text-white p-8 max-w-4xl w-full">
+            <h1 class="text-5xl md:text-6xl font-bold mb-10 text-center text-shadow">¿Qué veremos hoy?</h1>
+            <ul class="space-y-6 text-xl md:text-2xl">
+                <li class="flex items-start"><svg class="h-8 w-8 mr-4 text-cyan-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span class="text-shadow">¿Por qué es crucial seleccionar bien un material?</span></li>
+                <li class="flex items-start"><svg class="h-8 w-8 mr-4 text-cyan-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg><span class="text-shadow">El universo de los materiales: Familias y clases.</span></li>
+                <li class="flex items-start"><svg class="h-8 w-8 mr-4 text-cyan-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" /></svg><span class="text-shadow">Métodos para seleccionar: Del tradicional al método gráfico.</span></li>
+                <li class="flex items-start"><svg class="h-8 w-8 mr-4 text-cyan-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V6a2 2 0 012-2h2.5" /></svg><span class="text-shadow">El arte de "traducir": Cómo convertir una necesidad en requisitos.</span></li>
+                <li class="flex items-start"><svg class="h-8 w-8 mr-4 text-cyan-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg><span class="text-shadow">Ejercicio práctico: Analizando un caso real.</span></li>
+            </ul>
+        </div>
+        <div class="absolute bottom-8 right-8 z-10 text-white/70 text-lg">2</div>
+    </div>
+    
+    <!-- === DIAPOSITIVA 3: EL ENGANCHE === -->
+    <div id="slide-3" class="slide w-full h-screen bg-cover bg-center relative flex items-center justify-center" style="background-image: url('https://storage.googleapis.com/gemini-generative-ai-api/staging/v1/files/b4c107f9-8472-466d-ad02-601431f4a9b9?Expires=1719852377&GoogleAccessId=gcs-project-335541075346%40gemini-generative-ai-api.iam.gserviceaccount.com&Signature=k6kS8b8XjE89F07nE5tI%2Fr%2FmU1m4b45iG6iQ%2B2vM32K5Qk6wJ%2B0f25qD%2FR66Bq7d6K4b%2FXgD5M33Yy7D1lH8H9j5E1Yh5G%2BB%2BYf%2BXpP77p4jG04Tnj7t127p59gJ3v31iJc%2FK7m8wVlWjU6%2B5k7u7cM8h2pE0D9kS9P7%2BCuGz2uVp6xXw5V9Lq81VqT%2BdRk92L7rD%2Bxk7u2n2iF9L%2Br3xL%2Fo6zE%2Ff5F1q2uH5p%2Bo%2Fx7jL%2Fk3xM%2Fn2nO%2Fn3mH%2Fl4nO%2Fl4kO%2Fl4gO%2Fl4gP%2Fl4gO%2F');">
+        <div class="absolute inset-0 bg-black/70"></div>
+        <div class="absolute top-8 left-8 z-10"><svg class="h-12 w-12 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m-9 9h18" /></svg></div>
+        <div class="relative z-10 text-white p-8 max-w-5xl w-full text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 text-shadow">El material habilita la innovación</h1>
+            <p class="text-lg md:text-2xl font-light mb-10 text-white/90 text-shadow">Un fuselaje de <span class="font-semibold text-cyan-300">compuesto de carbono</span> (Boeing 787) es más ligero, más resistente a la fatiga y permite una cabina con mayor humedad y presión, mejorando la experiencia del pasajero.</p>
+            <p class="text-lg md:text-2xl font-light text-white/90 text-shadow">El diseño tradicional de <span class="font-semibold text-orange-300">aluminio</span> (Boeing 737) es más pesado y requiere más piezas y ensamblaje.</p>
+        </div>
+        <div class="absolute bottom-8 right-8 z-10 text-white/70 text-lg">3</div>
+    </div>
+
+    <!-- === DIAPOSITIVA 4: LA PERCEPCIÓN DEL VALOR (VERSIÓN MEJORADA) === -->
+    <div id="slide-4" class="slide w-full h-screen bg-cover bg-center relative flex flex-col justify-center" style="background-image: url('https://storage.googleapis.com/gemini-generative-ai-api/staging/v1/files/32d0bd4b-9e45-4235-961d-72782e3c0919?Expires=1719852377&GoogleAccessId=gcs-project-335541075346%40gemini-generative-ai-api.iam.gserviceaccount.com&Signature=Vp6%2BqBw0pS7q7lR3u6mN%2FmF%2BqJ1pXm1jF%2BuF%2BqN%2FqBw0pS7q7lR3u6mN%2FmF%2BqJ1pXm1jF%2BuF%2BqN%2FqBw0pS7q7lR3u6mN%2FmF%2BqJ1pXm1jF%2BuF%2BqN%2FqBw0pS7q7lR3u6mN%2FmF%2BqJ1pXm1jF%2BuF%2BqN%2FqBw0pS7q7lR3u6mN%2FmF%2BqJ1pXm1jF%2BuF%2BqN%2FqBw0pS');">
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div class="absolute top-8 left-8 z-10"><svg class="h-12 w-12 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m-9 9h18" /></svg></div>
+        <div class="relative z-10 text-white p-8 w-full">
+            <h1 class="text-4xl md:text-5xl font-bold mb-8 text-center text-shadow">El material comunica valor</h1>
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-black/40 backdrop-blur-sm p-6 rounded-lg border border-white/20 space-y-4">
+                    <h2 class="text-2xl font-bold text-cyan-300 text-shadow">Moderno: Titanio y Vidrio</h2>
+                    <p class="text-md font-light text-white/90">Comunica precisión y estatus. Se percibe como un objeto de lujo y alta tecnología.</p>
+                    <div class="space-y-3 pt-2">
+                        <div><span class="text-sm font-semibold">Costo del Material</span><div class="w-full bg-gray-700 rounded-full h-3"><div class="bg-cyan-400 h-3 rounded-full" style="width: 90%"></div></div></div>
+                        <div><span class="text-sm font-semibold">Percepción Premium</span><div class="w-full bg-gray-700 rounded-full h-3"><div class="bg-cyan-400 h-3 rounded-full" style="width: 95%"></div></div></div>
+                        <div><span class="text-sm font-semibold">Robustez (a caídas)</span><div class="w-full bg-gray-700 rounded-full h-3"><div class="bg-cyan-400 h-3 rounded-full" style="width: 60%"></div></div></div>
+                    </div>
+                </div>
+                <div class="bg-black/40 backdrop-blur-sm p-6 rounded-lg border border-white/20 space-y-4">
+                    <h2 class="text-2xl font-bold text-orange-300 text-shadow">Clásico: Policarbonato</h2>
+                    <p class="text-md font-light text-white/90">Comunica durabilidad y accesibilidad. Se percibe como una herramienta robusta, casi indestructible.</p>
+                    <div class="space-y-3 pt-2">
+                        <div><span class="text-sm font-semibold">Costo del Material</span><div class="w-full bg-gray-700 rounded-full h-3"><div class="bg-orange-400 h-3 rounded-full" style="width: 15%"></div></div></div>
+                        <div><span class="text-sm font-semibold">Percepción Premium</span><div class="w-full bg-gray-700 rounded-full h-3"><div class="bg-orange-400 h-3 rounded-full" style="width: 20%"></div></div></div>
+                        <div><span class="text-sm font-semibold">Robustez (a caídas)</span><div class="w-full bg-gray-700 rounded-full h-3"><div class="bg-orange-400 h-3 rounded-full" style="width: 95%"></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 right-8 z-10 text-white/70 text-lg">4</div>
+    </div>
+
+    <!-- === DIAPOSITIVA 5: EL TRIÁNGULO DEL DISEÑO === -->
+    <div id="slide-5" class="slide w-full h-screen bg-cover bg-center relative flex flex-col items-center justify-center p-8" style="background-image: url('https://images.unsplash.com/photo-1534294645229-4933545c2b0e?q=80&w=2070&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-black/70"></div>
+        <div class="absolute top-8 left-8 z-10"><svg class="h-12 w-12 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m-9 9h18" /></svg></div>
+        <div class="relative z-10 text-white w-full max-w-5xl">
+            <h1 class="text-4xl md:text-5xl font-bold mb-12 text-center text-shadow">El Vínculo Indivisible</h1>
+            <div class="grid grid-cols-2 grid-rows-2 gap-x-8 gap-y-4 items-center">
+                <div class="col-span-2 flex justify-center">
+                    <div class="bg-black/40 backdrop-blur-sm p-6 rounded-lg border border-white/20 text-center w-72"><h2 class="text-2xl font-bold text-cyan-300">DISEÑO</h2><p class="text-white/80">Función y Geometría</p></div>
+                </div>
+                <div class="flex justify-end text-right">
+                     <div class="bg-black/40 backdrop-blur-sm p-6 rounded-lg border border-white/20 text-center w-72"><h2 class="text-2xl font-bold text-orange-300">MATERIAL</h2><p class="text-white/80">Propiedades Intrínsecas</p></div>
+                </div>
+                <div class="flex justify-start text-left">
+                    <div class="bg-black/40 backdrop-blur-sm p-6 rounded-lg border border-white/20 text-center w-72"><h2 class="text-2xl font-bold text-lime-300">PROCESO</h2><p class="text-white/80">Manufactura y Acabado</p></div>
+                </div>
+            </div>
+             <p class="mt-12 text-center text-xl md:text-2xl font-light text-white/90 text-shadow">No se puede elegir uno sin considerar los otros dos. Un cambio en el material puede requerir un nuevo proceso y habilitar un nuevo diseño.</p>
+        </div>
+        <div class="absolute bottom-8 right-8 z-10 text-white/70 text-lg">5</div>
+    </div>
+    
+    <!-- === DIAPOSITIVA 6: FASES DEL PROCESO DE DISEÑO === -->
+    <div id="slide-6" class="slide w-full h-screen bg-cover bg-center relative flex flex-col items-center justify-center p-8" style="background-image: url('https://images.unsplash.com/photo-1581092446347-a5c33a493e89?q=80&w=2070&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-black/75"></div>
+        <div class="absolute top-8 left-8 z-10"><svg class="h-12 w-12 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m-9 9h18" /></svg></div>
+        <div class="relative z-10 text-white w-full max-w-7xl">
+            <h1 class="text-4xl md:text-5xl font-bold mb-16 text-center text-shadow">¿Cuándo seleccionamos el material?</h1>
+            <div class="flex items-center justify-between">
+                <div class="text-center w-1/3">
+                    <div class="bg-black/50 backdrop-blur-sm p-6 rounded-lg border-2 border-cyan-400 shadow-lg shadow-cyan-500/20">
+                        <h2 class="text-2xl font-bold text-cyan-400">1. Conceptual</h2>
+                        <p class="text-white/80 mt-2 h-16">Definir la función y los objetivos. Se eligen **familias** de materiales.</p>
+                        <p class="text-sm font-mono bg-cyan-900/50 text-cyan-200 rounded px-2 py-1 mt-2">Ej: "Metal" o "Polímero"</p>
+                    </div>
+                    <p class="mt-4 text-lg font-bold text-cyan-300 animate-pulse">¡AQUÍ ES CLAVE!</p>
+                </div>
+                <div class="text-gray-400 text-5xl font-thin mx-4">→</div>
+                <div class="w-1/3">
+                    <div class="bg-black/50 backdrop-blur-sm p-6 rounded-lg border border-white/20">
+                        <h2 class="text-2xl font-bold text-orange-300">2. Formulación</h2>
+                        <p class="text-white/80 mt-2 h-16">Refinar la geometría y el diseño. Se eligen **clases** de materiales.</p>
+                        <p class="text-sm font-mono bg-orange-900/50 text-orange-200 rounded px-2 py-1 mt-2">Ej: "Aleación de Aluminio"</p>
+                    </div>
+                </div>
+                <div class="text-gray-400 text-5xl font-thin mx-4">→</div>
+                <div class="w-1/3">
+                     <div class="bg-black/50 backdrop-blur-sm p-6 rounded-lg border border-white/20">
+                        <h2 class="text-2xl font-bold text-lime-300">3. Detalle</h2>
+                        <p class="text-white/80 mt-2 h-16">Finalizar dimensiones y tolerancias. Se elige un **miembro** específico.</p>
+                        <p class="text-sm font-mono bg-lime-900/50 text-lime-200 rounded px-2 py-1 mt-2">Ej: "Aluminio 6061-T6"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 right-8 z-10 text-white/70 text-lg">6</div>
+    </div>
+    
+    <!-- === DIAPOSITIVA 7: EL UNIVERSO DE MATERIALES === -->
+    <div id="slide-7" class="slide w-full h-screen bg-cover bg-center relative flex flex-col items-center justify-center p-8" style="background-image: url('https://images.unsplash.com/photo-1505798577917-f65d26438544?q=80&w=2070&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div class="absolute top-8 left-8 z-10"><svg class="h-12 w-12 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m-9 9h18" /></svg></div>
+        <div class="relative z-10 text-white w-full max-w-4xl text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-shadow">¿De qué están hechas las cosas?</h1>
+            <p class="text-xl md:text-2xl font-light text-white/90 text-shadow">
+                Nuestra civilización se construye sobre un universo de materiales, cada uno con una historia y un propósito.
+            </p>
+        </div>
+        <div class="absolute bottom-8 right-8 z-10 text-white/70 text-lg">7</div>
+    </div>
+
+    <!-- === DIAPOSITIVA 8: EL ÁRBOL DE LOS MATERIALES (FONDO INDUSTRIAL) === -->
+    <div id="slide-8" class="slide w-full h-screen bg-cover bg-center relative flex flex-col items-center justify-center p-8" style="background-image: url('https://images.unsplash.com/photo-1567942712689-e10893d3b746?q=80&w=1974&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-black/80"></div>
+        <div class="absolute top-8 left-8 z-10"><svg class="h-12 w-12 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m-9 9h18" /></svg></div>
+        <div class="relative z-10 text-white w-full max-w-7xl">
+            <h1 class="text-4xl md:text-5xl font-bold mb-10 text-center text-shadow">Clasificación: Un mapa para no perderse</h1>
+            <div class="flex items-start justify-center space-x-4">
+                <div class="flex flex-col items-center space-y-4">
+                    <div class="text-sm uppercase font-semibold text-gray-400">Nivel 1: Familia</div>
+                    <div class="bg-black/50 p-4 rounded-lg border border-white/20 w-48 text-center text-xl font-bold text-cyan-300">Metales</div>
+                    <div class="bg-black/50 p-4 rounded-lg border border-white/20 w-48 text-center text-xl">Polímeros</div>
+                    <div class="bg-black/50 p-4 rounded-lg border border-white/20 w-48 text-center text-xl">Cerámicos</div>
+                    <div class="bg-black/50 p-4 rounded-lg border border-white/20 w-48 text-center text-xl">...etc</div>
+                </div>
+                <div class="pt-20 text-gray-500 text-4xl">→</div>
+                <div class="flex flex-col items-center space-y-4">
+                    <div class="text-sm uppercase font-semibold text-gray-400">Nivel 2: Clase</div>
+                    <div class="bg-black/50 p-4 rounded-lg border-2 border-orange-400 w-48 text-center text-xl font-bold text-orange-300">Aceros</div>
+                    <div class="bg-black/50 p-4 rounded-lg border border-white/20 w-48 text-center text-xl">Aluminios</div>
+                    <div class="bg-black/50 p-4 rounded-lg border border-white/20 w-48 text-center text-xl">Cobres</div>
+                </div>
+                <div class="pt-20 text-gray-500 text-4xl">→</div>
+                <div class="flex flex-col items-center space-y-4">
+                    <div class="text-sm uppercase font-semibold text-gray-400">Nivel 3: Subclase</div>
+                    <div class="bg-black/50 p-4 rounded-lg border-2 border-lime-400 w-56 text-center text-xl font-bold text-lime-300">Acero Inoxidable</div>
+                    <div class="bg-black/50 p-4 rounded-lg border border-white/20 w-56 text-center text-xl">Acero al Carbono</div>
+                </div>
+                <div class="pt-20 text-gray-500 text-4xl">→</div>
+                 <div class="flex flex-col items-center space-y-4">
+                    <div class="text-sm uppercase font-semibold text-gray-400">Nivel 4: Miembro</div>
+                    <div class="bg-black/50 p-4 rounded-lg border-2 border-red-400 w-56 text-center text-xl font-bold text-red-300">AISI 304</div>
+                    <p class="text-center text-lg font-light text-white/80 max-w-xs pt-6">A medida que descendemos, las propiedades se vuelven más específicas y menos variables.</p>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 right-8 z-10 text-white/70 text-lg">8</div>
+    </div>
+
+    <!-- === DIAPOSITIVA 9: LAS 6 GRANDES FAMILIAS === -->
+    <div id="slide-9" class="slide w-full h-screen bg-cover bg-center relative flex flex-col items-center justify-center p-8" style="background-image: url('https://images.unsplash.com/photo-1618172193622-ae2d025f4032?q=80&w=1964&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-black/80"></div>
+        <div class="absolute top-8 left-8 z-10"><svg class="h-12 w-12 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m-9 9h18" /></svg></div>
+        
+        <div class="relative z-10 text-white w-full max-w-7xl">
+            <h1 class="text-4xl md:text-5xl font-bold mb-10 text-center text-shadow">Las 6 Grandes Familias de Materiales</h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Tarjeta: Metales -->
+                <div class="bg-black/50 backdrop-blur-sm p-6 rounded-lg border border-white/20 text-center space-y-3">
+                    <svg class="h-12 w-12 mx-auto text-cyan-300"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />  <line x1="12" y1="9" x2="12" y2="13" />  <line x1="12" y1="17" x2="12.01" y2="17" /></svg>
+                    <h2 class="text-2xl font-bold text-cyan-300">Metales</h2>
+                    <p class="text-white/90">Duros, rígidos, dúctiles, buenos conductores de calor y electricidad.</p>
+                </div>
+
+                <!-- Tarjeta: Polímeros -->
+                <div class="bg-black/50 backdrop-blur-sm p-6 rounded-lg border border-white/20 text-center space-y-3">
+                    <svg class="h-12 w-12 mx-auto text-orange-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2 1M4 7l2-1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"/></svg>
+                    <h2 class="text-2xl font-bold text-orange-300">Polímeros</h2>
+                    <p class="text-white/90">Ligeros, aislantes, fáciles de moldear, buena relación resistencia-peso.</p>
+                </div>
+
+                <!-- Tarjeta: Cerámicos -->
+                <div class="bg-black/50 backdrop-blur-sm p-6 rounded-lg border border-white/20 text-center space-y-3">
+                    <svg class="h-12 w-12 mx-auto text-lime-300"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M3.204 11.202l5.61 5.612a2.828 2.828 0 0 0 4.001 0l5.61 -5.612a2.828 2.828 0 0 0 0 -4.001l-5.61 -5.612a2.828 2.828 0 0 0 -4.001 0l-5.61 5.612a2.828 2.828 0 0 0 0 4.001z" />  <path d="M7 12h10" /></svg>
+                    <h2 class="text-2xl font-bold text-lime-300">Cerámicos</h2>
+                    <p class="text-white/90">Muy duros, resistentes al calor y a la compresión, pero frágiles.</p>
+                </div>
+
+                <!-- Tarjeta: Elastómeros -->
+                <div class="bg-black/50 backdrop-blur-sm p-6 rounded-lg border border-white/20 text-center space-y-3">
+                    <svg class="h-12 w-12 mx-auto text-red-400"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M17.657 17.657l-4.243-4.243a6 6 0 0 1 -8.485-8.485l4.243 4.243a6 6 0 0 1 8.485 8.485z" /></svg>
+                    <h2 class="text-2xl font-bold text-red-400">Elastómeros</h2>
+                    <p class="text-white/90">Muy elásticos y flexibles, capaces de grandes deformaciones, absorben vibraciones.</p>
+                </div>
+
+                <!-- Tarjeta: Vidrios -->
+                <div class="bg-black/50 backdrop-blur-sm p-6 rounded-lg border border-white/20 text-center space-y-3">
+                    <svg class="h-12 w-12 mx-auto text-purple-400"  fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <h2 class="text-2xl font-bold text-purple-400">Vidrios</h2>
+                    <p class="text-white/90">Amorfos (no cristalinos), duros, frágiles y a menudo transparentes.</p>
+                </div>
+
+                <!-- Tarjeta: Híbridos -->
+                <div class="bg-black/50 backdrop-blur-sm p-6 rounded-lg border border-white/20 text-center space-y-3">
+                     <svg class="h-12 w-12 mx-auto text-yellow-300"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M8 16v-4a4 4 0 0 1 8 0v4" />  <path d="M3 16h2.5" />  <path d="M18.5 16H21" />  <path d="M12 20v-4" />  <path d="M12 4v4" />  <path d="M12 12h-4" />  <path d="M12 12h4" /></svg>
+                    <h2 class="text-2xl font-bold text-yellow-300">Híbridos</h2>
+                    <p class="text-white/90">Combinación de materiales para obtener propiedades superiores. Ej: Compuestos, espumas.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 right-8 z-10 text-white/70 text-lg">9</div>
+    </div>
+    <!-- === FIN DIAPOSITIVA 9 === -->
+
+</body>
+</html>
