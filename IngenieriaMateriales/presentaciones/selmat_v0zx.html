@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación: Selección de Materiales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- === FUENTES MODERNAS: Poppins para títulos, Inter para texto === -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Estilo base del cuerpo */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-snap-type: y mandatory;
+            background-color: #020617; /* Un azul noche muy oscuro (slate-950) */
+            color: #e2e8f0; /* Color de texto base (slate-200) */
+            overflow-x: hidden;
+        }
+        /* Contenedor de diapositivas para el scroll-snap */
+        .slides-container {
+            width: 100%;
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+        }
+        /* Estilo base para cada diapositiva */
+        .slide {
+            scroll-snap-align: start;
+            flex-shrink: 0;
+            width: 100%;
+            height: 100vh;
+        }
+        /* Fuentes personalizadas para títulos */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        /* Animación sutil para la aparición de elementos */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        /* Animación para la línea de selección */
+        @keyframes drawLine {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        .draw-line {
+            animation: drawLine 1.5s ease-out forwards;
+            animation-delay: 1s;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slides-container">
+
+    <!-- === DIAPOSITIVA 1: TÍTULO - ESTILO "INGENIERÍA MODERNA" === -->
+    <div id="slide-1" class="slide w-full h-screen bg-cover bg-center relative flex items-center" style="background-image: url('https://images.unsplash.com/photo-1532187643623-dbf26353d45d?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+        
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/80 to-transparent"></div>
+        
+        <div class="absolute top-8 left-8 z-10 fade-in" style="animation-delay: 0.5s;">
+             <svg class="h-12 w-12 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+            </svg>
+        </div>
+
+        <div class="relative z-10 w-full max-w-4xl p-8 md:p-12 lg:p-16">
+            
+            <div class="w-24 h-1 bg-sky-500 mb-6 fade-in"></div>
+
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 fade-in" style="animation-delay: 0.2s;">
+                Selección de Materiales
+            </h1>
+            <h2 class="text-xl md:text-3xl font-light text-slate-300 mb-10 fade-in" style="animation-delay: 0.4s;">
+                Fundamentos y Aplicación del Método Ashby
+            </h2>
+            
+            <div class="author-info text-lg text-slate-400 border-t border-slate-700 pt-6 fade-in" style="animation-delay: 0.6s;">
+                <p class="font-light">Presentado por: <span class="font-medium text-slate-200">Rubén Velázquez Hernández</span></p>
+                <p class="font-light">Julio 2025</p>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 right-8 z-10 text-slate-500 text-2xl font-bold">01</div>
+    </div>
+
+    <!-- === DIAPOSITIVA 2: EL RETO INICIAL (VERSIÓN VISUAL) === -->
+    <div id="slide-2" class="slide w-full h-screen bg-cover bg-center relative flex items-center justify-center p-8" style="background-image: url('https://images.unsplash.com/photo-1505739999485-34931a70b161?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+        <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-sm"></div>
+
+        <div class="relative z-10 text-center max-w-5xl mx-auto">
+            <div class="fade-in">
+                <h2 class="text-sky-400 text-lg font-semibold mb-2">Módulo 1: Introducción</h2>
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-12">¿De qué lo hacemos?</h1>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 text-left">
+                <div class="bg-slate-900/70 p-6 rounded-lg border border-slate-700 backdrop-blur-md fade-in" style="animation-delay: 0.2s;">
+                    <div class="flex items-center mb-4">
+                        <svg class="h-8 w-8 text-sky-400 mr-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.562L16.5 21.75l-.398-1.188a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.188-.398a2.25 2.25 0 001.423-1.423l.398-1.188 1.188.398a2.25 2.25 0 001.423 1.423l.398 1.188-1.188.398a2.25 2.25 0 00-1.423 1.423z" /></svg>
+                        <h3 class="text-2xl font-bold text-white">La Función</h3>
+                    </div>
+                    <p class="text-slate-300">Toda aplicación debe cumplir una o más funciones específicas: soportar una carga, aislar del calor, conducir electricidad...</p>
+                </div>
+                <div class="bg-slate-900/70 p-6 rounded-lg border border-slate-700 backdrop-blur-md fade-in" style="animation-delay: 0.4s;">
+                    <div class="flex items-center mb-4">
+                        <svg class="h-8 w-8 text-sky-400 mr-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286zm0 13.036h.008v.008h-.008v-.008z" /></svg>
+                        <h3 class="text-2xl font-bold text-white">El Universo</h3>
+                    </div>
+                    <p class="text-slate-300">Nos enfrentamos a un catálogo de más de <span class="text-sky-400 font-medium">100,000 materiales</span>. Metales, polímeros, cerámicos, compuestos...</p>
+                </div>
+                <div class="bg-slate-900/70 p-6 rounded-lg border border-slate-700 backdrop-blur-md fade-in" style="animation-delay: 0.6s;">
+                    <div class="flex items-center mb-4">
+                        <svg class="h-8 w-8 text-sky-400 mr-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" /></svg>
+                        <h3 class="text-2xl font-bold text-white">La Decisión</h3>
+                    </div>
+                    <p class="text-slate-300">El reto es encontrar el material <span class="text-sky-400 font-medium">óptimo</span> considerando coste, durabilidad, seguridad y proceso de fabricación.</p>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 right-8 z-10 text-slate-500 text-2xl font-bold">02</div>
+    </div>
+
+    <!-- === DIAPOSITIVA 3: EL TRIÁNGULO FUNDAMENTAL (ICONOS ACTUALIZADOS) === -->
+    <div id="slide-3" class="slide w-full h-screen bg-slate-950 relative flex items-center justify-center p-8 overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('https://images.unsplash.com/photo-1581092162497-a01493535978?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+        
+        <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <!-- Columna de Texto -->
+            <div class="text-left">
+                <div class="fade-in">
+                    <h2 class="text-sky-400 text-lg font-semibold mb-2">La Clave de la Selección</h2>
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">El Triángulo Fundamental</h1>
+                    <p class="text-slate-300 text-lg mb-8">No se puede seleccionar un material de forma aislada. El éxito de cualquier diseño depende de la interconexión inseparable entre tres pilares:</p>
+                </div>
+                <div class="space-y-6">
+                    <div class="fade-in" style="animation-delay: 0.3s;">
+                        <h3 class="text-xl font-bold text-white mb-1">1. Diseño</h3>
+                        <p class="text-slate-400">Define la <span class="text-sky-400">función</span>, la <span class="text-sky-400">forma</span> y las <span class="text-sky-400">condiciones de servicio</span> que el componente debe soportar.</p>
+                    </div>
+                    <div class="fade-in" style="animation-delay: 0.5s;">
+                        <h3 class="text-xl font-bold text-white mb-1">2. Material</h3>
+                        <p class="text-slate-400">Aporta las <span class="text-sky-400">propiedades</span> (mecánicas, térmicas, químicas) para cumplir la función de manera segura y eficiente.</p>
+                    </div>
+                    <div class="fade-in" style="animation-delay: 0.7s;">
+                        <h3 class="text-xl font-bold text-white mb-1">3. Procesado</h3>
+                        <p class="text-slate-400">Permite <span class="text-sky-400">dar forma</span> al material (moldeo, mecanizado, etc.) y afecta directamente a sus <span class="text-sky-400">propiedades finales</span>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna del Diagrama -->
+            <div class="relative flex items-center justify-center h-96 fade-in" style="animation-delay: 0.2s;">
+                <div class="absolute w-full h-full flex items-center justify-center">
+                    <svg class="w-full h-full" viewBox="0 0 200 200">
+                        <path d="M 100 20 L 180 160 L 20 160 Z" stroke="#38bdf8" stroke-width="2" fill="rgba(56, 189, 248, 0.05)" />
+                    </svg>
+                </div>
+                <div class="absolute top-0 transform -translate-y-1/2 text-center fade-in" style="animation-delay: 0.9s;">
+                    <div class="bg-slate-800 p-3 rounded-full border-2 border-sky-400 mb-2 inline-block">
+                        <svg class="h-8 w-8 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v2m0 8v2m-6-4h2m8 0h2m-5-5l1.414-1.414M7.05 16.95l1.414-1.414m9.9-9.9l-1.414 1.414M7.05 7.05l1.414 1.414M12 15a3 3 0 100-6 3 3 0 000 6z" />
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-lg">DISEÑO</h4>
+                </div>
+                <div class="absolute bottom-0 left-0 transform translate-x-[-20%] translate-y-1/2 text-center fade-in" style="animation-delay: 1.1s;">
+                    <div class="bg-slate-800 p-3 rounded-full border-2 border-sky-400 mb-2 inline-block">
+                        <svg class="h-8 w-8 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(45 12 12)"></ellipse>
+                            <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-45 12 12)"></ellipse>
+                            <circle cx="12" cy="12" r="2" fill="currentColor"></circle>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-lg">MATERIAL</h4>
+                </div>
+                <div class="absolute bottom-0 right-0 transform translate-x-[20%] translate-y-1/2 text-center fade-in" style="animation-delay: 1.3s;">
+                    <div class="bg-slate-800 p-3 rounded-full border-2 border-sky-400 mb-2 inline-block">
+                        <svg class="h-8 w-8 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 20h14" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 16h14" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 16V8" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 8h6" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8V4" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 4h4" />
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-lg">PROCESADO</h4>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 right-8 z-10 text-slate-500 text-2xl font-bold">03</div>
+    </div>
+
+    <!-- === DIAPOSITIVA 4: EL UNIVERSO DE LOS MATERIALES === -->
+    <div id="slide-4" class="slide w-full h-screen bg-slate-950 relative flex flex-col items-center justify-center p-8 overflow-hidden">
+        <div class="text-center mb-12 fade-in">
+            <h2 class="text-sky-400 text-lg font-semibold mb-2">Las Grandes Familias</h2>
+            <h1 class="text-4xl md:text-5xl font-bold text-white">El Universo de los Materiales</h1>
+        </div>
+
+        <div class="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Tarjeta 1: Metales -->
+            <div class="bg-slate-900/70 p-6 rounded-lg border border-slate-800 text-center transform hover:scale-105 hover:border-sky-500 transition-all duration-300 fade-in" style="animation-delay: 0.2s;">
+                <div class="flex justify-center mb-4">
+                    <div class="bg-slate-800 p-4 rounded-full border-2 border-slate-700">
+                        <svg class="h-10 w-10 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.472-2.472a3.75 3.75 0 00-5.304-5.304l-2.472 2.472M11.42 15.17L5.636 20.954a3.75 3.75 0 005.304 5.304L17.25 21" /></svg>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">Metales</h3>
+                <p class="text-slate-400 text-sm">Aleaciones de hierro, aluminio, cobre, titanio... Duros, rígidos y resistentes.</p>
+            </div>
+            <!-- Tarjeta 2: Polímeros -->
+            <div class="bg-slate-900/70 p-6 rounded-lg border border-slate-800 text-center transform hover:scale-105 hover:border-sky-500 transition-all duration-300 fade-in" style="animation-delay: 0.4s;">
+                <div class="flex justify-center mb-4">
+                    <div class="bg-slate-800 p-4 rounded-full border-2 border-slate-700">
+                        <svg class="h-10 w-10 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m-3-1l-3-1m-3 1l-3 1" /></svg>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">Polímeros</h3>
+                <p class="text-slate-400 text-sm">Plásticos y elastómeros. Ligeros, aislantes y resistentes a la corrosión.</p>
+            </div>
+            <!-- Tarjeta 3: Cerámicos -->
+            <div class="bg-slate-900/70 p-6 rounded-lg border border-slate-800 text-center transform hover:scale-105 hover:border-sky-500 transition-all duration-300 fade-in" style="animation-delay: 0.6s;">
+                <div class="flex justify-center mb-4">
+                    <div class="bg-slate-800 p-4 rounded-full border-2 border-slate-700">
+                        <svg class="h-10 w-10 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 4.5v15m6-15v15m-10.875 0h15.75c.621 0 1.125-.504 1.125-1.125V5.625c0-.621-.504-1.125-1.125-1.125H4.125C3.504 4.5 3 5.004 3 5.625v12.75c0 .621.504 1.125 1.125 1.125z" /></svg>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">Cerámicos</h3>
+                <p class="text-slate-400 text-sm">Alúmina, carburos, vidrios... Duros, frágiles y resistentes a altas temperaturas.</p>
+            </div>
+            <!-- Tarjeta 4: Compuestos -->
+            <div class="bg-slate-900/70 p-6 rounded-lg border border-slate-800 text-center transform hover:scale-105 hover:border-sky-500 transition-all duration-300 fade-in" style="animation-delay: 0.8s;">
+                <div class="flex justify-center mb-4">
+                    <div class="bg-slate-800 p-4 rounded-full border-2 border-slate-700">
+                        <svg class="h-10 w-10 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18.375a6.375 6.375 0 006.375-6.375h-12.75A6.375 6.375 0 0012 18.375zM12 5.625v12.75" /></svg>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">Compuestos</h3>
+                <p class="text-slate-400 text-sm">Fibra de carbono, fibra de vidrio... Propiedades a la carta combinando materiales.</p>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 right-8 z-10 text-slate-500 text-2xl font-bold">04</div>
+    </div>
+
+    <!-- === DIAPOSITIVA 5: METALES (IMAGEN ACTUALIZADA) === -->
+    <div id="slide-5" class="slide w-full h-screen flex flex-col md:flex-row">
+        <div class="w-full md:w-1/2 h-1/3 md:h-full bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1562778627-a0f0d9136a43?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent"></div>
+        </div>
+        <div class="w-full md:w-1/2 h-2/3 md:h-full bg-slate-950 flex flex-col justify-center p-8 lg:p-16">
+            <div class="max-w-md mx-auto md:mx-0">
+                <div class="fade-in">
+                    <h2 class="text-sky-400 text-lg font-semibold mb-2">Familia 1</h2>
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Metales</h1>
+                    <p class="text-slate-300 mb-8">Los pilares de la industria. Conocidos por su alta resistencia, rigidez y capacidad para deformarse sin romperse (ductilidad).</p>
+                </div>
+                <div class="space-y-6">
+                    <div class="fade-in" style="animation-delay: 0.3s;">
+                        <h3 class="text-xl font-bold text-white mb-3 flex items-center"><svg class="h-6 w-6 text-green-400 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>Puntos Fuertes</h3>
+                        <ul class="list-disc list-inside text-slate-400 space-y-2 pl-2">
+                            <li>Alta rigidez (<span class="font-medium text-sky-400">E ≈ 100 GPa</span>) y tenacidad.</li>
+                            <li>Dúctiles y fácilmente moldeables.</li>
+                            <li>Buena conductividad térmica y eléctrica.</li>
+                        </ul>
+                    </div>
+                    <div class="fade-in" style="animation-delay: 0.5s;">
+                        <h3 class="text-xl font-bold text-white mb-3 flex items-center"><svg class="h-6 w-6 text-red-400 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>Debilidades</h3>
+                        <ul class="list-disc list-inside text-slate-400 space-y-2 pl-2">
+                            <li>Susceptibles a la corrosión.</li>
+                            <li>Relativamente pesados.</li>
+                            <li>Baja resistencia a la fatiga en estado puro.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 right-8 z-10 text-slate-500 text-2xl font-bold">05</div>
+    </div>
+
+    <!-- === DIAPOSITIVA 6: CERÁMICOS (IMAGEN MANTENIDA) === -->
+    <div id="slide-6" class="slide w-full h-screen flex flex-col md:flex-row-reverse">
+        <div class="w-full md:w-1/2 h-1/3 md:h-full bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1618498188055-239645524f30?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent"></div>
+        </div>
+        <div class="w-full md:w-1/2 h-2/3 md:h-full bg-slate-950 flex flex-col justify-center p-8 lg:p-16">
+            <div class="max-w-md mx-auto md:mx-0 md:ml-auto md:text-right">
+                <div class="fade-in">
+                    <h2 class="text-sky-400 text-lg font-semibold mb-2">Familia 2</h2>
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Cerámicos</h1>
+                    <p class="text-slate-300 mb-8">Materiales de extrema dureza y resistencia a altas temperaturas, ideales para condiciones de servicio severas.</p>
+                </div>
+                <div class="space-y-6">
+                    <div class="fade-in" style="animation-delay: 0.3s;">
+                        <h3 class="text-xl font-bold text-white mb-3 flex items-center md:justify-end"><svg class="h-6 w-6 text-green-400 mr-3 md:mr-0 md:ml-3 md:order-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>Puntos Fuertes</h3>
+                        <ul class="list-disc list-inside text-slate-400 space-y-2 pl-2 md:pl-0 md:pr-2 text-left md:text-right">
+                            <li>Muy alta rigidez (<span class="font-medium text-sky-400">E ≈ 200 GPa</span>) y dureza.</li>
+                            <li>Excelente resistencia a la corrosión y al desgaste.</li>
+                            <li>Alto punto de fusión, estables a altas temperaturas.</li>
+                        </ul>
+                    </div>
+                    <div class="fade-in" style="animation-delay: 0.5s;">
+                        <h3 class="text-xl font-bold text-white mb-3 flex items-center md:justify-end"><svg class="h-6 w-6 text-red-400 mr-3 md:mr-0 md:ml-3 md:order-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>Debilidades</h3>
+                        <ul class="list-disc list-inside text-slate-400 space-y-2 pl-2 md:pl-0 md:pr-2 text-left md:text-right">
+                            <li>Muy baja tenacidad (frágiles).</li>
+                            <li>Difíciles de fabricar y dar forma.</li>
+                            <li>Débil resistencia al choque térmico.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 right-8 z-10 text-slate-500 text-2xl font-bold">06</div>
+    </div>
+
+    <!-- === DIAPOSITIVA 7: POLÍMEROS (IMAGEN ACTUALIZADA) === -->
+    <div id="slide-7" class="slide w-full h-screen flex flex-col md:flex-row">
+        <div class="w-full md:w-1/2 h-1/3 md:h-full bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1579986331583-36873836154c?q=80&w=2071&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent"></div>
+        </div>
+        <div class="w-full md:w-1/2 h-2/3 md:h-full bg-slate-950 flex flex-col justify-center p-8 lg:p-16">
+            <div class="max-w-md mx-auto md:mx-0">
+                <div class="fade-in">
+                    <h2 class="text-sky-400 text-lg font-semibold mb-2">Familia 3</h2>
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Polímeros</h1>
+                    <p class="text-slate-300 mb-8">Los materiales más versátiles. Desde plásticos de uso diario hasta elastómeros y resinas de alta tecnología.</p>
+                </div>
+                <div class="space-y-6">
+                    <div class="fade-in" style="animation-delay: 0.3s;">
+                        <h3 class="text-xl font-bold text-white mb-3 flex items-center"><svg class="h-6 w-6 text-green-400 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>Puntos Fuertes</h3>
+                        <ul class="list-disc list-inside text-slate-400 space-y-2 pl-2">
+                            <li>Muy ligeros y de baja densidad.</li>
+                            <li>Excelente resistencia a la corrosión.</li>
+                            <li>Fáciles de moldear en formas complejas.</li>
+                        </ul>
+                    </div>
+                    <div class="fade-in" style="animation-delay: 0.5s;">
+                        <h3 class="text-xl font-bold text-white mb-3 flex items-center"><svg class="h-6 w-6 text-red-400 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>Debilidades</h3>
+                        <ul class="list-disc list-inside text-slate-400 space-y-2 pl-2">
+                            <li>Baja rigidez (<span class="font-medium text-sky-400">E ≈ 2 GPa</span>) y resistencia mecánica.</li>
+                            <li>Baja temperatura de servicio (<span class="font-medium text-sky-400">Tg ≈ 100°C</span>).</li>
+                            <li>Susceptibles a la degradación por UV.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 right-8 z-10 text-slate-500 text-2xl font-bold">07</div>
+    </div>
+    
+    <!-- === DIAPOSITIVA 8: COMPUESTOS (IMAGEN MANTENIDA) === -->
+    <div id="slide-8" class="slide w-full h-screen flex flex-col md:flex-row-reverse">
+        <div class="w-full md:w-1/2 h-1/3 md:h-full bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1603898039423-86d1a0b67364?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent"></div>
+        </div>
+        <div class="w-full md:w-1/2 h-2/3 md:h-full bg-slate-950 flex flex-col justify-center p-8 lg:p-16">
+            <div class="max-w-md mx-auto md:mx-0 md:ml-auto md:text-right">
+                <div class="fade-in">
+                    <h2 class="text-sky-400 text-lg font-semibold mb-2">Familia 4</h2>
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Compuestos</h1>
+                    <p class="text-slate-300 mb-8">Materiales de alto rendimiento diseñados a la carta, combinando las mejores propiedades de diferentes familias.</p>
+                </div>
+                <div class="space-y-6">
+                    <div class="fade-in" style="animation-delay: 0.3s;">
+                        <h3 class="text-xl font-bold text-white mb-3 flex items-center md:justify-end"><svg class="h-6 w-6 text-green-400 mr-3 md:mr-0 md:ml-3 md:order-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>Puntos Fuertes</h3>
+                        <ul class="list-disc list-inside text-slate-400 space-y-2 pl-2 md:pl-0 md:pr-2 text-left md:text-right">
+                            <li>Excelente relación rigidez/peso y resistencia/peso.</li>
+                            <li>Alta resistencia a la fatiga.</li>
+                            <li>Propiedades personalizables según la aplicación.</li>
+                        </ul>
+                    </div>
+                    <div class="fade-in" style="animation-delay: 0.5s;">
+                        <h3 class="text-xl font-bold text-white mb-3 flex items-center md:justify-end"><svg class="h-6 w-6 text-red-400 mr-3 md:mr-0 md:ml-3 md:order-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>Debilidades</h3>
+                        <ul class="list-disc list-inside text-slate-400 space-y-2 pl-2 md:pl-0 md:pr-2 text-left md:text-right">
+                            <li>Coste de fabricación muy elevado.</li>
+                            <li>Procesos de moldeo y reparación complejos.</li>
+                            <li>Propiedades direccionales (anisotropía).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 right-8 z-10 text-slate-500 text-2xl font-bold">08</div>
+    </div>
+
+    <!-- === DIAPOSITIVA 9: DEFINIENDO LAS REGLAS DEL JUEGO === -->
+    <div id="slide-9" class="slide w-full h-screen bg-slate-950 relative flex flex-col items-center justify-center p-8 overflow-hidden">
+        <div class="absolute inset-0 bg-grid-slate-900 [mask-image:linear-gradient(0deg,#000000,rgba(0,0,0,0))]"></div>
+        <div class="text-center mb-12 fade-in">
+            <h2 class="text-sky-400 text-lg font-semibold mb-2">Módulo 3: El Marco para Decidir</h2>
+            <h1 class="text-4xl md:text-5xl font-bold text-white">Definiendo las Reglas del Juego</h1>
+        </div>
+        <div class="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Tarjeta 1: Técnicas -->
+            <div class="bg-slate-900/70 p-8 rounded-lg border border-slate-800 backdrop-blur-sm fade-in" style="animation-delay: 0.2s;">
+                <div class="flex items-center mb-4">
+                    <svg class="h-8 w-8 text-sky-400 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.942 1.11-.942h2.593c.55 0 1.02.399 1.11.942l.223.894c.05.202.123.394.218.572 1.206.649 2.09 1.86 2.09 3.286v1.076c0 1.427-.884 2.637-2.09 3.286a6.73 6.73 0 01-.218.572l-.223.894c-.09.542-.56.942-1.11.942h-2.593c-.55 0-1.02-.399-1.11-.942l-.223-.894a6.73 6.73 0 01-.218-.572A4.493 4.493 0 015.5 12.5v-1.076c0-1.427.884-2.637 2.09-3.286.095-.178.168-.37.218-.572l.223-.894zM12 15.75a3.75 3.75 0 100-7.5 3.75 3.75 0 000 7.5z" /></svg>
+                    <h3 class="text-2xl font-bold text-white">Técnicas</h3>
+                </div>
+                <p class="text-slate-400">¿Qué propiedades mecánicas, térmicas o eléctricas son indispensables? ¿Debe ser rígido, tenaz, ligero, aislante?</p>
+            </div>
+            <!-- Tarjeta 2: Económicas -->
+            <div class="bg-slate-900/70 p-8 rounded-lg border border-slate-800 backdrop-blur-sm fade-in" style="animation-delay: 0.4s;">
+                <div class="flex items-center mb-4">
+                    <svg class="h-8 w-8 text-sky-400 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 11.21 12.77 10.5 12 10.5s-1.536.71-2.121 1.5c-.586.79-.586 2.006 0 2.796l.879.659z" /></svg>
+                    <h3 class="text-2xl font-bold text-white">Económicas</h3>
+                </div>
+                <p class="text-slate-400">¿Cuál es el coste objetivo? No solo de la materia prima, sino también del procesado, montaje y ciclo de vida completo.</p>
+            </div>
+            <!-- Tarjeta 3: Ambientales y Legales -->
+            <div class="bg-slate-900/70 p-8 rounded-lg border border-slate-800 backdrop-blur-sm fade-in" style="animation-delay: 0.6s;">
+                <div class="flex items-center mb-4">
+                    <svg class="h-8 w-8 text-sky-400 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.916 17.916 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" /></svg>
+                    <h3 class="text-2xl font-bold text-white">Ambientales</h3>
+                </div>
+                <p class="text-slate-400">¿Es tóxico? ¿Cuál es su huella de carbono? ¿Se puede reciclar? ¿Cumple con las normativas (OSHA, REACH, etc.)?</p>
+            </div>
+        </div>
+        <div class="absolute bottom-8 right-8 z-10 text-slate-500 text-2xl font-bold">09</div>
+    </div>
+
+    <!-- === DIAPOSITIVA 10: APRENDER DE LOS ERRORES === -->
+    <div id="slide-10" class="slide w-full h-screen flex flex-col md:flex-row-reverse">
+        <div class="w-full md:w-1/2 h-1/3 md:h-full bg-cover bg-center relative" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Tacoma_Narrows_Bridge_destruction.jpg/1920px-Tacoma_Narrows_Bridge_destruction.jpg');">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 text-xs text-white/50"><span>Image: Wikimedia Commons, Public Domain</span></div>
+        </div>
+        <div class="w-full md:w-1/2 h-2/3 md:h-full bg-slate-950 flex flex-col justify-center p-8 lg:p-16">
+            <div class="max-w-md mx-auto md:mx-0">
+                <div class="fade-in">
+                    <h2 class="text-sky-400 text-lg font-semibold mb-2">Lecciones de la Ingeniería</h2>
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Aprender de los Errores</h1>
+                    <p class="text-slate-300 mb-8">Las fallas de materiales, aunque costosas, son una fuente invaluable de conocimiento. Nos enseñan qué propiedades son críticas y qué condiciones no se tuvieron en cuenta.</p>
+                </div>
+                <div class="space-y-4 border-l-4 border-sky-500/30 pl-6">
+                    <div class="fade-in" style="animation-delay: 0.3s;">
+                        <h3 class="text-xl font-bold text-white">Deficiencias de Diseño</h3>
+                        <p class="text-slate-400">Concentradores de esfuerzos no previstos, cargas dinámicas subestimadas.</p>
+                    </div>
+                    <div class="fade-in" style="animation-delay: 0.5s;">
+                        <h3 class="text-xl font-bold text-white">Mala Selección del Material</h3>
+                        <p class="text-slate-400">Ignorar la fatiga, la corrosión o los efectos de la temperatura.</p>
+                    </div>
+                    <div class="fade-in" style="animation-delay: 0.7s;">
+                        <h3 class="text-xl font-bold text-white">Errores de Fabricación</h3>
+                        <p class="text-slate-400">Tratamientos térmicos incorrectos, defectos de soldadura, imperfecciones.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 right-8 z-10 text-slate-500 text-2xl font-bold">10</div>
+    </div>
+
+    <!-- === DIAPOSITIVA 11: LOS MÉTODOS DE SELECCIÓN === -->
+    <div id="slide-11" class="slide w-full h-screen bg-slate-950 relative flex flex-col items-center justify-center p-8 overflow-hidden">
+        <div class="text-center mb-12 fade-in">
+            <h2 class="text-sky-400 text-lg font-semibold mb-2">Del Arte a la Ciencia</h2>
+            <h1 class="text-4xl md:text-5xl font-bold text-white">Los Métodos de Selección</h1>
+        </div>
+        <div class="w-full max-w-2xl">
+            <!-- Línea de tiempo vertical -->
+            <div class="relative border-l-2 border-slate-700 ml-6">
+                <!-- Item 1: Tradicional -->
+                <div class="mb-12 ml-12 fade-in" style="animation-delay: 0.2s;">
+                    <div class="absolute -left-4 w-8 h-8 bg-sky-500 rounded-full border-4 border-slate-950 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">1. Método Tradicional</h3>
+                    <p class="text-slate-400">Se basa en la <span class="text-sky-400">experiencia</span> y en el uso de materiales que han funcionado en aplicaciones similares. Es seguro y rápido, pero limita la innovación y la optimización.</p>
+                </div>
+                <!-- Item 2: Gráfico (Ashby) -->
+                <div class="mb-12 ml-12 fade-in" style="animation-delay: 0.4s;">
+                    <div class="absolute -left-4 w-8 h-8 bg-sky-500 rounded-full border-4 border-slate-950 flex items-center justify-center">
+                         <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" /></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">2. Método Gráfico (Ashby)</h3>
+                    <p class="text-slate-400">Utiliza <span class="text-sky-400">mapas de propiedades</span> y los <span class="text-sky-400">índices de material</span> para visualizar y cuantificar el rendimiento, permitiendo encontrar soluciones óptimas e innovadoras.</p>
+                </div>
+                <!-- Item 3: Computacional -->
+                <div class="ml-12 fade-in" style="animation-delay: 0.6s;">
+                    <div class="absolute -left-4 w-8 h-8 bg-sky-500 rounded-full border-4 border-slate-950 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-1.621-1.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25A2.25 2.25 0 015.25 3h13.5A2.25 2.25 0 0121 5.25z" /></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">3. Método Computacional</h3>
+                    <p class="text-slate-400">Emplea <span class="text-sky-400">bases de datos</span> y software especializado (ej. MatWeb, Granta) para filtrar miles de materiales según un perfil de propiedades detallado.</p>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 right-8 z-10 text-slate-500 text-2xl font-bold">11</div>
+    </div>
+
+    <!-- === DIAPOSITIVA 12: MAPAS DE MATERIALES === -->
+    <div id="slide-12" class="slide w-full h-screen bg-slate-950 relative flex items-center justify-center p-8 overflow-hidden">
+        <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <!-- Columna de Texto -->
+            <div class="text-left fade-in">
+                <h2 class="text-sky-400 text-lg font-semibold mb-2">Módulo 4: El Método de Ashby</h2>
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Mapas de Materiales</h1>
+                <p class="text-slate-300 text-lg mb-6">Son la herramienta visual clave del método. Grafican una propiedad contra otra (en escala logarítmica) para condensar una enorme cantidad de información.</p>
+                <ul class="list-disc list-inside text-slate-400 space-y-2">
+                    <li>Permiten comparar fácilmente entre diferentes familias de materiales.</li>
+                    <li>Cada familia (metales, polímeros, etc.) ocupa una región o "burbuja" distinta.</li>
+                    <li>Revelan correlaciones entre propiedades de forma intuitiva.</li>
+                </ul>
+            </div>
+            <!-- Columna del Mapa -->
+            <div class="relative flex items-center justify-center fade-in" style="animation-delay: 0.3s;">
+                <img src="" alt="Mapa de Ashby de Módulo de Young vs Densidad" class="rounded-lg shadow-2xl border-2 border-slate-800">
+                <p class="absolute bottom-2 right-2 text-xs text-white/40">Gráfico: M. F. Ashby</p>
+            </div>
+        </div>
+        <div class="absolute bottom-8 right-8 z-10 text-slate-500 text-2xl font-bold">12</div>
+    </div>
+
+    <!-- === DIAPOSITIVA 13: ÍNDICE DE MATERIAL === -->
+    <div id="slide-13" class="slide w-full h-screen bg-slate-950 relative flex flex-col items-center justify-center p-8 overflow-hidden">
+        <div class="text-center mb-12 fade-in">
+            <h2 class="text-sky-400 text-lg font-semibold mb-2">La "Receta" del Éxito</h2>
+            <h1 class="text-4xl md:text-5xl font-bold text-white">El Índice de Material</h1>
+            <p class="text-slate-300 mt-4 max-w-3xl mx-auto">Rara vez una aplicación depende de una sola propiedad. El Índice de Material (M) es una combinación de propiedades que mide el "rendimiento" de un material para una función específica.</p>
+        </div>
+
+        <div class="w-full max-w-4xl mx-auto flex items-center justify-around fade-in" style="animation-delay: 0.3s;">
+            <!-- Inputs -->
+            <div class="text-center">
+                <div class="bg-slate-900 border border-slate-800 rounded-lg p-4 mb-4">
+                    <h3 class="font-bold text-white">Función</h3>
+                    <p class="text-slate-400">Soportar carga</p>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 rounded-lg p-4">
+                    <h3 class="font-bold text-white">Restricciones</h3>
+                    <p class="text-slate-400">Ligero, Rígido</p>
+                </div>
+            </div>
+            
+            <svg class="w-24 h-24 text-slate-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" /></svg>
+            
+            <!-- Caja Negra -->
+            <div class="bg-sky-900/20 border-2 border-dashed border-sky-500 rounded-lg p-8 text-center">
+                <h3 class="text-2xl font-bold text-white">Modelo Matemático</h3>
+                <p class="text-slate-300">(Análisis de la física)</p>
+            </div>
+
+            <svg class="w-24 h-24 text-slate-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" /></svg>
+
+            <!-- Output -->
+            <div class="text-center">
+                <div class="bg-slate-900 border border-sky-400 rounded-lg p-6">
+                    <h3 class="font-bold text-white text-lg">Índice de Material (M)</h3>
+                    <p class="text-sky-300 text-2xl font-mono mt-2">E<sup>1/2</sup> / ρ</p>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 right-8 z-10 text-slate-500 text-2xl font-bold">13</div>
+    </div>
+
+    <!-- === DIAPOSITIVA 14: CASO DE ESTUDIO === -->
+    <div id="slide-14" class="slide w-full h-screen flex flex-col md:flex-row">
+        <div class="w-full md:w-1/2 h-1/3 md:h-full bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1527977966376-94a86254b5c4?q=80&w=1974&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent"></div>
+        </div>
+        <div class="w-full md:w-1/2 h-2/3 md:h-full bg-slate-950 flex flex-col justify-center p-8 lg:p-16">
+            <div class="max-w-md mx-auto md:mx-0">
+                <div class="fade-in">
+                    <h2 class="text-sky-400 text-lg font-semibold mb-2">Caso de Estudio</h2>
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Barra Rígida y Ligera</h1>
+                    <p class="text-slate-300 mb-8">Imaginemos que diseñamos el brazo de un dron. Necesitamos que sea lo más ligero posible para volar eficientemente, pero a la vez lo suficientemente rígido para no doblarse bajo su propio peso y el de los motores.</p>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-slate-900 border border-slate-800 rounded-lg p-4 fade-in" style="animation-delay: 0.3s;">
+                        <h3 class="text-xl font-bold text-white mb-2">Objetivo</h3>
+                        <p class="text-slate-400">Minimizar la masa (<span class="font-mono text-sky-400">m</span>) del componente.</p>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-lg p-4 fade-in" style="animation-delay: 0.5s;">
+                        <h3 class="text-xl font-bold text-white mb-2">Restricciones</h3>
+                        <ul class="list-disc list-inside text-slate-400">
+                            <li>La longitud (<span class="font-mono text-sky-400">L</span>) está fija por el diseño.</li>
+                            <li>Debe soportar una carga (<span class="font-mono text-sky-400">F</span>) sin deformarse más de (<span class="font-mono text-sky-400">δ</span>).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 right-8 z-10 text-slate-500 text-2xl font-bold">14</div>
+    </div>
+
+    <!-- === DIAPOSITIVA 15: LA DERIVACIÓN === -->
+    <div id="slide-15" class="slide w-full h-screen bg-slate-950 relative flex items-center justify-center p-8 overflow-hidden">
+        <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <!-- Columna de Texto -->
+            <div class="text-left">
+                <div class="fade-in">
+                    <h2 class="text-sky-400 text-lg font-semibold mb-2">La Magia de la Derivación</h2>
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Encontrando el Índice</h1>
+                    <p class="text-slate-300 text-lg mb-6">Al combinar las ecuaciones de masa y rigidez, podemos aislar los términos que dependen del material.</p>
+                </div>
+                <div class="space-y-4 font-mono text-lg p-6 bg-slate-900 rounded-lg border border-slate-800">
+                    <p class="fade-in" style="animation-delay: 0.3s;"><span class="text-slate-400">1. Masa:</span> m = ρ * A * L</p>
+                    <p class="fade-in" style="animation-delay: 0.5s;"><span class="text-slate-400">2. Rigidez (S):</span> S ≈ E * I / L³</p>
+                    <p class="fade-in" style="animation-delay: 0.7s;"><span class="text-slate-400">3. Momento de Inercia (I):</span> I ≈ A²</p>
+                    <p class="text-slate-400 border-t border-slate-700 my-4 fade-in" style="animation-delay: 0.9s;"></p>
+                    <p class="fade-in" style="animation-delay: 1.1s;"><span class="text-slate-400">Combinando:</span> m ≈ (S * L⁵ / C)<sup>1/2</sup> * (<span class="text-yellow-400">ρ / E<sup>1/2</sup></span>)</p>
+                    <p class="text-sm text-slate-500 mt-4 fade-in" style="animation-delay: 1.3s;">Para minimizar la masa 'm', debemos minimizar el término del material.</p>
+                     <p class="text-center text-xl mt-4 fade-in" style="animation-delay: 1.5s;"><span class="text-slate-300">Maximizar:</span> <span class="p-2 bg-sky-900/50 rounded-md text-sky-300 font-bold text-2xl">M = E<sup>1/2</sup> / ρ</span></p>
+                </div>
+            </div>
+            <!-- Columna de Visualización -->
+            <div class="relative flex items-center justify-center fade-in" style="animation-delay: 0.2s;">
+                 <svg class="w-full" viewBox="0 0 400 200">
+                    <!-- Viga -->
+                    <rect x="20" y="80" width="360" height="40" rx="5" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+                    <!-- Soportes -->
+                    <path d="M 40 120 l 20 20 l -40 0 Z" fill="#334155" />
+                    <path d="M 360 120 l 20 20 l -40 0 Z" fill="#334155" />
+                    <!-- Fuerza -->
+                    <path d="M 200 20 L 190 60 L 210 60 Z" fill="#38bdf8" />
+                    <rect x="198" y="20" width="4" height="40" fill="#38bdf8" />
+                    <text x="220" y="45" font-family="Poppins" font-size="20" fill="#38bdf8" font-weight="bold">F</text>
+                 </svg>
+            </div>
+        </div>
+        <div class="absolute bottom-8 right-8 z-10 text-slate-500 text-2xl font-bold">15</div>
+    </div>
+
+    <!-- === DIAPOSITIVA 16: LÍNEA DE SELECCIÓN === -->
+    <div id="slide-16" class="slide w-full h-screen bg-slate-950 relative flex flex-col items-center justify-center p-8 overflow-hidden">
+        <div class="text-center mb-8 fade-in">
+            <h2 class="text-sky-400 text-lg font-semibold mb-2">Aplicando el Índice</h2>
+            <h1 class="text-4xl md:text-5xl font-bold text-white">Trazando la Línea de Selección</h1>
+        </div>
+        <div class="relative w-full max-w-4xl fade-in" style="animation-delay: 0.3s;">
+            <img src="https://i.imgur.com/k2tS8dC.png" alt="Mapa de Ashby de Módulo de Young vs Densidad" class="rounded-lg shadow-2xl border-2 border-slate-800">
+            <!-- Zona de Selección -->
+            <div class="absolute inset-0 overflow-hidden rounded-lg">
+                <div class="absolute w-[200%] h-[200%] bg-sky-400/20 transform -rotate-45 origin-bottom-left" style="clip-path: polygon(0 0, 100% 0, 100% 35%, 0 70%); animation: fadeIn 1s ease-out 2.5s forwards; opacity:0;"></div>
+            </div>
+            <!-- Línea de Selección -->
+            <div class="absolute top-0 left-0 w-full h-full">
+                <div class="absolute w-full h-1 bg-red-500 transform origin-left -rotate-45 scale-x-125 top-[42%] -left-[10%]">
+                    <div class="w-0 h-full bg-red-500 draw-line"></div>
+                </div>
+                <div class="absolute top-[35%] left-[55%] text-white font-bold text-lg transform -rotate-45 fade-in" style="animation-delay: 2.5s;">
+                    M = E<sup>1/2</sup> / ρ
+                </div>
+            </div>
+             <div class="absolute top-4 left-4 bg-slate-900/80 p-3 rounded-lg fade-in" style="animation-delay: 2.8s;">
+                <h3 class="font-bold text-white">Candidatos Óptimos</h3>
+                <p class="text-slate-300 text-sm">Materiales en la zona superior izquierda.</p>
+            </div>
+        </div>
+        <div class="absolute bottom-8 right-8 z-10 text-slate-500 text-2xl font-bold">16</div>
+    </div>
+
+    <!-- === DIAPOSITIVA 17: IDEAS CLAVE === -->
+    <div id="slide-17" class="slide w-full h-screen bg-slate-950 relative flex flex-col items-center justify-center p-8 overflow-hidden">
+        <div class="text-center mb-12 fade-in">
+            <h2 class="text-sky-400 text-lg font-semibold mb-2">Módulo 6: Conclusión</h2>
+            <h1 class="text-4xl md:text-5xl font-bold text-white">Ideas Clave para Llevar</h1>
+        </div>
+
+        <div class="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Tarjeta 1 -->
+            <div class="bg-slate-900/70 p-6 rounded-lg border border-slate-800 flex items-center gap-6 fade-in" style="animation-delay: 0.2s;">
+                <div class="bg-sky-900/50 p-4 rounded-full border-2 border-sky-500 flex-shrink-0">
+                    <svg class="h-10 w-10 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" /></svg>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-1">Proceso Sistemático</h3>
+                    <p class="text-slate-400">La selección no es azarosa; es un proceso que equilibra función, propiedades, proceso y coste.</p>
+                </div>
+            </div>
+            <!-- Tarjeta 2 -->
+            <div class="bg-slate-900/70 p-6 rounded-lg border border-slate-800 flex items-center gap-6 fade-in" style="animation-delay: 0.4s;">
+                <div class="bg-sky-900/50 p-4 rounded-full border-2 border-sky-500 flex-shrink-0">
+                    <svg class="h-10 w-10 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" /></svg>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-1">Fortalezas y Debilidades</h3>
+                    <p class="text-slate-400">Cada familia de materiales tiene un perfil característico. No existe el material "perfecto", solo el "adecuado".</p>
+                </div>
+            </div>
+            <!-- Tarjeta 3 -->
+            <div class="bg-slate-900/70 p-6 rounded-lg border border-slate-800 flex items-center gap-6 fade-in" style="animation-delay: 0.6s;">
+                <div class="bg-sky-900/50 p-4 rounded-full border-2 border-sky-500 flex-shrink-0">
+                     <svg class="h-10 w-10 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" /></svg>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-1">Optimizar e Innovar</h3>
+                    <p class="text-slate-400">El método Ashby (mapas + índices) es una herramienta poderosa para ir más allá de lo tradicional y encontrar la mejor solución.</p>
+                </div>
+            </div>
+            <!-- Tarjeta 4 -->
+            <div class="bg-slate-900/70 p-6 rounded-lg border border-slate-800 flex items-center gap-6 fade-in" style="animation-delay: 0.8s;">
+                <div class="bg-sky-900/50 p-4 rounded-full border-2 border-sky-500 flex-shrink-0">
+                    <svg class="h-10 w-10 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.82m5.84-2.56a17.96 17.96 0 00-5.84-2.56m0 0a17.96 17.96 0 01-5.84 2.56m5.84-2.56V4.84a6 6 0 0111.68 0v2.56" /></svg>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-1">El Futuro es Integral</h3>
+                    <p class="text-slate-400">La selección moderna considera todo el ciclo de vida: sostenibilidad, manufactura aditiva y materiales inteligentes.</p>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 right-8 z-10 text-slate-500 text-2xl font-bold">17</div>
+    </div>
+
+    <!-- === DIAPOSITIVA 18: PREGUNTAS Y AGRADECIMIENTOS === -->
+    <div id="slide-18" class="slide w-full h-screen bg-cover bg-center relative flex items-center justify-center" style="background-image: url('https://images.unsplash.com/photo-1554147090-e1221a04a025?q=80&w=2070&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+        
+        <div class="absolute inset-0 bg-slate-950/70"></div>
+        
+        <div class="relative z-10 text-center text-white p-8">
+            <h1 class="text-6xl md:text-8xl font-bold mb-4 fade-in">¿Preguntas?</h1>
+            <div class="w-32 h-1 bg-sky-500 mx-auto mb-12 fade-in" style="animation-delay: 0.2s;"></div>
+            <h2 class="text-2xl md:text-4xl font-light mb-2 fade-in" style="animation-delay: 0.4s;">Gracias por su atención</h2>
+            <p class="text-lg md:text-xl text-slate-300 fade-in" style="animation-delay: 0.6s;">Rubén Velázquez Hernández</p>
+            <p class="text-slate-400 fade-in" style="animation-delay: 0.8s;">[ruben.velazquez@uteq.edu.mx]</p>
+        </div>
+        <div class="absolute bottom-8 right-8 z-10 text-slate-400 text-2xl font-bold">18</div>
+    </div>
+
+
+</div>
+
+</body>
+</html>
